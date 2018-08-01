@@ -12,13 +12,13 @@
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
 
         <!-- 基本属性driverClassName url、user、password -->
-        <property name="driverClassName" value = "${jdbc.driver}" />
-        <property name="url" value="${jdbc.url}" />
-        <property name="username" value="${jdbc.username}" />
-        <property name="password" value="${jdbc.password}" />
+        <property name="driverClassName" value = "com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/tb_goods_info" />
+        <property name="username" value="root" />
+        <property name="password" value="123456" />
 
         <!-- 配置初始化大小、最小、最大 -->
-        <property name="initialSize" value="${jdbc.initialSize}" />
+        <property name="initialSize" value="3" />
         <property name="minIdle" value="${jdbc.minIdle}" />
         <property name="maxActive" value="${jdbc.maxActive}" />
 
@@ -56,7 +56,7 @@
         <!-- 扫描model包，使用别名cn.cnfia.dao.model -->
         <property name="typeAliasesPackage" value="com.longines.pojo"/>
         <!-- 扫描SQL配置文件：mapper需要的xml文件 -->
-        <property name="mapperLocations" value="classpath:mapper/UserMapper.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/SearchMapper.xml"/>
     </bean>
 
     <!-- 配置扫描Dao接口包，动态实现Dao接口，并注入到Spring容器中 -->

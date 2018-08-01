@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longines.dao.GoodsMapper">
+    <select id="findGoodsById" parameterType="int" resultType="com.longines.pojo.goods_info">
+        select * from tb_goods_info where g_id=#{id}
+    </select>
+    <insert id="InsertGoods" parameterType="com.longines.pojo.goods_info">
+        insert into tb_goods_info
+        (gname,brand,price,theme,g_pic)
+        value(#{gname},#{brand},#{price},#{theme},#{g_pic})
+    </insert>
+</mapper>

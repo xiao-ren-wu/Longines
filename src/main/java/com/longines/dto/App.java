@@ -1,4 +1,4 @@
-package com.longines.common;
+package com.longines.dto;
 
 /**
  * @author XiaoRenwu

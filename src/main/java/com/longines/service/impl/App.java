@@ -1,4 +1,4 @@
-package com.longines.common;
+package com.longines.service.impl;
 
 /**
  * @author XiaoRenwu

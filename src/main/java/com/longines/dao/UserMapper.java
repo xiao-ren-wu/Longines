@@ -16,5 +16,4 @@ import org.springframework.stereotype.Component;
 public interface UserMapper {
     public CollectionB findCollection(Integer id);
     public void   saveCollection(CollectionA collectiona);
-
 }

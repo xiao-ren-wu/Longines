@@ -1,8 +1,7 @@
 package com.longines.pojo;
 
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 
-import java.math.BigDecimal;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 /**
  * @author XiaoRenwu
@@ -13,111 +12,31 @@ import java.math.BigDecimal;
  */
 @JsonSerialize(include =  JsonSerialize.Inclusion.NON_NULL)
 public class User  {
-    private  Integer user_id;
-    private  String  uname;
-    private  String  sex;
-    private  String  tel_num;
-    private  String  pw;
-    private  BigDecimal ac_balance;
-    private  String label;
-    private  String birth;
-    private  String pic;
-    private  String sug;
+    private Integer id;
+    private String name;
+    private Integer age;
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getUname() {
-        return uname;
+    public String getName() {
+        return name;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSex() {
-        return sex;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getTel_num() {
-        return tel_num;
-    }
-
-    public void setTel_num(String tel_num) {
-        this.tel_num = tel_num;
-    }
-
-    public String getPw() {
-        return pw;
-    }
-
-    public void setPw(String pw) {
-        this.pw = pw;
-    }
-
-    public BigDecimal getAc_balance() {
-        return ac_balance;
-    }
-
-    public void setAc_balance(BigDecimal ac_balance) {
-        this.ac_balance = ac_balance;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public String getBirth() {
-        return birth;
-    }
-
-    public void setBirth(String birth) {
-        this.birth = birth;
-    }
-
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic;
-    }
-
-    public String getSug() {
-        return sug;
-    }
-
-    public void setSug(String sug) {
-        this.sug = sug;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "user_id=" + user_id +
-                ", uname='" + uname + '\'' +
-                ", sex='" + sex + '\'' +
-                ", tel_num='" + tel_num + '\'' +
-                ", pw='" + pw + '\'' +
-                ", ac_balance=" + ac_balance +
-                ", label='" + label + '\'' +
-                ", birth='" + birth + '\'' +
-                ", pic='" + pic + '\'' +
-                ", sug='" + sug + '\'' +
-                '}';
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }
-

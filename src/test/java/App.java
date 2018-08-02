@@ -9,13 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Date;
 
 
-/**
- * @author XiaoRenwu
- * e-mail 18629015421@163.com
- * github https://github.com/xiao-ren-wu
- * @version 1
- * @since 2018/7/8 23:35
- */
 
 public class App {
     private ApplicationContext cxt;
@@ -27,10 +20,11 @@ public class App {
     public void cs() throws Exception
     {
         UserMapper userMapper=(UserMapper) cxt.getBean("UserMapper");
-        CollectionB collection_b=userMapper.findCollection(167);
+        CollectionB collection_b=userMapper.findCollection(168);
+        System.out.println(collection_b);
         CollectionA collectionA=new CollectionA();
-        collectionA.setUser_id(24);
-        collectionA.setGoods_id(167);
+        collectionA.setUser_id(25);
+        collectionA.setGoods_id(168);
         collectionA.setC_price(collection_b.getPrice());
         collectionA.setColl_time(new Date());
         collectionA.setPur(0);

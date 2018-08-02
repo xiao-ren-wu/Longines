@@ -1,9 +1,7 @@
-import com.longines.dao.FindUserId;
-import com.longines.dao.FindUserIdImpl;
+import com.longines.dao.UserMapper;
 import com.longines.pojo.User;
 import org.junit.Before;
 import org.junit.Test;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -26,9 +24,8 @@ public class App {
    @Test
    public void dw()throws Exception
    {
-
-      FindUserId findUserId = (FindUserId) cxt.getBean("FindUserId");
-      User user = findUserId.findUserById(1);
+      UserMapper userMapper = (UserMapper) cxt.getBean("userMapper");
+      User user = userMapper.findUserById(1);
       System.out.println(user);
    }
 }

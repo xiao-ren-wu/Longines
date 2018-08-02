@@ -5,6 +5,6 @@ import com.longines.pojo.User;
 /**
  * @author leijing
  * */
-public interface FindUserId {
+public interface UserMapper {
     public User findUserById(int id) throws Exception;
 }

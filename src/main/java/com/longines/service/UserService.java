@@ -11,5 +11,5 @@ import com.longines.pojo.User;
  */
 
 public interface UserService {
-    User find(Integer id);
+    User dw(Integer id);
 }

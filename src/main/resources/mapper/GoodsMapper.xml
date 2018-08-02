@@ -6,7 +6,7 @@
     </select>
     <insert id="InsertGoods" parameterType="com.longines.pojo.goods_info">
         insert into tb_goods_info
-        (gname,brand,price,theme,g_pic)
-        value(#{gname},#{brand},#{price},#{theme},#{g_pic})
+        (gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic)
+        value(#{gname},#{brand},#{price},#{theme},#{mov},#{func},#{a_peo},#{dial},#{strap},#{w_but},#{g_pic})
     </insert>
 </mapper>

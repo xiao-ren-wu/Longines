@@ -1,6 +1,7 @@
 package com.longines.service;
 
-import com.longines.pojo.User;
+
+import com.longines.pojo.CollectionB;
 
 /**
  * @author XiaoRenwu
@@ -11,5 +12,6 @@ import com.longines.pojo.User;
  */
 
 public interface UserService {
-    User find(Integer id);
+    public void save(Integer id);
+    public void delete();
 }

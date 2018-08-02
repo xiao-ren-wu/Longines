@@ -1,4 +1,4 @@
-package com.longines.dao;
+/*package com.longines.dao;
 
 import com.longines.pojo.CollectionA;
 import com.longines.pojo.CollectionB;
@@ -14,4 +14,4 @@ public class UserMapperImpl extends SqlSessionDaoSupport implements UserMapper {
     public void saveCollection(CollectionA collectiona) {
         this.getSqlSession().insert("com.longines.dao.UserMapper.saveCollection", collectiona);
     }
-}
+}*/

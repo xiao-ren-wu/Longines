@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7c64477-9514-4383-8099-bac16effdb89" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/FindUserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/FindUserIdImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/User.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/App.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,8 +20,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="230">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +32,8 @@
       <file leaf-file-name="spring-longines-dao.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="58" column="94" selection-start-line="58" selection-start-column="94" selection-end-line="58" selection-end-column="94" />
+            <state relative-caret-position="221">
+              <caret line="66" column="57" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -71,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/dbinfo.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -89,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/UserMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -97,8 +93,8 @@
       <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="76">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -150,10 +146,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/FindUserIdImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/User.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/test/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
       </list>
     </option>
   </component>
@@ -182,8 +178,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,15 +252,6 @@
               <item name="Longines" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="longines" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Longines" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -333,6 +318,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -479,7 +466,8 @@
       <workItem from="1533130783685" duration="3419000" />
       <workItem from="1533205541185" duration="4513000" />
       <workItem from="1533210589219" duration="5417000" />
-      <workItem from="1533220795579" duration="789000" />
+      <workItem from="1533220795579" duration="969000" />
+      <workItem from="1533221791075" duration="575000" />
     </task>
     <task id="LOCAL-00001" summary="pojo">
       <created>1533135216495</created>
@@ -488,22 +476,17 @@
       <option name="project" value="LOCAL" />
       <updated>1533135216495</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ss">
+      <created>1533221759190</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1533221759190</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="App - 2018.08.02 at 21h 28m 55s.xml">
-      <configuration name="App" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="App - 2018.08.02 at 21h 29m 17s.xml">
-      <configuration name="App" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="App - 2018.08.02 at 22h 23m 51s.xml">
-      <configuration name="App" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="App - 2018.08.02 at 22h 25m 19s.xml">
-      <configuration name="App" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="App - 2018.08.02 at 22h 25m 32s.xml">
       <configuration name="App" configurationId="JUnit" />
     </history-entry>
@@ -522,12 +505,24 @@
     <history-entry file="App - 2018.08.02 at 22h 44m 57s.xml">
       <configuration name="App" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="App - 2018.08.02 at 22h 54m 36s.xml">
+      <configuration name="App" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="App - 2018.08.02 at 22h 56m 08s.xml">
+      <configuration name="App" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="App - 2018.08.02 at 22h 56m 42s.xml">
+      <configuration name="App" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="App - 2018.08.02 at 23h 01m 38s.xml">
+      <configuration name="App" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33346000" />
+    <option name="totallyTimeSpent" value="34101000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="735" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -548,10 +543,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49960968" weight="0.27858293" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36553946" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36553946" />
       <window_info anchor="bottom" id="Spring" order="12" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2740047" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2740047" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -597,7 +592,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pojo" />
-    <option name="LAST_COMMIT_MESSAGE" value="pojo" />
+    <MESSAGE value="ss" />
+    <option name="LAST_COMMIT_MESSAGE" value="ss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -796,30 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="58" column="94" selection-start-line="58" selection-start-column="94" selection-end-line="58" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/longines.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -840,14 +812,38 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/dbinfo.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="66" column="57" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="76">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
         </state>
       </provider>
     </entry>

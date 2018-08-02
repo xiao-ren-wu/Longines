@@ -2,10 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.longines.dao.UserMapper">
 
-
-    <select id="selectAdd" parameterType="int" resultType="com.longines.pojo.rec_info">
-        select * from rec_info where stud_id = #{u_id}
-    </select>
     <insert id="insertAdd" parameterType="com.longines.pojo.rec_info">
         insert into rec_info(u_id, a_id, consignee, s_add, c_tel, postcode) values(#{u_id},#{a_id},#{consignee},#{s_add},#{c_tel},#{postcode})
     </insert>

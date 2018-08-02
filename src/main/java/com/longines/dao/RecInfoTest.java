@@ -1,5 +1,6 @@
 package com.longines.dao;
 
+import com.longines.pojo.RecInfo;
 import com.longines.pojo.rec_info;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -11,9 +12,16 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class rec_infoTest {
+/**
+ * @author wangyichao
+ * e-mail 742969147@qq.com
+ * github https://github.com/MarryAndy
+ * @version 1
+ * @since 2018/8/3 00:22
+ */
+public class RecInfoTest {
         @Test
-        public void Testda(){
+        public void TestDa(){
             String resource = "mybatis/mybatis-config.xml";
             InputStream inputStream = null;
             try {
@@ -25,10 +33,8 @@ public class rec_infoTest {
 
             SqlSession session = sqlSessionFactory.openSession();
             try {
-                rec_info stu = new rec_info();
-                stu.setUser_id(2);
-                stu.setAdd_id(2);
-                stu.setConsignee("wwe");
+                RecInfo stu = new RecInfo();
+
                 session.insert("com.longines.dao.UserMapper.insertAdd", stu);
                 session.commit();
             } finally {

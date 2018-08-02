@@ -1,14 +1,37 @@
 package com.longines.pojo;
 
-
-public class rec_info {
-
-    private int u_id;       //用户ID
-    private int a_id;        //地址ID
-    private String consignee;  //收货人名称
-    private String s_add;  //收货地址
-    private String c_tel;      //收货人电话
-    private String postcode;   //邮编
+/**
+ * @author wangyichao
+ * e-mail 742969147@qq.com
+ * github https://github.com/MarryAndy
+ * @version 1
+ * @since 2018/8/3 00:22
+ */
+public class RecInfo {
+    /**
+     * 用户ID
+     */
+    private int u_id;
+    /**
+     * 地址ID
+     */
+    private int a_id;
+    /**
+     * 收货人名称
+     */
+    private String consignee;
+    /**
+     * 收货地址
+     */
+    private String s_add;
+    /**
+     * 收货人电话
+     */
+    private String c_tel;
+    /**
+     * 邮编
+     */
+    private String postcode;
     public int getUser_id() {
         return u_id;
     }

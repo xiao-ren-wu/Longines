@@ -1,8 +1,10 @@
 package com.longines.dao;
 
 
-import com.longines.pojo.User;
+import com.longines.pojo.Order;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @author XiaoRenwu
@@ -12,6 +14,6 @@ import org.springframework.stereotype.Component;
  * @since 2018/7/8 23:54
  */
 @Component
-public interface UserMapper {
-    User find(Integer id);
+public interface OrderMapper {
+    public Order findOrderById(int o_id) throws Exception;
 }

@@ -67,27 +67,6 @@
         <property name="basePackage" value="com.longines.dao"/>
         <!-- applicationcontext中beanfactory初始化需要 -->
     </bean>
-<<<<<<< HEAD
-
-    <bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath*:dbinfo.properties</value>
-            </list>
-        </property>
-    </bean>
-
-
     <context:component-scan base-package="com.longines.dao"/>
-    <bean id = "Shopping_CartMapper" class = "org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name = "mapperInterface" value = "com.longines.dao.Shopping_CartMapper"></property>
-        <property name="sqlSessionFactory" ref = "sqlSessionFactory"></property>
-
-    </bean>
-    <!--<context:component-scan base-package="com.longines.dao"/>-->
-=======
-    <context:component-scan base-package="com.longines.dao"/>
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 </beans>
 

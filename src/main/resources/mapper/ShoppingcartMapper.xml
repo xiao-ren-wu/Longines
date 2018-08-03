@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.longines.dao.UserMapper">
+<<<<<<< HEAD
 	<select id="FindByUid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
 		SELECT * FROM tb_shopping_cart WHERE u_id=#{u_id}
 	</select>
@@ -28,6 +29,17 @@
 	</resultMap>-->
 	<select id="FindByGid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
 		SELECT * FROM tb_shopping_cart WHERE g_id=#{g_id}
+=======
+        <select id="FindByUid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
+		SELECT * FROM tb_shopping_cart WHERE u_id=#{u_id}
+	</select>
+	<insert id="InsertUid" parameterType="com.longines.pojo.shopping_cart" >
+		INSERT INTO tb_shopping_cart (u_id,g_id,g_num,t_amount,status)
+		        VALUES(#{u_id},#{g_id},#{g_num},#{t_amount},#{status})
+	</insert>
+	<select id="FindByGid" parameterType="int" resultType="com.longines.pojo.goods_info">
+		SELECT * FROM tb_goods_info WHERE g_id=#{g_id}
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 	</select>
 
 	<!-- sm**根据用户ID查找sc信息-->

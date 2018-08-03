@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.longines.dao.UserMapper">
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<select id="FindByUid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
 		SELECT * FROM tb_shopping_cart WHERE u_id=#{u_id}
 	</select>
@@ -30,6 +31,8 @@
 	<select id="FindByGid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
 		SELECT * FROM tb_shopping_cart WHERE g_id=#{g_id}
 =======
+=======
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
         <select id="FindByUid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
 		SELECT * FROM tb_shopping_cart WHERE u_id=#{u_id}
 	</select>
@@ -39,6 +42,9 @@
 	</insert>
 	<select id="FindByGid" parameterType="int" resultType="com.longines.pojo.goods_info">
 		SELECT * FROM tb_goods_info WHERE g_id=#{g_id}
+<<<<<<< HEAD
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
+=======
 >>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 	</select>
 

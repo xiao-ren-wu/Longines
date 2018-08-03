@@ -1,14 +1,20 @@
 package com.longines.service.impl;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Shopping_CartServiceImp  {
     /*private Shopping_CartDao ScDao;
 =======
+=======
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 import com.longines.dao.Shopping_CartDao;
 import com.longines.service.Shopping_CartService;
 
 public class Shopping_CartServiceImp implements Shopping_CartService {
     private Shopping_CartDao ScDao;
+<<<<<<< HEAD
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
+=======
 >>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
     public void setScDao(Shopping_CartDao scDao){
         this.ScDao=scDao;
@@ -19,7 +25,11 @@ public class Shopping_CartServiceImp implements Shopping_CartService {
         //System.out.println("Shopping_CartServiceImp.addUser()");
         this.ScDao.addUser();
 <<<<<<< HEAD
+<<<<<<< HEAD
     }*/
+=======
+    }
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 =======
     }
 >>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf

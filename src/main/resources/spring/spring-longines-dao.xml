@@ -68,6 +68,7 @@
         <!-- applicationcontext中beanfactory初始化需要 -->
     </bean>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -86,6 +87,9 @@
 
     </bean>
     <!--<context:component-scan base-package="com.longines.dao"/>-->
+=======
+    <context:component-scan base-package="com.longines.dao"/>
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 =======
     <context:component-scan base-package="com.longines.dao"/>
 >>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf

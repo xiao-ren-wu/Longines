@@ -7,6 +7,7 @@ public class goods_info {
      */
     private int g_id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     private String gname;
     private String brand;
     private double price;
@@ -133,6 +134,8 @@ public class goods_info {
                 '}';
     }
 =======
+=======
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
     private String gname;      //商品名
     private String brand;      //品牌
     private double price;      //价格
@@ -224,6 +227,9 @@ public class goods_info {
     }
 
 
+<<<<<<< HEAD
+>>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
+=======
 >>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 }
 

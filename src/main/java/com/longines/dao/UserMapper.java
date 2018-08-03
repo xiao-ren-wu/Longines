@@ -2,7 +2,6 @@ package com.longines.dao;
 
 
 import com.longines.pojo.CollectionA;
-import com.longines.pojo.CollectionB;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,6 +13,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface UserMapper {
-    public CollectionB findCollection(Integer id);
+    public CollectionA findCollection(Integer id);
     public void   saveCollection(CollectionA collectiona);
 }

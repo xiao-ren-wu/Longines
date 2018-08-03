@@ -1,8 +1,6 @@
 package com.longines.service;
 
 
-import com.longines.pojo.CollectionB;
-
 /**
  * @author XiaoRenwu
  * e-mail 18629015421@163.com

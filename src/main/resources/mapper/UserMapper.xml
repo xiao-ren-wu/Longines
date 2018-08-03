@@ -3,11 +3,23 @@
 
 
 <mapper namespace="com.longines.dao.UserMapper">
-    <select id="findCollection" resultType="com.longines.pojo.CollectionB" parameterType="Integer">
-       SELECT tb_goods_info.price,tb_mg_associated.inv from tb_goods_info,tb_mg_associated
-       WHERE tb_goods_info.g_id = #{id} and tb_mg_associated.g_id=#{id};
-    </select>
+    <resultMap type="com.longines.pojo.CollectionA" id="OrdersAndDetailRstMap">
+            <result column="price" property="price" />
+            <result column="inv" property="invalid" />
+    </resultMap>
+
+
+    <select id="findCollection"  parameterType="Integer" resultMap="OrdersAndDetailRstMap">
+		SELECT
+		tb_goods_info.price,tb_mg_associated.inv
+		from
+		tb_goods_info,tb_mg_associated
+        WHERE
+        tb_goods_info.g_id = #{id}
+        and
+        tb_mg_associated.g_id=#{id};
+	</select>
     <insert id="saveCollection" parameterType="com.longines.pojo.CollectionA">
-        INSERT INTO tb_collection(u_id,g_id,coll_time,c_price,pur,invalid)VALUES(#{user_id},#{goods_id},#{coll_time},#{c_price},#{pur},#{invalid});
+        INSERT INTO tb_collection(u_id,g_id,coll_time,c_price,pur,invalid)VALUES(#{userid},#{goodsid},#{colltime},#{price},#{pur},#{invalid});
     </insert>
 </mapper>

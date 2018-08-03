@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--leijing-->
+<mapper namespace="com.longines.dao.PayMapper">
+    <select id="PayById" parameterType= "int" resultType="com.longines.pojo.Pay" >
+        select u_id,o_id,p_method,t_num,pm_data from tb_pay where p_id = #{id}
+
+    </select>
+</mapper>

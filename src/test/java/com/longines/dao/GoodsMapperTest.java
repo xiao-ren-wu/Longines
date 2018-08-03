@@ -14,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.io.InputStream;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -36,18 +37,43 @@ public class GoodsMapperTest {
 
         GoodsMapper mapper=(GoodsMapper)ctx.getBean("GoodsMapper");
         goods_info g=new goods_info();
-        g.setGname("表");
-        g.setBrand("浪");
-        g.setPrice(5000.00);
-        g.setTheme("婉约");
-        g.setG_pic("妈卖批");
-        g.setA_peo("情侣");
-        g.setDial("表盘");
-        g.setFunc("防水");
+        g.setgName("小金表");
+        g.setBrand("白晓夏");
+        g.setPrice(200.00);
+        g.setTheme("娇小");
+        g.setGpic("鞍山西安看");
+        g.setApeo("女性");
+        g.setDial("小胖表盘");
+        g.setFunc("防水放到");
         g.setMov("机械");
         g.setStrap("金边");
-        g.setW_but("表扣");
-        mapper.InsertGoods(g);
+        g.setWbut("表扣");
+        mapper.insertGoods(g);
 
     }
+    @Test
+    public void findGoodsByPrice ()throws Exception
+    {
+        GoodsMapper mapper=(GoodsMapper)ctx.getBean("GoodsMapper");
+        List<goods_info> goods=mapper.findGoodsByPrice();
+        for(goods_info g:goods)
+        {
+            System.out.println(g);
+        }
+
+    }
+    @Test
+    public  void findGoodsByTheme()
+    {
+        GoodsMapper mapper=(GoodsMapper)ctx.getBean("GoodsMapper");
+//        goods_info gs=new goods_info();
+//        gs.setTheme("婉约");
+        List<goods_info> goods=mapper.findGoodsByTheme("婉约");
+        for(goods_info g:goods)
+        {
+            System.out.println(g);
+        }
+    }
+
+
 }

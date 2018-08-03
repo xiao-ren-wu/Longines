@@ -3,39 +3,61 @@ package com.longines.pojo;
 import java.util.Date;
 
 public class mg_associated {
+	/**
+	 *  商家ID
+	 */
+	private int mId;
+	/**
+	 *  商品ID
+	 */
+	private int gId;
+	/**
+	 *  库存量
+	 */
+	private int inv;
+	/**
+	 *  上架时间
+	 */
+	private Date sTime;
 
-	private int m_id;            //商家ID
-	private int g_id;        //商品ID
-	private int inv;             //库存量
-	private Date s_time;     //上架时间
-	public int getM_id() {
-		return m_id;
+	public Date getsTime() {
+		return sTime;
 	}
-	public void setM_id(int m_id) {
-		this.m_id = m_id;
+
+	public void setsTime(Date sTime) {
+		this.sTime = sTime;
 	}
-	public int getGoods_id() {
-		return g_id;
+
+	public int getmId() {
+
+		return mId;
 	}
-	public void setGoods_id(int goods_id) {
-		this.g_id = goods_id;
+
+	public void setmId(int mId) {
+		this.mId = mId;
 	}
+
 	public int getInv() {
+
 		return inv;
 	}
+
 	public void setInv(int inv) {
 		this.inv = inv;
 	}
-	public Date getShelf_time() {
-		return s_time;
+
+	public int getgId() {
+
+		return gId;
 	}
-	public void setShelf_time(Date shelf_time) {
-		this.s_time = shelf_time;
+
+	public void setgId(int gId) {
+		this.gId = gId;
 	}
+
 	@Override
 	public String toString() {
-		return "mg_associated [m_id=" + m_id + ", goods_id=" + g_id + ", inv=" + inv + ", shelf_time=" + s_time
-				+ "]";
+		return "mg_associated [mId=" + mId + ", goodsId=" + gId + ", inv=" + inv + ", shelf_time=" + sTime + "]";
 	}
 	
 

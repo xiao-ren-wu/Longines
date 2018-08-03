@@ -4,50 +4,111 @@ import java.util.Date;
 
 public class merce {
 
-	private int m_id;          //商家ID
-	private String sname;      //店铺名称
-	private String s_cred;     //店铺信誉
-	private Date s_time;     //开店时间
-	private String home;       //所在地
-	private String c_into;     //店铺简介
-	private String m_tel;      //电话
-	private String s_manager;  //店长
-	private String b_card;     //店铺名片
-	private String p_ser;   //平台服务费
-	
-	public int getM_id() {
-		return m_id;
+	/**
+	 商家ID
+	 */
+	private int mId;
+	/**
+	 店铺名称
+	 */
+	private String sName;
+	/**
+	 店铺信誉
+	 */
+	private String sCred;
+	/**
+	 开店时间
+	 */
+	private Date sTime;
+	/**
+	 所在地
+	 */
+	private String home;
+	/**
+	 店铺简介
+	 */
+	private String cInto;
+	/**
+	 电话
+	 */
+	private String mTel;
+	/**
+	 店长
+	 */
+	private String sManager;
+	/**
+	 店铺名片
+	 */
+	private String bCard;
+	/**
+	 平台服务费
+	 */
+	private String pSer;
+
+	public Date getsTime() {
+		return sTime;
 	}
 
-	public void setM_id(int m_id) {
-		this.m_id = m_id;
+	public void setsTime(Date sTime) {
+		this.sTime = sTime;
 	}
 
-	public String getSname() {
-		return sname;
+	public String getsName() {
+
+		return sName;
 	}
 
-	public void setSname(String sname) {
-		this.sname = sname;
+	public void setsName(String sName) {
+		this.sName = sName;
 	}
 
-	public String getS_cred() {
-		return s_cred;
+	public String getsManager() {
+
+		return sManager;
 	}
 
-	public void setS_cred(String s_cred) {
-		this.s_cred = s_cred;
+	public void setsManager(String sManager) {
+		this.sManager = sManager;
 	}
 
-	public Date getS_time() {
-		return s_time;
+	public String getsCred() {
+
+		return sCred;
 	}
 
-	public void setS_time(Date s_time) {
-		this.s_time = s_time;
+	public void setsCred(String sCred) {
+		this.sCred = sCred;
+	}
+
+	public String getpSer() {
+
+		return pSer;
+	}
+
+	public void setpSer(String pSer) {
+		this.pSer = pSer;
+	}
+
+	public int getmId() {
+
+		return mId;
+	}
+
+	public void setmId(int mId) {
+		this.mId = mId;
+	}
+
+	public String getmTel() {
+
+		return mTel;
+	}
+
+	public void setmTel(String mTel) {
+		this.mTel = mTel;
 	}
 
 	public String getHome() {
+
 		return home;
 	}
 
@@ -55,51 +116,29 @@ public class merce {
 		this.home = home;
 	}
 
-	public String getC_into() {
-		return c_into;
+	public String getcInto() {
+
+		return cInto;
 	}
 
-	public void setC_into(String c_into) {
-		this.c_into = c_into;
+	public void setcInto(String cInto) {
+		this.cInto = cInto;
 	}
 
-	public String getM_tel() {
-		return m_tel;
+	public String getbCard() {
+
+		return bCard;
 	}
 
-	public void setM_tel(String m_tel) {
-		this.m_tel = m_tel;
-	}
-
-	public String getS_manager() {
-		return s_manager;
-	}
-
-	public void setS_manager(String s_manager) {
-		this.s_manager = s_manager;
-	}
-
-	public String getB_card() {
-		return b_card;
-	}
-
-	public void setB_card(String b_card) {
-		this.b_card = b_card;
-	}
-
-	public String getPlat_ser() {
-		return p_ser;
-	}
-
-	public void setPlat_ser(String plat_ser) {
-		this.p_ser = plat_ser;
+	public void setbCard(String bCard) {
+		this.bCard = bCard;
 	}
 
 	@Override
 	public String toString() {
-		return "merce [m_id=" + m_id + ", sname=" + sname + ", s_cred=" + s_cred + ", s_time=" + s_time + ", home="
-				+ home + ", c_into=" + c_into + ", m_tel=" + m_tel + ", s_manager=" + s_manager + ", b_card=" + b_card
-				+ ", plat_ser=" + p_ser + "]";
+		return "merce [mId=" + mId + ", sName=" + sName + ", sCred=" + sCred + ", sTime=" + sTime + ", home="
+				+ home + ", cInto=" + cInto + ", mTel=" + mTel + ", sManager=" + sManager + ", bCard=" + bCard
+				+ ", pSer=" + pSer + "]";
 	}
 
 	

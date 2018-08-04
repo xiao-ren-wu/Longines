@@ -2,8 +2,9 @@ package com.longines.dao;
 
 import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbOrderInfoExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface TbOrderInfoMapper {
     int countByExample(TbOrderInfoExample example);

@@ -2,19 +2,29 @@ package com.longines.pojo;
 
 import java.util.Date;
 
-public class TbOrder extends TbOrderKey {
-    private Integer gNum;
+public class TbMgAssociated extends TbMgAssociatedKey {
+    private Integer inv;
+
+    private Date sTime;
 
     private Date createtime;
 
     private Date updatetime;
 
-    public Integer getgNum() {
-        return gNum;
+    public Integer getInv() {
+        return inv;
     }
 
-    public void setgNum(Integer gNum) {
-        this.gNum = gNum;
+    public void setInv(Integer inv) {
+        this.inv = inv;
+    }
+
+    public Date getsTime() {
+        return sTime;
+    }
+
+    public void setsTime(Date sTime) {
+        this.sTime = sTime;
     }
 
     public Date getCreatetime() {
@@ -31,14 +41,5 @@ public class TbOrder extends TbOrderKey {
 
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
-    }
-
-    @Override
-    public String toString() {
-        return "TbOrder{" +
-                "gNum=" + gNum +
-                ", createtime=" + createtime +
-                ", updatetime=" + updatetime +
-                '}';
     }
 }

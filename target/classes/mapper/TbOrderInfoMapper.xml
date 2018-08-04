@@ -12,6 +12,8 @@
     <result column="freight" property="freight" jdbcType="DECIMAL" />
     <result column="s_num" property="sNum" jdbcType="INTEGER" />
     <result column="d_method" property="dMethod" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,7 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    o_id, u_id, a_id, cre_date, del_date, tb_date, a_amount, freight, s_num, d_method
+    o_id, u_id, a_id, cre_date, del_date, tb_date, a_amount, freight, s_num, d_method, 
+    createtime, updatetime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderInfoExample" >
     select
@@ -108,11 +111,13 @@
     insert into tb_order_info (o_id, u_id, a_id, 
       cre_date, del_date, tb_date, 
       a_amount, freight, s_num, 
-      d_method)
+      d_method, createtime, updatetime
+      )
     values (#{oId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{aId,jdbcType=INTEGER}, 
       #{creDate,jdbcType=TIMESTAMP}, #{delDate,jdbcType=TIMESTAMP}, #{tbDate,jdbcType=TIMESTAMP}, 
       #{aAmount,jdbcType=DECIMAL}, #{freight,jdbcType=DECIMAL}, #{sNum,jdbcType=INTEGER}, 
-      #{dMethod,jdbcType=VARCHAR})
+      #{dMethod,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbOrderInfo" >
     insert into tb_order_info
@@ -147,6 +152,12 @@
       <if test="dMethod != null" >
         d_method,
       </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="oId != null" >
@@ -178,6 +189,12 @@
       </if>
       <if test="dMethod != null" >
         #{dMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -220,6 +237,12 @@
       <if test="record.dMethod != null" >
         d_method = #{record.dMethod,jdbcType=VARCHAR},
       </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -236,7 +259,9 @@
       a_amount = #{record.aAmount,jdbcType=DECIMAL},
       freight = #{record.freight,jdbcType=DECIMAL},
       s_num = #{record.sNum,jdbcType=INTEGER},
-      d_method = #{record.dMethod,jdbcType=VARCHAR}
+      d_method = #{record.dMethod,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -271,6 +296,12 @@
       <if test="dMethod != null" >
         d_method = #{dMethod,jdbcType=VARCHAR},
       </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
@@ -284,7 +315,9 @@
       a_amount = #{aAmount,jdbcType=DECIMAL},
       freight = #{freight,jdbcType=DECIMAL},
       s_num = #{sNum,jdbcType=INTEGER},
-      d_method = #{dMethod,jdbcType=VARCHAR}
+      d_method = #{dMethod,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
 </mapper>

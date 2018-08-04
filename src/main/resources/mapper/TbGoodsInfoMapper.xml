@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.longines.dao.TbGoodsInfoMapper" >
+  <select id="findGoodsById" parameterType="int" resultType="com.longines.pojo.TbGoodsInfo">
+        select * from tb_goods_info where g_id=#{id}
+    </select>
+  <select id="findGoodsByPrice" resultType="com.longines.pojo.TbGoodsInfo">
+      select * from tb_goods_info order by price;
+    </select>
+  <select id="findGoodsByTheme" parameterType="String" resultType="com.longines.pojo.TbGoodsInfo">
+        select * from tb_goods_info where theme=#{theme}
+    </select>
+</mapper>

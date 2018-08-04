@@ -17,23 +17,5 @@ import java.io.InputStream;
 public class App {
     public static void main(String[] args){
 
-
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = null;
-        try {
-            inputStream = Resources.getResourceAsStream(resource);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
-        SqlSession session = sqlSessionFactory.openSession();
-        try {
-
-                session.commit();
-        } finally {
-            session.close();
-        }
-
     }
 }

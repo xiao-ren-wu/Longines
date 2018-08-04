@@ -18,7 +18,9 @@ public class RecInfoTest
     {
         String xmlPath  = "spring/spring-longines-dao.xml";
         ApplicationContext appContext = new ClassPathXmlApplicationContext(xmlPath);
-        RecInfoMapper mapper = appContext.getBean(RecInfoMapper.class);
+        //RecInfoMapper mapper = appContext.getBean("recInfoMapper");
+        //里面写的单词第一个字母小写，相当于自动生成RecInfoMapper的bean
+        RecInfoMapper recInfoMapper= (RecInfoMapper) appContext.getBean("recInfoMapper");
 
 
         RecInfo todo = new RecInfo();
@@ -29,7 +31,7 @@ public class RecInfoTest
         todo.setAdd_id(2);
         todo.setUser_id(3);
 
-        mapper.insert(todo);
+        recInfoMapper.insert(todo);
 
 //        System.out.println("todo's new id is " + todo.getUser_id());
 //        List<RecInfo> todoes = mapper.getTodoList();

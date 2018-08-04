@@ -1,7 +1,7 @@
 package com.longines.pojo;
 
 
-
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 /**
  * @author XiaoRenwu
@@ -10,7 +10,7 @@ package com.longines.pojo;
  * @version 1
  * @since 2018/7/8 23:53
  */
-
+@JsonSerialize(include =  JsonSerialize.Inclusion.NON_NULL)
 public class User  {
     private Integer id;
     private String name;

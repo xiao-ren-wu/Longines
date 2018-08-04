@@ -64,27 +64,10 @@
         <!-- 注入sqlSessionFactory，防止提前错误的初始化 -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出扫描DAO接口包 -->
-        <property name="basePackage" value="com.longines.spring"/>
+        <property name="basePackage" value="com.longines.dao"/>
         <!-- applicationcontext中beanfactory初始化需要 -->
     </bean>
 
-
-    <bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath*:dbinfo.properties</value>
-            </list>
-        </property>
-    </bean>
-
-
-    <context:component-scan base-package="com.longines.dao"/>
-    <bean id = "RecInfoMapper" class = "org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name = "mapperInterface" value = "com.longines.dao.RecInfoMapper"></property>
-        <property name="sqlSessionFactory" ref = "sqlSessionFactory"></property>
-
-    </bean>
 
 </beans>
 

@@ -1,12 +1,10 @@
 package com.longines.dao;
 
+
 import com.longines.pojo.shopping_cart;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-public class Shopping_CartDaoImp extends SqlSessionDaoSupport implements Shopping_CartDao {
-
-
-    @Override
+public class Shopping_CartDaoImp extends SqlSessionDaoSupport {
     public void insertsc(shopping_cart sc) throws Exception {
 
 //        String resource="mybatis/mybatis-config.xml";
@@ -24,12 +22,12 @@ public class Shopping_CartDaoImp extends SqlSessionDaoSupport implements Shoppin
 //        sqlSession.commit();
     }
 
-    @Override
+
     public void addUser() {
         System.out.println("ScDao_addUser()");   //DItest
     }
 
-    @Override
+
     public shopping_cart findScByUid(int id) throws Exception {
         return this.getSqlSession().selectOne("mapper/ShoppingcartMapper.xml",id);
     }

@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.longines.dao.UserMapper">
-        <select id="FindByUid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
+	<select id="FindByUid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
 		SELECT * FROM tb_shopping_cart WHERE u_id=#{u_id}
 	</select>
-	<insert id="InsertUid" parameterType="com.longines.pojo.shopping_cart" >
+	<update id="ModifyNum" parameterType="com.longines.pojo.shopping_cart" >
+		UPDATE tb_shopping_cart SET g_num = #{g_num} WHEREu_id=#{u_id} AND g_id =#{g_id}
+	</update>
+	<update id="ModifyTamount" parameterType="com.longines.pojo.shopping_cart">
+		UPDATE tb_shopping_cart SET t_amount = (SELECT price FROM tb_goods_info WHERE tb_shopping_cart.`g_id`=tb_goods_info.`g_id`)
+		UPDATE tb_shopping_cart SET t_amount = (t_amount*g_num)
+	</update>
+	<delete id="" parameterType="com.longines.pojo.shopping_cart">
+		DELETE FROM tb_shopping_cart WHERE g_id = ${g_id}
+	</delete>
+	<insert id="InsertShc" parameterType="com.longines.pojo.shopping_cart" >
 		INSERT INTO tb_shopping_cart (u_id,g_id,g_num,t_amount,status)
 		        VALUES(#{u_id},#{g_id},#{g_num},#{t_amount},#{status})
 	</insert>
-	<select id="FindByGid" parameterType="int" resultType="com.longines.pojo.goods_info">
-		SELECT * FROM tb_goods_info WHERE g_id=#{g_id}
+
+	<select id="FindByGid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
+		SELECT * FROM tb_shopping_cart WHERE g_id=#{g_id}
 	</select>
+	<!--<select id="findName" parameterType="java.lang.String" resultType="com.longines.pojo.shopping_cart">
+    SELECT * FROM USER WHERE username LIKE '%${value}%';
+</select>-->
 
-	<!-- sm**根据用户ID查找sc信息-->
-	<select id="findScByUid" parameterType="int" resultType="com.longines.pojo.shopping_cart">
-		SELECT * FROM tb_shopping_cart WHERE u_id=#{u_id}
-	</select>
-
-        <!--<select id="findName" parameterType="java.lang.String" resultType="com.longines.pojo.shopping_cart">
-		SELECT * FROM USER WHERE username LIKE '%${value}%';
-	</select>-->
-
-
-
-
-    </mapper>
+</mapper>

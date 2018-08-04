@@ -1,11 +1,11 @@
 package com.longines.pojo;
 
 public class shopping_cart {
-    private int u_id;      //用户ID
-    private int g_id;     //商品ID
-    private int g_num;        //商品数量
-    private double t_amount;  //总金额
-    private int status;       //状态号
+    private int u_id;
+    private int g_id;
+    private int g_num;
+    private double t_amount;
+    private int status;
 
     public int getUser_id() {
         return u_id;
@@ -39,12 +39,12 @@ public class shopping_cart {
         this.t_amount = t_amount;
     }
 
-    public int getStatus() {
-        return status;
+    public void setS_status(int s_status) {
+        this.status = s_status;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public int getS_status(int i) {
+        return status;
     }
 
     @Override

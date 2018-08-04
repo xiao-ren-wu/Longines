@@ -1,18 +1,16 @@
-package com.longines.service;
+package com.longines.dao;
 
 import com.longines.pojo.shopping_cart;
 
 import java.util.List;
 
 /**
- * @author XiaoRenwu
- * e-mail 18629015421@163.com
- * github https://github.com/xiao-ren-wu
- * @version 1
- * @since 2018/7/9 8:56
+ * @Author: liuyang
+ * @Description:
+ * @CreateDate: 2018/8/2 15:32
+ * @Version: 1.0
  */
-
-public interface Shopping_CartService {
+public interface Shopping_CartMapper {
     /**
      * 根据用户ID查询购物车信息
      */
@@ -28,5 +26,4 @@ public interface Shopping_CartService {
     /**
      * 新增购物车信息
      */
-    public void add(shopping_cart example);
 }

@@ -10,6 +10,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
  * @since 2018/7/8 23:53
  */
 import java.util.Date;
+
 @JsonSerialize(include =  JsonSerialize.Inclusion.NON_NULL)
 public class User {
 

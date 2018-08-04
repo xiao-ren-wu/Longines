@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @Author: liuyang
  * @Description:
- * @CreateDate: 2018/8/4$ 16:10$
+ * @CreateDate: 2018/8/3 16:10
  * @Version: 1.0
  */
 public interface TbShoppingCartMapper {
@@ -38,5 +38,7 @@ public interface TbShoppingCartMapper {
     int updateByPrimaryKey(TbShoppingCart record);
 
     TbShoppingCart selectByUid(int uid);
+
+    void updateByTamount(TbShoppingCart record);
 
 }

@@ -208,7 +208,7 @@
     where u_id = #{uId,jdbcType=INTEGER}
       and g_id = #{gId,jdbcType=INTEGER}
   </update>
-    <update id="updateBygNum" parameterType="com.longines.pojo.shopping_cart" >
+    <update id="updateBygNum" parameterType="com.longines.pojo.TbShoppingCart" >
 		update tb_shopping_cart
 	set g_num = #{g_num,jdbcType=INTEGER}
 	where u_id=#{u_id,jdbcType=INTEGER}
@@ -218,7 +218,7 @@
 		select * from tb_shopping_cart
 	WHERE u_id=#{u_id,jdbcType=INTEGER}
 	</select>
-    <update id="updateByTamount" parameterType="com.longines.pojo.shopping_cart">
+    <update id="updateByTamount" parameterType="com.longines.pojo.TbShoppingCart">
 		UPDATE tb_shopping_cart SET t_amount = (SELECT price FROM tb_goods_info WHERE tb_shopping_cart.`g_id`=tb_goods_info.`g_id`)
 		UPDATE tb_shopping_cart SET t_amount = (t_amount*g_num)
 	</update>

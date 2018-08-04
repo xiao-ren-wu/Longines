@@ -1,7 +1,5 @@
 package com.longines.service;
 
-import com.longines.pojo.User;
-
 /**
  * @author XiaoRenwu
  * e-mail 18629015421@163.com
@@ -11,5 +9,5 @@ import com.longines.pojo.User;
  */
 
 public interface UserService {
-    User find(Integer id);
+    /*User find(Integer id);*/
 }

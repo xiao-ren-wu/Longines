@@ -1,7 +1,5 @@
 package com.longines.service;
 
-import com.longines.pojo.shopping_cart;
-
 import java.util.List;
 
 /**

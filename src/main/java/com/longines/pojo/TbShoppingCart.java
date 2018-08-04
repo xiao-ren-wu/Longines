@@ -7,10 +7,17 @@ package com.longines.pojo;
  * @Version: 1.0
  */
 public class TbShoppingCart extends TbShoppingCartKey {
+    /**
+     * 商品数量
+     */
     private Integer gNum;
-
+    /**
+     * 总金额
+     */
     private Long tAmount;
-
+    /**
+     * 状态号
+     */
     private Integer status;
 
     public Integer getgNum() {
@@ -40,7 +47,9 @@ public class TbShoppingCart extends TbShoppingCartKey {
     @Override
     public String toString() {
         return "TbShoppingCart{" +
-                "gNum=" + gNum +
+                "uId=" + uId +
+                ", gId=" + gId +
+                ", gNum=" + gNum +
                 ", tAmount=" + tAmount +
                 ", status=" + status +
                 '}';

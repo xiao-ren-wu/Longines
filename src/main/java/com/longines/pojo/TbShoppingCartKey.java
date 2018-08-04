@@ -7,9 +7,14 @@ package com.longines.pojo;
  * @Version: 1.0
  */
 public class TbShoppingCartKey {
-    private Integer uId;
-
-    private Integer gId;
+    /**
+     * 用户ID
+     */
+    protected Integer uId;
+    /**
+     * 商品ID
+     */
+    protected Integer gId;
 
     public Integer getuId() {
         return uId;
@@ -25,13 +30,5 @@ public class TbShoppingCartKey {
 
     public void setgId(Integer gId) {
         this.gId = gId;
-    }
-
-    @Override
-    public String toString() {
-        return "TbShoppingCartKey{" +
-                "uId=" + uId +
-                ", gId=" + gId +
-                '}';
     }
 }

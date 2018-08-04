@@ -1,6 +1,5 @@
 package com.longines.service.impl;
 
-import com.longines.dao.Shopping_CartDao;
 import com.longines.service.Shopping_CartService;
 
 public class Shopping_CartServiceImp implements Shopping_CartService {

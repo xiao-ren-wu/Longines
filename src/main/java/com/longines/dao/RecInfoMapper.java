@@ -20,6 +20,6 @@ public interface RecInfoMapper {
 
     int updatePostcode(RecInfo todo);
 
-    int delete(int u_id);
+    int delete(RecInfo todo);
 
 }

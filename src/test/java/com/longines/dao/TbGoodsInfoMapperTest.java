@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -20,19 +22,51 @@ public class TbGoodsInfoMapperTest {
     public void setUp() throws Exception {
         ctx=new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
     }
-
     @Test
-    public void findGoodsById() {
-        TbGoodsInfoMapper mapper=(TbGoodsInfoMapper) ctx.getBean("tbGoodsInfoMapper");
-        TbGoodsInfo goods=mapper.findGoodsById(1);
-        System.out.println(goods);
-    }
+    public void findGoodsByPriceDesc() {
+        TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
+        List<TbGoodsInfo> goods=mapper.findGoodsByPriceDesc();
+        for(TbGoodsInfo g:goods)
+        {
+            System.out.println(g);
+        }
 
+    }
     @Test
-    public void findGoodsByPrice() {
-    }
+    public void findGoodsByPriceAsc() {
+        TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
+        List<TbGoodsInfo> goods=mapper.findGoodsByPriceAsc();
+        for(TbGoodsInfo g:goods)
+        {
+            System.out.println(g);
+        }
 
+    }
     @Test
     public void findGoodsByTheme() {
+        TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
+        List<TbGoodsInfo> goods=mapper.findGoodsByTheme("婉约");
+        for(TbGoodsInfo g: goods)
+        {
+            System.out.println(g);
+        }
+    }
+    @Test
+    public void findGoodsInfoBysTimeDesc() {
+        TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
+        List<TbGoodsInfo> goods=mapper.findGoodsInfoBysTimeDesc();
+        for (TbGoodsInfo g:goods)
+        {
+            System.out.println(g);
+        }
+    }
+    @Test
+    public void findGoodsInfoBysTimeAsc() {
+        TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
+        List<TbGoodsInfo> goods=mapper.findGoodsInfoBysTimeAsc();
+        for (TbGoodsInfo g:goods)
+        {
+            System.out.println(g);
+        }
     }
 }

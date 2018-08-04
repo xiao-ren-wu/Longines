@@ -121,4 +121,8 @@ public class TbGoodsInfo {
         this.gPic = gPic == null ? null : gPic.trim();
     }
 
+    @Override
+    public String toString() {
+        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theme='" + theme + '\'' + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + '}';
+    }
 }

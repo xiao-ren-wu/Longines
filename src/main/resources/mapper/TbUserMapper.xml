@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.longines.dao.TbUserMapper" >
+  <resultMap id="BaseResultMap" type="com.longines.pojo.TbUser" >
+    <id column="u_id" property="uId" jdbcType="INTEGER" />
+    <result column="uname" property="uname" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="tel_num" property="telNum" jdbcType="VARCHAR" />
+    <result column="pw" property="pw" jdbcType="VARCHAR" />
+    <result column="ac_balance" property="acBalance" jdbcType="DECIMAL" />
+    <result column="label" property="label" jdbcType="VARCHAR" />
+    <result column="birth" property="birth" jdbcType="VARCHAR" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="sug" property="sug" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    u_id, uname, sex, tel_num, pw, ac_balance, label, birth, pic, sug
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_user
+    where u_id = #{uId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_user
+    where u_id = #{uId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.longines.pojo.TbUserExample" >
+    delete from tb_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.longines.pojo.TbUser" >
+    insert into tb_user (u_id, uname, sex, 
+      tel_num, pw, ac_balance, 
+      label, birth, pic, 
+      sug)
+    values (#{uId,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{telNum,jdbcType=VARCHAR}, #{pw,jdbcType=VARCHAR}, #{acBalance,jdbcType=DECIMAL}, 
+      #{label,jdbcType=VARCHAR}, #{birth,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, 
+      #{sug,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.longines.pojo.TbUser" >
+    insert into tb_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uId != null" >
+        u_id,
+      </if>
+      <if test="uname != null" >
+        uname,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="telNum != null" >
+        tel_num,
+      </if>
+      <if test="pw != null" >
+        pw,
+      </if>
+      <if test="acBalance != null" >
+        ac_balance,
+      </if>
+      <if test="label != null" >
+        label,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="pic != null" >
+        pic,
+      </if>
+      <if test="sug != null" >
+        sug,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uId != null" >
+        #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="uname != null" >
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="telNum != null" >
+        #{telNum,jdbcType=VARCHAR},
+      </if>
+      <if test="pw != null" >
+        #{pw,jdbcType=VARCHAR},
+      </if>
+      <if test="acBalance != null" >
+        #{acBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="label != null" >
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null" >
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="sug != null" >
+        #{sug,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.longines.pojo.TbUserExample" resultType="java.lang.Integer" >
+    select count(*) from tb_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_user
+    <set >
+      <if test="record.uId != null" >
+        u_id = #{record.uId,jdbcType=INTEGER},
+      </if>
+      <if test="record.uname != null" >
+        uname = #{record.uname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telNum != null" >
+        tel_num = #{record.telNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pw != null" >
+        pw = #{record.pw,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acBalance != null" >
+        ac_balance = #{record.acBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.label != null" >
+        label = #{record.label,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birth != null" >
+        birth = #{record.birth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pic != null" >
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sug != null" >
+        sug = #{record.sug,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_user
+    set u_id = #{record.uId,jdbcType=INTEGER},
+      uname = #{record.uname,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=VARCHAR},
+      tel_num = #{record.telNum,jdbcType=VARCHAR},
+      pw = #{record.pw,jdbcType=VARCHAR},
+      ac_balance = #{record.acBalance,jdbcType=DECIMAL},
+      label = #{record.label,jdbcType=VARCHAR},
+      birth = #{record.birth,jdbcType=VARCHAR},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      sug = #{record.sug,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbUser" >
+    update tb_user
+    <set >
+      <if test="uname != null" >
+        uname = #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="telNum != null" >
+        tel_num = #{telNum,jdbcType=VARCHAR},
+      </if>
+      <if test="pw != null" >
+        pw = #{pw,jdbcType=VARCHAR},
+      </if>
+      <if test="acBalance != null" >
+        ac_balance = #{acBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="label != null" >
+        label = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null" >
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="sug != null" >
+        sug = #{sug,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbUser" >
+    update tb_user
+    set uname = #{uname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      tel_num = #{telNum,jdbcType=VARCHAR},
+      pw = #{pw,jdbcType=VARCHAR},
+      ac_balance = #{acBalance,jdbcType=DECIMAL},
+      label = #{label,jdbcType=VARCHAR},
+      birth = #{birth,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      sug = #{sug,jdbcType=VARCHAR}
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="036fe574-a1da-45ba-94b2-1d98391439e7" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/Shopping_CartDao.java" beforeDir="false" />
@@ -27,6 +28,72 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/Shopping_CartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Shopping_CartTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Shopping_cartDaoTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShoppingcartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ShoppingcartMapper.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbAdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbCPicMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbCollectionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbCouponsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbMerceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbMgAssociatedMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbOrderInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbOrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbPayMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbShoppingCartMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdminExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCPic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCPicExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollectionExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollectionKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCoupons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCouponsExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCouponsKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbGoodsInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbGoodsInfoExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMerce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMerceExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMgAssociated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMgAssociatedExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMgAssociatedKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderInfoExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbPay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbPayExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbUserExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbAdminMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbCPicMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbCollectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbCouponsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbMerceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbMgAssociatedMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbOrderInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbOrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbPayMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbRecInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiki/4组需求分配.doc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wiki/4组需求分配.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiki/4组需求文档.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wiki/4组需求文档.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RecInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RecInfoTest.java" afterDir="false" />
+>>>>>>> remotes/origin/wangyichao
       <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-longines-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-longines-dao.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,6 +104,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
@@ -61,19 +129,112 @@
         <option value="Class" />
       </list>
     </option>
+=======
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="RecInfoMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/RecInfoMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbPayMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbPayMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecInfoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/RecInfoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbRecInfoMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbRecInfoMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="858">
+              <caret line="141" column="14" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbRecInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#220#221#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbRecInfoExample.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoExample.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1034">
+              <caret line="137" column="42" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbRecInfoKey.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoKey.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> remotes/origin/wangyichao
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
+<<<<<<< HEAD
+=======
+    <option name="PATH_TO_GIT" value="D:\HTMI CSS\Git\cmd\git.exe" />
+>>>>>>> remotes/origin/wangyichao
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="liuyang" />
+=======
+        <entry key="$PROJECT_DIR$" value="dev" />
+>>>>>>> remotes/origin/wangyichao
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/longines/common/App.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/service/UserService.java" />
@@ -108,6 +269,30 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCart.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartKey.java" />
         <option value="$PROJECT_DIR$/src/test/java/Shopping_CartTest.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/rec_infoMapper.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/dbinfo.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/pojo/rec_info.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/rec_infoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/RecInfoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/service/impl/InfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/service/RecInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/rec_infoMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/outofmemory/hello/mybatis/console/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/outofmemory/hello/mybatis/console/RecInfoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/rec_infoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-longines-service.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/RecInfoMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/RecInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/App.java" />
+        <option value="$PROJECT_DIR$/src/test/java/RecInfoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/TbAdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/TbPayMapper.java" />
+>>>>>>> remotes/origin/wangyichao
       </list>
     </option>
   </component>
@@ -124,12 +309,42 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+<<<<<<< HEAD
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+=======
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="longines Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="longines Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="longines Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="junit:junit:4.12" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="340" />
+    <option name="y" value="155" />
+    <option name="width" value="975" />
+    <option name="height" value="760" />
+>>>>>>> remotes/origin/wangyichao
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="129" />
@@ -174,6 +389,62 @@
               <item name="Longines" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+>>>>>>> remotes/origin/wangyichao
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -189,16 +460,25 @@
               <item name="Longines" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="spring" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+>>>>>>> remotes/origin/wangyichao
             </path>
             <path>
               <item name="longines" type="b2602c69:ProjectViewProjectNode" />
               <item name="Longines" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="sql" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+>>>>>>> remotes/origin/wangyichao
             </path>
             <path>
               <item name="longines" type="b2602c69:ProjectViewProjectNode" />
@@ -217,13 +497,19 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+>>>>>>> remotes/origin/wangyichao
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -236,6 +522,22 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ly\Desktop\Lyy\Longines\src\main\resources" />
+=======
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="D:/HTMI CSS/Git/cmd/git.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\Longines\src\main\resources\mapper" />
+      <recent name="D:\github\Longines\src\main\java\com\longines\pojo" />
+      <recent name="D:\github\Longines\src\main\java\com\longines\dao" />
+>>>>>>> remotes/origin/wangyichao
     </key>
   </component>
   <component name="RunDashboard">
@@ -250,11 +552,46 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.Shopping_CartTest.test">
     <configuration name="Shopping_CartTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Shopping_CartTest" />
       <module name="longines" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+=======
+  <component name="RunManager" selected="Application.RecInfoTest (1)">
+    <configuration name="App (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.outofmemory.hello.mybatis.console.App" />
+      <module name="longines" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.outofmemory.hello.mybatis.console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="longines" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="RecInfoTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RecInfoTest" />
+      <module name="longines" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="RecInfoTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.outofmemory.hello.mybatis.console.RecInfoTest" />
+      <module name="longines" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.outofmemory.hello.mybatis.console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> remotes/origin/wangyichao
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -355,6 +692,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="RecInfoTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="longines" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RecInfoTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -450,6 +810,7 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Unnamed" />
+<<<<<<< HEAD
       <item itemvalue="JUnit.Daotest.Inserttest" />
       <item itemvalue="JUnit.DiTest.Demo" />
       <item itemvalue="JUnit.Shopping_cartDaoTest.testfindScByUid" />
@@ -463,6 +824,21 @@
         <item itemvalue="JUnit.Shopping_cartDaoTest.testfindScByUid" />
         <item itemvalue="JUnit.DiTest.Demo" />
         <item itemvalue="JUnit.Daotest.Inserttest" />
+=======
+      <item itemvalue="Application.App (1)" />
+      <item itemvalue="Application.RecInfoTest" />
+      <item itemvalue="TestNG.RecInfoTest" />
+      <item itemvalue="Application.RecInfoTest (1)" />
+      <item itemvalue="Application.App" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RecInfoTest (1)" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="TestNG.RecInfoTest" />
+        <item itemvalue="Application.RecInfoTest" />
+        <item itemvalue="Application.App (1)" />
+>>>>>>> remotes/origin/wangyichao
       </list>
     </recent_temporary>
   </component>
@@ -477,6 +853,7 @@
       <option name="presentableId" value="Default" />
       <updated>1531842847179</updated>
       <workItem from="1531842851489" duration="149000" />
+<<<<<<< HEAD
       <workItem from="1533030288544" duration="44000" />
       <workItem from="1533030450341" duration="34575000" />
       <workItem from="1533195876760" duration="9331000" />
@@ -491,11 +868,27 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1533127856345</updated>
+=======
+      <workItem from="1533051201260" duration="116000" />
+      <workItem from="1533092303550" duration="25000" />
+      <workItem from="1533124810132" duration="1051000" />
+      <workItem from="1533126190282" duration="6035000" />
+      <workItem from="1533135630488" duration="3078000" />
+      <workItem from="1533177176343" duration="23000" />
+      <workItem from="1533180729064" duration="1405000" />
+      <workItem from="1533209195994" duration="386000" />
+      <workItem from="1533215144573" duration="5942000" />
+      <workItem from="1533226003138" duration="1902000" />
+      <workItem from="1533257804768" duration="8477000" />
+      <workItem from="1533288351331" duration="13574000" />
+      <workItem from="1533343324653" duration="6169000" />
+>>>>>>> remotes/origin/wangyichao
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
+<<<<<<< HEAD
     <history-entry file="Daotest_Inserttest - 2018.08.03 at 17h 30m 07s.xml">
       <configuration name="Daotest.Inserttest" configurationId="JUnit" />
     </history-entry>
@@ -550,11 +943,42 @@
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info anchor="right" id="Database" />
+=======
+    <history-entry file="rec_infoTest_Testda - 2018.08.01 at 21h 59m 41s.xml">
+      <configuration name="rec_infoTest.Testda" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="rec_infoTest_Testda - 2018.08.01 at 22h 00m 42s.xml">
+      <configuration name="rec_infoTest.Testda" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="rec_infoTest_Testda - 2018.08.01 at 22h 01m 04s.xml">
+      <configuration name="rec_infoTest.Testda" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RecInfoTest - 2018.08.04 at 00h 50m 05s.xml">
+      <configuration name="RecInfoTest" configurationId="TestNG" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="48486000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32978722" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32908848" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="5" />
+>>>>>>> remotes/origin/wangyichao
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39942938" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
@@ -599,6 +1023,27 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.09822866" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+=======
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3281027" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25677603" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32952926" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20375335" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+>>>>>>> remotes/origin/wangyichao
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,16 +1052,29 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first day" />
     <option name="LAST_COMMIT_MESSAGE" value="first day" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/App.java</url>
+          <line>16</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+>>>>>>> remotes/origin/wangyichao
       <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/Daotest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dto/App.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -626,12 +1084,102 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/App.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RecInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/RecInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/longines.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/rec_infoMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/outofmemory/hello/mybatis/console/RecInfoTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dto/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/utils/App.java">
+>>>>>>> remotes/origin/wangyichao
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -687,12 +1235,166 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShoppingcartMapper.xml">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dto/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/longines.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/InfoService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/rec_infoMapper.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-679">
+          <caret line="48" column="72" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/outofmemory/hello/mybatis/console/RecInfoTest.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="222" selection-start-line="222" selection-end-line="222" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dbinfo.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/RecInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/RecInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-longines-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/RecInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCouponsExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdminExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbAdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbCouponsExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-longines-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+>>>>>>> remotes/origin/wangyichao
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShoppingcartMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -850,12 +1552,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/goods_info.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/shopping_cart.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RecInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbCouponsKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbRecInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbRecInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMgAssociatedKey.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbPayMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbOrderInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/RecInfoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoKey.java">
+>>>>>>> remotes/origin/wangyichao
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2160">
@@ -881,6 +1635,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="137" column="42" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbRecInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="141" column="14" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
+>>>>>>> remotes/origin/wangyichao
         </state>
       </provider>
     </entry>

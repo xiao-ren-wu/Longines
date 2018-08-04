@@ -56,7 +56,11 @@
         <!-- 扫描model包，使用别名cn.cnfia.dao.model -->
         <property name="typeAliasesPackage" value="com.longines.pojo"/>
         <!-- 扫描SQL配置文件：mapper需要的xml文件 -->
+<<<<<<< HEAD
         <property name="mapperLocations" value="classpath:mapper/ShoppingcartMapper.xml"/>
+=======
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+>>>>>>> remotes/origin/wangyichao
     </bean>
 
     <!-- 配置扫描Dao接口包，动态实现Dao接口，并注入到Spring容器中 -->
@@ -67,7 +71,11 @@
         <property name="basePackage" value="com.longines.dao"/>
         <!-- applicationcontext中beanfactory初始化需要 -->
     </bean>
+<<<<<<< HEAD
     <context:component-scan base-package="com.longines.dao"/>
+=======
+
+>>>>>>> remotes/origin/wangyichao
 
 </beans>
 

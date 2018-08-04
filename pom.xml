@@ -266,14 +266,24 @@
           <scope>compile</scope>
       </dependency>
     <dependency>
+<<<<<<< HEAD
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
+=======
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+>>>>>>> remotes/origin/wangyichao
       <version>RELEASE</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
+<<<<<<< HEAD
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
+=======
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+>>>>>>> remotes/origin/wangyichao
       <version>RELEASE</version>
       <scope>compile</scope>
     </dependency>

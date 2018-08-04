@@ -1,3 +1,11 @@
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * @author XiaoRenwu
  * e-mail 18629015421@163.com
@@ -7,7 +15,7 @@
  */
 
 public class App {
-    public static void main(String[] args) {
-        System.out.println("hello world");
+    public static void main(String[] args){
+
     }
 }

@@ -1,11 +1,14 @@
 package com.longines.pojo;
 
+<<<<<<< HEAD
 /**
  * @Author: liuyang
  * @Description:
  * @CreateDate: 2018/8/3 9:11
  * @Version: 1.0
  */
+=======
+>>>>>>> remotes/origin/wangyichao
 public class TbShoppingCart extends TbShoppingCartKey {
     private Integer gNum;
 
@@ -36,6 +39,7 @@ public class TbShoppingCart extends TbShoppingCartKey {
     public void setStatus(Integer status) {
         this.status = status;
     }
+<<<<<<< HEAD
 
     @Override
     public String toString() {
@@ -46,3 +50,6 @@ public class TbShoppingCart extends TbShoppingCartKey {
                 '}';
     }
 }
+=======
+}
+>>>>>>> remotes/origin/wangyichao

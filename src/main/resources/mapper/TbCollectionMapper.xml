@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.longines.dao.TbCollectionMapper" >
+  <resultMap id="BaseResultMap" type="com.longines.pojo.TbCollection" >
+    <id column="u_id" property="uId" jdbcType="INTEGER" />
+    <id column="g_id" property="gId" jdbcType="INTEGER" />
+    <result column="coll_time" property="collTime" jdbcType="TIMESTAMP" />
+    <result column="c_price" property="cPrice" jdbcType="DECIMAL" />
+    <result column="pur" property="pur" jdbcType="INTEGER" />
+    <result column="invalid" property="invalid" jdbcType="INTEGER" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    u_id, g_id, coll_time, c_price, pur, invalid, createtime, updatetime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbCollectionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_collection
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbCollectionKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_collection
+    where u_id = #{uId,jdbcType=INTEGER}
+      and g_id = #{gId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.longines.pojo.TbCollectionKey" >
+    delete from tb_collection
+    where u_id = #{uId,jdbcType=INTEGER}
+      and g_id = #{gId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.longines.pojo.TbCollectionExample" >
+    delete from tb_collection
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.longines.pojo.TbCollection" >
+    insert into tb_collection (u_id, g_id, coll_time, 
+      c_price, pur, invalid
+      )
+    values (#{uId,jdbcType=INTEGER}, #{gId,jdbcType=INTEGER}, #{collTime,jdbcType=TIMESTAMP}, 
+      #{cPrice,jdbcType=DECIMAL}, #{pur,jdbcType=INTEGER}, #{invalid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.longines.pojo.TbCollection" >
+    insert into tb_collection
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uId != null" >
+        u_id,
+      </if>
+      <if test="gId != null" >
+        g_id,
+      </if>
+      <if test="collTime != null" >
+        coll_time,
+      </if>
+      <if test="cPrice != null" >
+        c_price,
+      </if>
+      <if test="pur != null" >
+        pur,
+      </if>
+      <if test="invalid != null" >
+        invalid,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uId != null" >
+        #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="gId != null" >
+        #{gId,jdbcType=INTEGER},
+      </if>
+      <if test="collTime != null" >
+        #{collTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cPrice != null" >
+        #{cPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="pur != null" >
+        #{pur,jdbcType=INTEGER},
+      </if>
+      <if test="invalid != null" >
+        #{invalid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.longines.pojo.TbCollectionExample" resultType="java.lang.Integer" >
+    select count(*) from tb_collection
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_collection
+    <set >
+      <if test="record.uId != null" >
+        u_id = #{record.uId,jdbcType=INTEGER},
+      </if>
+      <if test="record.gId != null" >
+        g_id = #{record.gId,jdbcType=INTEGER},
+      </if>
+      <if test="record.collTime != null" >
+        coll_time = #{record.collTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.cPrice != null" >
+        c_price = #{record.cPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pur != null" >
+        pur = #{record.pur,jdbcType=INTEGER},
+      </if>
+      <if test="record.invalid != null" >
+        invalid = #{record.invalid,jdbcType=INTEGER},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_collection
+    set u_id = #{record.uId,jdbcType=INTEGER},
+      g_id = #{record.gId,jdbcType=INTEGER},
+      coll_time = #{record.collTime,jdbcType=TIMESTAMP},
+      c_price = #{record.cPrice,jdbcType=DECIMAL},
+      pur = #{record.pur,jdbcType=INTEGER},
+      invalid = #{record.invalid,jdbcType=INTEGER},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbCollection" >
+    update tb_collection
+    <set >
+      <if test="collTime != null" >
+        coll_time = #{collTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cPrice != null" >
+        c_price = #{cPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="pur != null" >
+        pur = #{pur,jdbcType=INTEGER},
+      </if>
+      <if test="invalid != null" >
+        invalid = #{invalid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where u_id = #{uId,jdbcType=INTEGER}
+      and g_id = #{gId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbCollection" >
+    update tb_collection
+    set coll_time = #{collTime,jdbcType=TIMESTAMP},
+      c_price = #{cPrice,jdbcType=DECIMAL},
+      pur = #{pur,jdbcType=INTEGER},
+      invalid = #{invalid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where u_id = #{uId,jdbcType=INTEGER}
+      and g_id = #{gId,jdbcType=INTEGER}
+ </update>
+  <resultMap type="com.longines.pojo.TbCollection" id="OrdersAndDetailRstMap">
+    <result column="price" property="cPrice" />
+    <result column="inv" property="invalid" />
+  </resultMap>
+
+
+
+  <select id="findCollection"  parameterType="Integer" resultMap="OrdersAndDetailRstMap">
+		SELECT
+		tb_goods_info.price,tb_mg_associated.inv
+		from
+		tb_goods_info,tb_mg_associated
+        WHERE
+        tb_goods_info.g_id = #{id}
+        and
+        tb_mg_associated.g_id=#{id};
+	</select>
+</mapper>

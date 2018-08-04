@@ -1,20 +1,29 @@
 package com.longines.pojo;
 
-<<<<<<< HEAD
 /**
  * @Author: liuyang
  * @Description:
  * @CreateDate: 2018/8/3 9:11
  * @Version: 1.0
  */
-=======
->>>>>>> remotes/origin/wangyichao
+
 public class TbShoppingCart extends TbShoppingCartKey {
+    /**
+     * 商品数量
+     */
     private Integer gNum;
-
+    /**
+     * 总金额
+     */
     private Long tAmount;
-
+    /**
+     * 状态号
+     */
     private Integer status;
+
+    private Date createtime;
+
+    private Date updatetime;
 
     public Integer getgNum() {
         return gNum;
@@ -39,17 +48,27 @@ public class TbShoppingCart extends TbShoppingCartKey {
     public void setStatus(Integer status) {
         this.status = status;
     }
-<<<<<<< HEAD
 
     @Override
     public String toString() {
         return "TbShoppingCart{" +
-                "gNum=" + gNum +
+                "uId=" + uId +
+                ", gId=" + gId +
+                ", gNum=" + gNum +
                 ", tAmount=" + tAmount +
                 ", status=" + status +
                 '}';
     }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
+    }
 }
-=======
-}
->>>>>>> remotes/origin/wangyichao

@@ -1,18 +1,14 @@
 package com.longines.pojo;
 
-<<<<<<< HEAD
-/**
- * @Author: liuyang
- * @Description:
- * @CreateDate: 2018/8/3 9:09
- * @Version: 1.0
- */
-=======
->>>>>>> remotes/origin/wangyichao
 public class TbShoppingCartKey {
-    private Integer uId;
-
-    private Integer gId;
+    /**
+     * 用户ID
+     */
+    protected Integer uId;
+    /**
+     * 商品ID
+     */
+    protected Integer gId;
 
     public Integer getuId() {
         return uId;
@@ -29,16 +25,4 @@ public class TbShoppingCartKey {
     public void setgId(Integer gId) {
         this.gId = gId;
     }
-<<<<<<< HEAD
-
-    @Override
-    public String toString() {
-        return "TbShoppingCartKey{" +
-                "uId=" + uId +
-                ", gId=" + gId +
-                '}';
-    }
 }
-=======
-}
->>>>>>> remotes/origin/wangyichao

@@ -6,7 +6,9 @@ import com.longines.pojo.TbShoppingCartKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+
 public interface TbShoppingCartMapper {
+
     int countByExample(TbShoppingCartExample example);
 
     int deleteByExample(TbShoppingCartExample example);
@@ -28,4 +30,11 @@ public interface TbShoppingCartMapper {
     int updateByPrimaryKeySelective(TbShoppingCart record);
 
     int updateByPrimaryKey(TbShoppingCart record);
+
+    TbShoppingCart selectByUid(int uid);
+
+    void updateByTamount(TbShoppingCart record);
+
+
+
 }

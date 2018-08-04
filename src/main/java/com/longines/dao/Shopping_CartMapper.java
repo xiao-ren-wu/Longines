@@ -1,6 +1,6 @@
 package com.longines.dao;
 
-import com.longines.pojo.shopping_cart;
+import com.longines.pojo.TbShoppingCart;
 
 import java.util.List;
 
@@ -14,15 +14,15 @@ public interface Shopping_CartMapper {
     /**
      * 根据用户ID查询购物车信息
      */
-    public List<shopping_cart> FindInfo(int id) throws Exception;
+    public List<TbShoppingCart> FindInfo(int id) throws Exception;
     /**
      * 更新购物车信息（包含计算总金额）
      */
-    public void update(shopping_cart example) throws Exception;
+    public void update(TbShoppingCart example) throws Exception;
     /**
      * 删除购物车信息
      */
-    public void delete(shopping_cart example);
+    public void delete(TbShoppingCart example);
     /**
      * 新增购物车信息
      */

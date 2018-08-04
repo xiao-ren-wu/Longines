@@ -1,4 +1,7 @@
-import com.longines.dao.Shopping_CartMapper;
+import com.longines.dao.TbShoppingCartMapper;
+import com.longines.pojo.TbShoppingCart;
+import com.longines.pojo.TbShoppingCartExample;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,18 +13,51 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Version: 1.0
  */
 public class Shopping_CartTest {
+    private ApplicationContext cxt;
+    @Before
+    public void before() {
+        cxt = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
+    }
     @Test
     public void test() throws Exception {
-        String xmlPath="spring/spring-longines-dao.xml";
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext(xmlPath);
-        Shopping_CartMapper mapper=applicationContext.getBean(Shopping_CartMapper.class);
+        TbShoppingCartMapper tbShoppingCartMapper= (TbShoppingCartMapper) cxt.getBean("tbShoppingCartMapper");
 
-//        shopping_cart shc=new shopping_cart();
-//        shc.setUser_id(2);
-//        shc.setGoods_id(3);
-//        shc.setG_num(15);
-//        shc.setT_amount(10*20);
-//
-//        mapper.FindInfo(2);
+        TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
+        TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
+        /**
+         * Select
+         */
+/*        criteria.andUIdEqualTo(2);
+        List<TbShoppingCart> ls=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
+        System.out.println(ls);*/
+
+/*        criteria.andUIdGreaterThan(1);
+        List<TbShoppingCart> list=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
+        System.out.println(list);*/
+
+/*        tbShoppingCartMapper.selectByUid(1);
+        System.out.println(tbShoppingCartMapper);*/
+        /**
+         * Insert
+         */
+        TbShoppingCart tbShoppingCart=new TbShoppingCart();
+        tbShoppingCart.setuId(5);
+        tbShoppingCart.setgId(9);
+        tbShoppingCart.setgNum(2);
+        tbShoppingCart.settAmount((long) 10);
+        tbShoppingCart.setStatus(1);
+        //tbShoppingCartMapper.insert(tbShoppingCart);
+        /**
+         * delete
+         */
+        /*TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
+        tbShoppingCartKey.setuId(5);
+        tbShoppingCartKey.setgId(9);
+        tbShoppingCartMapper.deleteByPrimaryKey(tbShoppingCartKey);*/
+        // List<TbShoppingCart> ll=tbShoppingCartMapper.selectByPrimaryKey(tbShoppingCart);
+        /**
+         * update by Tamount
+         */
+        tbShoppingCartMapper.updateByTamount(tbShoppingCart);
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @Author: liuyang
  * @Description:
- * @CreateDate: 2018/8/3$ 21:32$
+ * @CreateDate: 2018/8/2 15:32
  * @Version: 1.0
  */
 public interface Shopping_CartMapper {

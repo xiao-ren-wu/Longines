@@ -1,24 +1,10 @@
 package com.longines.dao;
 
+
 import com.longines.pojo.shopping_cart;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 public class Shopping_CartDaoImp extends SqlSessionDaoSupport {
-
-
-=======
-=======
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-public class Shopping_CartDaoImp extends SqlSessionDaoSupport implements Shopping_CartDao {
-
-
-    @Override
-<<<<<<< HEAD
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-=======
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
     public void insertsc(shopping_cart sc) throws Exception {
 
 //        String resource="mybatis/mybatis-config.xml";
@@ -36,28 +22,12 @@ public class Shopping_CartDaoImp extends SqlSessionDaoSupport implements Shoppin
 //        sqlSession.commit();
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-    @Override
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-=======
-    @Override
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
     public void addUser() {
         System.out.println("ScDao_addUser()");   //DItest
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-    @Override
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-=======
-    @Override
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
     public shopping_cart findScByUid(int id) throws Exception {
         return this.getSqlSession().selectOne("mapper/ShoppingcartMapper.xml",id);
     }

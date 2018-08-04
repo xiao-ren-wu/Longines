@@ -1,25 +1,11 @@
 package com.longines.pojo;
 
 public class shopping_cart {
-<<<<<<< HEAD
-<<<<<<< HEAD
     private int u_id;
     private int g_id;
     private int g_num;
     private double t_amount;
     private int status;
-=======
-=======
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-    private int u_id;      //用户ID
-    private int g_id;     //商品ID
-    private int g_num;        //商品数量
-    private double t_amount;  //总金额
-    private int status;       //状态号
-<<<<<<< HEAD
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-=======
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
 
     public int getUser_id() {
         return u_id;
@@ -53,27 +39,12 @@ public class shopping_cart {
         this.t_amount = t_amount;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public void setS_status(int s_status) {
         this.status = s_status;
     }
 
     public int getS_status(int i) {
         return status;
-=======
-=======
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-<<<<<<< HEAD
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
-=======
->>>>>>> 0fd1e24d83ff183679af25f965a3a6455e88cddf
     }
 
     @Override

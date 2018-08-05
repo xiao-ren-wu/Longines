@@ -1,12 +1,10 @@
 package com.test.service;
 
 import com.longines.pojo.TbGoodsInfo;
-import com.longines.service.SearchService;
-import com.longines.service.ThemeService;
-import com.longines.service.Theme_GoodsService;
-import com.longines.service.impl.SearchServiceImpl;
+import com.longines.service.TbThemeService;
+import com.longines.service.TbTheme_GoodsService;
 import com.longines.service.impl.ThemeServiceImpl;
-import com.longines.service.impl.Theme_GoodsServiceImpl;
+import com.longines.service.impl.TbTheme_GoodsServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,8 +20,8 @@ import java.util.List;
 @ContextConfiguration(locations = {"classpath:spring/spring-longines-dao.xml","classpath:spring/spring-longines-service.xml"})
 public class TestThemeGoods{
     @Autowired
-    private Theme_GoodsService theme_goodsService;
-    private ThemeService themeService;
+    private TbTheme_GoodsService theme_goodsService;
+    private TbThemeService tbThemeService;
 
     private ApplicationContext applicationContext;
     @Before
@@ -35,9 +33,9 @@ public class TestThemeGoods{
      */
     @Test
     public void Test(){
-        theme_goodsService=(Theme_GoodsServiceImpl) applicationContext.getBean("theme_GoodsServiceImpl");
-        themeService=(ThemeServiceImpl)applicationContext.getBean("themeServiceImpl");
-        int the_id=themeService.SelectThe_id("知性");
+        theme_goodsService=(TbTheme_GoodsServiceImpl) applicationContext.getBean("tbTheme_GoodsServiceImpl");
+        tbThemeService =(ThemeServiceImpl)applicationContext.getBean("themeServiceImpl");
+        int the_id= tbThemeService.SelectThe_id("知性");
         List<TbGoodsInfo> list=theme_goodsService.selectGoods(the_id);
         System.out.println(list);
     }

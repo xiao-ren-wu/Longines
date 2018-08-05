@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.longines.dao.TestSelectOrder
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.066 s <<< FAILURE! - in com.longines.dao.TestSelectOrder
+testselectOrder(com.longines.dao.TestSelectOrder)  Time elapsed: 0.066 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Type interface com.longines.dao.TbOrderMapper is not known to the MapperRegistry.
+	at com.longines.dao.TestSelectOrder.testselectOrder(TestSelectOrder.java:20)
+

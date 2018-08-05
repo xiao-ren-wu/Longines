@@ -192,6 +192,7 @@
       <artifactId>spring-jdbc</artifactId>
       <version>${spring.version}</version>
     </dependency>
+    <!-- 事务管理 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
@@ -211,6 +212,19 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- 切面编程 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!-- ORM 框架 -->
+    <dependency>
+    <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
       <version>${spring.version}</version>
     </dependency>
 

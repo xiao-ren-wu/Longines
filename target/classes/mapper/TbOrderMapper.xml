@@ -195,7 +195,7 @@
       </if>
       <if test="updatetime != null" >
         updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      </if>
+      </if>8
     </set>
     where o_id = #{oId,jdbcType=INTEGER}
       and g_id = #{gId,jdbcType=INTEGER}
@@ -208,4 +208,15 @@
     where o_id = #{oId,jdbcType=INTEGER}
       and g_id = #{gId,jdbcType=INTEGER}
   </update>
+  
+  
+  <!--<select id="selectgnumByoid" parameterType="Integer" resultMap="Integer">
+    select
+     g_num
+     from
+    (select
+      <include refid="Base_Column_List" />
+    from tb_order
+    where o_id = #{oId,jdbcType=INTEGER})
+  </select>-->
 </mapper>

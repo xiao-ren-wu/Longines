@@ -3,6 +3,7 @@ package com.longines.pojo;
 import java.util.Date;
 
 public class TbOrder extends TbOrderKey {
+
     private Integer gNum;
 
     private Date createtime;
@@ -32,6 +33,7 @@ public class TbOrder extends TbOrderKey {
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
     }
+
 
     @Override
     public String toString() {

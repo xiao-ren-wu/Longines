@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
+
 /**
  * @Author: liuyang
  * @Description:
@@ -22,14 +24,14 @@ public class Shopping_CartTest {
     public void test() throws Exception {
         TbShoppingCartMapper tbShoppingCartMapper= (TbShoppingCartMapper) cxt.getBean("tbShoppingCartMapper");
 
-        TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
+        TbShoppingCartExample tbShoppingCartExample= (TbShoppingCartExample) cxt.getBean("ShoppingCartExample");
         TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
         /**
          * Select
          */
-/*        criteria.andUIdEqualTo(2);
+        criteria.andUIdEqualTo(2);
         List<TbShoppingCart> ls=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
-        System.out.println(ls);*/
+        System.out.println(ls);
 
 /*        criteria.andUIdGreaterThan(1);
         List<TbShoppingCart> list=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
@@ -40,13 +42,13 @@ public class Shopping_CartTest {
         /**
          * Insert
          */
-        TbShoppingCart tbShoppingCart=new TbShoppingCart();
-        tbShoppingCart.setuId(5);
-        tbShoppingCart.setgId(9);
-        tbShoppingCart.setgNum(2);
+/*        TbShoppingCart tbShoppingCart=new TbShoppingCart();
+        tbShoppingCart.setuId(6);
+        tbShoppingCart.setgId(7);
+        tbShoppingCart.setgNum(9);
         tbShoppingCart.settAmount((long) 10);
         tbShoppingCart.setStatus(1);
-        //tbShoppingCartMapper.insert(tbShoppingCart);
+        tbShoppingCartMapper.insert(tbShoppingCart);*/
         /**
          * delete
          */
@@ -58,6 +60,8 @@ public class Shopping_CartTest {
         /**
          * update by Tamount
          */
-        tbShoppingCartMapper.updateByTamount(tbShoppingCart);
+
+        //tbShoppingCartMapper.updateByTamount(tbShoppingCart);
+
     }
 }

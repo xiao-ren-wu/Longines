@@ -4,6 +4,7 @@ import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartExample;
 import com.longines.pojo.TbShoppingCartKey;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @CreateDate: 2018/8/3 16:10
  * @Version: 1.0
  */
+@Repository("")
 public interface TbShoppingCartMapper {
 
     int countByExample(TbShoppingCartExample example);

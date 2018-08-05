@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.longines.dao.TbCouponsMapper" >
+  <resultMap id="BaseResultMap" type="com.longines.pojo.TbCoupons" >
+    <id column="c_id" property="cId" jdbcType="INTEGER" />
+    <id column="m_id" property="mId" jdbcType="INTEGER" />
+    <result column="u_id" property="uId" jdbcType="VARCHAR" />
+    <result column="discount" property="discount" jdbcType="VARCHAR" />
+    <result column="number" property="number" jdbcType="INTEGER" />
+    <result column="t_limit" property="tLimit" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    c_id, m_id, u_id, discount, number, t_limit
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbCouponsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_coupons
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbCouponsKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_coupons
+    where c_id = #{cId,jdbcType=INTEGER}
+      and m_id = #{mId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.longines.pojo.TbCouponsKey" >
+    delete from tb_coupons
+    where c_id = #{cId,jdbcType=INTEGER}
+      and m_id = #{mId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.longines.pojo.TbCouponsExample" >
+    delete from tb_coupons
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.longines.pojo.TbCoupons" >
+    insert into tb_coupons (c_id, m_id, u_id, 
+      discount, number, t_limit
+      )
+    values (#{cId,jdbcType=INTEGER}, #{mId,jdbcType=INTEGER}, #{uId,jdbcType=VARCHAR}, 
+      #{discount,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, #{tLimit,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.longines.pojo.TbCoupons" >
+    insert into tb_coupons
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        c_id,
+      </if>
+      <if test="mId != null" >
+        m_id,
+      </if>
+      <if test="uId != null" >
+        u_id,
+      </if>
+      <if test="discount != null" >
+        discount,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="tLimit != null" >
+        t_limit,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        #{cId,jdbcType=INTEGER},
+      </if>
+      <if test="mId != null" >
+        #{mId,jdbcType=INTEGER},
+      </if>
+      <if test="uId != null" >
+        #{uId,jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        #{discount,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=INTEGER},
+      </if>
+      <if test="tLimit != null" >
+        #{tLimit,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.longines.pojo.TbCouponsExample" resultType="java.lang.Integer" >
+    select count(*) from tb_coupons
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_coupons
+    <set >
+      <if test="record.cId != null" >
+        c_id = #{record.cId,jdbcType=INTEGER},
+      </if>
+      <if test="record.mId != null" >
+        m_id = #{record.mId,jdbcType=INTEGER},
+      </if>
+      <if test="record.uId != null" >
+        u_id = #{record.uId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.discount != null" >
+        discount = #{record.discount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.number != null" >
+        number = #{record.number,jdbcType=INTEGER},
+      </if>
+      <if test="record.tLimit != null" >
+        t_limit = #{record.tLimit,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_coupons
+    set c_id = #{record.cId,jdbcType=INTEGER},
+      m_id = #{record.mId,jdbcType=INTEGER},
+      u_id = #{record.uId,jdbcType=VARCHAR},
+      discount = #{record.discount,jdbcType=VARCHAR},
+      number = #{record.number,jdbcType=INTEGER},
+      t_limit = #{record.tLimit,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbCoupons" >
+    update tb_coupons
+    <set >
+      <if test="uId != null" >
+        u_id = #{uId,jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=INTEGER},
+      </if>
+      <if test="tLimit != null" >
+        t_limit = #{tLimit,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_id = #{cId,jdbcType=INTEGER}
+      and m_id = #{mId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbCoupons" >
+    update tb_coupons
+    set u_id = #{uId,jdbcType=VARCHAR},
+      discount = #{discount,jdbcType=VARCHAR},
+      number = #{number,jdbcType=INTEGER},
+      t_limit = #{tLimit,jdbcType=VARCHAR}
+    where c_id = #{cId,jdbcType=INTEGER}
+      and m_id = #{mId,jdbcType=INTEGER}
+  </update>
+</mapper>

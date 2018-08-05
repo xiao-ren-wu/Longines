@@ -68,6 +68,6 @@
         <!-- applicationcontext中beanfactory初始化需要 -->
     </bean>
     <context:component-scan base-package="com.longines.dao"/>
-
+    <context:component-scan base-package="com.longines.pojo"/>
 </beans>
 

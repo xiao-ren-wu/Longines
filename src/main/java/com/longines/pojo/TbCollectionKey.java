@@ -1,9 +1,9 @@
 package com.longines.pojo;
 
 public class TbCollectionKey {
-    private Integer uId;
+    protected Integer uId;
 
-    private Integer gId;
+    protected Integer gId;
 
     public Integer getuId() {
         return uId;

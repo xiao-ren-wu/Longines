@@ -62,4 +62,19 @@ public class TbCollection extends TbCollectionKey {
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
     }
+
+    @Override
+    public String toString() {
+        return "TbCollectionService{" +
+                ", uId=" + uId +
+                ", gId=" + gId +
+                ", collTime=" + collTime +
+                ", cPrice=" + cPrice +
+                ", pur=" + pur +
+                ", invalid=" + invalid +
+                ", createtime=" + createtime +
+                ", updatetime=" + updatetime +
+                '}'+"\n"
+               ;
+    }
 }

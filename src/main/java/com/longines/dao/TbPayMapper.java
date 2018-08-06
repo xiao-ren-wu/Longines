@@ -32,7 +32,8 @@ public interface TbPayMapper {
     int updateByPrimaryKey(TbPay record);
 
 
-    TbUser selectuIdPic(Integer pId);
-    TbOrderInfo selectaAmountsNum(Integer pId);
+    TbUser selectUser(Integer pId);
+
+    TbOrderInfo selectOrder(Integer pId);
 
 }

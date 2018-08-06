@@ -255,10 +255,11 @@
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where p_id = #{pId,jdbcType=INTEGER}
   </update>
-  <select id="selectuIdPic" parameterType="int" resultType="com.longines.pojo.TbUser">
-    select u.u_id,u.pic from tb_user u inner join tb_pay p on u.u_id = p.u_id
+  <select id="selectUser" parameterType="int" resultType="com.longines.pojo.TbUser">
+    select u.u_id,u.pic,u.ac_balance  from tb_user u inner join tb_pay p on u.u_id = p.u_id
   </select>
-  <select id ="selectaAmountsNum" parameterType="int" resultType="com.longines.pojo.TbOrderInfo">
+  <select id ="selectOrder" parameterType="int" resultType="com.longines.pojo.TbOrderInfo">
     select oi.a_amount,oi.s_num from tb_pay p inner join tb_order_info oi on p.o_id = oi.o_id
   </select>
+
 </mapper>

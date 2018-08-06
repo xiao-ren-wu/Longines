@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.longines.dao.TbOrderInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.longines.pojo.TbOrderInfo" >
+    <id column="o_id" property="oId" jdbcType="INTEGER" />
+    <result column="u_id" property="uId" jdbcType="INTEGER" />
+    <result column="a_id" property="aId" jdbcType="INTEGER" />
+    <result column="cre_date" property="creDate" jdbcType="TIMESTAMP" />
+    <result column="del_date" property="delDate" jdbcType="TIMESTAMP" />
+    <result column="tb_date" property="tbDate" jdbcType="TIMESTAMP" />
+    <result column="a_amount" property="aAmount" jdbcType="DECIMAL" />
+    <result column="freight" property="freight" jdbcType="DECIMAL" />
+    <result column="s_num" property="sNum" jdbcType="INTEGER" />
+    <result column="d_method" property="dMethod" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    o_id, u_id, a_id, cre_date, del_date, tb_date, a_amount, freight, s_num, d_method
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_order_info
+    where o_id = #{oId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_order_info
+    where o_id = #{oId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.longines.pojo.TbOrderInfoExample" >
+    delete from tb_order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.longines.pojo.TbOrderInfo" >
+    insert into tb_order_info (o_id, u_id, a_id, 
+      cre_date, del_date, tb_date, 
+      a_amount, freight, s_num, 
+      d_method)
+    values (#{oId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{aId,jdbcType=INTEGER}, 
+      #{creDate,jdbcType=TIMESTAMP}, #{delDate,jdbcType=TIMESTAMP}, #{tbDate,jdbcType=TIMESTAMP}, 
+      #{aAmount,jdbcType=DECIMAL}, #{freight,jdbcType=DECIMAL}, #{sNum,jdbcType=INTEGER}, 
+      #{dMethod,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.longines.pojo.TbOrderInfo" >
+    insert into tb_order_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oId != null" >
+        o_id,
+      </if>
+      <if test="uId != null" >
+        u_id,
+      </if>
+      <if test="aId != null" >
+        a_id,
+      </if>
+      <if test="creDate != null" >
+        cre_date,
+      </if>
+      <if test="delDate != null" >
+        del_date,
+      </if>
+      <if test="tbDate != null" >
+        tb_date,
+      </if>
+      <if test="aAmount != null" >
+        a_amount,
+      </if>
+      <if test="freight != null" >
+        freight,
+      </if>
+      <if test="sNum != null" >
+        s_num,
+      </if>
+      <if test="dMethod != null" >
+        d_method,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oId != null" >
+        #{oId,jdbcType=INTEGER},
+      </if>
+      <if test="uId != null" >
+        #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="aId != null" >
+        #{aId,jdbcType=INTEGER},
+      </if>
+      <if test="creDate != null" >
+        #{creDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delDate != null" >
+        #{delDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tbDate != null" >
+        #{tbDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="aAmount != null" >
+        #{aAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="freight != null" >
+        #{freight,jdbcType=DECIMAL},
+      </if>
+      <if test="sNum != null" >
+        #{sNum,jdbcType=INTEGER},
+      </if>
+      <if test="dMethod != null" >
+        #{dMethod,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.longines.pojo.TbOrderInfoExample" resultType="java.lang.Integer" >
+    select count(*) from tb_order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_order_info
+    <set >
+      <if test="record.oId != null" >
+        o_id = #{record.oId,jdbcType=INTEGER},
+      </if>
+      <if test="record.uId != null" >
+        u_id = #{record.uId,jdbcType=INTEGER},
+      </if>
+      <if test="record.aId != null" >
+        a_id = #{record.aId,jdbcType=INTEGER},
+      </if>
+      <if test="record.creDate != null" >
+        cre_date = #{record.creDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.delDate != null" >
+        del_date = #{record.delDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.tbDate != null" >
+        tb_date = #{record.tbDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.aAmount != null" >
+        a_amount = #{record.aAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.freight != null" >
+        freight = #{record.freight,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sNum != null" >
+        s_num = #{record.sNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.dMethod != null" >
+        d_method = #{record.dMethod,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_order_info
+    set o_id = #{record.oId,jdbcType=INTEGER},
+      u_id = #{record.uId,jdbcType=INTEGER},
+      a_id = #{record.aId,jdbcType=INTEGER},
+      cre_date = #{record.creDate,jdbcType=TIMESTAMP},
+      del_date = #{record.delDate,jdbcType=TIMESTAMP},
+      tb_date = #{record.tbDate,jdbcType=TIMESTAMP},
+      a_amount = #{record.aAmount,jdbcType=DECIMAL},
+      freight = #{record.freight,jdbcType=DECIMAL},
+      s_num = #{record.sNum,jdbcType=INTEGER},
+      d_method = #{record.dMethod,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbOrderInfo" >
+    update tb_order_info
+    <set >
+      <if test="uId != null" >
+        u_id = #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="aId != null" >
+        a_id = #{aId,jdbcType=INTEGER},
+      </if>
+      <if test="creDate != null" >
+        cre_date = #{creDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delDate != null" >
+        del_date = #{delDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tbDate != null" >
+        tb_date = #{tbDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="aAmount != null" >
+        a_amount = #{aAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="freight != null" >
+        freight = #{freight,jdbcType=DECIMAL},
+      </if>
+      <if test="sNum != null" >
+        s_num = #{sNum,jdbcType=INTEGER},
+      </if>
+      <if test="dMethod != null" >
+        d_method = #{dMethod,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where o_id = #{oId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbOrderInfo" >
+    update tb_order_info
+    set u_id = #{uId,jdbcType=INTEGER},
+      a_id = #{aId,jdbcType=INTEGER},
+      cre_date = #{creDate,jdbcType=TIMESTAMP},
+      del_date = #{delDate,jdbcType=TIMESTAMP},
+      tb_date = #{tbDate,jdbcType=TIMESTAMP},
+      a_amount = #{aAmount,jdbcType=DECIMAL},
+      freight = #{freight,jdbcType=DECIMAL},
+      s_num = #{sNum,jdbcType=INTEGER},
+      d_method = #{dMethod,jdbcType=VARCHAR}
+    where o_id = #{oId,jdbcType=INTEGER}
+  </update>
+</mapper>

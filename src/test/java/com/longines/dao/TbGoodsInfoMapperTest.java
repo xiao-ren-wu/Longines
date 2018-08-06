@@ -69,4 +69,15 @@ public class TbGoodsInfoMapperTest {
             System.out.println(g);
         }
     }
+    @Test
+    public void findGoodsInfoByLike()
+    {
+        TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
+        List<TbGoodsInfo> goods=mapper.findGoodsInfoByLike((long)2000);
+        for (TbGoodsInfo g:goods)
+        {
+            System.out.println(g);
+        }
+    }
+
 }

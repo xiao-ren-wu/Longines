@@ -22,4 +22,7 @@
         WHERE tb_goods_info.g_id=tb_mg_associated.g_id
         ORDER BY s_time asc;
     </select>
+    <select id="findGoodsInfoByLike" parameterType="Long" resultType="com.longines.pojo.TbGoodsInfo">
+        select * from tb_goods_info where  price between #{price}-1000 and #{price}+2000;
+    </select>
 </mapper>

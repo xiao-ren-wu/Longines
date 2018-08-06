@@ -1,10 +1,10 @@
 package com.longines.service;
 
 import com.longines.pojo.TbOrderInfoExample;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
-
 public interface TbOrderInfo {
     int countByExample(TbOrderInfoExample example);
 
@@ -27,4 +27,8 @@ public interface TbOrderInfo {
     int updateByPrimaryKeySelective(com.longines.pojo.TbOrderInfo record);
 
     int updateByPrimaryKey(com.longines.pojo.TbOrderInfo record);
+
+    List<com.longines.pojo.TbOrderInfo> selectByuId(Integer uId);
+
+    List<com.longines.pojo.TbOrderInfo> selectBysNum(com.longines.pojo.TbOrderInfo tbOrderInfo);
 }

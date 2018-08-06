@@ -3,10 +3,8 @@
 <mapper namespace="com.longines.dao.TbOrderMapper" >
   <resultMap id="BaseResultMap" type="com.longines.pojo.TbOrder" >
     <id column="o_id" property="oId" jdbcType="INTEGER" />
-    <id column="g_id" property="gId" jdbcType="INTEGER" />
+    <result column="g_id" property="gId" jdbcType="INTEGER" />
     <result column="g_num" property="gNum" jdbcType="INTEGER" />
-    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
-    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    o_id, g_id, g_num, createtime, updatetime
+    o_id, g_id, g_num
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderExample" >
     select
@@ -83,17 +81,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from tb_order
     where o_id = #{oId,jdbcType=INTEGER}
-      and g_id = #{gId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.longines.pojo.TbOrderKey" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from tb_order
     where o_id = #{oId,jdbcType=INTEGER}
-      and g_id = #{gId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.longines.pojo.TbOrderExample" >
     delete from tb_order
@@ -102,10 +98,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.longines.pojo.TbOrder" >
-    insert into tb_order (o_id, g_id, g_num, 
-      createtime, updatetime)
-    values (#{oId,jdbcType=INTEGER}, #{gId,jdbcType=INTEGER}, #{gNum,jdbcType=INTEGER}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+    insert into tb_order (o_id, g_id, g_num
+      )
+    values (#{oId,jdbcType=INTEGER}, #{gId,jdbcType=INTEGER}, #{gNum,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbOrder" >
     insert into tb_order
@@ -119,12 +115,6 @@
       <if test="gNum != null" >
         g_num,
       </if>
-      <if test="createtime != null" >
-        createtime,
-      </if>
-      <if test="updatetime != null" >
-        updatetime,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="oId != null" >
@@ -135,12 +125,6 @@
       </if>
       <if test="gNum != null" >
         #{gNum,jdbcType=INTEGER},
-      </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null" >
-        #{updatetime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -162,12 +146,6 @@
       <if test="record.gNum != null" >
         g_num = #{record.gNum,jdbcType=INTEGER},
       </if>
-      <if test="record.createtime != null" >
-        createtime = #{record.createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updatetime != null" >
-        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
-      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,9 +155,7 @@
     update tb_order
     set o_id = #{record.oId,jdbcType=INTEGER},
       g_id = #{record.gId,jdbcType=INTEGER},
-      g_num = #{record.gNum,jdbcType=INTEGER},
-      createtime = #{record.createtime,jdbcType=TIMESTAMP},
-      updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
+      g_num = #{record.gNum,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -187,36 +163,29 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbOrder" >
     update tb_order
     <set >
+      <if test="gId != null" >
+        g_id = #{gId,jdbcType=INTEGER},
+      </if>
       <if test="gNum != null" >
         g_num = #{gNum,jdbcType=INTEGER},
       </if>
-      <if test="createtime != null" >
-        createtime = #{createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null" >
-        updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      </if>8
     </set>
     where o_id = #{oId,jdbcType=INTEGER}
-      and g_id = #{gId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbOrder" >
     update tb_order
-    set g_num = #{gNum,jdbcType=INTEGER},
-      createtime = #{createtime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP}
-    where o_id = #{oId,jdbcType=INTEGER}
-      and g_id = #{gId,jdbcType=INTEGER}
+    <set>
+      g_num = #{gNum,jdbcType=INTEGER}
+  </set>
+    where g_id = #{gId,jdbcType=INTEGER}
+            and o_id= #{oId,jdbcType=INTEGER}
   </update>
-  
-  
-  <!--<select id="selectgnumByoid" parameterType="Integer" resultMap="Integer">
+
+
+  <select id="selectByoId" parameterType="Integer" resultMap="BaseResultMap">
     select
-     g_num
-     from
-    (select
-      <include refid="Base_Column_List" />
+    <include refid="Base_Column_List" />
     from tb_order
-    where o_id = #{oId,jdbcType=INTEGER})
-  </select>-->
+    where o_id = #{oId,jdbcType=INTEGER}
+  </select>
 </mapper>

@@ -29,5 +29,7 @@ public interface TbOrderMapper {
 
     int updateByPrimaryKey(TbOrder record);
 
-    /*Integer selectgnumByoid(Integer oid);*/
+    //通过oId搜集同一个订单
+    List<TbOrder> selectByoId(Integer oId);
+
 }

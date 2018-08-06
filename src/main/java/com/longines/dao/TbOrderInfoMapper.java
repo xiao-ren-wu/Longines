@@ -3,9 +3,9 @@ package com.longines.dao;
 import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbOrderInfoExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 public interface TbOrderInfoMapper {
     int countByExample(TbOrderInfoExample example);
 
@@ -28,4 +28,18 @@ public interface TbOrderInfoMapper {
     int updateByPrimaryKeySelective(TbOrderInfo record);
 
     int updateByPrimaryKey(TbOrderInfo record);
+
+    /**
+     * 查找所有订单
+     * @return
+     */
+    List<TbOrderInfo> selectByuId(Integer uId);
+
+    /**
+     * 查找其他状态的订单列表
+     * @param
+     * @return
+     */
+    List<TbOrderInfo> selectBysNum(TbOrderInfo tbOrderInfo);
+
 }

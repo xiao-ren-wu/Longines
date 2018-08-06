@@ -1,26 +1,28 @@
 package com.longines.dao;
-
-import com.longines.pojo.TbOrderKey;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.longines.pojo.TbOrderInfo;
+import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
 
 public class TestSelectOrder {
+    ApplicationContext ctx;
+
+    @Before
+    public void setUp() throws Exception {
+        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
+    }
 
     @Test
-    public void testselectOrder ()throws Exception
-    {
-        /*InputStream inputStream= Resources.getResourceAsStream("mybatis/mybatis-config.xml");
-        SqlSessionFactory sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
-        SqlSession sqlSession=sqlSessionFactory.openSession();
-        TbOrderMapper tbOrderMapper=sqlSession.getMapper(TbOrderMapper.class);
-        System.out.println(tbOrderMapper.selectgnumByoid(2));
-        sqlSession.close();*/
-
+    public void testInsertOrderInfo() {
+        TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
+        TbOrderInfo tbOrderInfo=new TbOrderInfo();
+        tbOrderInfo.setsNum(2);
+        tbOrderInfo.setuId(2);
+        System.out.println(tbOrderInfoMapper.selectBysNum(tbOrderInfo));
     }
 
 

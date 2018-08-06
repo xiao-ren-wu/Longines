@@ -17,7 +17,7 @@ public class TestDeleteOrderInfo {
     public  void  testDeleteOrderInfo()
     {
             TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
-            tbOrderInfoMapper.deleteByPrimaryKey(2) ;
+            tbOrderInfoMapper.deleteByPrimaryKey(11113) ;
             System.out.println("删除成功");
     }
 

@@ -19,10 +19,10 @@ public class TestUpdategNum {
     {
         TbOrderMapper tbOrderMapper= (TbOrderMapper) ctx.getBean("tbOrderMapper");
         TbOrder tbOrder=new TbOrder();
-        tbOrder.setoId(2);
-        tbOrder.setgId(4);
-        tbOrder.setgNum(7777777);
-        tbOrderMapper.updateByPrimaryKeySelective(tbOrder);
+        tbOrder.setoId(5);
+        tbOrder.setgId(8);
+        tbOrder.setgNum(2528);
+        tbOrderMapper.updateByPrimaryKey(tbOrder);
 
     }
 

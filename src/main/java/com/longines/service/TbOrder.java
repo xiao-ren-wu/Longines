@@ -28,4 +28,6 @@ public interface TbOrder {
     int updateByPrimaryKeySelective(com.longines.pojo.TbOrder record);
 
     int updateByPrimaryKey(com.longines.pojo.TbOrder record);
+
+    List<com.longines.pojo.TbOrder> selectByoId(Integer oId);
 }

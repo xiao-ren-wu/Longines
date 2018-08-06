@@ -320,4 +320,20 @@
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectByuId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    *
+    from tb_order_info
+    where u_id=#{uId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectBysNum" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderInfo">
+    select
+    *
+    from tb_order_info
+    where s_num=#{sNum,jdbcType=INTEGER}
+      and u_id=#{uId,jdbcType=INTEGER}
+  </select>
 </mapper>

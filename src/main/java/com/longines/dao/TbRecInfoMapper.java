@@ -5,6 +5,8 @@ import com.longines.pojo.TbRecInfoExample;
 import com.longines.pojo.TbRecInfoKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
+
 
 public interface TbRecInfoMapper {
     int countByExample(TbRecInfoExample example);

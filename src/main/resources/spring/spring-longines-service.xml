@@ -34,40 +34,40 @@
     <jdbc:embedded-database id="dataSource"/>
 
 
-
-    <!-- 数据库连接池 -->
+<!--
+    &lt;!&ndash; 数据库连接池 &ndash;&gt;
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <!-- 基本属性driverClassName url、User、password -->
+        &lt;!&ndash; 基本属性driverClassName url、User、password &ndash;&gt;
         <property name="driverClassName" value = "${jdbc.driver}" />
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
-        <!-- 配置初始化大小、最小、最大 -->
+        &lt;!&ndash; 配置初始化大小、最小、最大 &ndash;&gt;
         <property name="initialSize" value="${jdbc.initialSize}" />
         <property name="minIdle" value="${jdbc.minIdle}" />
         <property name="maxActive" value="${jdbc.maxActive}" />
-        <!-- 配置获取连接等待超时的时间 -->
+        &lt;!&ndash; 配置获取连接等待超时的时间 &ndash;&gt;
         <property name="maxWait" value="${jdbc.maxWait}" />
-        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        &lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;
         <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}" />
-        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        &lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;
         <property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" />
         <property name="validationQuery" value="${jdbc.validationQuery}" />
         <property name="testWhileIdle" value="${jdbc.testWhileIdle}" />
         <property name="testOnBorrow" value="${jdbc.testOnBorrow}" />
         <property name="testOnReturn" value="${jdbc.testOnReturn}" />
-        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        &lt;!&ndash; 打开PSCache，并且指定每个连接上PSCache的大小 &ndash;&gt;
         <property name="poolPreparedStatements" value="${jdbc.poolPreparedStatements}" />
         <property name="maxPoolPreparedStatementPerConnectionSize" value="${jdbc.maxPoolPreparedStatementPerConnectionSize}" />
-        <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+        &lt;!&ndash; 配置监控统计拦截的filters，去掉后监控界面sql无法统计 &ndash;&gt;
         <property name="filters" value="${jdbc.filters}" />
     </bean>
-    <context:property-placeholder location="classpath:dbinfo.properties" ignore-unresolvable="true"/>
+    <context:property-placeholder location="classpath:dbinfo.properties" ignore-unresolvable="true"/>-->
 
 
-    <!--创建目标类-->
+    <!--&lt;!&ndash;创建目标类&ndash;&gt;
     <bean id="tbOrderId" class="com.longines.service.impl.TbOrderImpl"></bean>
-    <!--创建切面类-->
+    &lt;!&ndash;创建切面类&ndash;&gt;
     <bean id="myAspectId" class="com.longines.service.MyOrderAspect"></bean>
 
     <aop:config>
@@ -75,5 +75,5 @@
         <aop:pointcut id="myPointCut" expression="execution( * com.longines.service.impl.TbOrderImpl.*(..))"/>
 
         </aop:aspect>
-    </aop:config>
+    </aop:config>-->
 </beans>

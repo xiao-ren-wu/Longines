@@ -56,11 +56,7 @@
         <!-- 扫描model包，使用别名cn.cnfia.dao.model -->
         <property name="typeAliasesPackage" value="com.longines.pojo"/>
         <!-- 扫描SQL配置文件：mapper需要的xml文件 -->
-<<<<<<< HEAD
-        <property name="mapperLocations" value="classpath:mapper/ShoppingcartMapper.xml"/>
-=======
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
->>>>>>> remotes/origin/wangyichao
     </bean>
 
     <!-- 配置扫描Dao接口包，动态实现Dao接口，并注入到Spring容器中 -->
@@ -71,37 +67,6 @@
         <property name="basePackage" value="com.longines.dao"/>
         <!-- applicationcontext中beanfactory初始化需要 -->
     </bean>
-
-<<<<<<< HEAD
-    <bean id="propertyConfigurer"
-=======
-
-    <!--<bean id="propertyConfigurer"
->>>>>>> remotes/origin/wangyichao
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath*:dbinfo.properties</value>
-            </list>
-        </property>
-    </bean>
-
-
     <context:component-scan base-package="com.longines.dao"/>
-<<<<<<< HEAD
-    <bean id = "Shopping_CartMapper" class = "org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name = "mapperInterface" value = "com.longines.dao.Shopping_CartMapper"></property>
-        <property name="sqlSessionFactory" ref = "sqlSessionFactory"></property>
-
-    </bean>
-    <!--<context:component-scan base-package="com.longines.dao"/>-->
-=======
-    <bean id = "RecInfoMapper" class = "org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name = "mapperInterface" value = "com.longines.dao.RecInfoMapper"></property>
-        <property name="sqlSessionFactory" ref = "sqlSessionFactory"></property>
-
-    </bean>-->
-
->>>>>>> remotes/origin/wangyichao
 </beans>
 

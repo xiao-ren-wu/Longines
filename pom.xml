@@ -259,13 +259,12 @@
       <artifactId>jackson-databind</artifactId>
       <version>${jackson-databind.version}</version>
     </dependency>
-      <dependency>
-          <groupId>org.junit.jupiter</groupId>
-          <artifactId>junit-jupiter-api</artifactId>
-          <version>RELEASE</version>
-          <scope>compile</scope>
-      </dependency>
+
+
     <dependency>
+      <groupId>tk.mybatis</groupId>
+      <artifactId>mapper</artifactId>
+      <version>4.0.4-beta1</version>
 
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
@@ -281,9 +280,8 @@
 
 
       <version>RELEASE</version>
-      <scope>compile</scope>
+      <scope>test</scope>
     </dependency>
-
 
   </dependencies>
 

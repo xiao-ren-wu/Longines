@@ -15,6 +15,10 @@ public class TbPay {
 
     private Date pmData;
 
+    private Date createtime;
+
+    private Date updatetime;
+
     public Integer getpId() {
         return pId;
     }
@@ -61,5 +65,35 @@ public class TbPay {
 
     public void setPmData(Date pmData) {
         this.pmData = pmData;
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    @Override
+    public String toString() {
+        return "TbPay{" +
+                "pId=" + pId +
+                ", uId=" + uId +
+                ", oId=" + oId +
+                ", pMethod='" + pMethod + '\'' +
+                ", tNum='" + tNum + '\'' +
+                ", pmData=" + pmData +
+                ", createtime=" + createtime +
+                ", updatetime=" + updatetime +
+                '}';
     }
 }

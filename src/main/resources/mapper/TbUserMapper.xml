@@ -12,6 +12,8 @@
     <result column="birth" property="birth" jdbcType="VARCHAR" />
     <result column="pic" property="pic" jdbcType="VARCHAR" />
     <result column="sug" property="sug" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    u_id, uname, sex, tel_num, pw, ac_balance, label, birth, pic, sug
+    u_id, uname, sex, tel_num, pw, ac_balance, label, birth, pic, sug, createtime, updatetime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbUserExample" >
     select
@@ -108,11 +110,13 @@
     insert into tb_user (u_id, uname, sex, 
       tel_num, pw, ac_balance, 
       label, birth, pic, 
-      sug)
-    values (#{uId,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
-      #{telNum,jdbcType=VARCHAR}, #{pw,jdbcType=VARCHAR}, #{acBalance,jdbcType=DECIMAL}, 
-      #{label,jdbcType=VARCHAR}, #{birth,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, 
-      #{sug,jdbcType=VARCHAR})
+      sug, createtime, updatetime
+      )
+    values (#{uId,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
+      #{telNum,jdbcType=VARCHAR}, #{pw,jdbcType=VARCHAR}, #{acBalance,jdbcType=DECIMAL},
+      #{label,jdbcType=VARCHAR}, #{birth,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR},
+      #{sug,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbUser" >
     insert into tb_user
@@ -147,6 +151,12 @@
       <if test="sug != null" >
         sug,
       </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="uId != null" >
@@ -178,6 +188,12 @@
       </if>
       <if test="sug != null" >
         #{sug,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -220,6 +236,12 @@
       <if test="record.sug != null" >
         sug = #{record.sug,jdbcType=VARCHAR},
       </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -236,7 +258,9 @@
       label = #{record.label,jdbcType=VARCHAR},
       birth = #{record.birth,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
-      sug = #{record.sug,jdbcType=VARCHAR}
+      sug = #{record.sug,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -271,6 +295,12 @@
       <if test="sug != null" >
         sug = #{sug,jdbcType=VARCHAR},
       </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where u_id = #{uId,jdbcType=INTEGER}
   </update>
@@ -284,7 +314,10 @@
       label = #{label,jdbcType=VARCHAR},
       birth = #{birth,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
-      sug = #{sug,jdbcType=VARCHAR}
+      sug = #{sug,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where u_id = #{uId,jdbcType=INTEGER}
   </update>
+
 </mapper>

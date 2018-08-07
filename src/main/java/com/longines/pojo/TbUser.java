@@ -1,5 +1,7 @@
 package com.longines.pojo;
 
+import java.util.Date;
+
 public class TbUser {
     private Integer uId;
 
@@ -20,6 +22,10 @@ public class TbUser {
     private String pic;
 
     private String sug;
+
+    private Date createtime;
+
+    private Date updatetime;
 
     public Integer getuId() {
         return uId;
@@ -99,5 +105,39 @@ public class TbUser {
 
     public void setSug(String sug) {
         this.sug = sug == null ? null : sug.trim();
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    @Override
+    public String toString() {
+        return "TbUser{" +
+                "uId=" + uId +
+                ", uname='" + uname + '\'' +
+                ", sex='" + sex + '\'' +
+                ", telNum='" + telNum + '\'' +
+                ", pw='" + pw + '\'' +
+                ", acBalance=" + acBalance +
+                ", label='" + label + '\'' +
+                ", birth='" + birth + '\'' +
+                ", pic='" + pic + '\'' +
+                ", sug='" + sug + '\'' +
+                ", createtime=" + createtime +
+                ", updatetime=" + updatetime +
+                '}';
     }
 }

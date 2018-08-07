@@ -23,6 +23,28 @@ public class TbOrderInfo {
 
     private String dMethod;
 
+    private Date createtime;
+
+    private Date updatetime;
+
+    @Override
+    public String toString() {
+        return "TbOrderInfo{" +
+                "oId=" + oId +
+                ", uId=" + uId +
+                ", aId=" + aId +
+                ", creDate=" + creDate +
+                ", delDate=" + delDate +
+                ", tbDate=" + tbDate +
+                ", aAmount=" + aAmount +
+                ", freight=" + freight +
+                ", sNum=" + sNum +
+                ", dMethod='" + dMethod + '\'' +
+                ", createtime=" + createtime +
+                ", updatetime=" + updatetime +
+                '}';
+    }
+
     public Integer getoId() {
         return oId;
     }
@@ -101,5 +123,21 @@ public class TbOrderInfo {
 
     public void setdMethod(String dMethod) {
         this.dMethod = dMethod == null ? null : dMethod.trim();
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
     }
 }

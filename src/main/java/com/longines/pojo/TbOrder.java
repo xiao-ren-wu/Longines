@@ -1,27 +1,13 @@
 package com.longines.pojo;
 
-public class TbOrder {
-    private Integer oId;
+import java.util.Date;
 
-    private Integer gId;
-
+public class TbOrder extends TbOrderKey {
     private Integer gNum;
 
-    public Integer getoId() {
-        return oId;
-    }
+    private Date createtime;
 
-    public void setoId(Integer oId) {
-        this.oId = oId;
-    }
-
-    public Integer getgId() {
-        return gId;
-    }
-
-    public void setgId(Integer gId) {
-        this.gId = gId;
-    }
+    private Date updatetime;
 
     public Integer getgNum() {
         return gNum;
@@ -29,5 +15,32 @@ public class TbOrder {
 
     public void setgNum(Integer gNum) {
         this.gNum = gNum;
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    @Override
+    public String toString() {
+        return "TbOrder{" +
+                "gNum=" + gNum +
+                ", createtime=" + createtime +
+                ", updatetime=" + updatetime +
+                ", oId=" + oId +
+                ", gId=" + gId +
+                '}';
     }
 }

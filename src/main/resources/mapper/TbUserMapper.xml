@@ -319,5 +319,4 @@
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where u_id = #{uId,jdbcType=INTEGER}
   </update>
-
 </mapper>

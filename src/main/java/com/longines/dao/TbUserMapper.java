@@ -2,9 +2,8 @@ package com.longines.dao;
 
 import com.longines.pojo.TbUser;
 import com.longines.pojo.TbUserExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbUserMapper {
     int countByExample(TbUserExample example);

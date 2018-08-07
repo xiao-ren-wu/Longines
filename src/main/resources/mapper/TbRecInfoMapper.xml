@@ -105,7 +105,7 @@
   <insert id="insert" parameterType="com.longines.pojo.TbRecInfo" >
     insert into tb_rec_info (a_id, u_id, consignee, 
       s_add, c_tel, postcode)
-    values (#{aId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR}, 
+    values (#{aId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR},
       #{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbRecInfo" >
@@ -149,6 +149,12 @@
       <if test="postcode != null" >
         #{postcode,jdbcType=VARCHAR},
       </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.longines.pojo.TbRecInfoExample" resultType="java.lang.Integer" >
@@ -178,6 +184,12 @@
       <if test="record.postcode != null" >
         postcode = #{record.postcode,jdbcType=VARCHAR},
       </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -190,7 +202,9 @@
       consignee = #{record.consignee,jdbcType=VARCHAR},
       s_add = #{record.sAdd,jdbcType=VARCHAR},
       c_tel = #{record.cTel,jdbcType=VARCHAR},
-      postcode = #{record.postcode,jdbcType=VARCHAR}
+      postcode = #{record.postcode,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -210,6 +224,12 @@
       <if test="postcode != null" >
         postcode = #{postcode,jdbcType=VARCHAR},
       </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where a_id = #{aId,jdbcType=INTEGER}
       and u_id = #{uId,jdbcType=INTEGER}
@@ -219,7 +239,9 @@
     set consignee = #{consignee,jdbcType=VARCHAR},
       s_add = #{sAdd,jdbcType=VARCHAR},
       c_tel = #{cTel,jdbcType=VARCHAR},
-      postcode = #{postcode,jdbcType=VARCHAR}
+      postcode = #{postcode,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where a_id = #{aId,jdbcType=INTEGER}
       and u_id = #{uId,jdbcType=INTEGER}
   </update>

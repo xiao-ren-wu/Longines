@@ -1,4 +1,12 @@
-
+2018.8.8
+刘洋：初步开发controlle层
+王毅超：初步开发controlle层
+刘昶辉：初步开发controlle层
+冯天浩：初步开发controlle层
+卫毅：初步开发controlle层
+雷菁：初步开发controlle层
+杨帅：初步开发controlle层
+赵晓康：初步开发controlle层
 2018.8.7
 刘洋：基本完成Service层代码实现
 王毅超：基本完成Service层代码实现
@@ -17,6 +25,7 @@
 雷菁：测试Service层代码
 杨帅：测试Service层代码
 赵晓康：测试Service层代码
+
 
 # Longines
 第4组暑假-售表平台

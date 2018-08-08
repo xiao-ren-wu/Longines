@@ -86,23 +86,10 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbCollectionKey" >
-    select 
-    <include refid="Base_Column_List" />
-    from tb_collection
-    where u_id = #{uId,jdbcType=INTEGER}
-      and g_id = #{gId,jdbcType=INTEGER}
-  </select>
   <delete id="deleteByPrimaryKey" parameterType="com.longines.pojo.TbCollectionKey" >
     delete from tb_collection
     where u_id = #{uId,jdbcType=INTEGER}
       and g_id = #{gId,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.longines.pojo.TbCollectionExample" >
-    delete from tb_collection
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
   </delete>
   <insert id="insert" parameterType="com.longines.pojo.TbCollection" >
     insert into tb_collection (u_id, g_id, coll_time, 
@@ -112,113 +99,6 @@
       #{cPrice,jdbcType=DECIMAL}, #{pur,jdbcType=INTEGER}, #{invalid,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.longines.pojo.TbCollection" >
-    insert into tb_collection
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        u_id,
-      </if>
-      <if test="gId != null" >
-        g_id,
-      </if>
-      <if test="collTime != null" >
-        coll_time,
-      </if>
-      <if test="cPrice != null" >
-        c_price,
-      </if>
-      <if test="pur != null" >
-        pur,
-      </if>
-      <if test="invalid != null" >
-        invalid,
-      </if>
-      <if test="createtime != null" >
-        createtime,
-      </if>
-      <if test="updatetime != null" >
-        updatetime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        #{uId,jdbcType=INTEGER},
-      </if>
-      <if test="gId != null" >
-        #{gId,jdbcType=INTEGER},
-      </if>
-      <if test="collTime != null" >
-        #{collTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="cPrice != null" >
-        #{cPrice,jdbcType=DECIMAL},
-      </if>
-      <if test="pur != null" >
-        #{pur,jdbcType=INTEGER},
-      </if>
-      <if test="invalid != null" >
-        #{invalid,jdbcType=INTEGER},
-      </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatetime != null" >
-        #{updatetime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.longines.pojo.TbCollectionExample" resultType="java.lang.Integer" >
-    select count(*) from tb_collection
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update tb_collection
-    <set >
-      <if test="record.uId != null" >
-        u_id = #{record.uId,jdbcType=INTEGER},
-      </if>
-      <if test="record.gId != null" >
-        g_id = #{record.gId,jdbcType=INTEGER},
-      </if>
-      <if test="record.collTime != null" >
-        coll_time = #{record.collTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.cPrice != null" >
-        c_price = #{record.cPrice,jdbcType=DECIMAL},
-      </if>
-      <if test="record.pur != null" >
-        pur = #{record.pur,jdbcType=INTEGER},
-      </if>
-      <if test="record.invalid != null" >
-        invalid = #{record.invalid,jdbcType=INTEGER},
-      </if>
-      <if test="record.createtime != null" >
-        createtime = #{record.createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updatetime != null" >
-        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update tb_collection
-    set u_id = #{record.uId,jdbcType=INTEGER},
-      g_id = #{record.gId,jdbcType=INTEGER},
-      coll_time = #{record.collTime,jdbcType=TIMESTAMP},
-      c_price = #{record.cPrice,jdbcType=DECIMAL},
-      pur = #{record.pur,jdbcType=INTEGER},
-      invalid = #{record.invalid,jdbcType=INTEGER},
-      createtime = #{record.createtime,jdbcType=TIMESTAMP},
-      updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbCollection" >
     update tb_collection
     <set >
@@ -238,23 +118,11 @@
     where u_id = #{uId,jdbcType=INTEGER}
       and g_id = #{gId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbCollection" >
-    update tb_collection
-    set coll_time = #{collTime,jdbcType=TIMESTAMP},
-      c_price = #{cPrice,jdbcType=DECIMAL},
-      pur = #{pur,jdbcType=INTEGER},
-      invalid = #{invalid,jdbcType=INTEGER},
-      createtime = #{createtime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP}
-    where u_id = #{uId,jdbcType=INTEGER}
-      and g_id = #{gId,jdbcType=INTEGER}
- </update>
+
   <resultMap type="com.longines.pojo.TbCollection" id="OrdersAndDetailRstMap">
     <result column="price" property="cPrice" />
     <result column="inv" property="invalid" />
   </resultMap>
-
-
 
   <select id="findCollection"  parameterType="Integer" resultMap="OrdersAndDetailRstMap">
 		SELECT

@@ -6,10 +6,10 @@ import com.longines.pojo.TbRecInfo;
 
 import com.longines.pojo.TbRecInfoExample;
 import com.longines.service.impl.TbRecInfoServiceImpl;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class TbRecInfoServiceTest {
     private TbRecInfoService infoService;
     private ApplicationContext appContext;
 
-    @BeforeMethod
+    @Before
     public void setUp() {
         String xmlPathDao  = "spring/spring-longines-dao.xml";
         String xmlPathService = "spring/spring-longines-service.xml";

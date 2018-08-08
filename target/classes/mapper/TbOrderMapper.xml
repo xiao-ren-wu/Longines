@@ -181,11 +181,18 @@
             and o_id= #{oId,jdbcType=INTEGER}
   </update>
 
-
-  <select id="selectByoId" parameterType="Integer" resultMap="BaseResultMap">
+  <select id="selectByoId" parameterType="Integer" resultType="integer">
     select
-    <include refid="Base_Column_List" />
+    tb_order.g_id
+    from  tb_order
+    where
+    o_id=#{oId,jdbcType=INTEGER}
+  </select>
+  <select id="selectgNum" resultType="integer">
+    select
+     tb_order.g_num
     from tb_order
-    where o_id = #{oId,jdbcType=INTEGER}
+    where
+    o_id=#{oId,jdbcType=INTEGER}
   </select>
 </mapper>

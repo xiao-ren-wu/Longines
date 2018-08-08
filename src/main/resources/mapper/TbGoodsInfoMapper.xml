@@ -317,4 +317,11 @@
       g_pic = #{gPic,jdbcType=VARCHAR}
     where g_id = #{gId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectPrice" resultType="integer" parameterType="java.lang.Integer" >
+    select
+    tb_goods_info.price
+    from tb_goods_info
+    where g_id = #{gId,jdbcType=INTEGER}
+  </select>
 </mapper>

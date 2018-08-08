@@ -74,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    o_id, u_id, a_id, cre_date, del_date, tb_date, a_amount, freight, s_num, d_method,
+    o_id, u_id, a_id, cre_date, del_date, tb_date, a_amount, freight, s_num, d_method, 
     createtime, updatetime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderInfoExample" >
@@ -113,9 +113,9 @@
       a_amount, freight, s_num, 
       d_method, createtime, updatetime
       )
-    values (#{oId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{aId,jdbcType=INTEGER},
-      #{creDate,jdbcType=TIMESTAMP}, #{delDate,jdbcType=TIMESTAMP}, #{tbDate,jdbcType=TIMESTAMP},
-      #{aAmount,jdbcType=DECIMAL}, #{freight,jdbcType=DECIMAL}, #{sNum,jdbcType=INTEGER},
+    values (#{oId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{aId,jdbcType=INTEGER}, 
+      #{creDate,jdbcType=TIMESTAMP}, #{delDate,jdbcType=TIMESTAMP}, #{tbDate,jdbcType=TIMESTAMP}, 
+      #{aAmount,jdbcType=DECIMAL}, #{freight,jdbcType=DECIMAL}, #{sNum,jdbcType=INTEGER}, 
       #{dMethod,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -320,4 +320,20 @@
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectByuId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    *
+    from tb_order_info
+    where u_id=#{uId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectBysNum" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderInfo">
+    select
+    *
+    from tb_order_info
+    where s_num=#{sNum,jdbcType=INTEGER}
+      and u_id=#{uId,jdbcType=INTEGER}
+  </select>
 </mapper>

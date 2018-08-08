@@ -13,6 +13,7 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
+
   <!--集中定义版本号-->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -191,6 +192,7 @@
       <artifactId>spring-jdbc</artifactId>
       <version>${spring.version}</version>
     </dependency>
+    <!-- 事务管理 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
@@ -212,6 +214,22 @@
       <artifactId>spring-aspects</artifactId>
       <version>${spring.version}</version>
     </dependency>
+
+    <!-- 切面编程 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!-- ORM 框架 -->
+    <dependency>
+    <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+
+
 
     <!-- JSP相关 -->
     <dependency>

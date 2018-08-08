@@ -1,16 +1,16 @@
 package com.longines.pojo;
 
-public class TbOrderKey {
-    private Integer oId;
+public class TbMgAssociatedKey {
+    private Integer mId;
 
     private Integer gId;
 
-    public Integer getoId() {
-        return oId;
+    public Integer getmId() {
+        return mId;
     }
 
-    public void setoId(Integer oId) {
-        this.oId = oId;
+    public void setmId(Integer mId) {
+        this.mId = mId;
     }
 
     public Integer getgId() {

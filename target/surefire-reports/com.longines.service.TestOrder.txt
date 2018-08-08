@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.longines.service.TestOrder
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.221 s <<< FAILURE! - in com.longines.service.TestOrder
+demo01(com.longines.service.TestOrder)  Time elapsed: 0.221 s  <<< ERROR!
+org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'transactionManager' defined in class path resource [spring/spring-longines-service.xml]: Cannot resolve reference to bean 'dataSource' while setting bean property 'dataSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource': Error setting property values; nested exception is org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'databaseType' threw exception; nested exception is java.lang.IllegalStateException: Driver for test database type [HSQL] is not available in the classpath
+	at com.longines.service.TestOrder.demo01(TestOrder.java:13)
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'dataSource': Error setting property values; nested exception is org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'databaseType' threw exception; nested exception is java.lang.IllegalStateException: Driver for test database type [HSQL] is not available in the classpath
+	at com.longines.service.TestOrder.demo01(TestOrder.java:13)
+Caused by: org.springframework.beans.PropertyBatchUpdateException: Failed properties: Property 'databaseType' threw exception; nested exception is java.lang.IllegalStateException: Driver for test database type [HSQL] is not available in the classpath
+	at com.longines.service.TestOrder.demo01(TestOrder.java:13)
+

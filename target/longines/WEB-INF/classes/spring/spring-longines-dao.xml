@@ -8,7 +8,6 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-
     <!-- 数据库连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性driverClassName url、user、password -->
@@ -61,7 +60,7 @@
 
 
     <!-- 配置扫描Dao接口包，动态实现Dao接口，并注入到Spring容器中 -->
-    <bean  class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 注入sqlSessionFactory，防止提前错误的初始化 -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出扫描DAO接口包 -->

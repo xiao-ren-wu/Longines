@@ -13,14 +13,14 @@ public interface TbGoodsInfoMapper {
     /**
      * 对商品信息按照价格进行降序排序
      *
-     *@param   []
+     *@param
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
     List<TbGoodsInfo> findGoodsByPriceDesc();
     /**
      * 对商品信息按照价格进行升序排序
      *
-     *@param   []
+     *@param
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
@@ -36,7 +36,7 @@ public interface TbGoodsInfoMapper {
     /**
      * 对商品信息按照上架时间进行降序排序
      *
-     *@param   []
+     *@param
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
@@ -44,7 +44,7 @@ public interface TbGoodsInfoMapper {
     /**
      * 对商品信息按照上架时间进行升序排序
      *
-     *@param   []
+     *@param
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
@@ -60,8 +60,19 @@ public interface TbGoodsInfoMapper {
     /**
      * 查找所有商品信息
      *
-     *@param   []
+     *@param
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
     List<TbGoodsInfo> findAllGoodsInfo();
+    /**
+     * @return java.util.List<com.longines.pojo.TbGoodsInfo>
+     * @param gname 商品名称
+     */
+    List<TbGoodsInfo> selectBygName(String gname);
+
+    /**
+     * @return java.util.List<com.longines.pojo.TbGoodsInfo>
+     * @param theid 主题id
+     */
+    List<TbGoodsInfo> selectBythemeid(int theid);
 }

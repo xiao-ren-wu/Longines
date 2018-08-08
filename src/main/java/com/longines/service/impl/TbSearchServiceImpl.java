@@ -3,6 +3,7 @@ package com.longines.service.impl;
 import com.longines.dao.TbGoodsInfoMapper;
 import com.longines.pojo.TbGoodsInfo;
 import com.longines.service.TbSearchService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,7 +17,7 @@ import java.util.List;
 @Service
 public class TbSearchServiceImpl implements TbSearchService {
 
-    @Resource(name="dao")
+    @Autowired
     private TbGoodsInfoMapper tbGoodsInfoMapper;
 
     /**

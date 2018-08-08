@@ -11,19 +11,16 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * @author leijing
- * @date
- */
+
 @Service
 public class TbPayServiceImpl  implements TbPayService {
 
     @Autowired
     private TbPayMapper tbPayMapper;
 
-
     @Override
     public void insertTbPay(Integer oId) {
+
         TbPay tbPay = new TbPay();
         Random random = new Random();
 
@@ -37,21 +34,24 @@ public class TbPayServiceImpl  implements TbPayService {
 
 
     }
-    @Override
-    public TbUser finduIdPicacBalance(Integer pId){
 
-        return tbPayMapper.selectUser(pId);
-    }
     @Override
-     public  TbOrderInfo findaAmount(Integer pId){
+    public TbUser finduIdPicacBalance(Integer oId){
 
-        return tbPayMapper.selectOrder(pId);
+        return tbPayMapper.selectUser(oId);
     }
 
-    @Override
-    public  int judgePw(Integer pId,String pw){
 
-        if (pw.equals(tbPayMapper.selectUser(1).getPw())){
+    @Override
+     public  TbOrderInfo findaAmount(Integer oId){
+
+        return tbPayMapper.selectOrder(oId);
+    }
+
+    @Override
+    public  int judgePw(Integer oId,String pw){
+
+        if (pw.equals(tbPayMapper.selectUser(oId).getPw())){
             return 1;
         }
         else {
@@ -60,10 +60,11 @@ public class TbPayServiceImpl  implements TbPayService {
     }
 
     @Override
-    public int updateacBalancesNum(Integer pId)
+    public int updateacBalancesNum(Integer oId)
     {
-        TbUser tbUser = tbPayMapper.selectUser(pId);
-        TbOrderInfo tbOrderInfo1= tbPayMapper.selectOrder(pId);
+
+        TbUser tbUser = tbPayMapper.selectUser(oId);
+        TbOrderInfo tbOrderInfo1= tbPayMapper.selectOrder(oId);
 
 
         if (tbUser.getAcBalance()>=tbOrderInfo1.getaAmount()) {

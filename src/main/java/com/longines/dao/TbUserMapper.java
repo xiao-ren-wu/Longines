@@ -1,14 +1,10 @@
 package com.longines.dao;
 
 import com.longines.pojo.TbUser;
-import com.longines.pojo.TbUserExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+
 
 public interface TbUserMapper {
-    int countByExample(TbUserExample example);
 
-    int deleteByExample(TbUserExample example);
 
     int deleteByPrimaryKey(Integer uId);
 
@@ -16,13 +12,11 @@ public interface TbUserMapper {
 
     int insertSelective(TbUser record);
 
-    List<TbUser> selectByExample(TbUserExample example);
+
 
     TbUser selectByPrimaryKey(Integer uId);
 
-    int updateByExampleSelective(@Param("record") TbUser record, @Param("example") TbUserExample example);
 
-    int updateByExample(@Param("record") TbUser record, @Param("example") TbUserExample example);
 
     int updateByPrimaryKeySelective(TbUser record);
 

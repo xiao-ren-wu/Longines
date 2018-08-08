@@ -1,7 +1,12 @@
 package com.longines.pojo;
 
 import java.util.Date;
-
+/**
+ * @author    liuchanghui
+ *
+ * @since     2018/8/8/008 22:47
+ * @version   1.0
+ */
 public class TbCollection extends TbCollectionKey {
     private Date collTime;
 

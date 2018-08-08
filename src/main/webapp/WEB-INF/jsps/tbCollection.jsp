@@ -16,7 +16,7 @@
     <input type="text" name="uId" value="${uId}"/>
     <input type="submit" value="提交"/>
 </form>
-<form id="its" action="${pageContext.request.contextPath }/longines/tbCollectionsave" method="post">
+<form id="its" action="${pageContext.request.contextPath }/longines/tbCollectionSave" method="post">
     <table>
         <tr>
             <td>uId</td><td>gId</td>

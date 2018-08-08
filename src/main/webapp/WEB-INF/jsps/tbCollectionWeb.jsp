@@ -23,7 +23,7 @@
                 <td>${tbCollection.collTime}</td>
                 <td>${tbCollection.cPrice}</td>
                 <td><a href="${pageContext.request.contextPath }/longines/tbCollection">返回</a></td>
-                <td><a href="${pageContext.request.contextPath }/longines/tbCollectiondelete?uId=${tbCollection.uId}&gId=${tbCollection.gId}">删除</a></td>
+                <td><a href="${pageContext.request.contextPath }/longines/tbCollectionDelete?uId=${tbCollection.uId}&gId=${tbCollection.gId}">删除</a></td>
             </tr>
         </c:forEach>
     </table>

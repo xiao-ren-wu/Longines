@@ -1,8 +1,7 @@
 package com.longines.controller;
 
 import com.longines.pojo.TbCollection;
-import com.longines.pojo.TbCollectionKey;
-import com.longines.service.TbcollectionService;
+import com.longines.service.TbCollectionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,31 +10,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import java.util.List;
 
-/*
- * @author liuchanghui
- * @Title: TbCollectionController
- * @ProjectName Longines
- * @Description: TODO
- * @date 2018/8/6/006  9:29
- */
 
+/**
+ * @author    liuchanghui
+ *
+ * @since     2018/8/8/008 22:41
+ * @version   1.0
+ */
 @Controller
 @RequestMapping("/longines")
 public class TbCollectionController {
     @Resource
-    private TbcollectionService tbcollectionService;
+    private TbCollectionService tbCollectionService;
 
-  @RequestMapping("tbCollectionsave")
-    public  String tbCollectionsave(Integer uId,Integer gId,Model model)
+  @RequestMapping("tbCollectionSave")
+    public  String tbCollectionSave(Integer uId,Integer gId,Model model)
     {
-        tbcollectionService.tbCollectionsave(uId,gId);
+        tbCollectionService.tbCollectionSave(uId,gId);
         model.addAttribute("uId",uId);
         return "redirect:tbCollectionWeb";
     }
+    
+    @RequestMapping("tbCollectionDelete")
+    public String tbCollectionSelect(Integer uId,Integer gId,Model model){
 
-    @RequestMapping("tbCollectiondelete")
-    public String tbCollectiondelete(Integer uId,Integer gId,Model model){
-        tbcollectionService.tbCollectiondelete(uId,gId);
+        tbCollectionService.tbCollectionDelete(uId,gId);
         model.addAttribute("uId",uId);
         return "redirect:tbCollectionWeb";
     }
@@ -49,7 +48,7 @@ public class TbCollectionController {
     @RequestMapping("tbCollectionWeb")
     public String tbCollectionSelect(@ModelAttribute("uId") Integer uId, Model model)
     {
-        List<TbCollection> tbCollectionList = tbcollectionService.tbCollectionSelect(uId);
+        List<TbCollection> tbCollectionList = tbCollectionService.tbCollectionSelect(uId);
         model.addAttribute("tbCollectionList",tbCollectionList);
         return "tbCollectionWeb";
     }

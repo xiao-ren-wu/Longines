@@ -7,8 +7,6 @@
         <result column="g_num" property="gNum" jdbcType="INTEGER" />
         <result column="t_amount" property="tAmount" jdbcType="DECIMAL" />
         <result column="status" property="status" jdbcType="INTEGER" />
-        <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
-        <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
     </resultMap>
     <sql id="Example_Where_Clause" >
         <where >
@@ -69,7 +67,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List" >
-    u_id, g_id, g_num, t_amount, status, createtime, updatetime
+    u_id, g_id, g_num, t_amount, status
   </sql>
     <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbShoppingCartExample" >
         select
@@ -105,11 +103,9 @@
     </delete>
     <insert id="insert" parameterType="com.longines.pojo.TbShoppingCart" >
     insert into tb_shopping_cart (u_id, g_id, g_num,
-      t_amount, status, createtime,
-      updatetime)
+      t_amount, status)
     values (#{uId,jdbcType=INTEGER}, #{gId,jdbcType=INTEGER}, #{gNum,jdbcType=INTEGER},
-      #{tAmount,jdbcType=DECIMAL}, #{status,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP},
-      #{updatetime,jdbcType=TIMESTAMP})
+      #{tAmount,jdbcType=DECIMAL}, #{status,jdbcType=INTEGER})
   </insert>
     <insert id="insertSelective" parameterType="com.longines.pojo.TbShoppingCart" >
         insert into tb_shopping_cart
@@ -129,12 +125,6 @@
             <if test="status != null" >
                 status,
             </if>
-            <if test="createtime != null" >
-                createtime,
-            </if>
-            <if test="updatetime != null" >
-                updatetime,
-            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," >
             <if test="uId != null" >
@@ -151,12 +141,6 @@
             </if>
             <if test="status != null" >
                 #{status,jdbcType=INTEGER},
-            </if>
-            <if test="createtime != null" >
-                #{createtime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="updatetime != null" >
-                #{updatetime,jdbcType=TIMESTAMP},
             </if>
         </trim>
     </insert>
@@ -184,12 +168,6 @@
             <if test="record.status != null" >
                 status = #{record.status,jdbcType=INTEGER},
             </if>
-            <if test="record.createtime != null" >
-                createtime = #{record.createtime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="record.updatetime != null" >
-                updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
-            </if>
         </set>
         <if test="_parameter != null" >
             <include refid="Update_By_Example_Where_Clause" />
@@ -201,9 +179,7 @@
         g_id = #{record.gId,jdbcType=INTEGER},
         g_num = #{record.gNum,jdbcType=INTEGER},
         t_amount = #{record.tAmount,jdbcType=DECIMAL},
-        status = #{record.status,jdbcType=INTEGER},
-        createtime = #{record.createtime,jdbcType=TIMESTAMP},
-        updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
+        status = #{record.status,jdbcType=INTEGER}
         <if test="_parameter != null" >
             <include refid="Update_By_Example_Where_Clause" />
         </if>
@@ -220,12 +196,6 @@
             <if test="status != null" >
                 status = #{status,jdbcType=INTEGER},
             </if>
-            <if test="createtime != null" >
-                createtime = #{createtime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="updatetime != null" >
-                updatetime = #{updatetime,jdbcType=TIMESTAMP},
-            </if>
         </set>
         where u_id = #{uId,jdbcType=INTEGER}
         and g_id = #{gId,jdbcType=INTEGER}
@@ -234,9 +204,7 @@
     update tb_shopping_cart
     set g_num = #{gNum,jdbcType=INTEGER},
       t_amount = #{tAmount,jdbcType=DECIMAL},
-      status = #{status,jdbcType=INTEGER},
-      createtime = #{createtime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+      status = #{status,jdbcType=INTEGER}
     where u_id = #{uId,jdbcType=INTEGER}
       and g_id = #{gId,jdbcType=INTEGER}
   </update>

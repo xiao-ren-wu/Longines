@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.longines.dao.TbRecInfoMapper" >
-  <resultMap id="BaseResultMap" type="com.longines.pojo.TbRecInfo" >
-    <id column="u_id" property="uId" jdbcType="INTEGER" />
+<mapper namespace="com.longines.dao.TbAdminMapper" >
+  <resultMap id="BaseResultMap" type="com.longines.pojo.TbAdmin" >
     <id column="a_id" property="aId" jdbcType="INTEGER" />
-    <result column="consignee" property="consignee" jdbcType="VARCHAR" />
-    <result column="s_add" property="sAdd" jdbcType="VARCHAR" />
-    <result column="c_tel" property="cTel" jdbcType="VARCHAR" />
-    <result column="postcode" property="postcode" jdbcType="VARCHAR" />
+    <result column="aname" property="aname" jdbcType="VARCHAR" />
+    <result column="a_pw" property="aPw" jdbcType="VARCHAR" />
+    <result column="a_tel" property="aTel" jdbcType="VARCHAR" />
+    <result column="catagory" property="catagory" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    u_id, a_id, consignee, s_add, c_tel, postcode
+    a_id, aname, a_pw, a_tel, catagory
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbRecInfoExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbAdminExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from tb_rec_info
+    from tb_admin
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -84,101 +83,88 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbRecInfoKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from tb_rec_info
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+    from tb_admin
+    where a_id = #{aId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.longines.pojo.TbRecInfoKey" >
-    delete from tb_rec_info
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_admin
+    where a_id = #{aId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.longines.pojo.TbRecInfoExample" >
-    delete from tb_rec_info
+  <delete id="deleteByExample" parameterType="com.longines.pojo.TbAdminExample" >
+    delete from tb_admin
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.longines.pojo.TbRecInfo" >
-    insert into tb_rec_info (u_id, a_id, consignee,
-      s_add, c_tel, postcode
-      )
-    values (#{uId,jdbcType=INTEGER}, #{aId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR},
-      #{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}
-      )
+  <insert id="insert" parameterType="com.longines.pojo.TbAdmin" >
+    insert into tb_admin (a_id, aname, a_pw, 
+      a_tel, catagory)
+    values (#{aId,jdbcType=INTEGER}, #{aname,jdbcType=VARCHAR}, #{aPw,jdbcType=VARCHAR}, 
+      #{aTel,jdbcType=VARCHAR}, #{catagory,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.longines.pojo.TbRecInfo" >
-    insert into tb_rec_info
+  <insert id="insertSelective" parameterType="com.longines.pojo.TbAdmin" >
+    insert into tb_admin
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        u_id,
-      </if>
       <if test="aId != null" >
         a_id,
       </if>
-      <if test="consignee != null" >
-        consignee,
+      <if test="aname != null" >
+        aname,
       </if>
-      <if test="sAdd != null" >
-        s_add,
+      <if test="aPw != null" >
+        a_pw,
       </if>
-      <if test="cTel != null" >
-        c_tel,
+      <if test="aTel != null" >
+        a_tel,
       </if>
-      <if test="postcode != null" >
-        postcode,
+      <if test="catagory != null" >
+        catagory,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        #{uId,jdbcType=INTEGER},
-      </if>
       <if test="aId != null" >
         #{aId,jdbcType=INTEGER},
       </if>
-      <if test="consignee != null" >
-        #{consignee,jdbcType=VARCHAR},
+      <if test="aname != null" >
+        #{aname,jdbcType=VARCHAR},
       </if>
-      <if test="sAdd != null" >
-        #{sAdd,jdbcType=VARCHAR},
+      <if test="aPw != null" >
+        #{aPw,jdbcType=VARCHAR},
       </if>
-      <if test="cTel != null" >
-        #{cTel,jdbcType=VARCHAR},
+      <if test="aTel != null" >
+        #{aTel,jdbcType=VARCHAR},
       </if>
-      <if test="postcode != null" >
-        #{postcode,jdbcType=VARCHAR},
+      <if test="catagory != null" >
+        #{catagory,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.longines.pojo.TbRecInfoExample" resultType="java.lang.Integer" >
-    select count(*) from tb_rec_info
+  <select id="countByExample" parameterType="com.longines.pojo.TbAdminExample" resultType="java.lang.Integer" >
+    select count(*) from tb_admin
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update tb_rec_info
+    update tb_admin
     <set >
-      <if test="record.uId != null" >
-        u_id = #{record.uId,jdbcType=INTEGER},
-      </if>
       <if test="record.aId != null" >
         a_id = #{record.aId,jdbcType=INTEGER},
       </if>
-      <if test="record.consignee != null" >
-        consignee = #{record.consignee,jdbcType=VARCHAR},
+      <if test="record.aname != null" >
+        aname = #{record.aname,jdbcType=VARCHAR},
       </if>
-      <if test="record.sAdd != null" >
-        s_add = #{record.sAdd,jdbcType=VARCHAR},
+      <if test="record.aPw != null" >
+        a_pw = #{record.aPw,jdbcType=VARCHAR},
       </if>
-      <if test="record.cTel != null" >
-        c_tel = #{record.cTel,jdbcType=VARCHAR},
+      <if test="record.aTel != null" >
+        a_tel = #{record.aTel,jdbcType=VARCHAR},
       </if>
-      <if test="record.postcode != null" >
-        postcode = #{record.postcode,jdbcType=VARCHAR},
+      <if test="record.catagory != null" >
+        catagory = #{record.catagory,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -186,43 +172,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update tb_rec_info
-    set u_id = #{record.uId,jdbcType=INTEGER},
-      a_id = #{record.aId,jdbcType=INTEGER},
-      consignee = #{record.consignee,jdbcType=VARCHAR},
-      s_add = #{record.sAdd,jdbcType=VARCHAR},
-      c_tel = #{record.cTel,jdbcType=VARCHAR},
-      postcode = #{record.postcode,jdbcType=VARCHAR}
+    update tb_admin
+    set a_id = #{record.aId,jdbcType=INTEGER},
+      aname = #{record.aname,jdbcType=VARCHAR},
+      a_pw = #{record.aPw,jdbcType=VARCHAR},
+      a_tel = #{record.aTel,jdbcType=VARCHAR},
+      catagory = #{record.catagory,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbRecInfo" >
-    update tb_rec_info
+  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbAdmin" >
+    update tb_admin
     <set >
-      <if test="consignee != null" >
-        consignee = #{consignee,jdbcType=VARCHAR},
+      <if test="aname != null" >
+        aname = #{aname,jdbcType=VARCHAR},
       </if>
-      <if test="sAdd != null" >
-        s_add = #{sAdd,jdbcType=VARCHAR},
+      <if test="aPw != null" >
+        a_pw = #{aPw,jdbcType=VARCHAR},
       </if>
-      <if test="cTel != null" >
-        c_tel = #{cTel,jdbcType=VARCHAR},
+      <if test="aTel != null" >
+        a_tel = #{aTel,jdbcType=VARCHAR},
       </if>
-      <if test="postcode != null" >
-        postcode = #{postcode,jdbcType=VARCHAR},
+      <if test="catagory != null" >
+        catagory = #{catagory,jdbcType=VARCHAR},
       </if>
     </set>
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+    where a_id = #{aId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbRecInfo" >
-    update tb_rec_info
-    set consignee = #{consignee,jdbcType=VARCHAR},
-      s_add = #{sAdd,jdbcType=VARCHAR},
-      c_tel = #{cTel,jdbcType=VARCHAR},
-      postcode = #{postcode,jdbcType=VARCHAR}
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbAdmin" >
+    update tb_admin
+    set aname = #{aname,jdbcType=VARCHAR},
+      a_pw = #{aPw,jdbcType=VARCHAR},
+      a_tel = #{aTel,jdbcType=VARCHAR},
+      catagory = #{catagory,jdbcType=VARCHAR}
+    where a_id = #{aId,jdbcType=INTEGER}
   </update>
 </mapper>

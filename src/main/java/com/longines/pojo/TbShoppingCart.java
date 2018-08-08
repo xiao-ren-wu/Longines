@@ -6,7 +6,6 @@ package com.longines.pojo;
  * @CreateDate: 2018/8/3 9:11
  * @Version: 1.0
  */
-
 public class TbShoppingCart extends TbShoppingCartKey {
     /**
      * 商品数量
@@ -20,10 +19,6 @@ public class TbShoppingCart extends TbShoppingCartKey {
      * 状态号
      */
     private Integer status;
-
-    private Date createtime;
-
-    private Date updatetime;
 
     public Integer getgNum() {
         return gNum;
@@ -58,17 +53,5 @@ public class TbShoppingCart extends TbShoppingCartKey {
                 ", tAmount=" + tAmount +
                 ", status=" + status +
                 '}';
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
     }
 }

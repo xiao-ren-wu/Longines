@@ -22,17 +22,7 @@
         <!--<setting name="defaultExecutorType" value="BATCH" />执行器类型-->
 
     </settings>
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=false"/>
-                <property name="username" value="root"/>
-                <property name="password" value="mysql"/>
-            </dataSource>
-        </environment>
-    <mappers>
-        <mapper resource="mapper/ShoppingcartMapper.xml"/>
-    </mappers>
-    </settings>
+
+
 </configuration>
+

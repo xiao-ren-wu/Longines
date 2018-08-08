@@ -12,16 +12,16 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * @Author: FengTianHao
- * @Date: 2018/8/6 0:10
- * @Version 1.0
+ * @author FengTianHao
+ * @since 2018/8/8 22:22
+ * @version 1.0
  */
 public class TbGoodsInfoMapperServiceTest {
 
     private ApplicationContext ctx;
     private TbGoodsInfoMapperService service;
     @Before
-    public void setUp() throws Exception {
+    public void setUp()  {
         ctx=new ClassPathXmlApplicationContext("spring/spring-longines-service.xml","spring/spring-longines-dao.xml");
         service= (TbGoodsInfoMapperServiceImpl)ctx.getBean("tbGoodsInfoMapperServiceImpl");
     }

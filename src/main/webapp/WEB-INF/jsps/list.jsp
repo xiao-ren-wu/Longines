@@ -29,8 +29,8 @@
         </tr>
         <c:forEach items="${tbGoodsInfoList }" var="tbGoodsInfo">
             <tr>
-                <td>${tbGoodsInfo.id }</td>
-                <td>${tbGoodsInfo.name }</td>
+                <td>${tbGoodsInfo.gId}</td>
+                <td>${tbGoodsInfo.gname }</td>
                 <td>${tbGoodsInfo.brand}</td>
                 <td>${tbGoodsInfo.price }</td>
                 <td>${tbGoodsInfo.theme }</td>

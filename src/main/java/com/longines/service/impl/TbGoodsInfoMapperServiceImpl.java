@@ -3,21 +3,22 @@ package com.longines.service.impl;
 import com.longines.dao.TbGoodsInfoMapper;
 import com.longines.pojo.TbGoodsInfo;
 import com.longines.service.TbGoodsInfoMapperService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @Author: FengTianHao
- * @Date: 2018/8/5 21:56
- * @Version 1.0
+ * @author FengTianHao
+ * @since 2018/8/8 21:06
+ * @version 1.0
  */
 @Service
 public class TbGoodsInfoMapperServiceImpl implements TbGoodsInfoMapperService {
 
     @Resource(name="dao")
-    TbGoodsInfoMapper tbGoodsInfoMapper;
+    private TbGoodsInfoMapper tbGoodsInfoMapper;
 
     @Override
     public List<TbGoodsInfo> findGoodsByPriceDesc()
@@ -54,5 +55,11 @@ public class TbGoodsInfoMapperServiceImpl implements TbGoodsInfoMapperService {
     public List<TbGoodsInfo> findGoodsInfoByLike(Long price) {
         List<TbGoodsInfo> goods=tbGoodsInfoMapper.findGoodsInfoByLike(price);
         return  goods;
+    }
+
+    @Override
+    public List<TbGoodsInfo> findAllGoodsInfo() {
+        List<TbGoodsInfo> goods=tbGoodsInfoMapper.findAllGoodsInfo();
+        return goods;
     }
 }

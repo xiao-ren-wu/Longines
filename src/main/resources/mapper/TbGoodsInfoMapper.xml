@@ -25,4 +25,7 @@
     <select id="findGoodsInfoByLike" parameterType="Long" resultType="com.longines.pojo.TbGoodsInfo">
         select * from tb_goods_info where  price between #{price}-1000 and #{price}+2000;
     </select>
+    <select id="findAllGoodsInfo" resultType="com.longines.pojo.TbGoodsInfo">
+        select * from tb_goods_info;
+    </select>
 </mapper>

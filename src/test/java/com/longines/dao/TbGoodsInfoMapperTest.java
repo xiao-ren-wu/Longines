@@ -11,15 +11,15 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * @Author: FengTianHao
- * @Date: 2018/8/4 11:26
- * @Version 1.0
+ * @author FengTianHao
+ * @since 2018/8/8 22:12
+ * @version 1.0
  */
 public class TbGoodsInfoMapperTest {
     private ApplicationContext ctx;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         ctx=new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
     }
     @Test

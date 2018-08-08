@@ -1,5 +1,9 @@
 package com.longines.pojo;
-
+/**
+ * @author FengTianHao
+ * @since 2018/8/8 21:51
+ * @version 1.0
+ */
 public class TbGoodsInfo {
     private Integer gId;
 

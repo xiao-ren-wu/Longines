@@ -1,7 +1,9 @@
 package com.longines.pojo;
-
-import java.util.Date;
-
+/**
+ * @author FengTianHao
+ * @since 2018/8/8 21:51
+ * @version 1.0
+ */
 public class TbGoodsInfo {
     private Integer gId;
 
@@ -11,7 +13,7 @@ public class TbGoodsInfo {
 
     private Long price;
 
-    private String theId;
+    private String theme;
 
     private String mov;
 
@@ -26,10 +28,6 @@ public class TbGoodsInfo {
     private String wBut;
 
     private String gPic;
-
-    private Date createtime;
-
-    private Date updatetime;
 
     public Integer getgId() {
         return gId;
@@ -63,12 +61,12 @@ public class TbGoodsInfo {
         this.price = price;
     }
 
-    public String getTheId() {
-        return theId;
+    public String getTheme() {
+        return theme;
     }
 
-    public void setTheId(String theId) {
-        this.theId = theId == null ? null : theId.trim();
+    public void setTheme(String theme) {
+        this.theme = theme == null ? null : theme.trim();
     }
 
     public String getMov() {
@@ -127,19 +125,8 @@ public class TbGoodsInfo {
         this.gPic = gPic == null ? null : gPic.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    @Override
+    public String toString() {
+        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theme='" + theme + '\'' + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + '}';
     }
 }

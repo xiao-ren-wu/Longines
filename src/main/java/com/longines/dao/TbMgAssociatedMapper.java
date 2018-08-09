@@ -5,7 +5,12 @@ import com.longines.pojo.TbMgAssociatedExample;
 import com.longines.pojo.TbMgAssociatedKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-
+/**
+* @author   yangshuai
+* @description   商品商家代理接口
+* @since    2018/8/9 1:04
+* @version  1.0
+*/
 public interface TbMgAssociatedMapper {
     int countByExample(TbMgAssociatedExample example);
 

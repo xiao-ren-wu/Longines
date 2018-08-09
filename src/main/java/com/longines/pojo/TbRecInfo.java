@@ -1,5 +1,13 @@
 package com.longines.pojo;
 
+import java.util.Date;
+/**
+ *
+ *
+ * @author wangyichao
+ * @date 2018/8/8
+ */
+
 public class TbRecInfo extends TbRecInfoKey {
     private String consignee;
 
@@ -8,6 +16,10 @@ public class TbRecInfo extends TbRecInfoKey {
     private String cTel;
 
     private String postcode;
+
+    private Date createtime;
+
+    private Date updatetime;
 
     public String getConsignee() {
         return consignee;
@@ -39,5 +51,21 @@ public class TbRecInfo extends TbRecInfoKey {
 
     public void setPostcode(String postcode) {
         this.postcode = postcode == null ? null : postcode.trim();
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
     }
 }

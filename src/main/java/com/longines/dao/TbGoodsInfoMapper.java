@@ -75,4 +75,11 @@ public interface TbGoodsInfoMapper {
      * @param theid 主题id
      */
     List<TbGoodsInfo> selectBythemeid(int theid);
+    /**
+     * 方法注解       给一个订单ID按ID大小顺序得到每个商品单价
+     *
+     *@param        gId
+     *@return       java.util.List<java.lang.Integer>
+     */
+    Integer selectPrice(Integer gId);
 }

@@ -1,31 +1,327 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.longines.dao.TbGoodsInfoMapper" >
-   <select id="findGoodsByPriceDesc" resultType="com.longines.pojo.TbGoodsInfo">
-      select * from tb_goods_info order by price desc;
-    </select>
-    <select id="findGoodsByPriceAsc" resultType="com.longines.pojo.TbGoodsInfo">
-      select * from tb_goods_info order by price  asc;
-    </select>
-  <select id="findGoodsByTheme" parameterType="String" resultType="com.longines.pojo.TbGoodsInfo">
-        select * from tb_goods_info where theme=#{theme}
-    </select>
-    <select id="findGoodsInfoBysTimeDesc" resultType="com.longines.pojo.TbGoodsInfo">
-        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,s_time
-        FROM tb_goods_info,tb_mg_associated
-        WHERE tb_goods_info.g_id=tb_mg_associated.g_id
-        ORDER BY s_time desc;
-    </select>
-    <select id="findGoodsInfoBysTimeAsc" resultType="com.longines.pojo.TbGoodsInfo">
-        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,s_time
-        FROM tb_goods_info,tb_mg_associated
-        WHERE tb_goods_info.g_id=tb_mg_associated.g_id
-        ORDER BY s_time asc;
-    </select>
-    <select id="findGoodsInfoByLike" parameterType="Long" resultType="com.longines.pojo.TbGoodsInfo">
-        select * from tb_goods_info where  price between #{price}-1000 and #{price}+2000;
-    </select>
-    <select id="findAllGoodsInfo" resultType="com.longines.pojo.TbGoodsInfo">
-        select * from tb_goods_info;
-    </select>
+  <resultMap id="BaseResultMap" type="com.longines.pojo.TbGoodsInfo" >
+    <id column="g_id" property="gId" jdbcType="INTEGER" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="theme" property="theme" jdbcType="VARCHAR" />
+    <result column="mov" property="mov" jdbcType="VARCHAR" />
+    <result column="func" property="func" jdbcType="VARCHAR" />
+    <result column="a_peo" property="aPeo" jdbcType="VARCHAR" />
+    <result column="dial" property="dial" jdbcType="VARCHAR" />
+    <result column="strap" property="strap" jdbcType="VARCHAR" />
+    <result column="w_but" property="wBut" jdbcType="VARCHAR" />
+    <result column="g_pic" property="gPic" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    g_id, gname, brand, price, theme, mov, func, a_peo, dial, strap, w_but, g_pic
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbGoodsInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_goods_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_goods_info
+    where g_id = #{gId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_goods_info
+    where g_id = #{gId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.longines.pojo.TbGoodsInfoExample" >
+    delete from tb_goods_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.longines.pojo.TbGoodsInfo" >
+    insert into tb_goods_info (g_id, gname, brand, 
+      price, theme, mov, 
+      func, a_peo, dial, strap, 
+      w_but, g_pic)
+    values (#{gId,jdbcType=INTEGER}, #{gname,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DECIMAL}, #{theme,jdbcType=VARCHAR}, #{mov,jdbcType=VARCHAR}, 
+      #{func,jdbcType=VARCHAR}, #{aPeo,jdbcType=VARCHAR}, #{dial,jdbcType=VARCHAR}, #{strap,jdbcType=VARCHAR}, 
+      #{wBut,jdbcType=VARCHAR}, #{gPic,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.longines.pojo.TbGoodsInfo" >
+    insert into tb_goods_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gId != null" >
+        g_id,
+      </if>
+      <if test="gname != null" >
+        gname,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="theme != null" >
+        theme,
+      </if>
+      <if test="mov != null" >
+        mov,
+      </if>
+      <if test="func != null" >
+        func,
+      </if>
+      <if test="aPeo != null" >
+        a_peo,
+      </if>
+      <if test="dial != null" >
+        dial,
+      </if>
+      <if test="strap != null" >
+        strap,
+      </if>
+      <if test="wBut != null" >
+        w_but,
+      </if>
+      <if test="gPic != null" >
+        g_pic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gId != null" >
+        #{gId,jdbcType=INTEGER},
+      </if>
+      <if test="gname != null" >
+        #{gname,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="theme != null" >
+        #{theme,jdbcType=VARCHAR},
+      </if>
+      <if test="mov != null" >
+        #{mov,jdbcType=VARCHAR},
+      </if>
+      <if test="func != null" >
+        #{func,jdbcType=VARCHAR},
+      </if>
+      <if test="aPeo != null" >
+        #{aPeo,jdbcType=VARCHAR},
+      </if>
+      <if test="dial != null" >
+        #{dial,jdbcType=VARCHAR},
+      </if>
+      <if test="strap != null" >
+        #{strap,jdbcType=VARCHAR},
+      </if>
+      <if test="wBut != null" >
+        #{wBut,jdbcType=VARCHAR},
+      </if>
+      <if test="gPic != null" >
+        #{gPic,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.longines.pojo.TbGoodsInfoExample" resultType="java.lang.Integer" >
+    select count(*) from tb_goods_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_goods_info
+    <set >
+      <if test="record.gId != null" >
+        g_id = #{record.gId,jdbcType=INTEGER},
+      </if>
+      <if test="record.gname != null" >
+        gname = #{record.gname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brand != null" >
+        brand = #{record.brand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.theme != null" >
+        theme = #{record.theme,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mov != null" >
+        mov = #{record.mov,jdbcType=VARCHAR},
+      </if>
+      <if test="record.func != null" >
+        func = #{record.func,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aPeo != null" >
+        a_peo = #{record.aPeo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dial != null" >
+        dial = #{record.dial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.strap != null" >
+        strap = #{record.strap,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wBut != null" >
+        w_but = #{record.wBut,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gPic != null" >
+        g_pic = #{record.gPic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_goods_info
+    set g_id = #{record.gId,jdbcType=INTEGER},
+      gname = #{record.gname,jdbcType=VARCHAR},
+      brand = #{record.brand,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      theme = #{record.theme,jdbcType=VARCHAR},
+      mov = #{record.mov,jdbcType=VARCHAR},
+      func = #{record.func,jdbcType=VARCHAR},
+      a_peo = #{record.aPeo,jdbcType=VARCHAR},
+      dial = #{record.dial,jdbcType=VARCHAR},
+      strap = #{record.strap,jdbcType=VARCHAR},
+      w_but = #{record.wBut,jdbcType=VARCHAR},
+      g_pic = #{record.gPic,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbGoodsInfo" >
+    update tb_goods_info
+    <set >
+      <if test="gname != null" >
+        gname = #{gname,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="theme != null" >
+        theme = #{theme,jdbcType=VARCHAR},
+      </if>
+      <if test="mov != null" >
+        mov = #{mov,jdbcType=VARCHAR},
+      </if>
+      <if test="func != null" >
+        func = #{func,jdbcType=VARCHAR},
+      </if>
+      <if test="aPeo != null" >
+        a_peo = #{aPeo,jdbcType=VARCHAR},
+      </if>
+      <if test="dial != null" >
+        dial = #{dial,jdbcType=VARCHAR},
+      </if>
+      <if test="strap != null" >
+        strap = #{strap,jdbcType=VARCHAR},
+      </if>
+      <if test="wBut != null" >
+        w_but = #{wBut,jdbcType=VARCHAR},
+      </if>
+      <if test="gPic != null" >
+        g_pic = #{gPic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where g_id = #{gId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbGoodsInfo" >
+    update tb_goods_info
+    set gname = #{gname,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      theme = #{theme,jdbcType=VARCHAR},
+      mov = #{mov,jdbcType=VARCHAR},
+      func = #{func,jdbcType=VARCHAR},
+      a_peo = #{aPeo,jdbcType=VARCHAR},
+      dial = #{dial,jdbcType=VARCHAR},
+      strap = #{strap,jdbcType=VARCHAR},
+      w_but = #{wBut,jdbcType=VARCHAR},
+      g_pic = #{gPic,jdbcType=VARCHAR}
+    where g_id = #{gId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectPrice" resultType="integer" parameterType="java.lang.Integer" >
+    select
+    tb_goods_info.price
+    from tb_goods_info
+    where g_id = #{gId,jdbcType=INTEGER}
+  </select>
 </mapper>

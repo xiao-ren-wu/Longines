@@ -2,10 +2,12 @@ package com.longines.dao;
 
 import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartKey;
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+
+
 
 /**
  * @author  liuyang
@@ -14,7 +16,7 @@ import org.testng.annotations.Test;
  */
 public class TbShoppingCartMapperTest {
     private ApplicationContext cxt;
-    @BeforeMethod
+    @Before
     public void setUp() {
         cxt = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
     }

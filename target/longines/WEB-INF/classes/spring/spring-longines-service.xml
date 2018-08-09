@@ -27,5 +27,5 @@
     <!-- 配置基于注解的声明式事务管理 -->
     <!-- 默认使用注解来管理事务行为 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <jdbc:embedded-database id="dataSource"/>
+    <!--<jdbc:embedded-database id="dataSource"/>-->
 </beans>

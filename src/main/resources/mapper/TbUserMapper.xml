@@ -112,9 +112,9 @@
       label, birth, pic, 
       sug, createtime, updatetime
       )
-    values (#{uId,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
-      #{telNum,jdbcType=VARCHAR}, #{pw,jdbcType=VARCHAR}, #{acBalance,jdbcType=DECIMAL},
-      #{label,jdbcType=VARCHAR}, #{birth,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR},
+    values (#{uId,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{telNum,jdbcType=VARCHAR}, #{pw,jdbcType=VARCHAR}, #{acBalance,jdbcType=DECIMAL}, 
+      #{label,jdbcType=VARCHAR}, #{birth,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, 
       #{sug,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -319,4 +319,13 @@
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where u_id = #{uId,jdbcType=INTEGER}
   </update>
+
+
+  <select id="getTbuserList" parameterType="com.longines.pojo.TbUser" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include> from tb_user
+    <where>
+      tel_num=#{telNum} and pw=#{pw}
+    </where>
+
+  </select>
 </mapper>

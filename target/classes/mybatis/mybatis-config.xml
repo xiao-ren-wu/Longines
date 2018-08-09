@@ -4,6 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+
     <!-- 配置全局属性 -->
     <settings>
         <!-- 全局映射器启用缓存 -->
@@ -22,6 +24,7 @@
         <!--<setting name="defaultExecutorType" value="BATCH" />执行器类型-->
 
     </settings>
+
 
 
 </configuration>

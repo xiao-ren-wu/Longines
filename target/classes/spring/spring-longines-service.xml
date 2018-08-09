@@ -17,6 +17,7 @@
     <!-- 扫描service包下的所有的使用注解的类型 -->
     <context:component-scan base-package="com.longines.service"/>
 
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->
@@ -26,5 +27,5 @@
     <!-- 配置基于注解的声明式事务管理 -->
     <!-- 默认使用注解来管理事务行为 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <jdbc:embedded-database id="dataSource"/>
+    <!--<jdbc:embedded-database id="dataSource"/>-->
 </beans>

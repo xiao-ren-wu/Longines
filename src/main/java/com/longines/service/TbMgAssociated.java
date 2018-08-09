@@ -10,25 +10,18 @@ import java.util.List;
 * @version  1.0
 */
 public interface TbMgAssociated {
-    int countByExample(TbMgAssociatedExample example);
-
-    int deleteByExample(TbMgAssociatedExample example);
-
-    int deleteByPrimaryKey(TbMgAssociatedKey key);
-
-    int insert(com.longines.pojo.TbMgAssociated record);
-
-    int insertSelective(com.longines.pojo.TbMgAssociated record);
-
-    List<com.longines.pojo.TbMgAssociated> selectByExample(TbMgAssociatedExample example);
-
-    com.longines.pojo.TbMgAssociated selectByPrimaryKey(TbMgAssociatedKey key);
-
-    int updateByExampleSelective(com.longines.pojo.TbMgAssociated record, TbMgAssociatedExample example);
-
-    int updateByExample(com.longines.pojo.TbMgAssociated record, TbMgAssociatedExample example);
-
-    int updateByPrimaryKeySelective(com.longines.pojo.TbMgAssociated record);
-
-    int updateByPrimaryKey(com.longines.pojo.TbMgAssociated record);
+    /**
+     * 方法注解       更新商品商家表里商品库存量
+     *
+     *@param       tbMgAssociated
+     *@return       void
+     */
+    void updateinv(com.longines.pojo.TbMgAssociated tbMgAssociated);
+    /**
+    * 方法注解      通过订单ID更新商品库存量
+    *
+    *@param       oId
+    *@return       void
+    */
+    void updateBygId(Integer oId);
 }

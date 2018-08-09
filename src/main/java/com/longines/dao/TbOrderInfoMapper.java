@@ -18,9 +18,7 @@ public interface TbOrderInfoMapper {
      *@return       java.util.List<java.lang.Integer>
      */
     long countAll(Integer oId);
-
     int countByExample(TbOrderInfoExample example);
-
     int deleteByExample(TbOrderInfoExample example);
     /**
      * 方法注解       根据主键订单ID删除订单
@@ -29,7 +27,6 @@ public interface TbOrderInfoMapper {
      *@return       int
      */
     int deleteByPrimaryKey(Integer oId);
-
     int insert(TbOrderInfo record);
     /**
      * 方法注解       生成订单详细信息表
@@ -38,7 +35,6 @@ public interface TbOrderInfoMapper {
      *@return       int
      */
     int insertSelective(TbOrderInfo record);
-
     List<TbOrderInfo> selectByExample(TbOrderInfoExample example);
     /**
      * 方法注解        根据订单ID选择订单详细信息行
@@ -47,9 +43,7 @@ public interface TbOrderInfoMapper {
      *@return       com.longines.pojo.TbOrderInfo
      */
     TbOrderInfo selectByPrimaryKey(Integer oId);
-
     int updateByExampleSelective(@Param("record") TbOrderInfo record, @Param("example") TbOrderInfoExample example);
-
     int updateByExample(@Param("record") TbOrderInfo record, @Param("example") TbOrderInfoExample example);
     /**
      * 方法注解       根据传进来的订单获得他的状态号再根据情况改变其状态值
@@ -58,7 +52,6 @@ public interface TbOrderInfoMapper {
      *@return       int
      */
     int updateByPrimaryKeySelective(TbOrderInfo record);
-
     int updateByPrimaryKey(TbOrderInfo record);
 
     /**
@@ -68,7 +61,6 @@ public interface TbOrderInfoMapper {
      *@return           java.util.List<com.longines.pojo.TbOrderInfo>
      */
     List<TbOrderInfo> selectByuId(Integer uId);
-
     /**
      * 方法注解      查询某个用户的其他子订单列表
      *
@@ -76,5 +68,4 @@ public interface TbOrderInfoMapper {
      *@return         java.util.List<com.longines.pojo.TbOrderInfo>
      */
     List<TbOrderInfo> selectBysNum(TbOrderInfo tbOrderInfo);
-
 }

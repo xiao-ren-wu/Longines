@@ -5,6 +5,7 @@ import com.longines.dao.TbOrderInfoMapper;
 import com.longines.dao.TbOrderMapper;
 import com.longines.pojo.*;
 import com.longines.service.TbOrderInfo;
+import org.ietf.jgss.Oid;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.ArrayList;
@@ -82,15 +83,15 @@ public class TbOrderInfoImpl implements TbOrderInfo {
         ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
         TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
         com.longines.pojo.TbOrderInfo tbOrderInfo=record;
-        TbOrder tbOrder=new TbOrder();
+        /*TbOrder tbOrder=new TbOrder();*/
         //先调方法生成订单-商品表。。。返回值订单号传给x再给订单明细表作为生成的同一个订单ID
-        int x=new TbOrderImpl().insertSelective(tbOrder);
+        /*int x=new TbOrderImpl().insertSelective(tbOrder);*/
         try {
             //生成订单ID
             //生成三个ID
-            tbOrderInfo.setoId(x);
+            /*tbOrderInfo.setoId(x);
             tbOrderInfo.setuId(2);
-            tbOrderInfo.setaId(110120);
+            tbOrderInfo.setaId(110120);*/
             /*tbOrderInfo.setuId(new TbUser().getuId());
             tbOrderInfo.setaId(new TbRecInfo().getaId());*/
 
@@ -103,7 +104,7 @@ public class TbOrderInfoImpl implements TbOrderInfo {
             //得到总价钱
             TbGoodsInfo tbGoodsInfo=new TbGoodsInfo();
             /*tbOrder.setoId(2);*/
-            tbOrderInfo.setaAmount(this.countAll(tbOrder.getoId()));
+            tbOrderInfo.setaAmount(this.countAll(tbOrderInfo.getoId()));
 
             //默认设置状态号为待付款(0)
             tbOrderInfo.setsNum(0);
@@ -114,16 +115,16 @@ public class TbOrderInfoImpl implements TbOrderInfo {
             peisong.add("圆通亲切配送");
             peisong.add("海外海上列车配送");
             tbOrderInfo.setdMethod(peisong.get((int)(Math.random()*4)));
-
             tbOrderInfoMapper.insertSelective(tbOrderInfo);
-
             System.out.println("创建订单成功!");
-                return 0;
+
+            new TbMgAssociatedImpl().updateBygId(tbOrderInfo.getoId());
+                return tbOrderInfo.getoId();
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("创建订单失败!");
         }
-        return 1;
+        return tbOrderInfo.getoId();
     }
 
     @Override

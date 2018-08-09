@@ -225,4 +225,18 @@
     where m_id = #{mId,jdbcType=INTEGER}
       and g_id = #{gId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectinvBygId" resultType="Integer" parameterType="Integer" >
+    select
+    tb_mg_associated.inv
+    from tb_mg_associated
+    where
+    g_id = #{gId,jdbcType=INTEGER}
+  </select>
+  <insert id="updateinv" parameterType="com.longines.pojo.TbMgAssociated" >
+    update tb_mg_associated
+      set inv = #{inv,jdbcType=INTEGER}
+      where m_id = #{mId,jdbcType=INTEGER}
+       and g_id = #{gId,jdbcType=INTEGER}
+  </insert>
 </mapper>

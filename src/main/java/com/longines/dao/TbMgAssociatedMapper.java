@@ -1,5 +1,6 @@
 package com.longines.dao;
 
+import com.longines.pojo.TbGoodsInfo;
 import com.longines.pojo.TbMgAssociated;
 import com.longines.pojo.TbMgAssociatedExample;
 import com.longines.pojo.TbMgAssociatedKey;
@@ -12,25 +13,18 @@ import org.apache.ibatis.annotations.Param;
 * @version  1.0
 */
 public interface TbMgAssociatedMapper {
-    int countByExample(TbMgAssociatedExample example);
-
-    int deleteByExample(TbMgAssociatedExample example);
-
-    int deleteByPrimaryKey(TbMgAssociatedKey key);
-
-    int insert(TbMgAssociated record);
-
-    int insertSelective(TbMgAssociated record);
-
-    List<TbMgAssociated> selectByExample(TbMgAssociatedExample example);
-
-    TbMgAssociated selectByPrimaryKey(TbMgAssociatedKey key);
-
-    int updateByExampleSelective(@Param("record") TbMgAssociated record, @Param("example") TbMgAssociatedExample example);
-
-    int updateByExample(@Param("record") TbMgAssociated record, @Param("example") TbMgAssociatedExample example);
-
-    int updateByPrimaryKeySelective(TbMgAssociated record);
-
-    int updateByPrimaryKey(TbMgAssociated record);
+    /**
+    * 方法注解       更新商品商家表里商品库存量
+    *
+    *@param       tbMgAssociated
+    *@return       void
+    */
+    void updateinv(TbMgAssociated tbMgAssociated);
+    /**
+    * 方法注解      通过商品ID查找其库存量
+    *
+    *@param       gid
+    *@return       int
+    */
+    int selectinvBygId(Integer gid);
 }

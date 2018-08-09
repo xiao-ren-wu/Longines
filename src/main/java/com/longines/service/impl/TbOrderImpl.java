@@ -2,6 +2,7 @@ package com.longines.service.impl;
 
 
 import com.longines.dao.TbOrderMapper;
+import com.longines.pojo.TbGoodsInfo;
 import com.longines.pojo.TbOrderExample;
 import com.longines.pojo.TbOrderKey;
 import com.longines.service.TbOrder;
@@ -15,25 +16,6 @@ import java.util.List;
 * @version  1.0
 */
 public class TbOrderImpl implements TbOrder {
-    @Override
-    public int countByExample(TbOrderExample example) {
-        return 0;
-    }
-
-    @Override
-    public int deleteByExample(TbOrderExample example) {
-        return 0;
-    }
-
-    @Override
-    public int deleteByPrimaryKey(TbOrderKey key) {
-        return 0;
-    }
-
-    @Override
-    public int insert(com.longines.pojo.TbOrder record) {
-        return 0;
-    }
     /**
     * 方法注解    生成订单-商品表
     *
@@ -49,43 +31,15 @@ public class TbOrderImpl implements TbOrder {
         int orderId=(int) System.currentTimeMillis();
         tbOrder.setoId(orderId);
         //获取商品ID
-        tbOrder.setgId(2);
+        tbOrder.setgId(new TbGoodsInfo().getgId());
         //获取商品个数
-        tbOrder.setgNum(10);      
+        /*tbOrder.setgNum(10);*/
         tbOrderMapper.insertSelective(tbOrder);
         //返回订单号
          return  orderId;
     }
-
-    @Override
-    public List<com.longines.pojo.TbOrder> selectByExample(TbOrderExample example) {
-        return null;
-    }
-
-    @Override
-    public com.longines.pojo.TbOrder selectByPrimaryKey(TbOrderKey key) {return null; }
-
-    @Override
-    public int updateByExampleSelective(com.longines.pojo.TbOrder record, TbOrderExample example) {
-        return 0;
-    }
-
-    @Override
-    public int updateByExample(com.longines.pojo.TbOrder record, TbOrderExample example) {
-        return 0;
-    }
-
-    @Override
-    public int updateByPrimaryKeySelective(com.longines.pojo.TbOrder record) {
-        return 0;
-    }
-
-    @Override
-    public int updateByPrimaryKey(com.longines.pojo.TbOrder record) {
-        return 0;
-    }
     /**
-    * 方法注解      通过订单ID得到这个表里所有此订单ID的集合
+    * 方法注解      通过订单ID得到这个表里所有此订单ID的商品集合
     *
     *@param       oId
     *@return       java.util.List<java.lang.Integer>

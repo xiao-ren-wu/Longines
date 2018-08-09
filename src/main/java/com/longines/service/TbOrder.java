@@ -10,14 +10,6 @@ import java.util.List;
 * @version  1.0
 */
 public interface TbOrder {
-
-    int countByExample(TbOrderExample example);
-
-    int deleteByExample(TbOrderExample example);
-
-    int deleteByPrimaryKey(TbOrderKey key);
-
-    int insert(com.longines.pojo.TbOrder record);
     /**
      * 方法注解    生成订单-商品表
      *
@@ -25,18 +17,6 @@ public interface TbOrder {
      *@return       int
      */
     int insertSelective(com.longines.pojo.TbOrder record);
-
-    List<com.longines.pojo.TbOrder> selectByExample(TbOrderExample example);
-
-    com.longines.pojo.TbOrder selectByPrimaryKey(TbOrderKey key);
-
-    int updateByExampleSelective( com.longines.pojo.TbOrder record, TbOrderExample example);
-
-    int updateByExample(com.longines.pojo.TbOrder record, TbOrderExample example);
-
-    int updateByPrimaryKeySelective(com.longines.pojo.TbOrder record);
-
-    int updateByPrimaryKey(com.longines.pojo.TbOrder record);
     /**
      * 方法注解      通过订单ID得到这个表里所有此订单ID的集合
      *

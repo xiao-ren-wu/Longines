@@ -14,14 +14,16 @@
 <form action="${pageContext.request.contextPath }/longines/tbCollectionWeb" method="post">
     商品列表：
     <table width="100%" border=1>
-        <c:forEach items="${tbCollectionList}" var="tbCollection">
+        <c:forEach items="${tbCollectionList}" var="tbCollection" varStatus="loop">
             <tr>
                 <td>${tbCollection.uId}</td>
                 <td>${tbCollection.gId}</td>
-                <td>${tbCollection.invalid}</td>
+                <c:if test="${tbCollection.invalid==1}"><td></td></c:if>
+                <c:if test="${tbCollection.invalid==0}"><td>已失效</td></c:if>
                 <td>${tbCollection.pur}</td>
                 <td>${tbCollection.collTime}</td>
                 <td>${tbCollection.cPrice}</td>
+                <td>${tbCollectionPic[loop.count-1]}</td>
                 <td><a href="${pageContext.request.contextPath }/longines/tbCollection">返回</a></td>
                 <td><a href="${pageContext.request.contextPath }/longines/tbCollectionDelete?uId=${tbCollection.uId}&gId=${tbCollection.gId}">删除</a></td>
             </tr>

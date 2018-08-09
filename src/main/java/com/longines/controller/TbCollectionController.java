@@ -49,7 +49,9 @@ public class TbCollectionController {
     public String tbCollectionSelect(@ModelAttribute("uId") Integer uId, Model model)
     {
         List<TbCollection> tbCollectionList = tbCollectionService.tbCollectionSelect(uId);
+        List<String> tbCollectionPic = tbCollectionService.tbCollectionSelectPic(uId);
         model.addAttribute("tbCollectionList",tbCollectionList);
+        model.addAttribute("tbCollectionPic",tbCollectionPic);
         return "tbCollectionWeb";
     }
 

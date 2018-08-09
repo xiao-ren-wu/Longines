@@ -46,5 +46,12 @@ public interface TbCollectionMapper {
      *@param   record ss
      */
     void updateByPrimaryKeySelective(TbCollection record);
+    /**
+     * 方法注释
+     *查找商品的pic
+     *@param   gid  所要查找的商品id
+     *@return   java.lang.String
+     */
+    String findCollectionPic(Integer gid);
 
 }

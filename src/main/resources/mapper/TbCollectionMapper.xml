@@ -132,6 +132,9 @@
         WHERE
         tb_goods_info.g_id = #{id}
         and
-        tb_mg_associated.g_id=#{id};
+        tb_mg_associated.g_id=#{id}
 	</select>
+  <select id="findCollectionPic" parameterType="Integer" resultType="String">
+    SELECT g_pic from tb_goods_info where g_id = #{id}
+  </select>
 </mapper>

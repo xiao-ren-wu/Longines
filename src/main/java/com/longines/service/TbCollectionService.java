@@ -14,26 +14,33 @@ import java.util.List;
 public interface TbCollectionService {
     /**
      * 方法注释
-     *
-     *@param   uId sad
-     * @param gId gid
+     *添加收藏
+     *@param   uId 用户id
+     * @param gId   商品id
      */
     void tbCollectionSave(Integer uId,Integer gId);
     /**
      * 方法注释
-     *
-     * @param   uId 不回家比较
-     * @param   gId 一个
+     *删除收藏
+     * @param   uId 用户id
+     * @param   gId 商品id
      */
     void tbCollectionDelete(Integer uId, Integer gId);
 
     /**
      * 方法注释
-     *
+     *我的收藏
      *@param   uId uio
      *@return   java.util.List<com.longines.pojo.TbCollection>
      */
     List<TbCollection> tbCollectionSelect(Integer uId);
+    /**
+     * 方法注释
+     *查找收藏中每一条商品所对应的图片
+     *@param   uId 用户ID
+     *@return   java.util.List<java.lang.String>
+     */
+    List<String> tbCollectionSelectPic(Integer uId);
 
 
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -67,5 +68,20 @@ public class TbCollectionServiceImpl implements TbCollectionService {
                }
         }
         return tbCollectionList;
+    }
+
+    @Override
+    public List<String> tbCollectionSelectPic(Integer uId) {
+        List<String> userList = new ArrayList<>();
+        TbCollectionExample tbCollectionExample =new TbCollectionExample();
+        TbCollectionExample.Criteria criteria = tbCollectionExample.createCriteria();
+        criteria.andUIdEqualTo(uId);
+        List<TbCollection> tbCollectionList = tbCollectionMapper.selectByExample(tbCollectionExample);
+        for (TbCollection tbCollection : tbCollectionList)
+        {
+           String pic = tbCollectionMapper.findCollectionPic(tbCollection.getgId());
+            userList.add(pic);
+        }
+        return userList;
     }
 }

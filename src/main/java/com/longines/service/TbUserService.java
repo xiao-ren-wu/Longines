@@ -57,5 +57,5 @@ public interface TbUserService {
         public List<TbUser> select(TbUser user);
 
 
-
+        public int updateTbUser1(TbUser user);
 }

@@ -7,6 +7,7 @@ import com.longines.pojo.TbUser;
 
 import com.longines.service.TbUserService;
 
+import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,8 +58,8 @@ public class TbUserServiceImpl implements TbUserService {
         TbUser user=new TbUser();
         user.setTelNum(telNum);
         user.setPw(pw);
-        List<TbUser> tbUserList=new ArrayList<TbUser>();
-        tbUserList=this.mapper.getTbuserList(user);
+
+        List<TbUser> tbUserList=this.mapper.getTbuserList(user);
         if(tbUserList.size()>0) {
             flag = true;
         }
@@ -139,6 +140,12 @@ public class TbUserServiceImpl implements TbUserService {
     public List<TbUser> select(TbUser user) {
 
         return ( mapper.getTbuserList(user));
+    }
+
+
+    @Override
+    public int updateTbUser1(TbUser user) {
+        return mapper.updateByPrimaryKeySelective(user);
     }
 
 

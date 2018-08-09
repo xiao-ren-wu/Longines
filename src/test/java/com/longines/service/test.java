@@ -1,5 +1,4 @@
 package com.longines.service;
-/*package com.longines.service;*/
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 *@version 1.0
 */
 
-/*
+
 @RunWith(SpringJUnit4ClassRunner.class)
 //告诉junit spring的配置文件
 @ContextConfiguration({"classpath:spring/spring-longines-dao.xml",
@@ -40,10 +39,7 @@ public class test {
                System.out.println(flag);
 
            }
-           @Test
-            public void test7(){
 
-           }
 
 
 
@@ -56,7 +52,6 @@ public class test {
 
 
     // private   ApplicationContext ctx;
-*/
 /*@Before
 public  void  bef() {
      ctx = new ClassPathXmlApplicationContext("classpath:spring/spring-longines-dao.xml");
@@ -67,12 +62,12 @@ public  void  bef() {
         TbUserMapper mapper= (TbUserMapper) ctx.getBean("tbUserMapper");
         TbUser user=mapper.selectByPrimaryKey(6);
         System.out.println(user);
-    }*//*
+    }*/
 
 
 
 
 
 }
-*/
+
 

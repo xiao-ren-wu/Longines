@@ -51,5 +51,19 @@ public interface TbUserMapper {
      *@since 2018/8/8 22:19
      */
     List<TbUser> getTbuserList(TbUser user);
+    /**
+     *@description
+     *@param user
+     *@return int
+     *@since 2018/8/9 11:23
+     */
+    /**
+     *动态sql更新信息
+     *@param user  用户
+     *@return int
+     *@since 2018/8/9 22:27
+     */
+    int updateByPrimaryKeySelective (TbUser user);
+
 
 }

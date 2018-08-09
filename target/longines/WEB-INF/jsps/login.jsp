@@ -11,7 +11,7 @@
     <title>用户登录</title>
 </head>
 <body>
-  <form action="${pageContext.request.contextPath }/longines/select",method=post>
+  <form action="${pageContext.request.contextPath }/longines/login",method=post>
     手机号码<input type="text" name="telNum"><br>
       密码<input type="text" name="pw"><br>
       <input type="submit" value="登录">

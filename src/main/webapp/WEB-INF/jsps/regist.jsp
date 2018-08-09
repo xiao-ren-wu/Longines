@@ -11,8 +11,8 @@
     <title>注册用户</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath }/longines/register" enctype="multipart/form-data" method="post">
-   姓名<input type="text" name="uname"><br>
+<form action="${pageContext.request.contextPath }/longines/register" enctype="multipart/form-data" method="post" pageEncoding="UTF-8">
+   昵称<input type="text" name="uname"><br>
    密码<input type="text" name="pw"><br>
     性别<input type="text" name="sex"><br>
     图像<input type="file" name="image"><br>

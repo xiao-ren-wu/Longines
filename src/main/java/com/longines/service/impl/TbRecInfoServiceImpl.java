@@ -29,6 +29,7 @@ public class TbRecInfoServiceImpl implements TbRecInfoService {
     public int deleteByPrimaryKey(TbRecInfoKey key) {
         Mapper.deleteByPrimaryKey(key);
         return 0;
+
     }
 
     @Override
@@ -41,5 +42,11 @@ public class TbRecInfoServiceImpl implements TbRecInfoService {
     public List<TbRecInfo> selectByExample(TbRecInfoExample example) {
         List<TbRecInfo> Info = Mapper.selectByExample(example);
         return Info;
+    }
+
+    @Override
+    public int selectByPrimaryKey(TbRecInfoKey key){
+        Mapper.selectByPrimaryKey(key);
+        return 0;
     }
 }

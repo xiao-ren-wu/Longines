@@ -10,11 +10,24 @@ import org.springframework.stereotype.Service;
 
 
 public interface TbRecInfoService {
+    /**
+     *惊呆了
+     *
+     *@param record
+     *@return   int
+     */
     int updateByPrimaryKeySelective(TbRecInfo record);
-
+    /**
+     * 方法注释
+     *
+     *@param   key
+     *@return   int
+     */
     int deleteByPrimaryKey(TbRecInfoKey key);
 
     int insert(TbRecInfo record);
+
+    int selectByPrimaryKey(TbRecInfoKey key);
 
     List<TbRecInfo> selectByExample(TbRecInfoExample example);
     //    int insertSelective(TbRecInfo record);

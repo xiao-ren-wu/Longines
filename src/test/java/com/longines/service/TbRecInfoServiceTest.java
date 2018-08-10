@@ -1,10 +1,9 @@
 package com.longines.service;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-import com.longines.dao.TbRecInfoMapper;
 import com.longines.pojo.TbRecInfo;
 
 import com.longines.pojo.TbRecInfoExample;
+import com.longines.pojo.TbRecInfoKey;
 import com.longines.service.impl.TbRecInfoServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,11 +43,19 @@ public class TbRecInfoServiceTest {
     }
 
     @Test
-    public void testUpdateAdd(int uid,int aid,String add) {
+    public void testDelete() {
+        TbRecInfoKey todo = new TbRecInfoKey();
+        todo.setaId(2);
+        todo.setuId(1);
+        infoService.deleteByPrimaryKey(todo);
+    }
+
+    @Test
+    public void testUpdateAdd() {
         TbRecInfo todo = new TbRecInfo();
-        todo.setaId(aid);
-        todo.setuId(uid);
-        todo.setsAdd(add);
+        todo.setaId(2);
+        todo.setuId(1);
+        todo.setsAdd("sa555555555d");
         infoService.updateByPrimaryKeySelective(todo);
     }
 
@@ -72,13 +79,13 @@ public class TbRecInfoServiceTest {
 
 
     @Test
-    public void testInsert(int uid,String con,String tel,String pos,String add) {
+    public void testInsert() {
         TbRecInfo todo = new TbRecInfo();
-        todo.setConsignee(con);
-        todo.setsAdd(add);
-        todo.setcTel(tel);
-        todo.setPostcode(pos);
-        todo.setuId(uid);
+        todo.setConsignee("777777");
+        todo.setsAdd("2222222222");
+        todo.setcTel("111111111111");
+        todo.setuId(2);
+        todo.setPostcode("ddddd");
         infoService.insert(todo);
     }
 

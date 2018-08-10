@@ -1,6 +1,12 @@
 package com.longines.pojo;
 
 import java.util.Date;
+/**
+ *
+ *
+ * @author wangyichao
+ * @date 2018/8/8
+ */
 
 public class TbRecInfo extends TbRecInfoKey {
     private String consignee;

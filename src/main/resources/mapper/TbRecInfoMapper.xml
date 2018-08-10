@@ -103,10 +103,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.longines.pojo.TbRecInfo" >
-    insert into tb_rec_info (a_id, u_id, consignee, 
-      s_add, c_tel, postcode)
-    values (#{aId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR}, 
-      #{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR})
+    insert into tb_rec_info (u_id, consignee,s_add, c_tel, postcode)values (#{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR},#{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbRecInfo" >
     insert into tb_rec_info

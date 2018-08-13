@@ -1,18 +1,15 @@
 package com.longines.dao;
 
 import com.longines.pojo.TbUser;
-
+import com.longines.pojo.TbUserExample;
 import java.util.List;
-
-
+import org.apache.ibatis.annotations.Param;
 /**
 *@author zhaoxiaokang
-*@since 2018/8/8 21:09
+*@since 2018/8/13 22:28
 *@version 1.0
 */
 public interface TbUserMapper {
-
-
     /**
      *删除用户
      *@param uId 用户id
@@ -21,12 +18,13 @@ public interface TbUserMapper {
      */
     int deleteByPrimaryKey(Integer uId);
     /**
-     *添加用户
-     *@param user  用户
+     *@description
+     *@param user 用户
      *@return int
-     *@since 2018/8/8 22:18
+     *@since 2018/8/13 22:33
      */
-    int insert(TbUser user);
+    int insertSelective(TbUser user);
+
 
     /**
      *查找用户
@@ -37,26 +35,14 @@ public interface TbUserMapper {
     TbUser selectByPrimaryKey(Integer uId);
 
     /**
-     *更新信息
-     *@param user 用户
-     *@return int
-     *@since 2018/8/8 22:19
-     */
-    int updateByPrimaryKey(TbUser user);
-
-    /**
      *查找用户
      *@param user 用户
      *@return java.util.List<com.longines.pojo.TbUser>
      *@since 2018/8/8 22:19
      */
-    List<TbUser> getTbuserList(TbUser user);
-    /**
-     *@description
-     *@param user
-     *@return int
-     *@since 2018/8/9 11:23
-     */
+    TbUser getTbuser(TbUser user);
+
+
     /**
      *动态sql更新信息
      *@param user  用户

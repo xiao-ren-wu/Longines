@@ -12,27 +12,20 @@ import java.util.List;
 
 public interface TbUserService {
         /**
-         *
+         *用户注册
          *@param user 用户
          *@return int
          */
         public int  regist(TbUser user);
         /**
-         *
-         *@param telNum, pw 电话号码  密码
+         *用户登录
+         *@param telNum 电话号码
+         *@param  pw 密码
          *@return java.lang.Boolean
          *@since 2018/8/8 22:12
          */
-        public Boolean login(String telNum, String pw);
+        public TbUser login(String telNum, String pw);
 
-
-        /**
-         *修改信息
-         *@param uId, uname, sex, label, pw, pic, telNum
-         *@return int
-         *@since 2018/8/8 22:13
-         */
-        public int revise(int uId, String uname, String sex, String label, String pw, String pic, String telNum);
         /**
          *退出登录
          *@since 2018/8/8 22:13
@@ -40,13 +33,20 @@ public interface TbUserService {
         public void logout();
         /**
          *注销用户
-         *@param uId 用户
+         *@param uId 用户id
          *@return int
          *@since 2018/8/8 22:14
          */
         public int logoff(int uId);
 
+        /**
+         *查找用户信息
+         *@param uId 用户id
+         *@return com.longines.pojo.TbUser
+         *@since 2018/8/10 16:43
+         */
         public TbUser select(int uId);
+
 
         /**
          *查找用户
@@ -54,8 +54,17 @@ public interface TbUserService {
          *@return java.util.List<com.longines.pojo.TbUser>
          *@since 2018/8/8 22:15
          */
-        public List<TbUser> select(TbUser user);
+        public TbUser select(TbUser user);
+
+        /**
+         *更新信息
+         *@param user 用户
+         *@return int
+         *@since 2018/8/10 16:38
+         */
+        public int updateTbUser(TbUser user);
 
 
-        public int updateTbUser1(TbUser user);
+
+
 }

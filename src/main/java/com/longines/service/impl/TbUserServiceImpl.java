@@ -7,12 +7,10 @@ import com.longines.pojo.TbUser;
 
 import com.longines.service.TbUserService;
 
-import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +33,7 @@ public class TbUserServiceImpl implements TbUserService {
     public int regist(TbUser user)
     {
 
-        if((mapper.insert(user))==1){
+        if((mapper.insertSelective(user))==1){
             return 1;
         }else{
             return 0;
@@ -51,47 +49,17 @@ public class TbUserServiceImpl implements TbUserService {
      *@since 2018/8/8 21:31
      */
     @Override
-    public Boolean login(String telNum,String pw) {
+    public TbUser login(String telNum,String pw) {
 
 
         boolean flag=false;
         TbUser user=new TbUser();
         user.setTelNum(telNum);
         user.setPw(pw);
-
-        List<TbUser> tbUserList=this.mapper.getTbuserList(user);
-        if(tbUserList.size()>0) {
-            flag = true;
-        }
-        return flag;
+       return mapper.getTbuser(user);
 
 
-    }
 
-    /**
-     *修改信息
-     *@param uId, uname, sex, lable, pw, pic, telNum
-     *@return int
-     *@since 2018/8/8 21:33
-     */
-    @Override
-    public int revise(int uId,String uname,String sex, String lable, String pw, String pic, String telNum) {
-
-        TbUser user=new TbUser();
-
-        user.setuId(uId);
-
-        user.setUname(uname);
-        user.setSex(sex);
-        user.setLabel(lable);
-        user.setPw(pw);
-        user.setPic(pic);
-        user.setTelNum(telNum);
-       if( mapper.updateByPrimaryKey(user)==1){
-           return 1;
-       }else {
-           return 0;
-        }
     }
 
 
@@ -130,6 +98,8 @@ public class TbUserServiceImpl implements TbUserService {
 
         return mapper.selectByPrimaryKey(uId);
     }
+
+
     /**
      *查找用户
      *@param user 用户
@@ -137,16 +107,23 @@ public class TbUserServiceImpl implements TbUserService {
      *@since 2018/8/8 21:36
      */
     @Override
-    public List<TbUser> select(TbUser user) {
-
-        return ( mapper.getTbuserList(user));
+    public TbUser select(TbUser user) {
+        return mapper.getTbuser(user);
     }
 
-
+    /**
+     *更新用户信息
+     *@param user 用户
+     *@return int
+     *@since 2018/8/10 16:31
+     */
     @Override
-    public int updateTbUser1(TbUser user) {
+    public int updateTbUser(TbUser user) {
+
         return mapper.updateByPrimaryKeySelective(user);
     }
+
+
 
 
 }

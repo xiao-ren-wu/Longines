@@ -1,5 +1,6 @@
 package com.longines.service;
 
+import com.longines.pojo.TbUser;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,10 +34,10 @@ public class test {
     }
            @Test
             public void test6(){
-
-
-            Boolean flag=service.login("123456789","1234567");
-               System.out.println(flag);
+               TbUser user=new TbUser();
+               user.setTelNum("123456789");
+               user.setPw("1234567");
+               System.out.println(service.select(user));
 
            }
 

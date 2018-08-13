@@ -3,11 +3,7 @@ package com.longines.pojo;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
-/**
-*@author zhaoxiaokang
-*@since 2018/8/8 22:07
-*@version 1.0
-*/
+
 public class TbUser {
     private Integer uId;
 
@@ -32,6 +28,12 @@ public class TbUser {
     private Date createtime;
 
     private Date updatetime;
+
+    private String valQu;
+
+    private String antoqu;
+
+    private Integer payCod;
 
     public Integer getuId() {
         return uId;
@@ -129,22 +131,28 @@ public class TbUser {
         this.updatetime = updatetime;
     }
 
-    @Override
-    public String toString() {
-        return "TbUser{" +
-                "uId=" + uId +
-                ", uname='" + uname + '\'' +
-                ", sex='" + sex + '\'' +
-                ", telNum='" + telNum + '\'' +
-                ", pw='" + pw + '\'' +
-                ", acBalance=" + acBalance +
-                ", label='" + label + '\'' +
-                ", birth='" + birth + '\'' +
-                ", pic='" + pic + '\'' +
-                ", sug='" + sug + '\'' +
-                ", createtime=" + createtime +
-                ", updatetime=" + updatetime +
-                '}';
+    public String getValQu() {
+        return valQu;
+    }
+
+    public void setValQu(String valQu) {
+        this.valQu = valQu == null ? null : valQu.trim();
+    }
+
+    public String getAntoqu() {
+        return antoqu;
+    }
+
+    public void setAntoqu(String antoqu) {
+        this.antoqu = antoqu == null ? null : antoqu.trim();
+    }
+
+    public Integer getPayCod() {
+        return payCod;
+    }
+
+    public void setPayCod(Integer payCod) {
+        this.payCod = payCod;
     }
 
     private MultipartFile image;
@@ -155,5 +163,4 @@ public class TbUser {
     public void setImage(MultipartFile image) {
         this.image = image;
     }
-
 }

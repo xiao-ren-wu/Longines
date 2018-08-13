@@ -323,13 +323,10 @@
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where u_id = #{uId,jdbcType=INTEGER}
   </update>
-
-
-  <select id="getTbuserList" parameterType="com.longines.pojo.TbUser" resultMap="BaseResultMap">
-    select <include refid="Base_Column_List"></include> from tb_user
+  <select id="getTbuser" parameterType="com.longines.pojo.TbUser" resultType="com.longines.pojo.TbUser">
+    select *from tb_user
     <where>
       tel_num=#{telNum} and pw=#{pw}
     </where>
-
   </select>
 </mapper>

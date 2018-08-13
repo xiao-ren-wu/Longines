@@ -21,7 +21,11 @@
             <tr>
                 <td>
                     <form action="${pageContext.request.contextPath }/rec/recSelect" method="post">
-                        ID<input type = "text" name = "uid1" id = "uid1">
+                        UID<input type = "text" name = "uid1" id = "uid1">
+                        <input type="submit" value = "提交">
+                    </form>
+                    <form action="${pageContext.request.contextPath }/rec/recSelect1" method="post">
+                        AID<input type = "text" name = "aid1" id = "aid1">
                         <input type="submit" value = "提交">
                     </form>
                 </td>

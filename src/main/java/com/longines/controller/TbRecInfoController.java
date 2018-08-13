@@ -8,6 +8,7 @@ import com.longines.service.TbRecInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
@@ -26,8 +27,8 @@ public class TbRecInfoController {
     @Resource
     private TbRecInfoService recInfoService;
 
-    @RequestMapping("recSelect")
-    public String list(Model model, @RequestParam(value = "uid1", required = true) Integer uid) {
+    @RequestMapping(value = "recSelect",method = RequestMethod.GET)
+    public String list1(Model model, @RequestParam(value = "uid1", required = true) Integer uid) {
         TbRecInfoExample ex = new TbRecInfoExample();
         ex.setDistinct(true);
         TbRecInfoExample.Criteria cri = ex.createCriteria();
@@ -39,7 +40,20 @@ public class TbRecInfoController {
         return "successSelect";
     }
 
-    @RequestMapping("recEdit")
+    @RequestMapping(value = "recSelect1",method = RequestMethod.GET)
+    public String list2(Model model, @RequestParam(value = "aid1", required = true) Integer aid) {
+        TbRecInfoExample ex = new TbRecInfoExample();
+        ex.setDistinct(true);
+        TbRecInfoExample.Criteria cri = ex.createCriteria();
+        cri.andAIdEqualTo(aid);
+        List<TbRecInfo> todoList = recInfoService.selectByExample(ex);
+
+        model.addAttribute("recListed", todoList);
+
+        return "successSelect";
+    }
+
+    @RequestMapping(value = "recEdit",method = RequestMethod.GET)
     public String edit(Model model, @RequestParam(value = "aid1", required = true) Integer aid, @RequestParam(value = "uid1", required = true) Integer uid) {
 
         TbRecInfo tbRecInfo = new TbRecInfo();
@@ -52,7 +66,7 @@ public class TbRecInfoController {
         return "editRec";
     }
 
-    @RequestMapping("editRec1")
+    @RequestMapping(value = "editRec1",method = RequestMethod.POST)
     public String edit1(Model model, @RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel, @RequestParam(value = "aid1", required = true) Integer aid, @RequestParam(value = "uid1", required = true) Integer uid) {
         TbRecInfo tbRecInfo = new TbRecInfo();
         tbRecInfo.setConsignee(con);
@@ -67,7 +81,7 @@ public class TbRecInfoController {
         return "rec";
     }
 
-    @RequestMapping("deleteByID")
+    @RequestMapping(value = "deleteByID",method = RequestMethod.GET)
     public String deleteByID(@RequestParam(value = "uid1", required = true) Integer uid,@RequestParam(value = "aid1", required = true) Integer aid)
     {
         TbRecInfoKey tbRecInfoKey = new TbRecInfoKey();
@@ -79,7 +93,7 @@ public class TbRecInfoController {
         return "rec";
     }
 
-    @RequestMapping("recInsert1")
+    @RequestMapping(value = "recInsert1",method = RequestMethod.GET)
     public String insert0(Model model,@RequestParam(value = "uid1", required = true) Integer uid) {
         TbRecInfo tbRecInfo = new TbRecInfo();
         tbRecInfo.setuId(uid);
@@ -90,7 +104,7 @@ public class TbRecInfoController {
         return "insertRec";
     }
 
-    @RequestMapping("insertRec")
+    @RequestMapping(value = "insertRec",method = RequestMethod.POST)
     public String insert1(Model model, @RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel,@RequestParam(value = "uid1", required = true) Integer uid) {
         TbRecInfo tbRecInfo = new TbRecInfo();
         tbRecInfo.setuId(uid);

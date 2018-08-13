@@ -15,10 +15,10 @@ import java.util.List;
 
 
 /**
- * @Author: liuyang
- * @Description:
- * @CreateDate: 2018/8/5 17:51
- * @Version: 1.0
+ * @author  liuyang
+ *
+ * @since   2018/8/5 17:51
+ * @version 1.0
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/spring-longines-dao.xml","classpath:spring/spring-longines-service.xml"})
@@ -35,12 +35,13 @@ public class TbShoppingCartServiceTest {
     public void testSelectByUid() {
         //tbShoppingCartService= (TbShoppingCartService) cxt.getBean("tbShoppingCartServiceImpl");
         System.out.println(tbShoppingCartService);
-        List<TbShoppingCart> list= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(1);
+        List<TbShoppingCart> list= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(4);
         System.out.println(list);
     }
 
     @Test
     public void testUpdateByTamount() {
+
     }
     @Test
     public void test(){
@@ -48,10 +49,11 @@ public class TbShoppingCartServiceTest {
     }
     @Test
     public void testDeleteByPrimaryKey() {
+        System.out.println("list");
     }
 
     @Test
     public void testInsertSelective() {
-        tbShoppingCartService.insertShcSelective(5,6,17,156,1);
+        tbShoppingCartService.insertShcSelective(9,9,17,156,1);
     }
 }

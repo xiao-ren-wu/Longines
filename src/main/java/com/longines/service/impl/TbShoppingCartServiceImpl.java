@@ -36,7 +36,10 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
 
     @Override
     public List<TbShoppingCart> selectShcByUid(int uid) {
-        return null;
+        uid=1;
+        System.out.println(tbShoppingCartMapper.selectByUid(uid));
+        List<TbShoppingCart> tbShoppingCartList= (List<TbShoppingCart>) tbShoppingCartMapper.selectByUid(1);
+        return tbShoppingCartList;
     }
 
     /**

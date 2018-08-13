@@ -50,9 +50,9 @@ public interface TbShoppingCartMapper {
 
 /*    int updateByExampleSelective(@Param("record") TbShoppingCart record, @Param("example") TbShoppingCartExample example);
 
-    int updateByExample(@Param("record") TbShoppingCart record, @Param("example") TbShoppingCartExample example);
+    int updateByExample(@Param("record") TbShoppingCart record, @Param("example") TbShoppingCartExample example);*/
 
-    int updateByPrimaryKey(TbShoppingCart record);*/
+    int updateByPrimaryKey(TbShoppingCart record);
     /**
      * 根据用户ID查询购物车信息
      * @param     uid  用户ID

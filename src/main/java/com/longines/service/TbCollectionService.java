@@ -1,7 +1,7 @@
 package com.longines.service;
 
 
-import com.longines.pojo.TbCollection;
+import com.longines.vo.TbCollectionVo;
 
 import java.util.List;
 
@@ -33,14 +33,7 @@ public interface TbCollectionService {
      *@param   uId uio
      *@return   java.util.List<com.longines.pojo.TbCollection>
      */
-    List<TbCollection> tbCollectionSelect(Integer uId);
-    /**
-     * 方法注释
-     *查找收藏中每一条商品所对应的图片
-     *@param   uId 用户ID
-     *@return   java.util.List<java.lang.String>
-     */
-    List<String> tbCollectionSelectPic(Integer uId);
+    List<TbCollectionVo> tbCollectionSelect(Integer uId);
 
 
 }

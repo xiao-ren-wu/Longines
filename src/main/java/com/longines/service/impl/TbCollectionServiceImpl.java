@@ -4,7 +4,9 @@ import com.longines.dao.TbCollectionMapper;
 import com.longines.pojo.TbCollection;
 import com.longines.pojo.TbCollectionExample;
 import com.longines.pojo.TbCollectionKey;
+import com.longines.pojo.TbGoodsInfo;
 import com.longines.service.TbCollectionService;
+import com.longines.vo.TbCollectionVo;
 import org.springframework.stereotype.Service;
 
 
@@ -47,41 +49,41 @@ public class TbCollectionServiceImpl implements TbCollectionService {
     }
 
     @Override
-    public List<TbCollection> tbCollectionSelect(Integer uId) {
+    public List<TbCollectionVo> tbCollectionSelect(Integer uId) {
+        TbCollectionVo tbCollectionVo = new TbCollectionVo();
+        List<TbCollectionVo> tbCollectionVoList =new ArrayList<>();
         TbCollectionExample tbCollectionExample =new TbCollectionExample();
         TbCollectionExample.Criteria criteria = tbCollectionExample.createCriteria();
         criteria.andUIdEqualTo(uId);
         List<TbCollection> tbCollectionList = tbCollectionMapper.selectByExample(tbCollectionExample);
         for (TbCollection tbCollection : tbCollectionList)
         {
+            TbGoodsInfo tbGoodsInfo = tbCollectionMapper.findCollectionGoods(tbCollection.getgId());
+            tbCollectionVo.setcPrice(0);
+            tbCollectionVo.setgId(tbCollection.getgId());
+            tbCollectionVo.setuId(tbCollection.getuId());
+            tbCollectionVo.setgName(tbGoodsInfo.getGname());
+            tbCollectionVo.setInvalid(1);
+            tbCollectionVo.setPic(tbGoodsInfo.getgPic());
+            tbCollectionVo.setPur(0);
                if(tbCollection.getInvalid()!=0)
                {
                     TbCollection tbCollection1 = tbCollectionMapper.findCollection(tbCollection.getgId());
                     if (tbCollection1.getInvalid()==0) {
+                        tbCollectionVo.setInvalid(0);
                         tbCollection.setInvalid(0);
                     }
-                    if(!tbCollection1.getcPrice().equals(tbCollection.getcPrice()))
+                    if(tbCollection1.getcPrice()<tbCollection.getcPrice())
                     {
-                       tbCollection.setcPrice(tbCollection1.getcPrice());
+                        tbCollectionVo.setGpic(tbCollection1.getcPrice());
+                        tbCollectionVo.setcPrice(1);
                     }
                     tbCollectionMapper.updateByPrimaryKeySelective(tbCollection);
                }
+               tbCollectionVoList.add(tbCollectionVo);
         }
-        return tbCollectionList;
+        return tbCollectionVoList;
     }
 
-    @Override
-    public List<String> tbCollectionSelectPic(Integer uId) {
-        List<String> userList = new ArrayList<>();
-        TbCollectionExample tbCollectionExample =new TbCollectionExample();
-        TbCollectionExample.Criteria criteria = tbCollectionExample.createCriteria();
-        criteria.andUIdEqualTo(uId);
-        List<TbCollection> tbCollectionList = tbCollectionMapper.selectByExample(tbCollectionExample);
-        for (TbCollection tbCollection : tbCollectionList)
-        {
-           String pic = tbCollectionMapper.findCollectionPic(tbCollection.getgId());
-            userList.add(pic);
-        }
-        return userList;
-    }
+
 }

@@ -3,6 +3,8 @@ package com.longines.dao;
 import com.longines.pojo.TbCollection;
 import com.longines.pojo.TbCollectionExample;
 import com.longines.pojo.TbCollectionKey;
+import com.longines.pojo.TbGoodsInfo;
+
 import java.util.List;
 
 /**
@@ -52,6 +54,6 @@ public interface TbCollectionMapper {
      *@param   gid  所要查找的商品id
      *@return   java.lang.String
      */
-    String findCollectionPic(Integer gid);
+    TbGoodsInfo findCollectionGoods(Integer gid);
 
 }

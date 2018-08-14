@@ -1,6 +1,7 @@
 package com.longines.service;
 
 import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbGoodsInfoExt;
 
 import java.util.List;
 /**
@@ -37,14 +38,14 @@ public interface TbGoodsInfoMapperService {
      *@param   []
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
-    List<TbGoodsInfo> findGoodsInfoBysTimeDesc();
+    List<TbGoodsInfoExt> findGoodsInfoBysTimeDesc();
     /**
      * 按上架时间对商品进行升序排序
      *
      *@param   []
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
-    List<TbGoodsInfo> findGoodsInfoBysTimeAsc(
+    List<TbGoodsInfoExt> findGoodsInfoBysTimeAsc(
 
 
     );

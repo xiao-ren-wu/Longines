@@ -1,6 +1,7 @@
 package com.longines.dao;
 
 import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbGoodsInfoExt;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository("dao")
@@ -40,7 +41,7 @@ public interface TbGoodsInfoMapper {
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
-    List<TbGoodsInfo> findGoodsInfoBysTimeDesc();
+    List<TbGoodsInfoExt> findGoodsInfoBysTimeDesc();
     /**
      * 对商品信息按照上架时间进行升序排序
      *
@@ -48,9 +49,9 @@ public interface TbGoodsInfoMapper {
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
-    List<TbGoodsInfo> findGoodsInfoBysTimeAsc();
+    List<TbGoodsInfoExt> findGoodsInfoBysTimeAsc();
     /**
-     * 对商品信息按照价格进行升序排序
+     * 猜你喜欢
      *
      *@param   price
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>

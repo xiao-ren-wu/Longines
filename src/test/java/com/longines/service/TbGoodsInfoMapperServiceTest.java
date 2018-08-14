@@ -1,6 +1,7 @@
 package com.longines.service;
 
 import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbGoodsInfoExt;
 import com.longines.service.impl.TbGoodsInfoMapperServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,8 +9,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @author FengTianHao
@@ -58,8 +57,8 @@ public class TbGoodsInfoMapperServiceTest {
 
     @Test
     public void findGoodsInfoBysTimeDesc() {
-        List<TbGoodsInfo> goods=service.findGoodsInfoBysTimeDesc();
-        for(TbGoodsInfo g:goods)
+        List<TbGoodsInfoExt> goods=service.findGoodsInfoBysTimeDesc();
+        for(TbGoodsInfoExt g:goods)
         {
 
             System.out.println(g);
@@ -68,8 +67,8 @@ public class TbGoodsInfoMapperServiceTest {
 
     @Test
     public void findGoodsInfoBysTimeAsc() {
-        List<TbGoodsInfo> goods=service.findGoodsInfoBysTimeAsc();
-        for(TbGoodsInfo g:goods)
+        List<TbGoodsInfoExt> goods=service.findGoodsInfoBysTimeAsc();
+        for(TbGoodsInfoExt g:goods)
         {
 
             System.out.println(g);

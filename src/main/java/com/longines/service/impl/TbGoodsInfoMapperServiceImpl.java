@@ -2,8 +2,8 @@ package com.longines.service.impl;
 
 import com.longines.dao.TbGoodsInfoMapper;
 import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbGoodsInfoExt;
 import com.longines.service.TbGoodsInfoMapperService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -40,14 +40,14 @@ public class TbGoodsInfoMapperServiceImpl implements TbGoodsInfoMapperService {
     }
 
     @Override
-    public List<TbGoodsInfo> findGoodsInfoBysTimeDesc() {
-        List<TbGoodsInfo> goods=tbGoodsInfoMapper.findGoodsByPriceDesc();
+    public List<TbGoodsInfoExt> findGoodsInfoBysTimeDesc() {
+        List<TbGoodsInfoExt> goods=tbGoodsInfoMapper.findGoodsInfoBysTimeDesc();
         return goods;
     }
 
     @Override
-    public List<TbGoodsInfo> findGoodsInfoBysTimeAsc() {
-        List<TbGoodsInfo> goods=tbGoodsInfoMapper.findGoodsInfoBysTimeAsc();
+    public List<TbGoodsInfoExt> findGoodsInfoBysTimeAsc() {
+        List<TbGoodsInfoExt> goods=tbGoodsInfoMapper.findGoodsInfoBysTimeAsc();
         return goods;
     }
 

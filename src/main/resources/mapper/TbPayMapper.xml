@@ -8,8 +8,6 @@
     <result column="p_method" property="pMethod" jdbcType="VARCHAR" />
     <result column="t_num" property="tNum" jdbcType="VARCHAR" />
     <result column="pm_data" property="pmData" jdbcType="TIMESTAMP" />
-    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
-    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -133,11 +131,22 @@
     </set>
     where p_id = #{pId,jdbcType=INTEGER}
   </update>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_pay
+    where p_id = #{pId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.longines.pojo.TbPay" >
+    insert into tb_pay (p_id, u_id, o_id,
+      p_method, t_num, pm_data)
+    values (#{pId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{oId,jdbcType=INTEGER},
+      #{pMethod,jdbcType=VARCHAR}, #{tNum,jdbcType=VARCHAR}, #{pmData,jdbcType=TIMESTAMP})
+  </insert>
   <select id="selectUser" parameterType="int" resultType="com.longines.pojo.TbUser">
-    select u.u_id,u.pic,u.ac_balance,u.pw  from tb_user u inner join tb_pay p on u.u_id = p.u_id
+    select u.u_id,u.pic,u.ac_balance,u.pay_cod  from tb_user u inner join tb_pay p on  p.u_id =  u.u_id where p.p_id = #{pId,jdbcType=INTEGER}
   </select>
   <select id ="selectOrder" parameterType="int" resultType="com.longines.pojo.TbOrderInfo">
-    select oi.a_amount,oi.s_num from tb_pay p inner join tb_order_info oi on p.o_id = oi.o_id
+    select oi.a_amount,oi.s_num from tb_pay p inner join tb_order_info oi on p.o_id = oi.o_id  where p.p_id = #{pId,jdbcType=INTEGER}
   </select>
-
+  <select id="selectUserId" parameterType="Integer" resultType="com.longines.pojo.TbUser">
+    select u_id from tb_order_info where o_id = #{oId} </select>
 </mapper>

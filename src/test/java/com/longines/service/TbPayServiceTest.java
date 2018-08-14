@@ -30,14 +30,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
                 tbPayService.insertTbPay(2);
-                Integer in = tbPayService.finduIdPicacBalance(1).getuId();
-                String st = tbPayService.finduIdPicacBalance(1).getPic();
+                Integer in = tbPayService.findUidPicAcBalance(1).getuId();
+                String st = tbPayService.findUidPicAcBalance(1).getPic();
                 Long lo = tbPayService.findaAmount(1).getaAmount();
                 System.out.println(in);
                 System.out.println(st);
                 System.out.println(lo);
 
-                int i = tbPayService.judgePw(1, "123456");
+                int i = tbPayService.judgePw(1, 123456);
                 if (i == 1) {
                     i = tbPayService.updateacBalancesNum(1);
                     if (i == 1) {

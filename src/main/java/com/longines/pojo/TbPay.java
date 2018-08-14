@@ -82,7 +82,6 @@ public class TbPay {
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
     }
-
     @Override
     public String toString() {
         return "TbPay{" +

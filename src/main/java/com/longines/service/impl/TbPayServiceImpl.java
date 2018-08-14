@@ -30,14 +30,15 @@ public class TbPayServiceImpl  implements TbPayService {
     private TbOrderInfoMapper tbOrderInfoMapper;
 
     @Override
-    public int insertTbPay(Integer oId) {
+    public Integer insertTbPay(Integer oId) {
 
         TbPay tbPay = new TbPay();
         Random random = new Random();
+        TbUser  tbUserId = tbPayMapper.selectUserId(oId);
 
         tbPay.setpId(random.nextInt(10000));
         tbPay.setoId(oId);
-        tbPay.setuId(1);
+        tbPay.setuId(tbUserId.getuId());
         tbPay.setpMethod("余额支付");
         tbPay.setPmData(new Date());
         tbPay.settNum("100");
@@ -60,9 +61,9 @@ public class TbPayServiceImpl  implements TbPayService {
     }
 
     @Override
-    public  int judgePw(Integer pId,String pw){
+    public  int judgePw(Integer pId,Integer pw){
 
-        if (pw.equals(tbPayMapper.selectUser(pId).getPw())){
+        if (pw.equals(tbPayMapper.selectUser(pId).getPayCod())){
             return 1;
         }
         else {

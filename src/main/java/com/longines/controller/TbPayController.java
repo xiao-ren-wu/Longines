@@ -1,9 +1,11 @@
 package com.longines.controller;
 
 import com.longines.service.TbPayService;
+import com.longines.vo.TbPayVo;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 /**
@@ -17,57 +19,57 @@ import javax.annotation.Resource;
 
 public class TbPayController {
 
+    TbPayVo  tbPayVo = new TbPayVo();
     @Resource
     private TbPayService tbPayService;
+
     /**
-     * 返回支付页面所需信息
+     * 添加支付订单数据，给页面返回数据
      *
-     *@param   oId 商品Id
-     *@param model 用户Id、头像、余额
-     *@return   java.lang.String
+     *@param   oId  订单Id
+     *@return   com.longines.vo.TbPayVo
      */
-    @RequestMapping("OrderPay")
-    public String OrderPay(Integer oId, Model model){
+    @ResponseBody
+    @PostMapping("OrderPay")
+    public TbPayVo orderPay(Integer oId){
 
-        tbPayService.insertTbPay(oId);
-        Integer in =  tbPayService.finduIdPicacBalance(oId).getuId();
-        String st = tbPayService.finduIdPicacBalance(oId).getPic();
-        Long lo = tbPayService.findaAmount(oId).getaAmount();
-
-       model.addAttribute("uId",in);
-       model.addAttribute("Pic",st);
-       model.addAttribute("aAmount",lo);
-        return "OrderP";
+        Integer pId=tbPayService.insertTbPay(oId);
+        tbPayVo.setpId(pId);
+        tbPayVo.setuId(tbPayService.findUidPicAcBalance(pId).getuId());
+        tbPayVo.setPic(tbPayService.findUidPicAcBalance(pId).getPic());
+        tbPayVo.setaAmount(tbPayService.findaAmount(pId).getaAmount());
+        return tbPayVo;
     }
 
     /**
-     * 判断支付是否成功
+     * 判断是否支付成功
      *
-     *@param   oId 用户Id
-     *@param  pw  用户密码
-     *@param model 支付状态0、1
+     *@param   pId 支付Id
+     *@param  pw  支付密码
+     *@return   com.longines.vo.TbPayVo
      */
-    @RequestMapping("IfSuccess")
-    public String success(Integer oId, String pw,Model model) {
+    @ResponseBody
+    @PostMapping("IfSuccess")
+    public TbPayVo success(Integer pId, Integer pw) {
 
-        int i = tbPayService.judgePw(oId,pw);
+
+        int i = tbPayService.judgePw(pId,pw);
+        /**
+         * i用来判断密码是否正确
+         * */
         if (i==1){
-            i =tbPayService.updateacBalancesNum(oId);
+            /**
+             * i返回的是是否成功更新余额、状态号
+             * */
+            i =tbPayService.updateacBalancesNum(pId);
             if (i==1) {
-                model.addAttribute("state",i);
+                tbPayVo.setstate(i);
+                return tbPayVo;
             }
         }
-        model.addAttribute("state",i);
-        return "Ifsuccess";
-    }
+        tbPayVo.setstate(i);
+        return tbPayVo;
 
-        @RequestMapping("OP")
-        public String OP(){
-            return "OrderP";
-        }
-        @RequestMapping("IS")
-        public String IS(){
-            return "Ifsuccess";
-        }
+    }
 
 }

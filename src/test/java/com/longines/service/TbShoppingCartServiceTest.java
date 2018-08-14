@@ -16,7 +16,6 @@ import java.util.List;
 
 /**
  * @author  liuyang
- *
  * @since   2018/8/5 17:51
  * @version 1.0
  */
@@ -32,28 +31,23 @@ public class TbShoppingCartServiceTest {
 
     }
     @Test
-    public void testSelectByUid() {
-        //tbShoppingCartService= (TbShoppingCartService) cxt.getBean("tbShoppingCartServiceImpl");
-        System.out.println(tbShoppingCartService);
-        List<TbShoppingCart> list= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(4);
-        System.out.println(list);
+    public void testSelectShcByUid() {
+        List<TbShoppingCart> tbShoppingCart= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(1);
+        System.out.println(tbShoppingCart);
     }
 
     @Test
-    public void testUpdateByTamount() {
-
-    }
-    @Test
-    public void test(){
-        System.out.println("sadjkhakjdg");
-    }
-    @Test
-    public void testDeleteByPrimaryKey() {
-        System.out.println("list");
+    public void testUpdateShcBygNum() {
+        tbShoppingCartService.updateShcBygNum(1,4,20);
     }
 
     @Test
-    public void testInsertSelective() {
+    public void testDeleteShcByPK() {
+        tbShoppingCartService.deleteShcByPK(9,9);
+    }
+
+    @Test
+    public void testInsertShcSelective() {
         tbShoppingCartService.insertShcSelective(9,9,17,156,1);
     }
 }

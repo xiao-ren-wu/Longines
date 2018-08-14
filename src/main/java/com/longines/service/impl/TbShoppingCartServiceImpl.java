@@ -19,26 +19,18 @@ import java.util.List;
 public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     @Autowired
     private TbShoppingCartMapper tbShoppingCartMapper;
+
     /**
      * 根据用户ID查询购物车信息
      *
      */
-
-/*    @Override
+    @Override
     public List<TbShoppingCart> selectShcByUid(int uid) {
         TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
         TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
         criteria.andUIdEqualTo(uid);
         List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
         System.out.println(tbShoppingCartList);
-        return tbShoppingCartList;
-    }*/
-
-    @Override
-    public List<TbShoppingCart> selectShcByUid(int uid) {
-        uid=1;
-        System.out.println(tbShoppingCartMapper.selectByUid(uid));
-        List<TbShoppingCart> tbShoppingCartList= (List<TbShoppingCart>) tbShoppingCartMapper.selectByUid(1);
         return tbShoppingCartList;
     }
 
@@ -47,8 +39,12 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
      *
      */
     @Override
-    public void updateShcByTamount(long amount) {
-
+    public void updateShcBygNum(int uid,int gid, int gNum) {
+        TbShoppingCart tbShoppingCart=new TbShoppingCart();
+        tbShoppingCart.setuId(uid);
+        tbShoppingCart.setgId(gid);
+        tbShoppingCart.setgNum(gNum);
+        tbShoppingCartMapper.updateBygNum(tbShoppingCart);
     }
 
     @Override

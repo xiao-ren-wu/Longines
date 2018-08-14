@@ -19,9 +19,11 @@ public interface TbShoppingCartService {
     List<TbShoppingCart> selectShcByUid(int uid);
     /**
      * 根据商品数量更新
-     * @param     amount 商品数量
+     * @param     uid   用户ID
+     * @param     gid   商品ID
+     * @param     gnum   商品数量
      */
-    void updateShcByTamount(long amount);
+    void updateShcBygNum(int uid,int gid,int gnum);
     /**
      * 根据联合主键删除
      * @param     uid  用户ID

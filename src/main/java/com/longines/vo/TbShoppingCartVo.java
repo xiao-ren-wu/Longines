@@ -1,22 +1,32 @@
 package com.longines.vo;
 
 /**
- * @Author: liuyang
- * @Description:
- * @CreateDate: 2018/8/14 21:58
- * @Version: 1.0
+ * @author  liuyang
+ * @since  2018/8/11 21:58
+ * @version  1.0
  */
 public class TbShoppingCartVo {
+    private int gId;
 
     private String sname;
 
-    private String m_pic;
+    private String mPic;
 
     private String gname;
 
     private Long price;
 
-    private String g_pic1;
+    private String gPic;
+
+    private int status;
+
+    public int getgId() {
+        return gId;
+    }
+
+    public void setgId(int gId) {
+        this.gId = gId;
+    }
 
     public String getSname() {
         return sname;
@@ -26,12 +36,12 @@ public class TbShoppingCartVo {
         this.sname = sname;
     }
 
-    public String getM_pic() {
-        return m_pic;
+    public String getmPic() {
+        return mPic;
     }
 
-    public void setM_pic(String m_pic) {
-        this.m_pic = m_pic;
+    public void setmPic(String mPic) {
+        this.mPic = mPic;
     }
 
     public String getGname() {
@@ -50,11 +60,31 @@ public class TbShoppingCartVo {
         this.price = price;
     }
 
-    public String getG_pic1() {
-        return g_pic1;
+    public String getgPic() {
+        return gPic;
     }
 
-    public void setG_pic1(String g_pic1) {
-        this.g_pic1 = g_pic1;
+    public void setgPic(String gPic) {
+        this.gPic = gPic;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "TbShoppingCartVo{" +
+                "sname='" + sname + '\'' +
+                ", mPic='" + mPic + '\'' +
+                ", gname='" + gname + '\'' +
+                ", price=" + price +
+                ", gPic='" + gPic + '\'' +
+                ", status=" + status +
+                '}';
     }
 }

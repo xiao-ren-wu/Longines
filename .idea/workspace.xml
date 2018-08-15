@@ -8,36 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c708a4b7-4375-4dbd-9297-9be98a472b5c" name="Default" comment="&quot;着手controller层&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/Shopping_CartMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbAdminMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbCollectionMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbOrderInfoMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbOrderMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbPayMapper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbShoppingCartMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbShoppingCartMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbUserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdminExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollectionExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollectionKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbPay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbPayExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbRecInfoKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/TbShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/TbShoppingCartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbShoppingCartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbShoppingCartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/vo/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/vo/TbShoppingCartVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/vo/TbShoppingCartVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbUserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/TbShoppingCartMapperTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/TbShoppingCartServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/longines/service/TbShoppingCartServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/TbShoppingCartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TbShoppingCartMapper.xml" afterDir="false" />
     </list>
@@ -54,14 +29,11 @@
       <file leaf-file-name="TbShoppingCartServiceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/longines/service/TbShoppingCartServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="39" column="39" lean-forward="true" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+            <state relative-caret-position="301">
+              <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
               <folding>
-                <element signature="e#1525#1526#0" expanded="true" />
-                <element signature="e#1579#1580#0" expanded="true" />
-                <element signature="e#1635#1636#0" expanded="true" />
+                <element signature="e#1630#1631#0" expanded="true" />
                 <element signature="e#1686#1687#0" expanded="true" />
-                <element signature="e#1756#1757#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,41 +42,17 @@
       <file leaf-file-name="TbShoppingCartService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbShoppingCartService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+            <state relative-caret-position="275">
+              <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbShoppingCartController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbShoppingCartController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-326">
-              <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-              <folding>
-                <element signature="e#1600#1616#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TbShoppingCartServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TbShoppingCartServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbShoppingCartServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TbShoppingCartMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbShoppingCartMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="44" column="72" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="367">
+              <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -112,8 +60,8 @@
       <file leaf-file-name="TbShoppingCartMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="212" column="41" lean-forward="true" selection-start-line="212" selection-start-column="41" selection-end-line="212" selection-end-column="41" />
+            <state relative-caret-position="384">
+              <caret line="234" column="43" lean-forward="true" selection-start-line="234" selection-start-column="43" selection-end-line="234" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -167,12 +115,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longines/controller/TbShoppingCartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCart.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartExample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/longines/vo/TbShoppingCartVo.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/longines/dao/TbShoppingCartMapperTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/service/TbShoppingCartService.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/longines/service/TbShoppingCartServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/TbShoppingCartMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/vo/TbShoppingCartVo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbShoppingCartServiceImpl.java" />
       </list>
     </option>
@@ -260,7 +208,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="longines" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="longines" type="b2602c69:ProjectViewProjectNode" />
@@ -268,6 +235,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="longines" type="b2602c69:ProjectViewProjectNode" />
@@ -374,11 +349,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TbShoppingCartServiceTest.testSelectShcByUid">
+  <component name="RunManager" selected="JUnit.TbShoppingCartServiceTest.testSelectEchoInfo">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="TbShoppingCartServiceTest.testDeleteByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TbShoppingCartServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="longines" />
       <extension name="coverage">
         <pattern>
@@ -390,7 +365,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.longines.service" />
       <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testDeleteByPrimaryKey" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -401,7 +376,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TbShoppingCartServiceTest.testInsertSelective" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TbShoppingCartServiceTest.testDeleteShcByPK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="longines" />
       <extension name="coverage">
         <pattern>
@@ -413,7 +388,30 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.longines.service" />
       <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testInsertSelective" />
+      <option name="METHOD_NAME" value="testDeleteShcByPK" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="longines" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.longines.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.longines.service" />
+      <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
+      <option name="METHOD_NAME" value="testSelectEchoInfo" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -437,29 +435,6 @@
       <option name="PACKAGE_NAME" value="com.longines.service" />
       <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
       <option name="METHOD_NAME" value="testSelectShcByUid" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TbShoppingCartServiceTest.testUpdateByGnum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="longines" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.longines.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.longines.service" />
-      <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testUpdateByGnum" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -604,19 +579,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Unnamed" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testInsertSelective" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testDeleteByPrimaryKey" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testUpdateByGnum" />
       <item itemvalue="JUnit.TbShoppingCartServiceTest.testUpdateShcBygNum" />
       <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectShcByUid" />
+      <item itemvalue="JUnit.TbShoppingCartServiceTest.test" />
+      <item itemvalue="JUnit.TbShoppingCartServiceTest.testDeleteShcByPK" />
+      <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectEchoInfo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectEchoInfo" />
         <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectShcByUid" />
         <item itemvalue="JUnit.TbShoppingCartServiceTest.testUpdateShcBygNum" />
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testUpdateByGnum" />
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testDeleteByPrimaryKey" />
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testInsertSelective" />
+        <item itemvalue="JUnit.TbShoppingCartServiceTest.testDeleteShcByPK" />
+        <item itemvalue="JUnit.TbShoppingCartServiceTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -634,47 +609,47 @@
       <workItem from="1533731291682" duration="7224000" />
       <workItem from="1533787654352" duration="34037000" />
       <workItem from="1534146084686" duration="6602000" />
-      <workItem from="1534250250894" duration="15096000" />
+      <workItem from="1534250250894" duration="22800000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TbShoppingCartServiceTest_testUpdateByGnum - 2018.08.15 at 00h 08m 20s.xml">
-      <configuration name="TbShoppingCartServiceTest.testUpdateByGnum" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testSelectByUid - 2018.08.15 at 00h 14m 17s.xml">
-      <configuration name="TbShoppingCartServiceTest.testSelectByUid" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testInsertSelective - 2018.08.15 at 00h 25m 15s.xml">
-      <configuration name="TbShoppingCartServiceTest.testInsertSelective" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testDeleteByPrimaryKey - 2018.08.15 at 00h 25m 35s.xml">
-      <configuration name="TbShoppingCartServiceTest.testDeleteByPrimaryKey" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testInsertSelective - 2018.08.15 at 00h 26m 18s.xml">
-      <configuration name="TbShoppingCartServiceTest.testInsertSelective" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testDeleteByPrimaryKey - 2018.08.15 at 00h 26m 33s.xml">
-      <configuration name="TbShoppingCartServiceTest.testDeleteByPrimaryKey" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testUpdateByGnum - 2018.08.15 at 00h 41m 03s.xml">
-      <configuration name="TbShoppingCartServiceTest.testUpdateByGnum" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testUpdateShcBygNum - 2018.08.15 at 00h 42m 49s.xml">
-      <configuration name="TbShoppingCartServiceTest.testUpdateShcBygNum" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testSelectShcByUid - 2018.08.15 at 00h 45m 46s.xml">
+    <history-entry file="TbShoppingCartServiceTest_testSelectShcByUid - 2018.08.15 at 15h 45m 54s.xml">
       <configuration name="TbShoppingCartServiceTest.testSelectShcByUid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TbShoppingCartServiceTest_testSelectShcByUid - 2018.08.15 at 00h 47m 11s.xml">
+    <history-entry file="TbShoppingCartServiceTest_testSelectShcByUid - 2018.08.15 at 15h 47m 06s.xml">
       <configuration name="TbShoppingCartServiceTest.testSelectShcByUid" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectShcByUid - 2018.08.15 at 15h 47m 19s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectShcByUid" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectEchoInfo - 2018.08.15 at 16h 10m 19s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectEchoInfo - 2018.08.15 at 16h 23m 40s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectEchoInfo - 2018.08.15 at 16h 26m 12s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectEchoInfo - 2018.08.15 at 16h 43m 00s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectEchoInfo - 2018.08.15 at 16h 49m 21s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectEchoInfo - 2018.08.15 at 17h 01m 02s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TbShoppingCartServiceTest_testSelectEchoInfo - 2018.08.15 at 17h 05m 36s.xml">
+      <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82070000" />
+    <option name="totallyTimeSpent" value="89774000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -690,13 +665,13 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3993559" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.1900161" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.15619968" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.1336554" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.11594203" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
@@ -796,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-longines-service.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="13" column="50" lean-forward="true" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -834,13 +802,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsps/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsps/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/TbshoppingCart.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -899,35 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/vo/TbShoppingCartVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbOrderMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -942,9 +874,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/longines/dao/TbShoppingCartMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsps/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-longines-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="-440">
           <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
           <folding>
             <element signature="e#452#453#0" expanded="true" />
@@ -963,30 +922,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/longines/dao/TbShoppingCartMapperTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbShoppingCartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+        <state relative-caret-position="-66">
+          <caret line="84" column="28" lean-forward="true" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1600#1616#0" expanded="true" />
+            <element signature="e#2198#2199#0" expanded="true" />
+            <element signature="e#2236#2237#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="212" column="41" lean-forward="true" selection-start-line="212" selection-start-column="41" selection-end-line="212" selection-end-column="41" />
+        <state relative-caret-position="384">
+          <caret line="234" column="43" lean-forward="true" selection-start-line="234" selection-start-column="43" selection-end-line="234" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbShoppingCartMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="44" column="72" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
+        <state relative-caret-position="302">
+          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -995,39 +953,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/longines/service/TbShoppingCartServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="39" column="39" lean-forward="true" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+        <state relative-caret-position="301">
+          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
           <folding>
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1579#1580#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
+            <element signature="e#1630#1631#0" expanded="true" />
             <element signature="e#1686#1687#0" expanded="true" />
-            <element signature="e#1756#1757#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbShoppingCartService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        <state relative-caret-position="275">
+          <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/vo/TbShoppingCartVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1024">
+          <caret line="85" column="42" lean-forward="true" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
+          <folding>
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#957#958#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbShoppingCartServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbShoppingCartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-326">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="e#1600#1616#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="367">
+          <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
         </state>
       </provider>
     </entry>

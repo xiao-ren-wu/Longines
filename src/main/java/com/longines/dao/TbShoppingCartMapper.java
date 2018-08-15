@@ -45,21 +45,22 @@ public interface TbShoppingCartMapper {
     List<TbShoppingCart> selectByExample(TbShoppingCartExample example);
 
     /**
-     * 根据用户ID查询购物车信息
-     * @param     uid  用户ID
-     * @return    com.longines.pojo.TbShoppingCart
-     */
-    TbShoppingCart selectByUid(int uid);
-    /**
      * 根据商品数量更新
      * @param    record  购物车类对象
      */
     void updateBygNum(TbShoppingCart record);
 
+    /**
+     * 根据用户ID查询购物车信息
+     * @param     uid  用户ID
+     * @return    com.longines.pojo.TbShoppingCart
+     */
+    TbShoppingCart selectByUid(int uid);
+
     TbShoppingCartVo selectMerceInfo(int gid);
 
     TbShoppingCartVo selectGoodsInfo(int gid);
 
-    TbShoppingCartVo selectStatus(int gid);
+    int selectStatus(int gid);
 
 }

@@ -5,6 +5,7 @@ import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartExample;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
+import com.longines.vo.TbShoppingCartVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,18 +21,23 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     @Autowired
     private TbShoppingCartMapper tbShoppingCartMapper;
 
-    /**
-     * 根据用户ID查询购物车信息
-     *
-     */
     @Override
-    public List<TbShoppingCart> selectShcByUid(int uid) {
-        TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
-        TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
-        criteria.andUIdEqualTo(uid);
-        List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
-        System.out.println(tbShoppingCartList);
-        return tbShoppingCartList;
+    public void insertShcSelective(int uid,int gid,int gnum,long amount,int statu) {
+        TbShoppingCart tbShoppingCart=new TbShoppingCart();
+        tbShoppingCart.setuId(uid);
+        tbShoppingCart.setgId(gid);
+        tbShoppingCart.setgNum(gnum);
+        tbShoppingCart.settAmount(amount);
+        tbShoppingCart.setStatus(statu);
+        tbShoppingCartMapper.insertSelective(tbShoppingCart);
+    }
+
+    @Override
+    public void deleteShcByPK(int uid, int gid) {
+        TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
+        tbShoppingCartKey.setuId(uid);
+        tbShoppingCartKey.setgId(gid);
+        tbShoppingCartMapper.deleteByPrimaryKey(tbShoppingCartKey);
     }
 
     /**
@@ -46,22 +52,32 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         tbShoppingCart.setgNum(gNum);
         tbShoppingCartMapper.updateBygNum(tbShoppingCart);
     }
+    /**
+     * 根据用户ID查询购物车信息
+     *
+     */
+    @Override
+    public List<TbShoppingCart> selectShcByUid(int uid) {
+        TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
+        TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
+        criteria.andUIdEqualTo(uid);
+        List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
+        return tbShoppingCartList;
+    }
 
     @Override
-    public void deleteShcByPK(int uid, int gid) {
-        TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
-        tbShoppingCartKey.setuId(uid);
-        tbShoppingCartKey.setgId(gid);
-        tbShoppingCartMapper.deleteByPrimaryKey(tbShoppingCartKey);
+    public TbShoppingCartVo selectEchoInfo(int gid) {
+        TbShoppingCartVo tbShoppingCartVoo=new TbShoppingCartVo();
+        tbShoppingCartVoo.setgId(gid);
+        tbShoppingCartVoo=tbShoppingCartMapper.selectMerceInfo(gid);
+        String sName=tbShoppingCartVoo.getSname();
+        String mPic=tbShoppingCartVoo.getmPic();
+        int Status=tbShoppingCartMapper.selectStatus(4);
+        TbShoppingCartVo tbShoppingCartVo=tbShoppingCartMapper.selectGoodsInfo(gid);
+        tbShoppingCartVo.setSname(sName);
+        tbShoppingCartVo.setmPic(mPic);
+        tbShoppingCartVo.setStatus(Status);
+        return tbShoppingCartVo;
     }
-    @Override
-    public void insertShcSelective(int uid,int gid,int gnum,long amount,int statu) {
-        TbShoppingCart tbShoppingCart=new TbShoppingCart();
-        tbShoppingCart.setuId(uid);
-        tbShoppingCart.setgId(gid);
-        tbShoppingCart.setgNum(gnum);
-        tbShoppingCart.settAmount(amount);
-        tbShoppingCart.setStatus(statu);
-        tbShoppingCartMapper.insertSelective(tbShoppingCart);
-    }
+
 }

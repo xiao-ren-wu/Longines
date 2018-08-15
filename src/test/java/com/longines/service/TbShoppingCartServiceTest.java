@@ -2,6 +2,7 @@ package com.longines.service;
 
 import com.longines.pojo.TbShoppingCart;
 import com.longines.service.TbShoppingCartService;
+import com.longines.vo.TbShoppingCartVo;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,8 +33,8 @@ public class TbShoppingCartServiceTest {
     }
     @Test
     public void testSelectShcByUid() {
-        List<TbShoppingCart> tbShoppingCart= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(1);
-        System.out.println(tbShoppingCart);
+        List<TbShoppingCart> tbShoppingCartlist= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(2);
+        System.out.println(tbShoppingCartlist);
     }
 
     @Test
@@ -49,5 +50,11 @@ public class TbShoppingCartServiceTest {
     @Test
     public void testInsertShcSelective() {
         tbShoppingCartService.insertShcSelective(9,9,17,156,1);
+    }
+
+    @Test
+    public void testSelectEchoInfo(){
+        TbShoppingCartVo tbShoppingCartVo=tbShoppingCartService.selectEchoInfo(4);
+        System.out.println(tbShoppingCartVo);
     }
 }

@@ -33,7 +33,7 @@ public class TbShoppingCartServiceTest {
     }
     @Test
     public void testSelectShcByUid() {
-        List<TbShoppingCart> tbShoppingCartlist= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(2);
+        List<TbShoppingCart> tbShoppingCartlist= tbShoppingCartService.selectShcByUid(1);
         System.out.println(tbShoppingCartlist);
     }
 
@@ -49,7 +49,7 @@ public class TbShoppingCartServiceTest {
 
     @Test
     public void testInsertShcSelective() {
-        tbShoppingCartService.insertShcSelective(9,9,17,156,1);
+        tbShoppingCartService.insertShcSelective(9,9,17,156);
     }
 
     @Test

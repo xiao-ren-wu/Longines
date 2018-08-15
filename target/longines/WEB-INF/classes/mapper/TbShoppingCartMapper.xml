@@ -210,16 +210,29 @@
   </update>
     <update id="updateBygNum" parameterType="com.longines.pojo.TbShoppingCart" >
 		update tb_shopping_cart
-	set g_num = #{g_num,jdbcType=INTEGER}
-	where u_id=#{u_id,jdbcType=INTEGER}
-	  and g_id =#{g_id,jdbcType=INTEGER}
+	set g_num = #{gNum,jdbcType=INTEGER}
+	where u_id=#{uId,jdbcType=INTEGER}
+	  and g_id =#{gId,jdbcType=INTEGER}
 	</update>
     <select id="selectByUid" parameterType="int" resultMap="BaseResultMap">
 		select * from tb_shopping_cart
-	WHERE u_id=#{u_id,jdbcType=INTEGER}
+	WHERE u_id=#{uId,jdbcType=INTEGER}
 	</select>
-    <update id="updateByTamount" parameterType="com.longines.pojo.TbShoppingCart">
-		UPDATE tb_shopping_cart SET t_amount = (SELECT price FROM tb_goods_info WHERE tb_shopping_cart.`g_id`=tb_goods_info.`g_id`)
-		UPDATE tb_shopping_cart SET t_amount = (t_amount*g_num)
-	</update>
+    <select id="selectTamount" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+        update tb_shopping_cart
+        set t_amount =g_num*(select price from tb_goods_info where g_id=#{gId,jdbcType=INTEGER})
+        where g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <select id="selectMerceInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+        select sname,m_pic from tb_merce
+        where m_id=(select m_id from tb_mg_associated where g_id=#{gId,jdbcType=INTEGER})
+    </select>
+    <select id="selectGoodsInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+        select gname,price,g_pic from tb_goods_info
+        where g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <select id="selectStatus" parameterType="int" resultType="int">
+        select status from tb_shopping_cart
+        where g_id=#{gId,jdbcType=INTEGER}
+    </select>
 </mapper>

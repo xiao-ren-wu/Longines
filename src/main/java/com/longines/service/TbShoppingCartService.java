@@ -18,9 +18,8 @@ public interface TbShoppingCartService {
      * @param     gid  商品ID
      * @param     gnum 商品数量
      * @param     amount 总金额
-     * @param     statu  状态号
      */
-    void insertShcSelective(int uid, int gid, int gnum, long amount, int statu);
+    void insertShcSelective(int uid, int gid, int gnum, long amount);
 
     /**
      * 根据联合主键删除
@@ -44,7 +43,7 @@ public interface TbShoppingCartService {
      */
     List<TbShoppingCart> selectShcByUid(int uid);
     /**
-     * 设置回显信息
+     * 查询回显信息
      * @param     gid   商品ID
      * @return    com.longines.vo.TbShoppingCartVo
      */

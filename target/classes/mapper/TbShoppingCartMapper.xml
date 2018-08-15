@@ -223,13 +223,13 @@
         set t_amount =g_num*(select price from tb_goods_info where g_id=#{gId,jdbcType=INTEGER})
         where g_id=#{gId,jdbcType=INTEGER}
     </select>
-    <select id="selectGoodsInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
-        select gname,price,g_pic from tb_goods_info
-        where g_id=#{gId,jdbcType=INTEGER}
-    </select>
     <select id="selectMerceInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
         select sname,m_pic from tb_merce
         where m_id=(select m_id from tb_mg_associated where g_id=#{gId,jdbcType=INTEGER})
+    </select>
+    <select id="selectGoodsInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+        select gname,price,g_pic from tb_goods_info
+        where g_id=#{gId,jdbcType=INTEGER}
     </select>
     <select id="selectStatus" parameterType="int" resultType="int">
         select status from tb_shopping_cart

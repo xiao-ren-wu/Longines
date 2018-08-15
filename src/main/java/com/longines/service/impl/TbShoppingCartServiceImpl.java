@@ -22,13 +22,13 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     private TbShoppingCartMapper tbShoppingCartMapper;
 
     @Override
-    public void insertShcSelective(int uid,int gid,int gnum,long amount,int statu) {
+    public void insertShcSelective(int uid,int gid,int gnum,long amount) {
         TbShoppingCart tbShoppingCart=new TbShoppingCart();
         tbShoppingCart.setuId(uid);
         tbShoppingCart.setgId(gid);
         tbShoppingCart.setgNum(gnum);
         tbShoppingCart.settAmount(amount);
-        tbShoppingCart.setStatus(statu);
+        tbShoppingCart.setStatus(1);
         tbShoppingCartMapper.insertSelective(tbShoppingCart);
     }
 
@@ -41,7 +41,7 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     }
 
     /**
-     * 更新购物车信息（包含计算总金额）
+     * 更新购物车信息
      *
      */
     @Override
@@ -64,6 +64,7 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
         return tbShoppingCartList;
     }
+
 
     @Override
     public TbShoppingCartVo selectEchoInfo(int gid) {

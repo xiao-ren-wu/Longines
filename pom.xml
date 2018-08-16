@@ -213,6 +213,12 @@
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- 分词器 -->
+    <dependency>
+      <groupId>org.apdplat</groupId>
+      <artifactId>word</artifactId>
+      <version>1.2</version>
+    </dependency>
     <!-- JSP相关 -->
     <dependency>
       <groupId>jstl</groupId>
@@ -259,7 +265,6 @@
       <artifactId>jackson-databind</artifactId>
       <version>${jackson-databind.version}</version>
     </dependency>
-
 
   </dependencies>
 

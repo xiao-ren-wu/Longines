@@ -1,10 +1,9 @@
 package com.longines.dao;
 
-import com.longines.pojo.TbGoodsThe;
+import com.longines.vo.TbThemeGoodsInfo;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 /**
  * @author weiyi
@@ -13,16 +12,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("Themedao")
 public interface TbGoodsTheMapper {
-    /**
-     * @return int
-     * @param theDes 主题描述
-     */
-    int selectTheidBytheDes(String theDes);
 
     /**
-     * @return java.lang.String
-     * @param theDes 主题描述
+     * @return java.util.List<com.longines.vo.TbThemeGoodsInfo>
+     * @param theId 主题id
      */
-    String selectThepicBythDes(String theDes);
+    List<TbThemeGoodsInfo> selectGooTheByTheId(int theId);
 
 }

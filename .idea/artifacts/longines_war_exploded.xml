@@ -47,6 +47,8 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.0" />
           <element id="library" level="project" name="Maven: tk.mybatis:mapper:4.0.4-beta1" />
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:2.5" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

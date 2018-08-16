@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Demo class
+ * TbRecInfoMapper
  *
  * @author wangyichao
  * @date 2018/8/8
@@ -40,13 +40,19 @@ public interface TbRecInfoMapper {
     int insert(TbRecInfo record);
 
     /**
-     * 通过自定义查询实现查询
+     * 通过u_id,a_id联合查询
      *
-     * @param   example 将参数封装进对象中
+     * @param   key 将参数封装进对象中
      * @return   int
      */
     int selectByPrimaryKey(TbRecInfoKey key);
 
+    /**
+     * 自定义查询
+     *
+     * @param   example   通过example对象定义方法
+     * @return   java.util.List<com.longines.pojo.TbRecInfo>
+     */
     List<TbRecInfo> selectByExample(TbRecInfoExample example);
     //    int insertSelective(TbRecInfo record);
     //    TbRecInfo selectByPrimaryKey(TbRecInfoKey key);

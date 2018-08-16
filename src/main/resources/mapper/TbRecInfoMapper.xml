@@ -7,6 +7,9 @@
     <result column="consignee" property="consignee" jdbcType="VARCHAR" />
     <result column="s_add" property="sAdd" jdbcType="VARCHAR" />
     <result column="c_tel" property="cTel" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="district" property="district" jdbcType="VARCHAR" />
     <result column="postcode" property="postcode" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -68,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    a_id, u_id, consignee, s_add, c_tel, postcode
+    a_id, u_id, consignee, s_add, c_tel, postcode,province,city,district
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbRecInfoExample" >
     select
@@ -103,7 +106,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.longines.pojo.TbRecInfo" >
-    insert into tb_rec_info (u_id, consignee,s_add, c_tel, postcode)values (#{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR},#{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR})
+    insert into tb_rec_info (u_id, consignee,s_add, c_tel, postcode,province,city,district)values (#{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR},#{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{district,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbRecInfo" >
     insert into tb_rec_info
@@ -206,6 +209,15 @@
       </if>
       <if test="postcode != null" >
         postcode = #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="district != null" >
+        district = #{district,jdbcType=VARCHAR},
       </if>
     </set>
     where a_id = #{aId,jdbcType=INTEGER}

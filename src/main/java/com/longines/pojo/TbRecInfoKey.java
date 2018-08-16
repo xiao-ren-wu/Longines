@@ -1,4 +1,10 @@
 package com.longines.pojo;
+/**
+ * TbRecInfoKey
+ *
+ * @author wangyichao
+ * @date 2018/8/14
+ */
 
 public class TbRecInfoKey {
     private Integer aId;

@@ -6,10 +6,8 @@ import com.longines.pojo.TbRecInfoKey;
 import com.longines.service.TbRecInfoService;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -27,95 +25,87 @@ public class TbRecInfoController {
     @Resource
     private TbRecInfoService recInfoService;
 
-    @RequestMapping(value = "recSelect",method = RequestMethod.GET)
-    public String list1(Model model, @RequestParam(value = "uid1", required = true) Integer uid) {
+   @CrossOrigin
+   @ResponseBody
+   @RequestMapping(value = "/recSelect",method = RequestMethod.POST)
+   public List<TbRecInfo> list1(@RequestBody TbRecInfo tbRecInfo) {
         TbRecInfoExample ex = new TbRecInfoExample();
         ex.setDistinct(true);
         TbRecInfoExample.Criteria cri = ex.createCriteria();
-        cri.andUIdEqualTo(uid);
+        cri.andUIdEqualTo(tbRecInfo.getuId());
+
         List<TbRecInfo> todoList = recInfoService.selectByExample(ex);
 
-        model.addAttribute("recListed", todoList);
-
-        return "successSelect";
+        return todoList;
     }
 
-    @RequestMapping(value = "recSelect1",method = RequestMethod.GET)
-    public String list2(Model model, @RequestParam(value = "aid1", required = true) Integer aid) {
+   @CrossOrigin
+   @ResponseBody
+   @RequestMapping(value = "/recSelect1",method = RequestMethod.POST)
+   public List<TbRecInfo> list2(@RequestBody TbRecInfo tbRecInfo) {
         TbRecInfoExample ex = new TbRecInfoExample();
         ex.setDistinct(true);
         TbRecInfoExample.Criteria cri = ex.createCriteria();
-        cri.andAIdEqualTo(aid);
+        cri.andAIdEqualTo(tbRecInfo.getaId());
+
         List<TbRecInfo> todoList = recInfoService.selectByExample(ex);
 
-        model.addAttribute("recListed", todoList);
 
-        return "successSelect";
+        return todoList;
+   }
+
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/editRec",method = RequestMethod.POST)
+    public TbRecInfo edit(@RequestBody TbRecInfo tbRecInfo) {
+        List<TbRecInfo> todoList = list2(tbRecInfo);
+
+        return tbRecInfo;
     }
 
-    @RequestMapping(value = "recEdit",method = RequestMethod.GET)
-    public String edit(Model model, @RequestParam(value = "aid1", required = true) Integer aid, @RequestParam(value = "uid1", required = true) Integer uid) {
+    //@RequestParam(value = "dis1", required = true) String dis,@RequestParam(value = "city1", required = true) String city ,@RequestParam(value = "pro1", required = true) String pro, @RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel, @RequestParam(value = "aid1", required = true) Integer aid, @RequestParam(value = "uid1", required = true) Integer uid
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/recEdit",method = RequestMethod.POST)
+    public String edit1(@RequestBody TbRecInfo tbRecInfo) {
 
-        TbRecInfo tbRecInfo = new TbRecInfo();
-        tbRecInfo.setaId(aid);
-        tbRecInfo.setuId(uid);
+        int flag = recInfoService.updateByPrimaryKeySelective(tbRecInfo);
 
-        //页面回显
-        model.addAttribute("recode", tbRecInfo);
-
-        return "editRec";
+        if(flag == 1){
+            return "successEdit";
+        }else{
+            return "failEdit";
+        }
     }
 
-    @RequestMapping(value = "editRec1",method = RequestMethod.POST)
-    public String edit1(Model model, @RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel, @RequestParam(value = "aid1", required = true) Integer aid, @RequestParam(value = "uid1", required = true) Integer uid) {
-        TbRecInfo tbRecInfo = new TbRecInfo();
-        tbRecInfo.setConsignee(con);
-        tbRecInfo.setsAdd(add);
-        tbRecInfo.setcTel(tel);
-        tbRecInfo.setuId(uid);
-        tbRecInfo.setaId(aid);
-        recInfoService.updateByPrimaryKeySelective(tbRecInfo);
+    //@RequestParam(value = "uid1", required = true) Integer uid,@RequestParam(value = "aid1", required = true) Integer aid
 
-        model.addAttribute("recode", tbRecInfo);
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/deleteByID",method = RequestMethod.POST)
+    public  String deleteByID(@RequestBody TbRecInfoKey tbRecInfoKey) {
 
-        return "rec";
+        int flag = recInfoService.deleteByPrimaryKey(tbRecInfoKey);
+
+        if(flag == 1){
+            return "delSuccess";
+        }else{
+            return "delFail";
+        }
     }
 
-    @RequestMapping(value = "deleteByID",method = RequestMethod.GET)
-    public String deleteByID(@RequestParam(value = "uid1", required = true) Integer uid,@RequestParam(value = "aid1", required = true) Integer aid)
-    {
-        TbRecInfoKey tbRecInfoKey = new TbRecInfoKey();
-        tbRecInfoKey.setuId(uid);
-        tbRecInfoKey.setaId(aid);
+   //@RequestParam(value = "dis1", required = true) String dis,@RequestParam(value = "city1", required = true) String city ,@RequestParam(value = "pro1", required = true) String pro,@RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel,@RequestParam(value = "uid1", required = true) Integer uid
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/insertRec",method = RequestMethod.POST)
+    public String insert1(@RequestBody TbRecInfo tbRecInfo) {
 
-        recInfoService.deleteByPrimaryKey(tbRecInfoKey);
+        int flag = recInfoService.insert(tbRecInfo);
 
-        return "rec";
-    }
-
-    @RequestMapping(value = "recInsert1",method = RequestMethod.GET)
-    public String insert0(Model model,@RequestParam(value = "uid1", required = true) Integer uid) {
-        TbRecInfo tbRecInfo = new TbRecInfo();
-        tbRecInfo.setuId(uid);
-
-        //页面回显
-        model.addAttribute("recode", tbRecInfo);
-
-        return "insertRec";
-    }
-
-    @RequestMapping(value = "insertRec",method = RequestMethod.POST)
-    public String insert1(Model model, @RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel,@RequestParam(value = "uid1", required = true) Integer uid) {
-        TbRecInfo tbRecInfo = new TbRecInfo();
-        tbRecInfo.setuId(uid);
-        tbRecInfo.setConsignee(con);
-        tbRecInfo.setcTel(tel);
-        tbRecInfo.setsAdd(add);
-        tbRecInfo.setPostcode("00");
-        recInfoService.insert(tbRecInfo);
-
-        model.addAttribute("recode", tbRecInfo);
-
-        return "rec";
+        if(flag == 1){
+            return "insertSuccess";
+        }else{
+            return "insertFail";
+        }
     }
 }

@@ -16,12 +16,20 @@
             <td>收货人</td>
             <td>收货地址</td>
             <td>联系方式</td>
+            <td>邮编</td>
+            <td>省</td>
+            <td>市</td>
+            <td>区</td>
         </tr>
         <c:forEach items="${recListed}" var="recode">
             <tr>
                 <td>${recode.consignee}</td>
                 <td>${recode.sAdd}</td>
                 <td>${recode.cTel}</td>
+                <td>${recode.postcode}</td>
+                <td>${recode.province}</td>
+                <td>${recode.city}</td>
+                <td>${recode.district}</td>
                 <td>
                     <a href="${pageContext.request.contextPath }/rec/recEdit?aid1=${recode.aId}&uid1=${recode.uId}">修改</a>
                     <a href="${pageContext.request.contextPath }/rec/deleteByID?aid1=${recode.aId}&uid1=${recode.uId}">删除</a>

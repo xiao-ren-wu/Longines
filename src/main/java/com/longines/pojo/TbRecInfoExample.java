@@ -3,6 +3,12 @@ package com.longines.pojo;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+/**
+ * TbRecInfoExample
+ *
+ * @author wangyichao
+ * @date 2018/8/14
+ */
 
 public class TbRecInfoExample {
     protected String orderByClause;

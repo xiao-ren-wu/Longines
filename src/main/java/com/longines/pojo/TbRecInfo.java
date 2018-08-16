@@ -1,8 +1,8 @@
 package com.longines.pojo;
 
-import java.util.Date;
+
 /**
- *
+ * TbRecInfo
  *
  * @author wangyichao
  * @date 2018/8/8
@@ -17,9 +17,11 @@ public class TbRecInfo extends TbRecInfoKey {
 
     private String postcode;
 
-    private Date createtime;
+    private String province;
 
-    private Date updatetime;
+    private String city;
+
+    private String district;
 
     public String getConsignee() {
         return consignee;
@@ -45,6 +47,18 @@ public class TbRecInfo extends TbRecInfoKey {
         this.cTel = cTel == null ? null : cTel.trim();
     }
 
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
+    }
+
+    public String getCity() {
+        return city;
+    }
+
     public String getPostcode() {
         return postcode;
     }
@@ -53,19 +67,16 @@ public class TbRecInfo extends TbRecInfoKey {
         this.postcode = postcode == null ? null : postcode.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
+
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public String getDistrict() {
+        return district;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setDistrict(String district) {
+        this.district = district == null ? null : district.trim();
     }
 }

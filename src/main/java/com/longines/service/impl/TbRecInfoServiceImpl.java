@@ -11,6 +11,12 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+/**
+ * TbRecInfoServiceImpl
+ *
+ * @author wangyichao
+ * @date 2018/8/14
+ */
 
 @Service
 public class TbRecInfoServiceImpl implements TbRecInfoService {
@@ -21,32 +27,52 @@ public class TbRecInfoServiceImpl implements TbRecInfoService {
     @Override
     public int updateByPrimaryKeySelective(TbRecInfo record) {
 
-        Mapper.updateByPrimaryKeySelective(record);
-        return 0;
+        try {
+            Mapper.updateByPrimaryKeySelective(record);
+            return 1;
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     @Override
     public int deleteByPrimaryKey(TbRecInfoKey key) {
-        Mapper.deleteByPrimaryKey(key);
-        return 0;
-
+        try {
+            Mapper.deleteByPrimaryKey(key);
+            return 1;
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     @Override
     public int insert(TbRecInfo record) {
-        Mapper.insert(record);
-        return 0;
+        try {
+            Mapper.insert(record);
+            return 1;
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     @Override
     public List<TbRecInfo> selectByExample(TbRecInfoExample example) {
         List<TbRecInfo> Info = Mapper.selectByExample(example);
-        return Info;
+        if(Info == null){
+            return null;
+        }else{
+            return Info;
+        }
     }
 
     @Override
     public int selectByPrimaryKey(TbRecInfoKey key){
-        Mapper.selectByPrimaryKey(key);
-        return 0;
+
+        try {
+            Mapper.selectByPrimaryKey(key);
+            return 1;
+        } catch (Exception e) {
+            return 0;
+        }
     }
 }

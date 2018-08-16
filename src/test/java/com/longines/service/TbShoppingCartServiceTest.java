@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-
 /**
  * @author  liuyang
  * @since   2018/8/5 17:51
@@ -49,7 +48,7 @@ public class TbShoppingCartServiceTest {
 
     @Test
     public void testInsertShcSelective() {
-        tbShoppingCartService.insertShcSelective(9,9);
+        tbShoppingCartService.insertShcSelective(20,20);
     }
 
     @Test

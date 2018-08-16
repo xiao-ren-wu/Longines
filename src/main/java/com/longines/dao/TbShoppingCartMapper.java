@@ -12,7 +12,7 @@ import java.util.List;
  * @since : 2018/8/3 16:10
  * @version 1.0
  */
-//@Repository("")
+
 public interface TbShoppingCartMapper {
 
     /**
@@ -61,10 +61,10 @@ public interface TbShoppingCartMapper {
     TbShoppingCartVo selectGoodsInfo(int gid);
     /**
      * 查询单价
-     * @param     record 购物车对象
+     * @param     tbShoppingCart 购物车对象
      * @return    int
      */
-    int updateTamount(TbShoppingCart record);
+    int updateTamount(TbShoppingCart tbShoppingCart);
 
     int selectStatus(int gid);
 

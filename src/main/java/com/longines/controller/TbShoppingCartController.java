@@ -1,12 +1,10 @@
 package com.longines.controller;
 
-import com.longines.dao.TbShoppingCartMapper;
 import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,11 +21,11 @@ public class TbShoppingCartController {
     @Resource
     public TbShoppingCartService tbShoppingCartService;
 
-    @RequestMapping("TbShoppingCartHomePage")
+    @RequestMapping("HomePage")
     public String  homePage()
     {
         System.out.println("homePage();");
-        return "TbShoppingCartHomePage";
+        return "HomePage";
     }
     /**
      * 根据用户ID和商品ID添加（默认数量为1）
@@ -44,6 +42,7 @@ public class TbShoppingCartController {
         }
         return 1;
     }
+
     @ResponseBody
     @RequestMapping("Delete")
     public int tbShoppingCartDelete(@RequestBody TbShoppingCartKey tbShoppingCartKey){
@@ -55,7 +54,6 @@ public class TbShoppingCartController {
     @RequestMapping("Update")
     public int tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
         tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
-
         return 0;
     }
 

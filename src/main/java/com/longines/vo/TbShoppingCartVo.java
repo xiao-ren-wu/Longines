@@ -21,6 +21,10 @@ public class TbShoppingCartVo {
     private Integer status;
 
     private Long tAmount;
+    /**
+     * 去结算时显示商品总数
+     */
+    private int tNum;
 
     public int getgId() {
         return gId;
@@ -86,6 +90,14 @@ public class TbShoppingCartVo {
         this.tAmount = tAmount;
     }
 
+    public int gettNum() {
+        return tNum;
+    }
+
+    public void settNum(int tNum) {
+        this.tNum = tNum;
+    }
+
     @Override
     public String toString() {
         return "TbShoppingCartVo{" +
@@ -96,6 +108,7 @@ public class TbShoppingCartVo {
                 ", gPic='" + gPic + '\'' +
                 ", status=" + status +
                 ", tAmount=" + tAmount +
+                ", tNum=" + tNum +
                 '}';
     }
 }

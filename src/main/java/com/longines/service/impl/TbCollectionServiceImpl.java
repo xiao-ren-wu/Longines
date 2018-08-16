@@ -5,10 +5,12 @@ import com.longines.pojo.TbCollection;
 import com.longines.pojo.TbCollectionExample;
 import com.longines.pojo.TbCollectionKey;
 import com.longines.service.TbCollectionService;
+import com.longines.vo.TbCollectionVo;
 import org.springframework.stereotype.Service;
 
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -46,26 +48,51 @@ public class TbCollectionServiceImpl implements TbCollectionService {
     }
 
     @Override
-    public List<TbCollection> tbCollectionSelect(Integer uId) {
+    public List<TbCollectionVo> tbCollectionSelect(Integer uId) {
+        List<TbCollectionVo> tbCollectionVoList =new ArrayList<>();
         TbCollectionExample tbCollectionExample =new TbCollectionExample();
+        tbCollectionExample.setOrderByClause("createTime desc");
         TbCollectionExample.Criteria criteria = tbCollectionExample.createCriteria();
         criteria.andUIdEqualTo(uId);
         List<TbCollection> tbCollectionList = tbCollectionMapper.selectByExample(tbCollectionExample);
         for (TbCollection tbCollection : tbCollectionList)
         {
-               if(tbCollection.getInvalid()!=0)
-               {
-                    TbCollection tbCollection1 = tbCollectionMapper.findCollection(tbCollection.getgId());
-                    if (tbCollection1.getInvalid()==0) {
+            TbCollectionVo tbCollectionVo = tbCollectionMapper.findCollectionGoods(tbCollection);
+            tbCollectionVo.setgId(tbCollection.getgId());
+            tbCollectionVo.setuId(tbCollection.getuId());
+            TbCollection tbCollection1 = tbCollectionMapper.findCollection(tbCollection.getgId());
+            tbCollectionVo.setcPrice(0);
+            if(tbCollection.getPur()==0)
+            {
+                    Integer pur = tbCollectionMapper.collectionPur(tbCollection);
+                   if(tbCollection.getgId().equals(pur))
+                   {
+                       tbCollection.setPur(1);
+                       tbCollectionVo.setPur(1);
+                   }
+            }else
+            {
+                tbCollectionVo.setPur(1);
+            }
+
+                if (tbCollection1.getInvalid()==0)
+                    {
+                        tbCollectionVo.setInvalid(0);
                         tbCollection.setInvalid(0);
                     }
-                    if(!tbCollection1.getcPrice().equals(tbCollection.getcPrice()))
+                else
                     {
-                       tbCollection.setcPrice(tbCollection1.getcPrice());
+                        tbCollectionVo.setInvalid(1);
+                        tbCollection.setInvalid(1);
                     }
+                if(tbCollection1.getcPrice()<tbCollection.getcPrice())
+                    {
+                        tbCollectionVo.setcPrice(1);
+                    }
+                   tbCollectionVo.setgPrice(tbCollection1.getcPrice());
                     tbCollectionMapper.updateByPrimaryKeySelective(tbCollection);
-               }
+               tbCollectionVoList.add(tbCollectionVo);
         }
-        return tbCollectionList;
+        return tbCollectionVoList;
     }
 }

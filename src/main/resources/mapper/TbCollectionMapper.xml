@@ -132,6 +132,14 @@
         WHERE
         tb_goods_info.g_id = #{id}
         and
-        tb_mg_associated.g_id=#{id};
+        tb_mg_associated.g_id=#{id}
 	</select>
+  <select id="findCollectionGoods" parameterType="com.longines.pojo.TbCollection" resultType="com.longines.vo.TbCollectionVo">
+    SELECT tb_goods_info.gname,tb_goods_info.g_pic,tb_collection.pur,tb_collection.invalid
+    from tb_goods_info inner join tb_collection on tb_goods_info.g_id=tb_collection.g_id where tb_collection.u_id = #{uId} AND tb_collection.g_id=#{gId}
+  </select>
+
+  <select id="collectionPur" parameterType="com.longines.pojo.TbCollection" resultType="Integer">
+    SELECT tb_order.g_id from tb_pay inner join tb_order on tb_pay.o_id = tb_order.o_id where tb_pay.u_id=#{uId} and tb_order.g_id=#{gId}
+  </select>
 </mapper>

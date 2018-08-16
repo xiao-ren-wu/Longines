@@ -1,9 +1,10 @@
 package com.longines.controller;
 
+import com.longines.dto.TbPayDto;
 import com.longines.service.TbPayService;
+import com.longines.vo.TbPayVo;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 /**
@@ -12,62 +13,83 @@ import javax.annotation.Resource;
  *@author   leijing
  *@date   2018/8/8
  */
+
 @Controller
 @RequestMapping("/Longines")
 
 public class TbPayController {
 
+    TbPayVo  tbPayVo = new TbPayVo();
     @Resource
     private TbPayService tbPayService;
     /**
-     * 返回支付页面所需信息
+     * 生成支付订单数据，回显页面所需信息
      *
-     *@param   oId 商品Id
-     *@param model 用户Id、头像、余额
-     *@return   java.lang.String
+     *@param   tbPayDto  从页面接收的数据对象
+     *@return   com.longines.vo.TbPayVo
      */
-    @RequestMapping("OrderPay")
-    public String OrderPay(Integer oId, Model model){
+    @CrossOrigin
+    @ResponseBody
+    @PostMapping("OrderPay")
+    public TbPayVo orderPay(@RequestBody TbPayDto tbPayDto){
 
-        tbPayService.insertTbPay(oId);
-        Integer in =  tbPayService.finduIdPicacBalance(oId).getuId();
-        String st = tbPayService.finduIdPicacBalance(oId).getPic();
-        Long lo = tbPayService.findaAmount(oId).getaAmount();
-
-       model.addAttribute("uId",in);
-       model.addAttribute("Pic",st);
-       model.addAttribute("aAmount",lo);
-        return "OrderP";
+        Integer pId=tbPayService.insertTbPay(tbPayDto.getoId());
+        tbPayVo.setState(4);
+        tbPayVo.setpId(pId);
+        tbPayVo.setuId(tbPayService.findUidPicAcBalance(pId).getuId());
+        tbPayVo.setPic(tbPayService.findUidPicAcBalance(pId).getPic());
+        tbPayVo.setaAmount(tbPayService.findaAmount(pId).getaAmount());
+        return tbPayVo;
     }
-
     /**
      * 判断支付是否成功
      *
-     *@param   oId 用户Id
-     *@param  pw  用户密码
-     *@param model 支付状态0、1
+     *@param   tbPayDto 从页面接收的数据对象
+     *@return   com.longines.vo.TbPayVo
      */
-    @RequestMapping("IfSuccess")
-    public String success(Integer oId, String pw,Model model) {
+    @CrossOrigin
+    @ResponseBody
+    @PostMapping("IfSuccess")
+    public TbPayVo success(@RequestBody TbPayDto tbPayDto) {
 
-        int i = tbPayService.judgePw(oId,pw);
-        if (i==1){
-            i =tbPayService.updateacBalancesNum(oId);
-            if (i==1) {
-                model.addAttribute("state",i);
+        int i = tbPayService.judgePw(tbPayDto.getpId(),tbPayDto.getpayCod());
+        /**
+         * i用来判断密码是否正确
+         * 0:密码正确
+         * 1:密码不正确
+         * 3：未设置密码
+         * */
+        if (i==0){
+            /**
+             * i返回的是是否成功更新余额、状态号
+             * 0:修改成功
+             * 2:余额不足
+             * */
+            i =tbPayService.updateacBalancesNum(tbPayDto.getpId());
+            if (i==0) {
+                tbPayVo.setState(i);
+                return tbPayVo;
+            }else{
+                tbPayVo.setState(i);
+                return tbPayVo;
             }
+        }else {
+            tbPayVo.setState(i);
+            return tbPayVo;
         }
-        model.addAttribute("state",i);
-        return "Ifsuccess";
     }
 
-        @RequestMapping("OP")
-        public String OP(){
-            return "OrderP";
+    @CrossOrigin
+    @ResponseBody
+    @PostMapping("InsertPayCod")
+    public TbPayVo insertPw (@RequestBody TbPayDto tbPayDto) {
+        int i = tbPayService.insertPayCod(tbPayDto.getpayCod(),tbPayDto.getuId());
+        if (i == 1) {
+            tbPayVo.setMsg("设置密码成功");
+            return tbPayVo;
+        } else {
+            tbPayVo.setMsg("设置密码失败");
+            return tbPayVo;
         }
-        @RequestMapping("IS")
-        public String IS(){
-            return "Ifsuccess";
-        }
-
+    }
 }

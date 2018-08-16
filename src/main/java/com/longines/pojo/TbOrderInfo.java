@@ -27,24 +27,6 @@ public class TbOrderInfo {
 
     private Date updatetime;
 
-    @Override
-    public String toString() {
-        return "TbOrderInfo{" +
-                "oId=" + oId +
-                ", uId=" + uId +
-                ", aId=" + aId +
-                ", creDate=" + creDate +
-                ", delDate=" + delDate +
-                ", tbDate=" + tbDate +
-                ", aAmount=" + aAmount +
-                ", freight=" + freight +
-                ", sNum=" + sNum +
-                ", dMethod='" + dMethod + '\'' +
-                ", createtime=" + createtime +
-                ", updatetime=" + updatetime +
-                '}';
-    }
-
     public Integer getoId() {
         return oId;
     }
@@ -139,5 +121,23 @@ public class TbOrderInfo {
 
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
+    }
+
+    @Override
+    public String toString() {
+        return "TbOrderInfo{" +
+                "oId=" + oId +
+                ", uId=" + uId +
+                ", aId=" + aId +
+                ", creDate=" + creDate +
+                ", delDate=" + delDate +
+                ", tbDate=" + tbDate +
+                ", aAmount=" + aAmount +
+                ", freight=" + freight +
+                ", sNum=" + sNum +
+                ", dMethod='" + dMethod + '\'' +
+                ", createtime=" + createtime +
+                ", updatetime=" + updatetime +
+                '}';
     }
 }

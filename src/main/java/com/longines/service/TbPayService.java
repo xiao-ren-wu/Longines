@@ -15,38 +15,50 @@ public interface TbPayService {
    /**
     * 查找用户id、头像、余额
     *
-    *@param   oId 订单Id
+    *@param   pId 支付id
     *@return   com.longines.pojo.TbUser
     */
-   TbUser finduIdPicacBalance(Integer oId);
+   TbUser findUidPicAcBalance(Integer pId);
    /**
     * 查找订单总金额
     *
-    *@param   oId 订单Id
+    *@param   pId 支付Id
     *@return   com.longines.pojo.TbOrderInfo
     */
-   TbOrderInfo findaAmount(Integer oId);
+   TbOrderInfo findaAmount(Integer pId);
    /**
     * 更新余额和订单状态号
     *
-    *@param   oId 订单Id
+    *@param   pId 支付Id
     *@return   int
     */
-   int updateacBalancesNum(Integer oId);
+   int updateacBalancesNum(Integer pId);
    /**
     * 增加订单支付表信息
     *
     *@param   oId 订单Id
+    * @return Integer
     */
-   void insertTbPay(Integer oId);
+   Integer insertTbPay(Integer oId);
    /**
     * 判断密码是否正确
     *
-    *@param  oId 订单Id
-    *@param  pw  用户密码
+    *@param  pId 用户Id
+    *@param  PayCod  支付密码
     *@return   int
     */
-   int judgePw(Integer oId,String pw);
+   int judgePw(Integer pId,Integer  PayCod);
+   /**
+    * 增加支付密码
+    *
+    *@param   payCod  支付密码
+    *@param   uId  用户Id
+    *@return   int
+    */
+   int insertPayCod(Integer payCod,Integer uId);
 }
+
+
+
 
   

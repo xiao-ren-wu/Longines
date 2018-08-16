@@ -33,6 +33,12 @@ public class TbUser {
 
     private Date updatetime;
 
+    private String valQu;
+
+    private String antoqu;
+
+    private String payCod;
+
     public Integer getuId() {
         return uId;
     }
@@ -129,22 +135,28 @@ public class TbUser {
         this.updatetime = updatetime;
     }
 
-    @Override
-    public String toString() {
-        return "TbUser{" +
-                "uId=" + uId +
-                ", uname='" + uname + '\'' +
-                ", sex='" + sex + '\'' +
-                ", telNum='" + telNum + '\'' +
-                ", pw='" + pw + '\'' +
-                ", acBalance=" + acBalance +
-                ", label='" + label + '\'' +
-                ", birth='" + birth + '\'' +
-                ", pic='" + pic + '\'' +
-                ", sug='" + sug + '\'' +
-                ", createtime=" + createtime +
-                ", updatetime=" + updatetime +
-                '}';
+    public String getValQu() {
+        return valQu;
+    }
+
+    public void setValQu(String valQu) {
+        this.valQu = valQu == null ? null : valQu.trim();
+    }
+
+    public String getAntoqu() {
+        return antoqu;
+    }
+
+    public void setAntoqu(String antoqu) {
+        this.antoqu = antoqu == null ? null : antoqu.trim();
+    }
+
+    public String getPayCod() {
+        return payCod;
+    }
+
+    public void setPayCod(String payCod) {
+        this.payCod = payCod;
     }
 
     private MultipartFile image;

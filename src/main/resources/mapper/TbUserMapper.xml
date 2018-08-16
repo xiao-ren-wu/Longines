@@ -14,6 +14,9 @@
     <result column="sug" property="sug" jdbcType="VARCHAR" />
     <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
     <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="val_qu" property="valQu" jdbcType="VARCHAR" />
+    <result column="antoqu" property="antoqu" jdbcType="VARCHAR" />
+    <result column="pay_cod" property="payCod" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -74,7 +77,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    u_id, uname, sex, tel_num, pw, ac_balance, label, birth, pic, sug, createtime, updatetime
+    u_id, uname, sex, tel_num, pw, ac_balance, label, birth, pic, sug, createtime, updatetime, 
+    val_qu, antoqu, pay_cod
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbUserExample" >
     select
@@ -110,12 +114,14 @@
     insert into tb_user (u_id, uname, sex, 
       tel_num, pw, ac_balance, 
       label, birth, pic, 
-      sug, createtime, updatetime
+      sug, createtime, updatetime, 
+      val_qu, antoqu, pay_cod
       )
     values (#{uId,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
       #{telNum,jdbcType=VARCHAR}, #{pw,jdbcType=VARCHAR}, #{acBalance,jdbcType=DECIMAL}, 
       #{label,jdbcType=VARCHAR}, #{birth,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, 
-      #{sug,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
+      #{sug,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{valQu,jdbcType=VARCHAR}, #{antoqu,jdbcType=VARCHAR}, #{payCod,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbUser" >
@@ -157,6 +163,15 @@
       <if test="updatetime != null" >
         updatetime,
       </if>
+      <if test="valQu != null" >
+        val_qu,
+      </if>
+      <if test="antoqu != null" >
+        antoqu,
+      </if>
+      <if test="payCod != null" >
+        pay_cod,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="uId != null" >
@@ -194,6 +209,15 @@
       </if>
       <if test="updatetime != null" >
         #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valQu != null" >
+        #{valQu,jdbcType=VARCHAR},
+      </if>
+      <if test="antoqu != null" >
+        #{antoqu,jdbcType=VARCHAR},
+      </if>
+      <if test="payCod != null" >
+        #{payCod,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -242,6 +266,15 @@
       <if test="record.updatetime != null" >
         updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.valQu != null" >
+        val_qu = #{record.valQu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.antoqu != null" >
+        antoqu = #{record.antoqu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payCod != null" >
+        pay_cod = #{record.payCod,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -260,7 +293,10 @@
       pic = #{record.pic,jdbcType=VARCHAR},
       sug = #{record.sug,jdbcType=VARCHAR},
       createtime = #{record.createtime,jdbcType=TIMESTAMP},
-      updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      val_qu = #{record.valQu,jdbcType=VARCHAR},
+      antoqu = #{record.antoqu,jdbcType=VARCHAR},
+      pay_cod = #{record.payCod,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -301,8 +337,17 @@
       <if test="updatetime != null" >
         updatetime = #{updatetime,jdbcType=TIMESTAMP},
       </if>
+      <if test="valQu != null" >
+        val_qu = #{valQu,jdbcType=VARCHAR},
+      </if>
+      <if test="antoqu != null" >
+        antoqu = #{antoqu,jdbcType=VARCHAR},
+      </if>
+      <if test="payCod != null" >
+        pay_cod = #{payCod,jdbcType=INTEGER},
+      </if>
     </set>
-    where u_id = #{uId,jdbcType=INTEGER}
+    where u_id = #{uId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbUser" >
     update tb_user
@@ -316,15 +361,21 @@
       pic = #{pic,jdbcType=VARCHAR},
       sug = #{sug,jdbcType=VARCHAR},
       createtime = #{createtime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP}
-    where u_id = #{uId,jdbcType=INTEGER}
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      val_qu = #{valQu,jdbcType=VARCHAR},
+      antoqu = #{antoqu,jdbcType=VARCHAR},
+      pay_cod = #{payCod,jdbcType=INTEGER}
+    where u_id = #{uId,jdbcType=VARCHAR}
   </update>
 
-    <select id="getTbuser" parameterType="com.longines.pojo.TbUser" resultType="com.longines.pojo.TbUser">
-        select *from tb_user
-        <where>
-            tel_num=#{telNum} and pw=#{pw}
-        </where>
-    </select>
+  <select id="getTbuser" parameterType="com.longines.pojo.TbUser" resultType="com.longines.pojo.TbUser">
+    select * from tb_user where tel_num=#{telNum} and pw=#{pw}
 
+  </select>
+  <select id="findTbuser" parameterType="String" resultType="com.longines.pojo.TbUser">
+    select * from tb_user
+    <where>
+      tel_num=#{telNum}
+    </where>
+  </select>
 </mapper>

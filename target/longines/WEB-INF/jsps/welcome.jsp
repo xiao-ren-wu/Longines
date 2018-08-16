@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>welcome ${telNum}</h1>
+    <h1>welcome </h1>
 </body>
 </html>

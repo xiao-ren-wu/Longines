@@ -64,7 +64,7 @@ public interface TbUserService {
          */
         public int updateTbUser(TbUser user);
 
-
+        public TbUser select(String telNum);
 
 
 }

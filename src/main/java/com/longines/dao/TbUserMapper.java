@@ -51,5 +51,7 @@ public interface TbUserMapper {
      */
     int updateByPrimaryKeySelective (TbUser user);
 
+    TbUser findTbuser(String telNum);
+
 
 }

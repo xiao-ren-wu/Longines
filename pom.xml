@@ -279,6 +279,11 @@
     </dependency>
 
       <!-- https://mvnrepository.com/artifact/tk.mybatis/mapper -->
+    <dependency>
+      <groupId>com.thetransactioncompany</groupId>
+      <artifactId>cors-filter</artifactId>
+      <version>2.5</version>
+    </dependency>
 
   </dependencies>
 

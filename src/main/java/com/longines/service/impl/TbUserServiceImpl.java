@@ -52,7 +52,6 @@ public class TbUserServiceImpl implements TbUserService {
     public TbUser login(String telNum,String pw) {
 
 
-        boolean flag=false;
         TbUser user=new TbUser();
         user.setTelNum(telNum);
         user.setPw(pw);
@@ -123,7 +122,10 @@ public class TbUserServiceImpl implements TbUserService {
         return mapper.updateByPrimaryKeySelective(user);
     }
 
-
+    @Override
+    public TbUser select(String telNum) {
+        return mapper.findTbuser(telNum);
+    }
 
 
 }

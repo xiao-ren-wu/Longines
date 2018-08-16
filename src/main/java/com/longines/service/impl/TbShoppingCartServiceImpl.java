@@ -22,14 +22,14 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     private TbShoppingCartMapper tbShoppingCartMapper;
 
     @Override
-    public void insertShcSelective(int uid,int gid,int gnum,long amount) {
+    public void insertShcSelective(int uid,int gid) {
         TbShoppingCart tbShoppingCart=new TbShoppingCart();
         tbShoppingCart.setuId(uid);
         tbShoppingCart.setgId(gid);
-        tbShoppingCart.setgNum(gnum);
-        tbShoppingCart.settAmount(amount);
+        tbShoppingCart.setgNum(1);
         tbShoppingCart.setStatus(1);
         tbShoppingCartMapper.insertSelective(tbShoppingCart);
+        tbShoppingCartMapper.updateTamount(tbShoppingCart);
     }
 
     @Override
@@ -73,10 +73,12 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         tbShoppingCartVoo=tbShoppingCartMapper.selectMerceInfo(gid);
         String sName=tbShoppingCartVoo.getSname();
         String mPic=tbShoppingCartVoo.getmPic();
+        Long Price=tbShoppingCartVoo.getPrice();
         int Status=tbShoppingCartMapper.selectStatus(4);
         TbShoppingCartVo tbShoppingCartVo=tbShoppingCartMapper.selectGoodsInfo(gid);
         tbShoppingCartVo.setSname(sName);
         tbShoppingCartVo.setmPic(mPic);
+        tbShoppingCartVo.setPrice(Price);
         tbShoppingCartVo.setStatus(Status);
         return tbShoppingCartVo;
     }

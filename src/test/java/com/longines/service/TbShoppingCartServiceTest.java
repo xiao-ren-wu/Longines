@@ -49,7 +49,7 @@ public class TbShoppingCartServiceTest {
 
     @Test
     public void testInsertShcSelective() {
-        tbShoppingCartService.insertShcSelective(9,9,17,156);
+        tbShoppingCartService.insertShcSelective(9,9);
     }
 
     @Test

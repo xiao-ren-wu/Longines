@@ -18,7 +18,9 @@ public class TbShoppingCartVo {
 
     private String gPic;
 
-    private int status;
+    private Integer status;
+
+    private Long tAmount;
 
     public int getgId() {
         return gId;
@@ -68,12 +70,20 @@ public class TbShoppingCartVo {
         this.gPic = gPic;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Long gettAmount() {
+        return tAmount;
+    }
+
+    public void settAmount(Long tAmount) {
+        this.tAmount = tAmount;
     }
 
     @Override
@@ -85,6 +95,7 @@ public class TbShoppingCartVo {
                 ", price=" + price +
                 ", gPic='" + gPic + '\'' +
                 ", status=" + status +
+                ", tAmount=" + tAmount +
                 '}';
     }
 }

@@ -4,7 +4,6 @@ import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartExample;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.vo.TbShoppingCartVo;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -47,9 +46,9 @@ public interface TbShoppingCartMapper {
     /**
      * 根据商品数量更新
      * @param    record  购物车类对象
+     * @return   int
      */
-    void updateBygNum(TbShoppingCart record);
-
+    int  updateBygNum(TbShoppingCart record);
     /**
      * 根据用户ID查询购物车信息
      * @param     uid  用户ID
@@ -60,6 +59,12 @@ public interface TbShoppingCartMapper {
     TbShoppingCartVo selectMerceInfo(int gid);
 
     TbShoppingCartVo selectGoodsInfo(int gid);
+    /**
+     * 查询单价
+     * @param     record 购物车对象
+     * @return    int
+     */
+    int updateTamount(TbShoppingCart record);
 
     int selectStatus(int gid);
 

@@ -16,10 +16,8 @@ public interface TbShoppingCartService {
      * 新增信息
      * @param     uid  用户ID
      * @param     gid  商品ID
-     * @param     gnum 商品数量
-     * @param     amount 总金额
      */
-    void insertShcSelective(int uid, int gid, int gnum, long amount);
+    void insertShcSelective(int uid, int gid);
 
     /**
      * 根据联合主键删除

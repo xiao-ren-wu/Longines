@@ -22,9 +22,6 @@ public class TbShoppingCart extends TbShoppingCartKey {
      */
     private Integer status;
 
-    private Date createtime;
-
-    private Date updatetime;
 
     public Integer getgNum() {
         return gNum;
@@ -50,21 +47,6 @@ public class TbShoppingCart extends TbShoppingCartKey {
         this.status = status;
     }
 
-    public Date getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
-    }
     @Override
     public String toString() {
         return "TbShoppingCart{" +

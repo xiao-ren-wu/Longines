@@ -16,6 +16,6 @@ import com.longines.pojo.TbOrderInfo;
          *@param   record 订单明细表
          *@return   int
          */
-        int updateByPrimaryKeySelective(TbOrderInfo record);
+    int updateByPrimaryKeySelective(TbOrderInfo record);
 
 }

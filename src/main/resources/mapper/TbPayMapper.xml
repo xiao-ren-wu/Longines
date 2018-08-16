@@ -149,4 +149,10 @@
   </select>
   <select id="selectUserId" parameterType="Integer" resultType="com.longines.pojo.TbUser">
     select u_id from tb_order_info where o_id = #{oId} </select>
+  <update id="updateAcBalance" parameterType="com.longines.pojo.TbUser" >
+    update tb_user SET ac_balance = #{acBalance} where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+  <update id="updatePayCod" parameterType="com.longines.pojo.TbUser">
+   UPDATE  tb_user   SET   pay_cod = #{payCod} WHERE u_id = #{uId}
+  </update>
 </mapper>

@@ -7,12 +7,30 @@ package com.longines.vo;
 
 public class TbPayVo {
     private Integer uId;
-    private String Pic;
+
+
+
+    private String pic;
+
+
+
     private Long aAmount;
     private Integer pId;
     private int state;
+    private String msg;
+
+    public String getPic() { return pic; }
+
+    public void setPic(String pic) { this.pic = pic; }
 
 
+    public int getState() { return state; }
+
+    public void setState(int state) { this.state = state; }
+
+    public String getMsg() { return msg; }
+
+    public void setMsg(String msg) { this.msg = msg; }
 
     public Long getaAmount() {
         return aAmount;
@@ -28,22 +46,6 @@ public class TbPayVo {
 
     public void setpId(Integer pId) {
         this.pId = pId;
-    }
-
-    public String getPic() {
-        return Pic;
-    }
-
-    public void setPic(String pic) {
-        Pic = pic;
-    }
-
-    public int getstate() {
-        return state;
-    }
-
-    public void setstate(int state) {
-        this.state = state;
     }
 
     public Integer getuId() {

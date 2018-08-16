@@ -1,5 +1,6 @@
 package com.longines.controller;
 
+import com.longines.dto.TbPayDto;
 import com.longines.service.TbPayService;
 import com.longines.vo.TbPayVo;
 import org.springframework.stereotype.Controller;
@@ -22,54 +23,74 @@ public class TbPayController {
     TbPayVo  tbPayVo = new TbPayVo();
     @Resource
     private TbPayService tbPayService;
-
     /**
-     * 添加支付订单数据，给页面返回数据
+     * 生成支付订单数据，回显页面所需信息
      *
-     *@param   oId  订单Id
+     *@param   tbPayDto  从页面接收的数据对象
      *@return   com.longines.vo.TbPayVo
      */
     @ResponseBody
     @PostMapping("OrderPay")
-    public TbPayVo orderPay(Integer oId){
+    public TbPayVo orderPay(TbPayDto tbPayDto){
 
-        Integer pId=tbPayService.insertTbPay(oId);
+        Integer pId=tbPayService.insertTbPay(tbPayDto.getoId());
+        tbPayVo.setState(4);
         tbPayVo.setpId(pId);
         tbPayVo.setuId(tbPayService.findUidPicAcBalance(pId).getuId());
         tbPayVo.setPic(tbPayService.findUidPicAcBalance(pId).getPic());
         tbPayVo.setaAmount(tbPayService.findaAmount(pId).getaAmount());
         return tbPayVo;
     }
-
     /**
-     * 判断是否支付成功
+     * 判断支付是否成功
      *
-     *@param   pId 支付Id
-     *@param  pw  支付密码
+     *@param   tbPayDto 从页面接收的数据对象
      *@return   com.longines.vo.TbPayVo
      */
+
     @ResponseBody
     @PostMapping("IfSuccess")
-    public TbPayVo success(Integer pId, Integer pw) {
+    public TbPayVo success(TbPayDto tbPayDto) {
 
 
-        int i = tbPayService.judgePw(pId,pw);
+        int i = tbPayService.judgePw(tbPayDto.getpId(),tbPayDto.getpayCod());
         /**
          * i用来判断密码是否正确
+         * 0:密码正确
+         * 1:密码不正确
+         * 3：未设置密码
          * */
-        if (i==1){
+        if (i==0){
             /**
              * i返回的是是否成功更新余额、状态号
+             * 0:修改成功
+             * 2:余额不足
              * */
-            i =tbPayService.updateacBalancesNum(pId);
-            if (i==1) {
-                tbPayVo.setstate(i);
+            i =tbPayService.updateacBalancesNum(tbPayDto.getpId());
+            if (i==0) {
+                tbPayVo.setState(i);
+                return tbPayVo;
+            }else{
+                tbPayVo.setState(i);
                 return tbPayVo;
             }
+        }else {
+            tbPayVo.setState(i);
+            return tbPayVo;
         }
-        tbPayVo.setstate(i);
-        return tbPayVo;
-
     }
 
+
+    @ResponseBody
+    @PostMapping("InsertPayCod")
+    public TbPayVo insertPw (TbPayDto tbPayDto) {
+        int i = tbPayService.insertPayCod(tbPayDto.getpayCod(),tbPayDto.getuId());
+        if (i == 1) {
+            tbPayVo.setMsg("设置密码成功");
+            return tbPayVo;
+        } else {
+            tbPayVo.setMsg("设置密码失败");
+            return tbPayVo;
+        }
+    }
 }

@@ -2,11 +2,11 @@ package com.longines.service.impl;
 
 import com.longines.dao.TbOrderInfoMapper;
 import com.longines.dao.TbPayMapper;
-import com.longines.dao.TbUserMapper;
 import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbPay;
 import com.longines.pojo.TbUser;
 import com.longines.service.TbPayService;
+import com.longines.utils.MD5;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,8 +24,6 @@ public class TbPayServiceImpl  implements TbPayService {
 
     @Resource
     private TbPayMapper tbPayMapper;
-    @Resource
-    private  TbUserMapper tbUserMapper;
     @Resource
     private TbOrderInfoMapper tbOrderInfoMapper;
 
@@ -61,13 +59,22 @@ public class TbPayServiceImpl  implements TbPayService {
     }
 
     @Override
-    public  int judgePw(Integer pId,Integer pw){
+    public  int judgePw(Integer pId,String payCod){
 
-        if (pw.equals(tbPayMapper.selectUser(pId).getPayCod())){
-            return 1;
-        }
-        else {
-            return 0;
+        String payCod1=tbPayMapper.selectUser(pId).getPayCod();
+
+        if(payCod1==null){
+            tbPayMapper.deleteByPrimaryKey(pId);
+            return 3;
+        }else{
+            if (MD5.tomd5(payCod).equals(payCod1)){
+                return 0;
+            }
+            else {
+                tbPayMapper.deleteByPrimaryKey(pId);
+                return 1;
+            }
+
         }
     }
 
@@ -79,20 +86,33 @@ public class TbPayServiceImpl  implements TbPayService {
         TbOrderInfo tbOrderInfo= tbPayMapper.selectOrder(pId);
 
 
-        if (tbUser.getAcBalance()>=tbOrderInfo.getaAmount()) {
+        if (tbUser.getAcBalance()!=null&&tbUser.getAcBalance()>=tbOrderInfo.getaAmount()) {
 
             tbUser.setAcBalance(tbUser.getAcBalance() - tbOrderInfo.getaAmount());
-            tbUserMapper.updateByPrimaryKeySelective(tbUser);
+            tbPayMapper.updateAcBalance(tbUser);
+            if (tbOrderInfo.getsNum() == 0){
 
+                tbOrderInfo.setsNum(1);
+                tbOrderInfoMapper.updateByPrimaryKeySelective(tbOrderInfo);
+            }
         }
-        else if (tbUser.getAcBalance()==null||tbUser.getAcBalance()<tbOrderInfo.getaAmount()){
+        else
+            {
             tbPayMapper.deleteByPrimaryKey(pId);
-            return  0;
+            return  2;
         }
-        if (tbOrderInfo.getsNum() == 0){
+        return 0;
+    }
 
-            tbOrderInfo.setsNum(1);
-            tbOrderInfoMapper.updateByPrimaryKeySelective(tbOrderInfo);
+    @Override
+    public int insertPayCod(String  payCod,Integer uId){
+        TbUser tbUser =new TbUser();
+        tbUser.setuId(uId);
+        tbUser.setPayCod(MD5.tomd5(payCod));
+        try {
+            tbPayMapper.updatePayCod(tbUser);
+        } catch (Exception e) {
+            return 0;
         }
         return 1;
     }

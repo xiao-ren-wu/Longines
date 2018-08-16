@@ -44,10 +44,18 @@ public interface TbPayService {
     * 判断密码是否正确
     *
     *@param  pId 用户Id
-    *@param  pw  支付密码
+    *@param  PayCod  支付密码
     *@return   int
     */
-   int judgePw(Integer pId,Integer pw);
+   int judgePw(Integer pId,String  PayCod);
+   /**
+    * 增加支付密码
+    *
+    *@param   payCod  支付密码
+    *@param   uId  用户Id
+    *@return   int
+    */
+   int insertPayCod(String payCod,Integer uId);
 }
 
 

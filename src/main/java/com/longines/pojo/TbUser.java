@@ -31,7 +31,7 @@ public class TbUser {
 
     private String antoqu;
 
-    private Integer payCod;
+    private String payCod;
 
     public Integer getuId() {
         return uId;
@@ -145,11 +145,11 @@ public class TbUser {
         this.antoqu = antoqu == null ? null : antoqu.trim();
     }
 
-    public Integer getPayCod() {
+    public String getPayCod() {
         return payCod;
     }
 
-    public void setPayCod(Integer payCod) {
+    public void setPayCod(String payCod) {
         this.payCod = payCod;
     }
 }

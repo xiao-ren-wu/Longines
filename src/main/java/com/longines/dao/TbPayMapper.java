@@ -4,7 +4,7 @@ import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbPay;
 import com.longines.pojo.TbUser;
 
-/**
+        /**
          * 更新支付表
          * 对用户表中的id、余额、头像、密码进行查找
          * 对订单明细表中的总金额、状态号
@@ -20,7 +20,7 @@ public interface TbPayMapper {
      */
     void insert(TbPay record);
     /**
-     * 通过支付id查找用户表中的id、余额、头像、密码进行查找
+     * 通过支付id查找用户表中的id、余额、头像、支付密码进行查找
      *
      *@param   pId 支付id
      *@return   com.longines.pojo.TbUser
@@ -39,11 +39,24 @@ public interface TbPayMapper {
      *@param   pId  支付id
      */
     void deleteByPrimaryKey(Integer pId);
-            /**
-             * 通过订单ID查找用户id
-             *
-             *@param   oId  订单Id
-             *@return   com.longines.pojo.TbUser
-             */
+    /**
+     * 通过订单ID查找用户id
+     *
+     *@param   oId  订单Id
+     *@return   com.longines.pojo.TbUser
+     */
     TbUser selectUserId(Integer oId);
+
+    /**
+     ** 方法注释
+     *
+     *@param   tbUser 用户名
+     */
+    void updatePayCod(TbUser tbUser);
+    /**
+     * 方法注释
+     *
+     *@param   tbUser 用户名
+     */
+    void updateAcBalance(TbUser tbUser);
 }

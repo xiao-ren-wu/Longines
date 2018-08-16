@@ -3,11 +3,7 @@ package com.longines.pojo;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
-/**
-*@author zhaoxiaokang
-*@since 2018/8/8 22:07
-*@version 1.0
-*/
+
 public class TbUser {
     private Integer uId;
 
@@ -167,5 +163,4 @@ public class TbUser {
     public void setImage(MultipartFile image) {
         this.image = image;
     }
-
 }

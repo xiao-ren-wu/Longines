@@ -7,37 +7,48 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
-
+/**
+ * TbRecInfoService
+ *
+ * @author wangyichao
+ * @date 2018/8/14
+ */
 
 public interface TbRecInfoService {
     /**
-     *惊呆了
+     * 更新数据
      *
-     *@param record
-     *@return   int
+     * @param   record  将修改过的参数封装进record进行更新数据
+     * @return   int
      */
     int updateByPrimaryKeySelective(TbRecInfo record);
     /**
-     * 方法注释
+     * 删除数据
      *
-     *@param   key
-     *@return   int
+     * @param   key 将u_id，a_id封装进key中
+     * @return   int
      */
     int deleteByPrimaryKey(TbRecInfoKey key);
-
+    /**
+     * 插入数据
+     *
+     * @param   record  将参数封装进record
+     * @return   int
+     */
     int insert(TbRecInfo record);
-
+    /**
+     * 查找数据
+     *
+     * @param   key 将u_id，a_id封装进key中
+     * @return   int
+     */
     int selectByPrimaryKey(TbRecInfoKey key);
-
+    /**
+     * 自定义查询
+     *
+     * @param   example 创建example对象实现自定义查询
+     * @return   java.util.List<com.longines.pojo.TbRecInfo>
+     */
     List<TbRecInfo> selectByExample(TbRecInfoExample example);
-    //    int insertSelective(TbRecInfo record);
-    //    TbRecInfo selectByPrimaryKey(TbRecInfoKey key);
 
-    //    int updateByExampleSelective(@Param("record") TbRecInfo record, @Param("example") TbRecInfoExample example);
-
-    //    int updateByExample(@Param("record") TbRecInfo record, @Param("example") TbRecInfoExample example);
-
-    //   int updateByPrimaryKey(TbRecInfo record);
-    //    int countByExample(TbRecInfoExample example);
-    //    int deleteByExample(TbRecInfoExample example);
 }

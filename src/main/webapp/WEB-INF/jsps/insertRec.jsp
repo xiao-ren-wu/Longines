@@ -27,6 +27,22 @@
             <td><input type="text" name="tel1" id="tel1" value="${recode.cTel}"/></td>
         </tr>
         <tr>
+            <td>邮编</td>
+            <td><input type="text" name="pos1" id="pos1" value="${recode.postcode}"/></td>
+        </tr>
+        <tr>
+            <td>省</td>
+            <td><input type="text" name="pro1" id="pro1" value="${recode.province}"/></td>
+        </tr>
+        <tr>
+            <td>市</td>
+            <td><input type="text" name="city1" id="city1" value="${recode.city}"/></td>
+        </tr>
+        <tr>
+            <td>区</td>
+            <td><input type="text" name="dis1" id="dis1" value="${recode.district}"/></td>
+        </tr>
+        <tr>
             <td colspan="2" align="center"><input type="submit" value="提交"/>
             </td>
         </tr>

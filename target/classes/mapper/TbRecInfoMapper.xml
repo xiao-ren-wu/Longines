@@ -2,11 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.longines.dao.TbRecInfoMapper" >
   <resultMap id="BaseResultMap" type="com.longines.pojo.TbRecInfo" >
-    <id column="u_id" property="uId" jdbcType="INTEGER" />
     <id column="a_id" property="aId" jdbcType="INTEGER" />
+    <id column="u_id" property="uId" jdbcType="INTEGER" />
     <result column="consignee" property="consignee" jdbcType="VARCHAR" />
     <result column="s_add" property="sAdd" jdbcType="VARCHAR" />
     <result column="c_tel" property="cTel" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="district" property="district" jdbcType="VARCHAR" />
     <result column="postcode" property="postcode" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -68,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    u_id, a_id, consignee, s_add, c_tel, postcode
+    a_id, u_id, consignee, s_add, c_tel, postcode,province,city,district
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbRecInfoExample" >
     select
@@ -88,13 +91,13 @@
     select 
     <include refid="Base_Column_List" />
     from tb_rec_info
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+    where a_id = #{aId,jdbcType=INTEGER}
+      and u_id = #{uId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.longines.pojo.TbRecInfoKey" >
     delete from tb_rec_info
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+    where a_id = #{aId,jdbcType=INTEGER}
+      and u_id = #{uId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.longines.pojo.TbRecInfoExample" >
     delete from tb_rec_info
@@ -103,16 +106,16 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.longines.pojo.TbRecInfo" >
-    insert into tb_rec_info (u_id, consignee,s_add, c_tel, postcode)values (#{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR},#{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR})
+    insert into tb_rec_info (u_id, consignee,s_add, c_tel, postcode,province,city,district)values (#{uId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR},#{sAdd,jdbcType=VARCHAR}, #{cTel,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{district,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbRecInfo" >
     insert into tb_rec_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        u_id,
-      </if>
       <if test="aId != null" >
         a_id,
+      </if>
+      <if test="uId != null" >
+        u_id,
       </if>
       <if test="consignee != null" >
         consignee,
@@ -128,11 +131,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        #{uId,jdbcType=INTEGER},
-      </if>
       <if test="aId != null" >
         #{aId,jdbcType=INTEGER},
+      </if>
+      <if test="uId != null" >
+        #{uId,jdbcType=INTEGER},
       </if>
       <if test="consignee != null" >
         #{consignee,jdbcType=VARCHAR},
@@ -157,11 +160,11 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update tb_rec_info
     <set >
-      <if test="record.uId != null" >
-        u_id = #{record.uId,jdbcType=INTEGER},
-      </if>
       <if test="record.aId != null" >
         a_id = #{record.aId,jdbcType=INTEGER},
+      </if>
+      <if test="record.uId != null" >
+        u_id = #{record.uId,jdbcType=INTEGER},
       </if>
       <if test="record.consignee != null" >
         consignee = #{record.consignee,jdbcType=VARCHAR},
@@ -182,8 +185,8 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update tb_rec_info
-    set u_id = #{record.uId,jdbcType=INTEGER},
-      a_id = #{record.aId,jdbcType=INTEGER},
+    set a_id = #{record.aId,jdbcType=INTEGER},
+      u_id = #{record.uId,jdbcType=INTEGER},
       consignee = #{record.consignee,jdbcType=VARCHAR},
       s_add = #{record.sAdd,jdbcType=VARCHAR},
       c_tel = #{record.cTel,jdbcType=VARCHAR},
@@ -207,9 +210,18 @@
       <if test="postcode != null" >
         postcode = #{postcode,jdbcType=VARCHAR},
       </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="district != null" >
+        district = #{district,jdbcType=VARCHAR},
+      </if>
     </set>
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+    where a_id = #{aId,jdbcType=INTEGER}
+      and u_id = #{uId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.longines.pojo.TbRecInfo" >
     update tb_rec_info
@@ -217,7 +229,7 @@
       s_add = #{sAdd,jdbcType=VARCHAR},
       c_tel = #{cTel,jdbcType=VARCHAR},
       postcode = #{postcode,jdbcType=VARCHAR}
-    where u_id = #{uId,jdbcType=INTEGER}
-      and a_id = #{aId,jdbcType=INTEGER}
+    where a_id = #{aId,jdbcType=INTEGER}
+      and u_id = #{uId,jdbcType=INTEGER}
   </update>
 </mapper>

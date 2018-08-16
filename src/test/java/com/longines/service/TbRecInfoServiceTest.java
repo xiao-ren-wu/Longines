@@ -34,28 +34,55 @@ public class TbRecInfoServiceTest {
     }
 
     @Test
-    public void testUpdateCon(int uid,int aid,String con) {
+    public void testUpdateCon() {
         TbRecInfo todo = new TbRecInfo();
-        todo.setaId(aid);
-        todo.setuId(uid);
-        todo.setConsignee(con);
+        todo.setaId(14);
+        todo.setuId(0);
+        todo.setConsignee("垃圾王良");
         infoService.updateByPrimaryKeySelective(todo);
     }
 
     @Test
     public void testDelete() {
         TbRecInfoKey todo = new TbRecInfoKey();
-        todo.setaId(2);
-        todo.setuId(1);
+        todo.setaId(3);
+        todo.setuId(2);
         infoService.deleteByPrimaryKey(todo);
     }
 
     @Test
     public void testUpdateAdd() {
         TbRecInfo todo = new TbRecInfo();
-        todo.setaId(2);
-        todo.setuId(1);
+        todo.setaId(3);
+        todo.setuId(2);
         todo.setsAdd("sa555555555d");
+        infoService.updateByPrimaryKeySelective(todo);
+    }
+
+    @Test
+    public void testUpdatePro() {
+        TbRecInfo todo = new TbRecInfo();
+        todo.setaId(3);
+        todo.setuId(2);
+        todo.setProvince("河南");
+        infoService.updateByPrimaryKeySelective(todo);
+    }
+
+    @Test
+    public void testUpdateCity() {
+        TbRecInfo todo = new TbRecInfo();
+        todo.setaId(3);
+        todo.setuId(2);
+        todo.setCity("洛阳");
+        infoService.updateByPrimaryKeySelective(todo);
+    }
+
+    @Test
+    public void testUpdateDis() {
+        TbRecInfo todo = new TbRecInfo();
+        todo.setaId(3);
+        todo.setuId(2);
+        todo.setDistrict("洛龙区");
         infoService.updateByPrimaryKeySelective(todo);
     }
 
@@ -69,11 +96,11 @@ public class TbRecInfoServiceTest {
     }
 
     @Test
-    public void testUpdatePos(int uid,int aid,String pos){
+    public void testUpdatePos(){
         TbRecInfo todo = new TbRecInfo();
-        todo.setaId(aid);
-        todo.setuId(uid);
-        todo.setPostcode(pos);
+        todo.setaId(3);
+        todo.setuId(2);
+        todo.setPostcode("0825");
         infoService.updateByPrimaryKeySelective(todo);
     }
 
@@ -84,20 +111,23 @@ public class TbRecInfoServiceTest {
         todo.setConsignee("777777");
         todo.setsAdd("2222222222");
         todo.setcTel("111111111111");
-        todo.setuId(2);
+        todo.setuId(8);
         todo.setPostcode("ddddd");
+        todo.setProvince("甘肃");
+        todo.setCity("兰州");
+        todo.setDistrict("金阳");
         infoService.insert(todo);
     }
 
     @Test
-    public void testSelectByExample(int uid) {
+    public void testSelectByExample() {
         TbRecInfoExample ex = new TbRecInfoExample();
         ex.setDistinct(true);
         TbRecInfoExample.Criteria cri = ex.createCriteria();//自定义查询方法
-        cri.andUIdEqualTo(uid);
+        cri.andUIdEqualTo(2);
         List<TbRecInfo> todoList = infoService.selectByExample(ex);
         for(TbRecInfo rec:todoList){
-            System.out.println(rec.getuId() + ""+ rec.getaId() + "" + rec.getConsignee());
+            System.out.println(rec.getuId() + ""+ rec.getaId() + "" + rec.getConsignee() + rec.getProvince() + rec.getCity() + rec.getDistrict());
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.longines.service.impl;
 
-import com.longines.dao.TbOrderInfoMapper;
 import com.longines.dao.TbPayMapper;
 import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbPay;
@@ -24,8 +23,6 @@ public class TbPayServiceImpl  implements TbPayService {
 
     @Resource
     private TbPayMapper tbPayMapper;
-    @Resource
-    private TbOrderInfoMapper tbOrderInfoMapper;
 
     @Override
     public Integer insertTbPay(Integer oId) {
@@ -93,7 +90,7 @@ public class TbPayServiceImpl  implements TbPayService {
             if (tbOrderInfo.getsNum() == 0){
 
                 tbOrderInfo.setsNum(1);
-                tbOrderInfoMapper.updateByPrimaryKeySelective(tbOrderInfo);
+                tbPayMapper.updatesNum(tbOrderInfo);
             }
         }
         else

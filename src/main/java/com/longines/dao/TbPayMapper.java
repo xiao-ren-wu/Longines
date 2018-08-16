@@ -48,15 +48,21 @@ public interface TbPayMapper {
     TbUser selectUserId(Integer oId);
 
     /**
-     ** 方法注释
+     ** 设置用户支付密码
      *
      *@param   tbUser 用户名
      */
     void updatePayCod(TbUser tbUser);
     /**
-     * 方法注释
+     * 修改用户余额
      *
      *@param   tbUser 用户名
      */
     void updateAcBalance(TbUser tbUser);
+    /**
+     * 修改状态号
+     *
+     *@param   tbOrderInfo  订单明细
+     */
+    void updatesNum(TbOrderInfo tbOrderInfo);
 }

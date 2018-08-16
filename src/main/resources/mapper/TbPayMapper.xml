@@ -135,6 +135,8 @@
     delete from tb_pay
     where p_id = #{pId,jdbcType=INTEGER}
   </delete>
+
+
   <insert id="insert" parameterType="com.longines.pojo.TbPay" >
     insert into tb_pay (p_id, u_id, o_id,
       p_method, t_num, pm_data)
@@ -145,7 +147,7 @@
     select u.u_id,u.pic,u.ac_balance,u.pay_cod  from tb_user u inner join tb_pay p on  p.u_id =  u.u_id where p.p_id = #{pId,jdbcType=INTEGER}
   </select>
   <select id ="selectOrder" parameterType="int" resultType="com.longines.pojo.TbOrderInfo">
-    select oi.a_amount,oi.s_num from tb_pay p inner join tb_order_info oi on p.o_id = oi.o_id  where p.p_id = #{pId,jdbcType=INTEGER}
+    select oi.a_amount,oi.s_num,oi.o_id from tb_pay p inner join tb_order_info oi on p.o_id = oi.o_id  where p.p_id = #{pId,jdbcType=INTEGER}
   </select>
   <select id="selectUserId" parameterType="Integer" resultType="com.longines.pojo.TbUser">
     select u_id from tb_order_info where o_id = #{oId} </select>
@@ -154,5 +156,8 @@
   </update>
   <update id="updatePayCod" parameterType="com.longines.pojo.TbUser">
    UPDATE  tb_user   SET   pay_cod = #{payCod} WHERE u_id = #{uId}
+  </update>
+  <update id="updatesNum" parameterType="com.longines.pojo.TbOrderInfo" >
+    update tb_order_info  SET s_num = #{sNum} where o_id = #{oId}
   </update>
 </mapper>

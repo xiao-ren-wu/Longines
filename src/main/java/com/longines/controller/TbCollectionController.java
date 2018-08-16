@@ -4,8 +4,7 @@ import com.longines.dto.TbCollectionDto;
 import com.longines.service.TbCollectionService;
 import com.longines.vo.TbCollectionVo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -20,21 +19,38 @@ import java.util.List;
 public class TbCollectionController {
     @Resource
     private TbCollectionService tbCollectionService;
-
-    @RequestMapping("Add")
-    public  void tbCollectionSave(TbCollectionDto tbCollectionDto )
-    {
-        tbCollectionService.tbCollectionSave(tbCollectionDto.getuId(),tbCollectionDto.getgId());
-    }
-    @RequestMapping("Delete")
-    public void tbCollectionDelete(TbCollectionDto tbCollectionDto){
-        tbCollectionService.tbCollectionDelete(tbCollectionDto.getuId(),tbCollectionDto.getgId());
-    }
-
+    @CrossOrigin
     @ResponseBody
-    @RequestMapping("Select")
-    public  List<TbCollectionVo> tbCollectionSelect(Integer uId)
+    @PostMapping("Add")
+    public  int tbCollectionSave(@RequestBody TbCollectionDto tbCollectionDto)
     {
-        return tbCollectionService.tbCollectionSelect(uId);
+        try {
+            tbCollectionService.tbCollectionSave(tbCollectionDto.getuId(), tbCollectionDto.getgId());
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+    @CrossOrigin
+    @ResponseBody
+    @PostMapping("Delete")
+    public int tbCollectionDelete(@RequestBody TbCollectionDto tbCollectionDto){
+        try {
+            tbCollectionService.tbCollectionDelete(tbCollectionDto.getuId(),tbCollectionDto.getgId());
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+    @CrossOrigin
+    @ResponseBody
+    @PostMapping("Select")
+    public  List<TbCollectionVo> tbCollectionSelect(@RequestBody TbCollectionDto tbCollectionDto)
+    {
+        if(tbCollectionDto.getuId()==null)
+        {
+            return null;
+        }
+        return tbCollectionService.tbCollectionSelect(tbCollectionDto.getuId());
     }
 }

@@ -19,29 +19,20 @@ public class TbCollectionVo {
 
     private Integer invalid;
 
-    private  String pic;
+    private  String gPic;
 
     private long gPrice;
 
     private  String  gName;
 
-    private String describe;
-
-    public long getGpic() {
+    public long getgPrice() {
         return gPrice;
     }
 
-    public void setGpic(long gPrice) {
+    public void setgPrice(long gPrice) {
         this.gPrice = gPrice;
     }
 
-    public String getDescribe() {
-        return describe;
-    }
-
-    public void setDescribe(String describe) {
-        this.describe = describe;
-    }
 
     public Integer getuId() {
         return uId;
@@ -83,12 +74,12 @@ public class TbCollectionVo {
         this.cPrice = cPrice;
     }
 
-    public String getPic() {
-        return pic;
+    public String getgPic1() {
+        return gPic;
     }
 
-    public void setPic(String pic) {
-        this.pic = pic;
+    public void setgPic(String gPic) {
+        this.gPic = gPic;
     }
 
     public String getgName() {

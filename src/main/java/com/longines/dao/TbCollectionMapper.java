@@ -3,7 +3,7 @@ package com.longines.dao;
 import com.longines.pojo.TbCollection;
 import com.longines.pojo.TbCollectionExample;
 import com.longines.pojo.TbCollectionKey;
-import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbCollectionVo;
 
 import java.util.List;
 
@@ -51,9 +51,16 @@ public interface TbCollectionMapper {
     /**
      * 方法注释
      *查找商品的pic
-     *@param   gid  所要查找的商品id
+     *@param   tbCollection  收藏里所需信息
      *@return   java.lang.String
      */
-    TbGoodsInfo findCollectionGoods(Integer gid);
+    TbCollectionVo findCollectionGoods(TbCollection tbCollection);
+  /**
+     * 方法注释
+     *
+     *@param   tbCollection ss
+     *@return   java.util.List<java.lang.Integer>
+     */
+    Integer collectionPur(TbCollection tbCollection);
 
 }

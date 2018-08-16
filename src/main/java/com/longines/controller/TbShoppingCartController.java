@@ -1,15 +1,13 @@
 package com.longines.controller;
 
+import com.longines.dao.TbShoppingCartMapper;
 import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -46,7 +44,6 @@ public class TbShoppingCartController {
         }
         return 1;
     }
-    @CrossOrigin
     @ResponseBody
     @RequestMapping("Delete")
     public int tbShoppingCartDelete(@RequestBody TbShoppingCartKey tbShoppingCartKey){
@@ -63,13 +60,13 @@ public class TbShoppingCartController {
     }
 
     @ResponseBody
-    @RequestMapping("Select")
-    public List<TbShoppingCart> tbShoppingCartSelect(Integer uid){
-        if(uid==null){
+    @RequestMapping(value = "Select",method = RequestMethod.POST)
+    public List<TbShoppingCart> tbShoppingCartSelect(@RequestBody TbShoppingCartKey tbShoppingCartKey){
+        if(tbShoppingCartKey.getuId()==null){
             return null;
         }
         else {
-            return tbShoppingCartService.selectShcByUid(uid);
+            return tbShoppingCartService.selectShcByUid(tbShoppingCartKey.getuId());
         }
     }
 

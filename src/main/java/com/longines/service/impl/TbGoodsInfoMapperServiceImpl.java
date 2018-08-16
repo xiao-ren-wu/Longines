@@ -24,42 +24,105 @@ public class TbGoodsInfoMapperServiceImpl implements TbGoodsInfoMapperService {
     public List<TbGoodsInfo> findGoodsByPriceDesc()
     {
         List<TbGoodsInfo> goods=tbGoodsInfoMapper.findGoodsByPriceDesc();
-        return goods;
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
+
     }
 
     @Override
     public List<TbGoodsInfo> findGoodsByPriceAsc() {
         List<TbGoodsInfo> goods=tbGoodsInfoMapper.findGoodsByPriceAsc();
-        return goods;
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
     }
 
     @Override
     public List<TbGoodsInfo> findGoodsByTheme(String theme) {
         List<TbGoodsInfo> goods=tbGoodsInfoMapper.findGoodsByTheme(theme);
-        return goods;
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
     }
 
     @Override
     public List<TbGoodsInfoExt> findGoodsInfoBysTimeDesc() {
         List<TbGoodsInfoExt> goods=tbGoodsInfoMapper.findGoodsInfoBysTimeDesc();
-        return goods;
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
     }
-
     @Override
     public List<TbGoodsInfoExt> findGoodsInfoBysTimeAsc() {
         List<TbGoodsInfoExt> goods=tbGoodsInfoMapper.findGoodsInfoBysTimeAsc();
-        return goods;
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
     }
 
     @Override
     public List<TbGoodsInfo> findGoodsInfoByLike(Long price) {
         List<TbGoodsInfo> goods=tbGoodsInfoMapper.findGoodsInfoByLike(price);
-        return  goods;
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
     }
 
     @Override
     public List<TbGoodsInfo> findAllGoodsInfo() {
         List<TbGoodsInfo> goods=tbGoodsInfoMapper.findAllGoodsInfo();
-        return goods;
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
     }
+
+    @Override
+    public TbGoodsInfoExt findGoodsDetailById(Integer gId) {
+        TbGoodsInfoExt goods=tbGoodsInfoMapper.findGoodsDetailById(gId);
+        if(goods==null)
+        {
+            return null;
+        }
+        else
+        {
+            return goods;
+        }
+    }
+
 }

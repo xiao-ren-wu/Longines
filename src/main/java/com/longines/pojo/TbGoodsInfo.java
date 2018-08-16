@@ -13,7 +13,7 @@ public class TbGoodsInfo {
 
     private Long price;
 
-    private String theme;
+    private Integer theId;
 
     private String mov;
 
@@ -28,6 +28,27 @@ public class TbGoodsInfo {
     private String wBut;
 
     private String gPic;
+
+    private String gPic2;
+
+    private String gPic3;
+
+    public String getgPic3() {
+        return gPic3;
+    }
+
+    public void setgPic3(String gPic3) {
+        this.gPic3 = gPic3;
+    }
+
+    public String getgPic2() {
+
+        return gPic2;
+    }
+
+    public void setgPic2(String gPic2) {
+        this.gPic2 = gPic2;
+    }
 
     public Integer getgId() {
         return gId;
@@ -61,13 +82,6 @@ public class TbGoodsInfo {
         this.price = price;
     }
 
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme == null ? null : theme.trim();
-    }
 
     public String getMov() {
         return mov;
@@ -127,6 +141,14 @@ public class TbGoodsInfo {
 
     @Override
     public String toString() {
-        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theme='" + theme + '\'' + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + '}';
+        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + '}';
+    }
+
+    public Integer getTheId() {
+        return theId;
+    }
+
+    public void setTheId(Integer theId) {
+        this.theId = theId;
     }
 }

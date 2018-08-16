@@ -8,18 +8,18 @@
       select * from tb_goods_info order by price  asc;
     </select>
   <select id="findGoodsByTheme" parameterType="String" resultType="com.longines.pojo.TbGoodsInfo">
-        select * from tb_goods_info where theme=#{theme}
+        select * from tb_goods_info where brand=#{brand}
     </select>
-    <select id="findGoodsInfoBysTimeDesc" resultType="com.longines.pojo.TbGoodsInfoExt">
-        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,tb_mg_associated.s_time,tb_mg_associated.m_id,tb_merce.pic
+    <select id="findGoodsInfoBysTimeDesc" resultType="com.longines.vo.TbGoodsInfoExt">
+        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,g_pic2,g_pic3,tb_mg_associated.s_time,tb_mg_associated.m_id,tb_merce.m_pic
         FROM tb_goods_info,tb_mg_associated,tb_merce
         WHERE tb_goods_info.g_id=tb_mg_associated.g_id
         and
               tb_mg_associated.m_id=tb_merce.m_id
         ORDER BY s_time desc;
     </select>
-    <select id="findGoodsInfoBysTimeAsc" resultType="com.longines.pojo.TbGoodsInfoExt">
-        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,tb_mg_associated.s_time,tb_mg_associated.m_id,tb_merce.pic
+    <select id="findGoodsInfoBysTimeAsc" resultType="com.longines.vo.TbGoodsInfoExt">
+        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,g_pic2,g_pic3,tb_mg_associated.s_time,tb_mg_associated.m_id,tb_merce.m_pic
         FROM tb_goods_info,tb_mg_associated,tb_merce
         WHERE tb_goods_info.g_id=tb_mg_associated.g_id
         and
@@ -31,5 +31,13 @@
     </select>
     <select id="findAllGoodsInfo" resultType="com.longines.pojo.TbGoodsInfo">
         select * from tb_goods_info;
+    </select>
+    <select id="findGoodsDetailById" parameterType="Integer" resultType="com.longines.vo.TbGoodsInfoExt">
+      SELECT tb_goods_info.g_id,gname,brand,price,the_id,mov,func,a_peo,dial,strap,w_but,g_pic,g_pic2,g_pic3,tb_mg_associated.m_id,tb_merce.m_pic
+        FROM tb_goods_info,tb_mg_associated,tb_merce
+        WHERE #{id}=tb_goods_info.g_id
+        AND tb_goods_info.`g_id`=tb_mg_associated.`g_id`
+        AND
+              tb_mg_associated.m_id=tb_merce.m_id
     </select>
 </mapper>

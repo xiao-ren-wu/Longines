@@ -14,7 +14,7 @@ public class TbGoodsInfoExt {
 
     private Long price;
 
-    private String theme;
+    private Integer theId;
 
     private String mov;
 
@@ -30,17 +30,16 @@ public class TbGoodsInfoExt {
 
     private String gPic;
 
+    private String gPic2;
+
+    private String gPic3;
+
     private Integer mId;
 
     private String mPic;
 
-    public String getmPic() {
-        return mPic;
-    }
 
-    public void setmPic(String mPic) {
-        this.mPic = mPic;
-    }
+
 
     public Integer getmId() {
         return mId;
@@ -82,12 +81,12 @@ public class TbGoodsInfoExt {
         this.price = price;
     }
 
-    public String getTheme() {
-        return theme;
+    public Integer getTheId() {
+        return theId;
     }
 
-    public void setTheme(String theme) {
-        this.theme = theme == null ? null : theme.trim();
+    public void setTheId(Integer theId) {
+        this.theId = theId;
     }
 
     public String getMov() {
@@ -146,8 +145,34 @@ public class TbGoodsInfoExt {
         this.gPic = gPic == null ? null : gPic.trim();
     }
 
+    public String getmPic() {
+        return mPic;
+    }
+
+    public void setmPic(String mPic) {
+        this.mPic = mPic;
+    }
+
+    public String getgPic3() {
+
+        return gPic3;
+    }
+
+    public void setgPic3(String gPic3) {
+        this.gPic3 = gPic3;
+    }
+
+    public String getgPic2() {
+
+        return gPic2;
+    }
+
+    public void setgPic2(String gPic2) {
+        this.gPic2 = gPic2;
+    }
+
     @Override
     public String toString() {
-        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theme='" + theme + '\'' + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + '}';
+        return "TbGoodsInfoExt{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + ", mId=" + mId + ", mPic='" + mPic + '\'' + '}';
     }
 }

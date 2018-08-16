@@ -65,4 +65,11 @@ public interface TbGoodsInfoMapper {
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
     List<TbGoodsInfo> findAllGoodsInfo();
+    /**
+     * 根据商品id查找商品信息及其对应的商家及商家头像
+     *
+     *@param   [gId]
+     *@return   java.util.List<com.longines.vo.TbGoodsInfoExt>
+     */
+    TbGoodsInfoExt findGoodsDetailById(Integer gId);
 }

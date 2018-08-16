@@ -10,7 +10,7 @@
     <title>查询商品列表</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath }/TbGoods/sTimeAsc" method="post">
+<form action="${pageContext.request.contextPath }/TbGoods/findGoodsById" method="post">
     查询条件：
     <table width="100%" border=1>
         <tr>

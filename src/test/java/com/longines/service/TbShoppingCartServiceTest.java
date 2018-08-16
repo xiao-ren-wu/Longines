@@ -2,6 +2,7 @@ package com.longines.service;
 
 import com.longines.pojo.TbShoppingCart;
 import com.longines.service.TbShoppingCartService;
+import com.longines.vo.TbShoppingCartVo;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,12 +14,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-
 /**
- * @Author: liuyang
- * @Description:
- * @CreateDate: 2018/8/5 17:51
- * @Version: 1.0
+ * @author  liuyang
+ * @since   2018/8/5 17:51
+ * @version 1.0
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/spring-longines-dao.xml","classpath:spring/spring-longines-service.xml"})
@@ -32,26 +31,29 @@ public class TbShoppingCartServiceTest {
 
     }
     @Test
-    public void testSelectByUid() {
-        //tbShoppingCartService= (TbShoppingCartService) cxt.getBean("tbShoppingCartServiceImpl");
-        System.out.println(tbShoppingCartService);
-        List<TbShoppingCart> list= (List<TbShoppingCart>) tbShoppingCartService.selectShcByUid(1);
-        System.out.println(list);
+    public void testSelectShcByUid() {
+        List<TbShoppingCart> tbShoppingCartlist= tbShoppingCartService.selectShcByUid(1);
+        System.out.println(tbShoppingCartlist);
     }
 
     @Test
-    public void testUpdateByTamount() {
-    }
-    @Test
-    public void test(){
-        System.out.println("sadjkhakjdg");
-    }
-    @Test
-    public void testDeleteByPrimaryKey() {
+    public void testUpdateShcBygNum() {
+        tbShoppingCartService.updateShcBygNum(1,4,20);
     }
 
     @Test
-    public void testInsertSelective() {
-        tbShoppingCartService.insertShcSelective(5,6,17,156,1);
+    public void testDeleteShcByPK() {
+        tbShoppingCartService.deleteShcByPK(9,9);
+    }
+
+    @Test
+    public void testInsertShcSelective() {
+        tbShoppingCartService.insertShcSelective(20,20);
+    }
+
+    @Test
+    public void testSelectEchoInfo(){
+        TbShoppingCartVo tbShoppingCartVo=tbShoppingCartService.selectEchoInfo(4);
+        System.out.println(tbShoppingCartVo);
     }
 }

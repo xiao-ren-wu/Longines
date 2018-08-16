@@ -1,50 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%--
+  Created by IntelliJ IDEA.
+  User: ly
+  Date: 2018/8/11
+  Time: 1:42
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
-<c:set var="picPath" value="http://127.0.0.1:8003/ssmImage19"></c:set>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta http-equiv="Conl,lktent-Type" content="text/html; charset=UTF-8">
-    <title>查询商品列表</title>
+    <title>Title</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath }/TbGoods/findGoodsById" method="post">
-    查询条件：
-    <table width="100%" border=1>
+    <h1>Successful!</h1>
+    <table border="1">
         <tr>
-            <td><input type="text" name="theme" id="theme"></td>
-            <td><input type="submit" value="查询"/></td>
+            <td>用户ID</td>
+            <td>商品ID</td>
+            <td>商品数量</td>
+            <td>总金额</td>
+            <td>状态号</td>
+            <td>操作</td>
         </tr>
     </table>
-    商品列表：
-    <table width="100%" border=1>
-        <tr>
-            <td>ID</td>
-            <td>商品名称</td>
-            <td>商品品牌</td>
-            <td>商品价格</td>
-            <td>主题</td>
-            <td>商品图片</td>
-            <td>商家id</td>
-            <td>商家头像</td>
-        </tr>
-        <c:forEach items="${tbGoodsInfoExtList }" var="tbGoodsInfo">
-            <tr>
-                <td>${tbGoodsInfo.gId}</td>
-                <td>${tbGoodsInfo.gname }</td>
-                <td>${tbGoodsInfo.brand}</td>
-                <td>${tbGoodsInfo.price }</td>
-                <td>${tbGoodsInfo.theme }</td>
-                <td>${tbGoodsInfo.gPic}</td>
-                <td>${tbGoodsInfo.mId}</td>
-                <td>${tbGoodsInfo.mPic}</td>
-            </tr>
-        </c:forEach>
-
-    </table>
-</form>
+    <c:forEach items="ShcList" var="shc">
+        <td>${shc.uId}</td>
+        <td>${shc.gId}</td>
+        <td>${shc.gNum}</td>
+        <td>${shc.gAmount}</td>
+        <td>${shc.status}</td>
+        <td>
+            <a href="${pageContext.request.contextPath }/longines/receiveInt?id=${shc.uId}>修改</a>
+        </td>
+    </c:forEach>
 </body>
-
 </html>

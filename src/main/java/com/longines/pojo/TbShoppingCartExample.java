@@ -1,17 +1,9 @@
 package com.longines.pojo;
 
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-/**
- * @Author:    liuyang
- * @Description:   条件查询方法
- * @CreateDate:    2018/8/3 20:06
- * @Version:   1.0
- */
-@Repository("ShoppingCartExample")
+
 public class TbShoppingCartExample {
     protected String orderByClause;
 
@@ -35,7 +27,7 @@ public class TbShoppingCartExample {
         this.distinct = distinct;
     }
 
-    public boolean isDistinct(boolean b) {
+    public boolean isDistinct() {
         return distinct;
     }
 

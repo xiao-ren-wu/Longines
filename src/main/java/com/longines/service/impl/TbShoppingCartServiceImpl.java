@@ -5,6 +5,7 @@ import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartExample;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
+import com.longines.vo.TbShoppingCartVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,33 +20,16 @@ import java.util.List;
 public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     @Autowired
     private TbShoppingCartMapper tbShoppingCartMapper;
-    /**
-     * 根据用户ID查询购物车信息
-     *
-     */
-
-/*    @Override
-    public List<TbShoppingCart> selectShcByUid(int uid) {
-        TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
-        TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
-        criteria.andUIdEqualTo(uid);
-        List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
-        System.out.println(tbShoppingCartList);
-        return tbShoppingCartList;
-    }*/
 
     @Override
-    public List<TbShoppingCart> selectShcByUid(int uid) {
-        return null;
-    }
-
-    /**
-     * 更新购物车信息（包含计算总金额）
-     *
-     */
-    @Override
-    public void updateShcByTamount(long amount) {
-
+    public void insertShcSelective(int uid,int gid) {
+        TbShoppingCart tbShoppingCart=new TbShoppingCart();
+        tbShoppingCart.setuId(uid);
+        tbShoppingCart.setgId(gid);
+        tbShoppingCart.setgNum(1);
+        tbShoppingCart.setStatus(1);
+        tbShoppingCartMapper.insertSelective(tbShoppingCart);
+        tbShoppingCartMapper.updateTamount(tbShoppingCart);
     }
 
     @Override
@@ -55,14 +39,48 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         tbShoppingCartKey.setgId(gid);
         tbShoppingCartMapper.deleteByPrimaryKey(tbShoppingCartKey);
     }
+
+    /**
+     * 更新购物车信息
+     *
+     */
     @Override
-    public void insertShcSelective(int uid,int gid,int gnum,long amount,int statu) {
+    public void updateShcBygNum(int uid,int gid, int gNum) {
         TbShoppingCart tbShoppingCart=new TbShoppingCart();
         tbShoppingCart.setuId(uid);
         tbShoppingCart.setgId(gid);
-        tbShoppingCart.setgNum(gnum);
-        tbShoppingCart.settAmount(amount);
-        tbShoppingCart.setStatus(statu);
-        tbShoppingCartMapper.insertSelective(tbShoppingCart);
+        tbShoppingCart.setgNum(gNum);
+        tbShoppingCartMapper.updateBygNum(tbShoppingCart);
     }
+    /**
+     * 根据用户ID查询购物车信息
+     *
+     */
+    @Override
+    public List<TbShoppingCart> selectShcByUid(int uid) {
+        TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
+        TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
+        criteria.andUIdEqualTo(uid);
+        List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
+        return tbShoppingCartList;
+    }
+
+
+    @Override
+    public TbShoppingCartVo selectEchoInfo(int gid) {
+        TbShoppingCartVo tbShoppingCartVoo=new TbShoppingCartVo();
+        tbShoppingCartVoo.setgId(gid);
+        tbShoppingCartVoo=tbShoppingCartMapper.selectMerceInfo(gid);
+        String sName=tbShoppingCartVoo.getSname();
+        String mPic=tbShoppingCartVoo.getmPic();
+        Long Price=tbShoppingCartVoo.getPrice();
+        int Status=tbShoppingCartMapper.selectStatus(4);
+        TbShoppingCartVo tbShoppingCartVo=tbShoppingCartMapper.selectGoodsInfo(gid);
+        tbShoppingCartVo.setSname(sName);
+        tbShoppingCartVo.setmPic(mPic);
+        tbShoppingCartVo.setPrice(Price);
+        tbShoppingCartVo.setStatus(Status);
+        return tbShoppingCartVo;
+    }
+
 }

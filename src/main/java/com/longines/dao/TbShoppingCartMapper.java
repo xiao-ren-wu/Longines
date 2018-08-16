@@ -3,8 +3,7 @@ package com.longines.dao;
 import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartExample;
 import com.longines.pojo.TbShoppingCartKey;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
+import com.longines.vo.TbShoppingCartVo;
 
 import java.util.List;
 
@@ -13,14 +12,9 @@ import java.util.List;
  * @since : 2018/8/3 16:10
  * @version 1.0
  */
-//@Repository("")
+
 public interface TbShoppingCartMapper {
 
-/*    int countByExample(TbShoppingCartExample example);
-
-    int deleteByExample(TbShoppingCartExample example);
-
-    int insert(TbShoppingCart record);*/
     /**
      *新增购物车信息(不为空)
      * @param  record  购物车对象
@@ -34,7 +28,6 @@ public interface TbShoppingCartMapper {
      */
     int deleteByPrimaryKey(TbShoppingCartKey key);
 
- /*   List<TbShoppingCart> selectByExample(TbShoppingCartExample example);*/
     /**
      * 根据联合主键更新(不为空)
      * @param     record  购物车类对象
@@ -48,23 +41,31 @@ public interface TbShoppingCartMapper {
      */
     TbShoppingCart selectByPrimaryKey(TbShoppingCartKey key);
 
-/*    int updateByExampleSelective(@Param("record") TbShoppingCart record, @Param("example") TbShoppingCartExample example);
+    List<TbShoppingCart> selectByExample(TbShoppingCartExample example);
 
-    int updateByExample(@Param("record") TbShoppingCart record, @Param("example") TbShoppingCartExample example);
-
-    int updateByPrimaryKey(TbShoppingCart record);*/
+    /**
+     * 根据商品数量更新
+     * @param    record  购物车类对象
+     * @return   int
+     */
+    int  updateBygNum(TbShoppingCart record);
     /**
      * 根据用户ID查询购物车信息
      * @param     uid  用户ID
      * @return    com.longines.pojo.TbShoppingCart
      */
     TbShoppingCart selectByUid(int uid);
-    /**
-     * 根据商品数量更新
-     * @param    record  购物车类对象
-     * @return   void
-     */
-    void updateByTamount(TbShoppingCart record);
 
+    TbShoppingCartVo selectMerceInfo(int gid);
+
+    TbShoppingCartVo selectGoodsInfo(int gid);
+    /**
+     * 查询单价
+     * @param     tbShoppingCart 购物车对象
+     * @return    int
+     */
+    int updateTamount(TbShoppingCart tbShoppingCart);
+
+    int selectStatus(int gid);
 
 }

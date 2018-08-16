@@ -1,11 +1,13 @@
 package com.longines.controller;
 
+import com.longines.pojo.TbShoppingCart;
+import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.longines.vo.TbShoppingCartVo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -14,15 +16,67 @@ import java.util.List;
  * @version  1.0
  */
 @Controller
-@RequestMapping("/shoppingcart")
+@RequestMapping("/shopping")
 public class TbShoppingCartController {
-    @Autowired
+    @Resource
     public TbShoppingCartService tbShoppingCartService;
-    @RequestMapping("info")
-    @ResponseBody
-    public List ShoppingCartInfo(){
-        System.out.println("------------------");
-        System.out.println(tbShoppingCartService.selectShcByUid(1).toString());
-        return (List) tbShoppingCartService.selectShcByUid(1);
+
+    @RequestMapping("HomePage")
+    public String  homePage()
+    {
+        System.out.println("homePage();");
+        return "HomePage";
     }
+    /**
+     * 根据用户ID和商品ID添加（默认数量为1）
+     * @param     tbShoppingCartKey  购物车对象
+     * @return    int
+     */
+    @ResponseBody
+    @RequestMapping("Insert")
+    public  int tbShoppingCartInsert(@RequestBody TbShoppingCartKey tbShoppingCartKey){
+        try {
+            tbShoppingCartService.insertShcSelective(tbShoppingCartKey.getuId(), tbShoppingCartKey.getgId());
+        }catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+
+    @ResponseBody
+    @RequestMapping("Delete")
+    public int tbShoppingCartDelete(@RequestBody TbShoppingCartKey tbShoppingCartKey){
+        tbShoppingCartService.deleteShcByPK(tbShoppingCartKey.getuId(),tbShoppingCartKey.getgId());
+        return 0;
+    }
+
+    @ResponseBody
+    @RequestMapping("Update")
+    public int tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
+        tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
+        return 0;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "Select",method = RequestMethod.POST)
+    public List<TbShoppingCart> tbShoppingCartSelect(@RequestBody TbShoppingCartKey tbShoppingCartKey){
+        if(tbShoppingCartKey.getuId()==null){
+            return null;
+        }
+        else {
+            return tbShoppingCartService.selectShcByUid(tbShoppingCartKey.getuId());
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping("SelectVo")
+    public TbShoppingCartVo tbShoppingCartSelectVo(Integer uid){
+        if(uid==null){
+            return null;
+        }
+        else {
+            return tbShoppingCartService.selectEchoInfo(uid);
+        }
+    }
+
 }

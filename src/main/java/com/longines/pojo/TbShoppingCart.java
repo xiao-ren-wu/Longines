@@ -1,5 +1,7 @@
 package com.longines.pojo;
 
+import java.util.Date;
+
 /**
  * @Author: liuyang
  * @Description:
@@ -19,6 +21,7 @@ public class TbShoppingCart extends TbShoppingCartKey {
      * 状态号
      */
     private Integer status;
+
 
     public Integer getgNum() {
         return gNum;

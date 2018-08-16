@@ -4,9 +4,7 @@ import com.longines.dto.TbPayDto;
 import com.longines.service.TbPayService;
 import com.longines.vo.TbPayVo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 /**
@@ -15,6 +13,7 @@ import javax.annotation.Resource;
  *@author   leijing
  *@date   2018/8/8
  */
+
 @Controller
 @RequestMapping("/Longines")
 
@@ -29,9 +28,10 @@ public class TbPayController {
      *@param   tbPayDto  从页面接收的数据对象
      *@return   com.longines.vo.TbPayVo
      */
+    @CrossOrigin
     @ResponseBody
     @PostMapping("OrderPay")
-    public TbPayVo orderPay(TbPayDto tbPayDto){
+    public TbPayVo orderPay(@RequestBody TbPayDto tbPayDto){
 
         Integer pId=tbPayService.insertTbPay(tbPayDto.getoId());
         tbPayVo.setState(4);
@@ -47,11 +47,10 @@ public class TbPayController {
      *@param   tbPayDto 从页面接收的数据对象
      *@return   com.longines.vo.TbPayVo
      */
-
+    @CrossOrigin
     @ResponseBody
     @PostMapping("IfSuccess")
-    public TbPayVo success(TbPayDto tbPayDto) {
-
+    public TbPayVo success(@RequestBody TbPayDto tbPayDto) {
 
         int i = tbPayService.judgePw(tbPayDto.getpId(),tbPayDto.getpayCod());
         /**
@@ -80,10 +79,10 @@ public class TbPayController {
         }
     }
 
-
+    @CrossOrigin
     @ResponseBody
     @PostMapping("InsertPayCod")
-    public TbPayVo insertPw (TbPayDto tbPayDto) {
+    public TbPayVo insertPw (@RequestBody TbPayDto tbPayDto) {
         int i = tbPayService.insertPayCod(tbPayDto.getpayCod(),tbPayDto.getuId());
         if (i == 1) {
             tbPayVo.setMsg("设置密码成功");

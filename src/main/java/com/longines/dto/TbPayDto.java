@@ -9,15 +9,15 @@ public class TbPayDto {
     private Integer oId;
     private Integer uId;
     private Integer pId;
-    private String  payCod;
+    private Integer payCod;
 
     public Integer getuId() { return uId; }
 
     public void setuId(Integer uId) { this.uId = uId; }
 
-    public String getpayCod() { return payCod; }
+    public Integer getpayCod() { return payCod; }
 
-    public void setpayCod(String payCod) { this.payCod = payCod; }
+    public void setpayCod(Integer payCod) { this.payCod = payCod; }
 
     public Integer getoId() {
         return oId;

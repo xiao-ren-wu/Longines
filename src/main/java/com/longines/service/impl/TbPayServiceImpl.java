@@ -56,7 +56,7 @@ public class TbPayServiceImpl  implements TbPayService {
     }
 
     @Override
-    public  int judgePw(Integer pId,String payCod){
+    public  int judgePw(Integer pId,Integer payCod){
 
         String payCod1=tbPayMapper.selectUser(pId).getPayCod();
 
@@ -64,7 +64,8 @@ public class TbPayServiceImpl  implements TbPayService {
             tbPayMapper.deleteByPrimaryKey(pId);
             return 3;
         }else{
-            if (MD5.tomd5(payCod).equals(payCod1)){
+            System.out.println(payCod);
+            if (payCod1.equals(MD5.tomd5(payCod.toString()))){
                 return 0;
             }
             else {
@@ -102,10 +103,10 @@ public class TbPayServiceImpl  implements TbPayService {
     }
 
     @Override
-    public int insertPayCod(String  payCod,Integer uId){
+    public int insertPayCod(Integer  payCod,Integer uId){
         TbUser tbUser =new TbUser();
         tbUser.setuId(uId);
-        tbUser.setPayCod(MD5.tomd5(payCod));
+        tbUser.setPayCod(MD5.tomd5(payCod.toString()));
         try {
             tbPayMapper.updatePayCod(tbUser);
         } catch (Exception e) {

@@ -47,7 +47,7 @@ public interface TbPayService {
     *@param  PayCod  支付密码
     *@return   int
     */
-   int judgePw(Integer pId,String  PayCod);
+   int judgePw(Integer pId,Integer  PayCod);
    /**
     * 增加支付密码
     *
@@ -55,7 +55,7 @@ public interface TbPayService {
     *@param   uId  用户Id
     *@return   int
     */
-   int insertPayCod(String payCod,Integer uId);
+   int insertPayCod(Integer payCod,Integer uId);
 }
 
 

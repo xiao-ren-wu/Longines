@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.longines.dao.TbGoodsInfoMapper" >
-  <select id="findGoodsByPriceDesc" resultType="com.longines.pojo.TbGoodsInfo">
+   <select id="findGoodsByPriceDesc" resultType="com.longines.pojo.TbGoodsInfo">
       select * from tb_goods_info order by price desc;
     </select>
-  <select id="findGoodsByPriceAsc" resultType="com.longines.pojo.TbGoodsInfo">
+    <select id="findGoodsByPriceAsc" resultType="com.longines.pojo.TbGoodsInfo">
       select * from tb_goods_info order by price  asc;
     </select>
   <select id="findGoodsByTheme" parameterType="String" resultType="com.longines.pojo.TbGoodsInfo">
-        select * from tb_goods_info where theme=#{theme}
+        select * from tb_goods_info where brand=#{brand}
     </select>
-  <select id="findGoodsInfoBysTimeDesc" resultType="com.longines.pojo.TbGoodsInfo">
-        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,s_time
-        FROM tb_goods_info,tb_mg_associated
+    <select id="findGoodsInfoBysTimeDesc" resultType="com.longines.vo.TbGoodsInfoExt">
+        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,g_pic2,g_pic3,tb_mg_associated.s_time,tb_mg_associated.m_id,tb_merce.m_pic
+        FROM tb_goods_info,tb_mg_associated,tb_merce
         WHERE tb_goods_info.g_id=tb_mg_associated.g_id
+        and
+              tb_mg_associated.m_id=tb_merce.m_id
         ORDER BY s_time desc;
     </select>
-  <select id="findGoodsInfoBysTimeAsc" resultType="com.longines.pojo.TbGoodsInfo">
-        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,s_time
-        FROM tb_goods_info,tb_mg_associated
+    <select id="findGoodsInfoBysTimeAsc" resultType="com.longines.vo.TbGoodsInfoExt">
+        SELECT tb_goods_info.g_id,gname,brand,price,theme,mov,func,a_peo,dial,strap,w_but,g_pic,g_pic2,g_pic3,tb_mg_associated.s_time,tb_mg_associated.m_id,tb_merce.m_pic
+        FROM tb_goods_info,tb_mg_associated,tb_merce
         WHERE tb_goods_info.g_id=tb_mg_associated.g_id
+        and
+              tb_mg_associated.m_id=tb_merce.m_id
         ORDER BY s_time asc;
     </select>
-  <select id="findGoodsInfoByLike" parameterType="Long" resultType="com.longines.pojo.TbGoodsInfo">
+    <select id="findGoodsInfoByLike" parameterType="Long" resultType="com.longines.pojo.TbGoodsInfo">
         select * from tb_goods_info where  price between #{price}-1000 and #{price}+2000;
     </select>
-  <select id="findAllGoodsInfo" resultType="com.longines.pojo.TbGoodsInfo">
+    <select id="findAllGoodsInfo" resultType="com.longines.pojo.TbGoodsInfo">
         select * from tb_goods_info;
+    </select>
+    <select id="findGoodsDetailById" parameterType="Integer" resultType="com.longines.vo.TbGoodsInfoExt">
+      SELECT tb_goods_info.g_id,gname,brand,price,the_id,mov,func,a_peo,dial,strap,w_but,g_pic,g_pic2,g_pic3,tb_mg_associated.m_id,tb_merce.m_pic
+        FROM tb_goods_info,tb_mg_associated,tb_merce
+        WHERE #{id}=tb_goods_info.g_id
+        AND tb_goods_info.`g_id`=tb_mg_associated.`g_id`
+        AND
+              tb_mg_associated.m_id=tb_merce.m_id
     </select>
 </mapper>

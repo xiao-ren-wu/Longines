@@ -1,10 +1,11 @@
-package com.longines.pojo;
+package com.longines.vo;
+
 /**
  * @author FengTianHao
- * @since 2018/8/8 21:51
  * @version 1.0
+ * @since 2018/8/13 20:29
  */
-public class TbGoodsInfo {
+public class TbGoodsInfoExt {
     private Integer gId;
 
     private String gname;
@@ -33,21 +34,19 @@ public class TbGoodsInfo {
 
     private String gPic3;
 
-    public String getgPic3() {
-        return gPic3;
+    private Integer mId;
+
+    private String mPic;
+
+
+
+
+    public Integer getmId() {
+        return mId;
     }
 
-    public void setgPic3(String gPic3) {
-        this.gPic3 = gPic3;
-    }
-
-    public String getgPic2() {
-
-        return gPic2;
-    }
-
-    public void setgPic2(String gPic2) {
-        this.gPic2 = gPic2;
+    public void setmId(Integer mId) {
+        this.mId = mId;
     }
 
     public Integer getgId() {
@@ -82,6 +81,13 @@ public class TbGoodsInfo {
         this.price = price;
     }
 
+    public Integer getTheId() {
+        return theId;
+    }
+
+    public void setTheId(Integer theId) {
+        this.theId = theId;
+    }
 
     public String getMov() {
         return mov;
@@ -139,16 +145,34 @@ public class TbGoodsInfo {
         this.gPic = gPic == null ? null : gPic.trim();
     }
 
+    public String getmPic() {
+        return mPic;
+    }
+
+    public void setmPic(String mPic) {
+        this.mPic = mPic;
+    }
+
+    public String getgPic3() {
+
+        return gPic3;
+    }
+
+    public void setgPic3(String gPic3) {
+        this.gPic3 = gPic3;
+    }
+
+    public String getgPic2() {
+
+        return gPic2;
+    }
+
+    public void setgPic2(String gPic2) {
+        this.gPic2 = gPic2;
+    }
+
     @Override
     public String toString() {
-        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + '}';
-    }
-
-    public Integer getTheId() {
-        return theId;
-    }
-
-    public void setTheId(Integer theId) {
-        this.theId = theId;
+        return "TbGoodsInfoExt{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + ", mId=" + mId + ", mPic='" + mPic + '\'' + '}';
     }
 }

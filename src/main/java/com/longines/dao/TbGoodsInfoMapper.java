@@ -1,6 +1,7 @@
 package com.longines.dao;
 
 import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbGoodsInfoExt;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository("dao")
@@ -13,14 +14,14 @@ public interface TbGoodsInfoMapper {
     /**
      * 对商品信息按照价格进行降序排序
      *
-     *@param
+     *@param   []
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
     List<TbGoodsInfo> findGoodsByPriceDesc();
     /**
      * 对商品信息按照价格进行升序排序
      *
-     *@param
+     *@param   []
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
@@ -36,21 +37,21 @@ public interface TbGoodsInfoMapper {
     /**
      * 对商品信息按照上架时间进行降序排序
      *
-     *@param
+     *@param   []
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
-    List<TbGoodsInfo> findGoodsInfoBysTimeDesc();
+    List<TbGoodsInfoExt> findGoodsInfoBysTimeDesc();
     /**
      * 对商品信息按照上架时间进行升序排序
      *
-     *@param
+     *@param   []
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
 
-    List<TbGoodsInfo> findGoodsInfoBysTimeAsc();
+    List<TbGoodsInfoExt> findGoodsInfoBysTimeAsc();
     /**
-     * 对商品信息按照价格进行升序排序
+     * 猜你喜欢
      *
      *@param   price
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
@@ -60,26 +61,15 @@ public interface TbGoodsInfoMapper {
     /**
      * 查找所有商品信息
      *
-     *@param
+     *@param   []
      *@return   java.util.List<com.longines.pojo.TbGoodsInfo>
      */
     List<TbGoodsInfo> findAllGoodsInfo();
     /**
-     * @return java.util.List<com.longines.pojo.TbGoodsInfo>
-     * @param gname 商品名称
-     */
-    List<TbGoodsInfo> selectBygName(String gname);
-
-    /**
-     * @return java.util.List<com.longines.pojo.TbGoodsInfo>
-     * @param theid 主题id
-     */
-    List<TbGoodsInfo> selectBythemeid(int theid);
-    /**
-     * 方法注解       给一个订单ID按ID大小顺序得到每个商品单价
+     * 根据商品id查找商品信息及其对应的商家及商家头像
      *
-     *@param        gId
-     *@return       java.util.List<java.lang.Integer>
+     *@param   [gId]
+     *@return   java.util.List<com.longines.vo.TbGoodsInfoExt>
      */
-    Integer selectPrice(Integer gId);
+    TbGoodsInfoExt findGoodsDetailById(Integer gId);
 }

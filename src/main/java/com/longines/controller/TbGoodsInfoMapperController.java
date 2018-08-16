@@ -1,10 +1,10 @@
 package com.longines.controller;
 
 import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbGoodsInfoExt;
 import com.longines.service.TbGoodsInfoMapperService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -14,59 +14,129 @@ import java.util.List;
  * @since 2018/8/8 21:05
  * @version 1.0
  */
+@CrossOrigin
 @Controller
 @RequestMapping("/TbGoods")
 public class TbGoodsInfoMapperController {
     @Resource
    private  TbGoodsInfoMapperService tbGoodsInfoMapperService;
-    @RequestMapping("PriceAsc")
-    public String findGoodsByPriceAsc(Model model)
+    @ResponseBody
+    @PostMapping("ByPriceAsc")
+    public List<TbGoodsInfo> findGoodsByPriceAsc()
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByPriceAsc();
-        model.addAttribute("tbGoodsInfoList",tbGoodsInfoList);
-        return "list";
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
+
     }
-    @RequestMapping("PriceDesc")
-    public String findGoodsByPriceDesc(Model model)
+    @ResponseBody
+    @PostMapping("ByPriceDesc")
+    public List<TbGoodsInfo> findGoodsByPriceDesc()
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByPriceDesc();
-        model.addAttribute("tbGoodsInfoList",tbGoodsInfoList);
-        return "list";
+
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
     }
-    @RequestMapping("theme")
-    public String findGoodsByTheme(Model model,String theme)
+    @ResponseBody
+    @PostMapping("ByBrand")
+    public   List<TbGoodsInfo> findGoodsByTheme( String brand)
     {
-        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByTheme(theme);
-        model.addAttribute("tbGoodsInfoList",tbGoodsInfoList);
-        return "list";
+
+        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByTheme(brand);
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
     }
-    @RequestMapping("sTimeAsc")
-    public String findGoodsBysTimeAsc(Model model)
+    @ResponseBody
+    @PostMapping("BysTimeAsc")
+    public  List<TbGoodsInfoExt> findGoodsBysTimeAsc()
     {
-        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoBysTimeAsc();
-        model.addAttribute("tbGoodsInfoList",tbGoodsInfoList);
-        return "list";
+        List<TbGoodsInfoExt> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoBysTimeAsc();
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
     }
-    @RequestMapping("sTimeDesc")
-    public String findGoodsBysTimeDesc(Model model)
+    @ResponseBody
+    @PostMapping("BysTimeDesc")
+    public  List<TbGoodsInfoExt> findGoodsBysTimeDesc()
     {
-        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoBysTimeDesc();
-        model.addAttribute("tbGoodsInfoList",tbGoodsInfoList);
-        return "list";
+        List<TbGoodsInfoExt> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoBysTimeDesc();
+
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
     }
-    @RequestMapping("ByLike")
-    public String findGoodsByLike(Model model,long price)
+    @ResponseBody
+    @PostMapping("ByLike")
+    public  List<TbGoodsInfo> findGoodsByLike( long price)
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoByLike(price);
-        model.addAttribute("tbGoodsInfoList",tbGoodsInfoList);
-        return "list";
+
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
     }
-    @RequestMapping("findAllGoods")
-    public String findAllGoods(Model model)
+    @ResponseBody
+    @PostMapping("findAllGoods")
+    public  List<TbGoodsInfo> findAllGoods()
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findAllGoodsInfo();
-        model.addAttribute("tbGoodsInfoList",tbGoodsInfoList);
-        return "list";
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
+    }
+    @ResponseBody
+    @PostMapping("ById")
+    public  TbGoodsInfoExt findAllGoods( @RequestBody TbGoodsInfo goods)
+    {
+
+        TbGoodsInfoExt tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsDetailById(goods.getgId());
+        if(tbGoodsInfoList==null)
+        {
+            return null;
+        }
+        else
+        {
+            return tbGoodsInfoList;
+        }
     }
 
 }

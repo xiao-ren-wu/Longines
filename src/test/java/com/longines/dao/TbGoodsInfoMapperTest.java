@@ -1,14 +1,13 @@
 package com.longines.dao;
 
 import com.longines.pojo.TbGoodsInfo;
+import com.longines.vo.TbGoodsInfoExt;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @author FengTianHao
@@ -54,8 +53,8 @@ public class TbGoodsInfoMapperTest {
     @Test
     public void findGoodsInfoBysTimeDesc() {
         TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
-        List<TbGoodsInfo> goods=mapper.findGoodsInfoBysTimeDesc();
-        for (TbGoodsInfo g:goods)
+        List<TbGoodsInfoExt> goods=mapper.findGoodsInfoBysTimeDesc();
+        for (TbGoodsInfoExt g:goods)
         {
             System.out.println(g);
         }
@@ -63,8 +62,8 @@ public class TbGoodsInfoMapperTest {
     @Test
     public void findGoodsInfoBysTimeAsc() {
         TbGoodsInfoMapper mapper=(TbGoodsInfoMapper)ctx.getBean("tbGoodsInfoMapper");
-        List<TbGoodsInfo> goods=mapper.findGoodsInfoBysTimeAsc();
-        for (TbGoodsInfo g:goods)
+        List<TbGoodsInfoExt> goods=mapper.findGoodsInfoBysTimeAsc();
+        for (TbGoodsInfoExt g:goods)
         {
             System.out.println(g);
         }

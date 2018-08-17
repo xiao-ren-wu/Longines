@@ -32,7 +32,6 @@ public class TbSearchController {
      * @param watchesName 输入的商品名（原始查询）
      */
     @ResponseBody
-
 //    @RequestMapping("searchController1")
     @PostMapping("searchController1")
     public List<TbSearchGoodsInfo> searchController1(@RequestBody TbSearchGoodsInfo watchesName) {
@@ -41,7 +40,9 @@ public class TbSearchController {
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
             List<TbSearchGoodsInfo> list = tbSearchService.search(watchName);
-            return list;
+            if(!list.isEmpty()){
+                return list;
+            }
         }
         return null;
     }
@@ -59,7 +60,9 @@ public class TbSearchController {
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
             List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsPUD(watchName);
+            if(!list.isEmpty()){
                 return list;
+            }
         }
         return null;
     }
@@ -77,7 +80,9 @@ public class TbSearchController {
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
             List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsPDU(watchName);
-            return list;
+            if(!list.isEmpty()){
+                return list;
+            }
         }
         return null;
     }
@@ -95,7 +100,9 @@ public class TbSearchController {
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
             List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsTUD(watchName);
-            return list;
+            if(!list.isEmpty()){
+                return list;
+            }
         }
         return null;
     }
@@ -113,7 +120,9 @@ public class TbSearchController {
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
             List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsTDU(watchName);
-            return list;
+            if(!list.isEmpty()){
+                return list;
+            }
         }
         return null;
     }

@@ -125,7 +125,7 @@ public class TbOrderInfo {
 
     @Override
     public String toString() {
-        return "TbOrderInfo{" +
+        return "TbOrderInfoService{" +
                 "oId=" + oId +
                 ", uId=" + uId +
                 ", aId=" + aId +

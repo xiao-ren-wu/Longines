@@ -37,4 +37,6 @@ public interface TbOrderMapper {
      *@return       java.util.List<java.lang.Integer>
      */
     List<Integer> selectgNum(Integer oId);
+
+    void updateByPrimaryKey(TbOrder tbOrder);
 }

@@ -27,4 +27,11 @@ public interface TbMgAssociatedMapper {
     *@return       int
     */
     int selectinvBygId(Integer gid);
-}
+    /**
+     * 方法注解         根据商品ID得到商家ID
+     *
+     *@param       gId
+     *@return       List<Integer>
+     */
+    Integer selectBygId(Integer gId);
+    }

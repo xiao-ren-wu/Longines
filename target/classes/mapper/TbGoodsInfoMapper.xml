@@ -6,7 +6,7 @@
     <result column="gname" property="gname" jdbcType="VARCHAR" />
     <result column="brand" property="brand" jdbcType="VARCHAR" />
     <result column="price" property="price" jdbcType="DECIMAL" />
-    <result column="theme" property="theme" jdbcType="VARCHAR" />
+    <result column="the_id" property="theId" jdbcType="VARCHAR" />
     <result column="mov" property="mov" jdbcType="VARCHAR" />
     <result column="func" property="func" jdbcType="VARCHAR" />
     <result column="a_peo" property="aPeo" jdbcType="VARCHAR" />
@@ -14,6 +14,10 @@
     <result column="strap" property="strap" jdbcType="VARCHAR" />
     <result column="w_but" property="wBut" jdbcType="VARCHAR" />
     <result column="g_pic" property="gPic" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="g_pic2" property="gPic2" jdbcType="VARCHAR" />
+    <result column="g_pic3" property="gPic3" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -74,7 +78,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    g_id, gname, brand, price, theme, mov, func, a_peo, dial, strap, w_but, g_pic
+    g_id, gname, brand, price, the_id, mov, func, a_peo, dial, strap, w_but, g_pic, createtime, 
+    updatetime, g_pic2, g_pic3
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbGoodsInfoExample" >
     select
@@ -108,13 +113,17 @@
   </delete>
   <insert id="insert" parameterType="com.longines.pojo.TbGoodsInfo" >
     insert into tb_goods_info (g_id, gname, brand, 
-      price, theme, mov, 
+      price, the_id, mov, 
       func, a_peo, dial, strap, 
-      w_but, g_pic)
+      w_but, g_pic, createtime, 
+      updatetime, g_pic2, g_pic3
+      )
     values (#{gId,jdbcType=INTEGER}, #{gname,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
-      #{price,jdbcType=DECIMAL}, #{theme,jdbcType=VARCHAR}, #{mov,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DECIMAL}, #{theId,jdbcType=VARCHAR}, #{mov,jdbcType=VARCHAR}, 
       #{func,jdbcType=VARCHAR}, #{aPeo,jdbcType=VARCHAR}, #{dial,jdbcType=VARCHAR}, #{strap,jdbcType=VARCHAR}, 
-      #{wBut,jdbcType=VARCHAR}, #{gPic,jdbcType=VARCHAR})
+      #{wBut,jdbcType=VARCHAR}, #{gPic,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{gPic2,jdbcType=VARCHAR}, #{gPic3,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.longines.pojo.TbGoodsInfo" >
     insert into tb_goods_info
@@ -131,8 +140,8 @@
       <if test="price != null" >
         price,
       </if>
-      <if test="theme != null" >
-        theme,
+      <if test="theId != null" >
+        the_id,
       </if>
       <if test="mov != null" >
         mov,
@@ -155,6 +164,18 @@
       <if test="gPic != null" >
         g_pic,
       </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="gPic2 != null" >
+        g_pic2,
+      </if>
+      <if test="gPic3 != null" >
+        g_pic3,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="gId != null" >
@@ -169,8 +190,8 @@
       <if test="price != null" >
         #{price,jdbcType=DECIMAL},
       </if>
-      <if test="theme != null" >
-        #{theme,jdbcType=VARCHAR},
+      <if test="theId != null" >
+        #{theId,jdbcType=VARCHAR},
       </if>
       <if test="mov != null" >
         #{mov,jdbcType=VARCHAR},
@@ -192,6 +213,18 @@
       </if>
       <if test="gPic != null" >
         #{gPic,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gPic2 != null" >
+        #{gPic2,jdbcType=VARCHAR},
+      </if>
+      <if test="gPic3 != null" >
+        #{gPic3,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -216,8 +249,8 @@
       <if test="record.price != null" >
         price = #{record.price,jdbcType=DECIMAL},
       </if>
-      <if test="record.theme != null" >
-        theme = #{record.theme,jdbcType=VARCHAR},
+      <if test="record.theId != null" >
+        the_id = #{record.theId,jdbcType=VARCHAR},
       </if>
       <if test="record.mov != null" >
         mov = #{record.mov,jdbcType=VARCHAR},
@@ -240,6 +273,18 @@
       <if test="record.gPic != null" >
         g_pic = #{record.gPic,jdbcType=VARCHAR},
       </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gPic2 != null" >
+        g_pic2 = #{record.gPic2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gPic3 != null" >
+        g_pic3 = #{record.gPic3,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -251,14 +296,18 @@
       gname = #{record.gname,jdbcType=VARCHAR},
       brand = #{record.brand,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DECIMAL},
-      theme = #{record.theme,jdbcType=VARCHAR},
+      the_id = #{record.theId,jdbcType=VARCHAR},
       mov = #{record.mov,jdbcType=VARCHAR},
       func = #{record.func,jdbcType=VARCHAR},
       a_peo = #{record.aPeo,jdbcType=VARCHAR},
       dial = #{record.dial,jdbcType=VARCHAR},
       strap = #{record.strap,jdbcType=VARCHAR},
       w_but = #{record.wBut,jdbcType=VARCHAR},
-      g_pic = #{record.gPic,jdbcType=VARCHAR}
+      g_pic = #{record.gPic,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      g_pic2 = #{record.gPic2,jdbcType=VARCHAR},
+      g_pic3 = #{record.gPic3,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -275,8 +324,8 @@
       <if test="price != null" >
         price = #{price,jdbcType=DECIMAL},
       </if>
-      <if test="theme != null" >
-        theme = #{theme,jdbcType=VARCHAR},
+      <if test="theId != null" >
+        the_id = #{theId,jdbcType=VARCHAR},
       </if>
       <if test="mov != null" >
         mov = #{mov,jdbcType=VARCHAR},
@@ -299,6 +348,18 @@
       <if test="gPic != null" >
         g_pic = #{gPic,jdbcType=VARCHAR},
       </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gPic2 != null" >
+        g_pic2 = #{gPic2,jdbcType=VARCHAR},
+      </if>
+      <if test="gPic3 != null" >
+        g_pic3 = #{gPic3,jdbcType=VARCHAR},
+      </if>
     </set>
     where g_id = #{gId,jdbcType=INTEGER}
   </update>
@@ -307,20 +368,23 @@
     set gname = #{gname,jdbcType=VARCHAR},
       brand = #{brand,jdbcType=VARCHAR},
       price = #{price,jdbcType=DECIMAL},
-      theme = #{theme,jdbcType=VARCHAR},
+      the_id = #{theId,jdbcType=VARCHAR},
       mov = #{mov,jdbcType=VARCHAR},
       func = #{func,jdbcType=VARCHAR},
       a_peo = #{aPeo,jdbcType=VARCHAR},
       dial = #{dial,jdbcType=VARCHAR},
       strap = #{strap,jdbcType=VARCHAR},
       w_but = #{wBut,jdbcType=VARCHAR},
-      g_pic = #{gPic,jdbcType=VARCHAR}
+      g_pic = #{gPic,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      g_pic2 = #{gPic2,jdbcType=VARCHAR},
+      g_pic3 = #{gPic3,jdbcType=VARCHAR}
     where g_id = #{gId,jdbcType=INTEGER}
   </update>
-
   <select id="selectPrice" resultType="integer" parameterType="java.lang.Integer" >
     select
-    tb_goods_info.price
+    price
     from tb_goods_info
     where g_id = #{gId,jdbcType=INTEGER}
   </select>

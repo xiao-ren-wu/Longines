@@ -327,6 +327,14 @@
     *
     from tb_order_info
     where u_id=#{uId,jdbcType=INTEGER}
+    order by cre_date desc
+  </select>
+  <select id="selectByuid" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    select
+    o_id
+    from tb_order_info
+    where u_id=#{uId,jdbcType=INTEGER}
+    order by cre_date desc
   </select>
 
   <select id="selectBysNum" resultMap="BaseResultMap" parameterType="com.longines.pojo.TbOrderInfo">
@@ -335,5 +343,14 @@
     from tb_order_info
     where s_num=#{sNum,jdbcType=INTEGER}
       and u_id=#{uId,jdbcType=INTEGER}
+      order by cre_date desc
+  </select>
+  <select id="selectByuIdsNum" resultType="java.lang.Integer" parameterType="com.longines.pojo.TbOrderInfo">
+    select
+    o_id
+    from tb_order_info
+    where u_id=#{uId,jdbcType=INTEGER}
+    and s_num=#{sNum,jdbcType=INTEGER}
+    order by cre_date desc
   </select>
 </mapper>

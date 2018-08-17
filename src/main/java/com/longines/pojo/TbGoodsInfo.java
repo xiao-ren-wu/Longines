@@ -1,5 +1,7 @@
 package com.longines.pojo;
 
+import java.util.Date;
+
 public class TbGoodsInfo {
     private Integer gId;
 
@@ -9,7 +11,7 @@ public class TbGoodsInfo {
 
     private Long price;
 
-    private String theme;
+    private String theId;
 
     private String mov;
 
@@ -24,6 +26,14 @@ public class TbGoodsInfo {
     private String wBut;
 
     private String gPic;
+
+    private Date createtime;
+
+    private Date updatetime;
+
+    private String gPic2;
+
+    private String gPic3;
 
     public Integer getgId() {
         return gId;
@@ -57,12 +67,12 @@ public class TbGoodsInfo {
         this.price = price;
     }
 
-    public String getTheme() {
-        return theme;
+    public String getTheId() {
+        return theId;
     }
 
-    public void setTheme(String theme) {
-        this.theme = theme == null ? null : theme.trim();
+    public void setTheId(String theId) {
+        this.theId = theId == null ? null : theId.trim();
     }
 
     public String getMov() {
@@ -119,5 +129,37 @@ public class TbGoodsInfo {
 
     public void setgPic(String gPic) {
         this.gPic = gPic == null ? null : gPic.trim();
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    public String getgPic2() {
+        return gPic2;
+    }
+
+    public void setgPic2(String gPic2) {
+        this.gPic2 = gPic2 == null ? null : gPic2.trim();
+    }
+
+    public String getgPic3() {
+        return gPic3;
+    }
+
+    public void setgPic3(String gPic3) {
+        this.gPic3 = gPic3 == null ? null : gPic3.trim();
     }
 }

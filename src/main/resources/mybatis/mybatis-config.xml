@@ -43,8 +43,5 @@
             </dataSource>
         </environment>
     </environments>
-   <!-- <mappers>
-         <mapper resource="mapper/TbOrderMapper.xml"/>
-         <mapper resource="mapper/TbOrderInfoMapper.xml"/>
-    </mappers>-->
+
 </configuration>

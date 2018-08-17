@@ -14,7 +14,7 @@ public interface TbOrderInfoMapper {
     /**
      * 方法注解     计算订单的总价钱
      *
-     *@param       oId
+     *@param       oId  订单Id
      *@return       java.util.List<java.lang.Integer>
      */
     long countAll(Integer oId);
@@ -23,7 +23,7 @@ public interface TbOrderInfoMapper {
     /**
      * 方法注解       根据主键订单ID删除订单
      *
-     *@param       oId
+     *@param       oId  订单Id
      *@return       int
      */
     int deleteByPrimaryKey(Integer oId);
@@ -31,7 +31,7 @@ public interface TbOrderInfoMapper {
     /**
      * 方法注解       生成订单详细信息表
      *
-     *@param       record
+     *@param       record  订单明细表
      *@return       int
      */
     int insertSelective(TbOrderInfo record);
@@ -39,8 +39,8 @@ public interface TbOrderInfoMapper {
     /**
      * 方法注解        根据订单ID选择订单详细信息行
      *
-     *@param       oId
-     *@return       com.longines.pojo.TbOrderInfo
+     *@param       oId 订单Id
+     *@return       com.longines.pojo.TbOrderInfoService
      */
     TbOrderInfo selectByPrimaryKey(Integer oId);
     int updateByExampleSelective(@Param("record") TbOrderInfo record, @Param("example") TbOrderInfoExample example);
@@ -48,7 +48,7 @@ public interface TbOrderInfoMapper {
     /**
      * 方法注解       根据传进来的订单获得他的状态号再根据情况改变其状态值
      *
-     *@param       record
+     *@param       record  订单明细表
      *@return       int
      */
     int updateByPrimaryKeySelective(TbOrderInfo record);
@@ -57,15 +57,29 @@ public interface TbOrderInfoMapper {
     /**
      * 方法注解     查询某个用户的全部订单
      *
-     *@param            uId
-     *@return           java.util.List<com.longines.pojo.TbOrderInfo>
+     *@param            uId 用户ID
+     *@return           java.util.List<com.longines.pojo.TbOrderInfoService>
      */
     List<TbOrderInfo> selectByuId(Integer uId);
+    /**
+     * 方法注解     查询某个用户的全部订单ID
+     *
+     *@param            uId 用户ID
+     *@return           List<Integer>
+     */
+    List<Integer> selectByuid(Integer uId);
     /**
      * 方法注解      查询某个用户的其他子订单列表
      *
      *@param          tbOrderInfo
-     *@return         java.util.List<com.longines.pojo.TbOrderInfo>
+     *@return         java.util.List<com.longines.pojo.TbOrderInfoService>
      */
     List<TbOrderInfo> selectBysNum(TbOrderInfo tbOrderInfo);
+    /**
+     * 方法注解       根据用户ID和状态号查询其所有订单ID
+     *
+     *@param          tbOrderInfo
+     *@return       List<Integer>
+     */
+    List<Integer> selectByuIdsNum(TbOrderInfo tbOrderInfo);
 }

@@ -1,14 +1,13 @@
 package com.longines.service.impl;
 
 import com.longines.dao.TbShoppingCartMapper;
-import com.longines.pojo.TbShoppingCart;
-import com.longines.pojo.TbShoppingCartExample;
-import com.longines.pojo.TbShoppingCartKey;
+import com.longines.pojo.*;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -62,6 +61,9 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
         criteria.andUIdEqualTo(uid);
         List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
+        for(TbShoppingCart tbShoppingCart:tbShoppingCartList){
+            System.out.println(tbShoppingCart.getgId());
+        }
         return tbShoppingCartList;
     }
 
@@ -70,17 +72,32 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     public TbShoppingCartVo selectEchoInfo(int gid) {
         TbShoppingCartVo tbShoppingCartVoo=new TbShoppingCartVo();
         tbShoppingCartVoo.setgId(gid);
-        tbShoppingCartVoo=tbShoppingCartMapper.selectMerceInfo(gid);
-        String sName=tbShoppingCartVoo.getSname();
-        String mPic=tbShoppingCartVoo.getmPic();
-        Long Price=tbShoppingCartVoo.getPrice();
-        int Status=tbShoppingCartMapper.selectStatus(4);
-        TbShoppingCartVo tbShoppingCartVo=tbShoppingCartMapper.selectGoodsInfo(gid);
-        tbShoppingCartVo.setSname(sName);
-        tbShoppingCartVo.setmPic(mPic);
-        tbShoppingCartVo.setPrice(Price);
-        tbShoppingCartVo.setStatus(Status);
-        return tbShoppingCartVo;
+        TbMerce tbMerce=tbShoppingCartMapper.selectMerceInfo(gid);
+        tbShoppingCartVoo.setSname(tbMerce.getSname());
+        tbShoppingCartVoo.setmPic(tbMerce.getmPic());
+        TbGoodsInfo tbGoodsInfo=tbShoppingCartMapper.selectGoodsInfo(gid);
+        tbShoppingCartVoo.setGname(tbGoodsInfo.getGname());
+        tbShoppingCartVoo.setgPic(tbGoodsInfo.getgPic());
+        tbShoppingCartVoo.setPrice(tbGoodsInfo.getPrice());
+        tbShoppingCartVoo.settNum(1);
+        tbShoppingCartVoo.settAmount(tbGoodsInfo.getPrice());
+        tbShoppingCartVoo.setStatus(tbShoppingCartMapper.selectStatus(gid));
+        return tbShoppingCartVoo;
+    }
+
+
+    @Override
+    public List<TbShoppingCartVo> selectEcho(int uid){
+        List<TbShoppingCartVo> tbShoppingCartVoList=new ArrayList<>();
+        TbShoppingCartExample tbShoppingCartExample=new TbShoppingCartExample();
+        TbShoppingCartExample.Criteria criteria=tbShoppingCartExample.createCriteria();
+        criteria.andUIdEqualTo(uid);
+        List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
+        for(TbShoppingCart tbShoppingCart:tbShoppingCartList){
+             TbShoppingCartVo tbShoppingCartVo  =selectEchoInfo(tbShoppingCart.getgId());
+             tbShoppingCartVoList.add(tbShoppingCartVo);
+        }
+        return tbShoppingCartVoList;
     }
 
 }

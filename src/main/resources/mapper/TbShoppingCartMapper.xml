@@ -8,7 +8,64 @@
         <result column="t_amount" property="tAmount" jdbcType="DECIMAL" />
         <result column="status" property="status" jdbcType="INTEGER" />
     </resultMap>
-
+    <sql id="Example_Where_Clause" >
+        <where >
+            <foreach collection="oredCriteria" item="criteria" separator="or" >
+                <if test="criteria.valid" >
+                    <trim prefix="(" suffix=")" prefixOverrides="and" >
+                        <foreach collection="criteria.criteria" item="criterion" >
+                            <choose >
+                                <when test="criterion.noValue" >
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue" >
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue" >
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue" >
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause" >
+        <where >
+            <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+                <if test="criteria.valid" >
+                    <trim prefix="(" suffix=")" prefixOverrides="and" >
+                        <foreach collection="criteria.criteria" item="criterion" >
+                            <choose >
+                                <when test="criterion.noValue" >
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue" >
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue" >
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue" >
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
     <sql id="Base_Column_List" >
     u_id, g_id, g_num, t_amount, status
   </sql>
@@ -166,11 +223,11 @@
 		select * from tb_shopping_cart
 	WHERE u_id=#{uId,jdbcType=INTEGER}
 	</select>
-    <select id="selectMerceInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+    <select id="selectMerceInfo" parameterType="int" resultType="com.longines.pojo.TbMerce">
         select sname,m_pic from tb_merce
         where m_id=(select m_id from tb_mg_associated where g_id=#{gId,jdbcType=INTEGER})
     </select>
-    <select id="selectGoodsInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+    <select id="selectGoodsInfo" parameterType="int" resultType="com.longines.pojo.TbGoodsInfo">
         select gname,price,g_pic from tb_goods_info
         where g_id=#{gId,jdbcType=INTEGER}
     </select>

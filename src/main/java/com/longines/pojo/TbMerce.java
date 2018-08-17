@@ -1,5 +1,7 @@
 package com.longines.pojo;
 
+import java.util.Date;
+
 public class TbMerce {
     private Integer mId;
 
@@ -20,6 +22,20 @@ public class TbMerce {
     private String bCard;
 
     private String pSer;
+
+    private Date createtime;
+
+    private Date updatetime;
+
+    public String mPic;
+
+    public String getmPic() {
+        return mPic;
+    }
+
+    public void setmPic(String mPic) {
+        this.mPic = mPic;
+    }
 
     public Integer getmId() {
         return mId;
@@ -99,5 +115,21 @@ public class TbMerce {
 
     public void setpSer(String pSer) {
         this.pSer = pSer == null ? null : pSer.trim();
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
     }
 }

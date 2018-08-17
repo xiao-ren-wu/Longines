@@ -1,8 +1,6 @@
 package com.longines.dao;
 
-import com.longines.pojo.TbShoppingCart;
-import com.longines.pojo.TbShoppingCartExample;
-import com.longines.pojo.TbShoppingCartKey;
+import com.longines.pojo.*;
 import com.longines.vo.TbShoppingCartVo;
 
 import java.util.List;
@@ -56,9 +54,9 @@ public interface TbShoppingCartMapper {
      */
     TbShoppingCart selectByUid(int uid);
 
-    TbShoppingCartVo selectMerceInfo(int gid);
+    TbMerce selectMerceInfo(int gid);
 
-    TbShoppingCartVo selectGoodsInfo(int gid);
+    TbGoodsInfo selectGoodsInfo(int gid);
     /**
      * 查询单价
      * @param     tbShoppingCart 购物车对象

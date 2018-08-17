@@ -1,5 +1,6 @@
 package com.longines.controller;
 
+import com.longines.dto.TbShoppingCartDto;
 import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
@@ -42,11 +43,18 @@ public class TbShoppingCartController {
         }
         return 1;
     }
-
+    /**
+     * 批量删除
+     * @param     tbShoppingCartDto  DTO对象
+     * @return    int
+     */
     @ResponseBody
     @RequestMapping("Delete")
-    public int tbShoppingCartDelete(@RequestBody TbShoppingCartKey tbShoppingCartKey){
-        tbShoppingCartService.deleteShcByPK(tbShoppingCartKey.getuId(),tbShoppingCartKey.getgId());
+    public int tbShoppingCartDelete(@RequestBody TbShoppingCartDto tbShoppingCartDto){
+        List<Integer> gid=tbShoppingCartDto.getgId();
+        for(int GID:gid) {
+            tbShoppingCartService.deleteShcByPK(tbShoppingCartDto.getuId(), GID);
+        }
         return 0;
     }
 
@@ -54,17 +62,17 @@ public class TbShoppingCartController {
     @RequestMapping("Update")
     public int tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
         tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
-        return 0;
+        return 1;
     }
 
     @ResponseBody
     @RequestMapping(value = "Select",method = RequestMethod.POST)
-    public List<TbShoppingCart> tbShoppingCartSelect(@RequestBody TbShoppingCartKey tbShoppingCartKey){
+    public List<TbShoppingCartVo> tbShoppingCartSelect(@RequestBody TbShoppingCartKey tbShoppingCartKey){
         if(tbShoppingCartKey.getuId()==null){
             return null;
         }
         else {
-            return tbShoppingCartService.selectShcByUid(tbShoppingCartKey.getuId());
+            return tbShoppingCartService.selectEcho(tbShoppingCartKey.getuId());
         }
     }
 

@@ -223,11 +223,11 @@
 		select * from tb_shopping_cart
 	WHERE u_id=#{uId,jdbcType=INTEGER}
 	</select>
-    <select id="selectMerceInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+    <select id="selectMerceInfo" parameterType="int" resultType="com.longines.pojo.TbMerce">
         select sname,m_pic from tb_merce
         where m_id=(select m_id from tb_mg_associated where g_id=#{gId,jdbcType=INTEGER})
     </select>
-    <select id="selectGoodsInfo" parameterType="int" resultType="com.longines.vo.TbShoppingCartVo">
+    <select id="selectGoodsInfo" parameterType="int" resultType="com.longines.pojo.TbGoodsInfo">
         select gname,price,g_pic from tb_goods_info
         where g_id=#{gId,jdbcType=INTEGER}
     </select>

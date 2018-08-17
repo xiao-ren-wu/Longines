@@ -46,5 +46,6 @@ public interface TbShoppingCartService {
      * @return    com.longines.vo.TbShoppingCartVo
      */
     TbShoppingCartVo selectEchoInfo(int gid);
+    List<TbShoppingCartVo> selectEcho(int uid);
 
 }

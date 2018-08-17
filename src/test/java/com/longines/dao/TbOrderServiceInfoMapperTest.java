@@ -10,7 +10,7 @@ import java.util.Date;
 
 import static org.junit.Assert.*;
 
-public class TbOrderInfoMapperTest {
+public class TbOrderServiceInfoMapperTest {
     ApplicationContext ctx;
     @Before
     public void setUp() throws Exception {

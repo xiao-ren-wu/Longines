@@ -1,12 +1,11 @@
 package com.longines.service.impl;
 
-import com.longines.dao.TbGoodsInfoMapper;
-import com.longines.dao.TbOrderInfoMapper;
-import com.longines.dao.TbOrderMapper;
+import com.longines.dao.*;
 import com.longines.pojo.*;
-import com.longines.service.TbOrderInfo;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.longines.service.TbOrderInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +15,21 @@ import java.util.List;
 * @since    2018/8/9 1:13
 * @version  1.0
 */
-public class TbOrderInfoImpl implements TbOrderInfo {
+@Service
+public class TbOrderInfoServiceImpl implements TbOrderInfoService{
+    @Autowired
+    private TbOrderInfoMapper tbOrderInfoMapper;
+    @Autowired
+    private TbMgAssociatedMapper tbMgAssociatedMapper;
+    @Autowired
+    private TbOrderMapper tbOrderMapper;
+    @Autowired
+    private TbGoodsInfoMapper tbGoodsInfoMapper;
+    @Autowired
+    private TbRecInfoMapper tbRecInfoMapper;
+    @Autowired
+    private TbMerceMapper tbMerceMapper;
+
     /**
      * 方法注解     计算订单的总价钱
      *
@@ -26,20 +39,19 @@ public class TbOrderInfoImpl implements TbOrderInfo {
     @Override
     public long countAll(Integer oId)
     {
-        ApplicationContext ctx;
-        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
-        TbOrderMapper tbOrderMapper= (TbOrderMapper) ctx.getBean("tbOrderMapper");
-        TbGoodsInfoMapper tbGoodsInfoMapper= (TbGoodsInfoMapper) ctx.getBean("tbGoodsInfoMapper");
-
           List<Integer> listshu=tbOrderMapper.selectgNum(oId);
           List<Integer> listgid=tbOrderMapper.selectByoId(oId);
-          List<Integer> listjia=new TbGoodsInfoImpl().selectPrice(listgid);
+          List<Integer> prices=new ArrayList<>();
+          for (int i=0;i<listgid.size();i++)
+          {
+            prices.add(tbGoodsInfoMapper.selectPrice(listgid.get(i)));
+          }
+          List<Integer> listjia=prices;
           Integer allmoney=0;
           for (int i=0;i<listjia.size();i++)
           {
               allmoney+=(listshu.get(i))*(listjia.get(i));
           }
-        System.out.println(allmoney);
            return allmoney;
     }
 
@@ -60,9 +72,6 @@ public class TbOrderInfoImpl implements TbOrderInfo {
     */
     @Override
     public int deleteByPrimaryKey(Integer oId) {
-        ApplicationContext ctx;
-        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
-        TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
         tbOrderInfoMapper.deleteByPrimaryKey(oId);
         return 0;
     }
@@ -78,52 +87,41 @@ public class TbOrderInfoImpl implements TbOrderInfo {
      */
     @Override
     public int insertSelective(com.longines.pojo.TbOrderInfo record) {
-        ApplicationContext ctx;
-        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
-        TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
         com.longines.pojo.TbOrderInfo tbOrderInfo=record;
-        TbOrder tbOrder=new TbOrder();
-        //先调方法生成订单-商品表。。。返回值订单号传给x再给订单明细表作为生成的同一个订单ID
-        int x=new TbOrderImpl().insertSelective(tbOrder);
         try {
-            //生成订单ID
-            //生成三个ID
-            tbOrderInfo.setoId(x);
-            tbOrderInfo.setuId(2);
-            tbOrderInfo.setaId(110120);
-            /*tbOrderInfo.setuId(new TbUser().getuId());
-            tbOrderInfo.setaId(new TbRecInfo().getaId());*/
-
-            //订单创建时间
+            tbOrderInfo.setoId(tbOrderInfo.getoId());
+            tbOrderInfo.setuId(tbOrderInfo.getuId());
+            tbOrderInfo.setaId(tbOrderInfo.getaId());
             tbOrderInfo.setCreDate(new Date());
             tbOrderInfo.setDelDate(new Date());
             tbOrderInfo.setTbDate(new Date());
-            //运费
-            tbOrderInfo.setFreight((long) ((Math.random()*90)+10));
-            //得到总价钱
-            TbGoodsInfo tbGoodsInfo=new TbGoodsInfo();
-            /*tbOrder.setoId(2);*/
-            tbOrderInfo.setaAmount(this.countAll(tbOrder.getoId()));
-
-            //默认设置状态号为待付款(0)
+            long qian=this.countAll(tbOrderInfo.getoId());
+            //折扣
+            int zhekou=0;
+            if (qian>=4000){
+                zhekou= (int) (qian*0.2);
+            }else if(qian>=3000){
+                zhekou= (int) (qian*0.1);
+            }else  if (qian>=2000){
+                zhekou= (int) (qian*0.05);
+            }
+            tbOrderInfo.setFreight((long) (zhekou));
+            tbOrderInfo.setaAmount(qian-zhekou);
             tbOrderInfo.setsNum(0);
-            //设置配送方式
             ArrayList<String> peisong=new ArrayList<String>();
             peisong.add("京东便利配送");
             peisong.add("顺丰迅捷配送");
             peisong.add("圆通亲切配送");
             peisong.add("海外海上列车配送");
             tbOrderInfo.setdMethod(peisong.get((int)(Math.random()*4)));
-
             tbOrderInfoMapper.insertSelective(tbOrderInfo);
-
             System.out.println("创建订单成功!");
-                return 0;
+                return tbOrderInfo.getoId();
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("创建订单失败!");
         }
-        return 1;
+        return tbOrderInfo.getoId();
     }
 
     @Override
@@ -134,13 +132,10 @@ public class TbOrderInfoImpl implements TbOrderInfo {
     * 方法注解        根据订单ID选择订单详细信息行
     *
     *@param       oId
-    *@return       com.longines.pojo.TbOrderInfo
+    *@return       com.longines.pojo.TbOrderInfoService
     */
     @Override
     public com.longines.pojo.TbOrderInfo selectByPrimaryKey(Integer oId) {
-        ApplicationContext ctx;
-        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
-        TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
         return tbOrderInfoMapper.selectByPrimaryKey(oId);
 
     }
@@ -161,19 +156,14 @@ public class TbOrderInfoImpl implements TbOrderInfo {
     *@return       int
     */
     @Override
-    public int updateByPrimaryKeySelective(com.longines.pojo.TbOrderInfo record) {
-        ApplicationContext ctx;
-        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
-        TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
+    public int updateByPrimaryKeySelective(com.longines.pojo.TbOrderInfo record){
         //状态号:0待支付,1代发货,2已发货,3.交易成功,4交易取消
-        if(record.getsNum()==1){
-
-        }else if(record.getsNum()==2)
+    /*   if(record.getsNum()==2)
         {
             record.setTbDate(new Date());
         }
         tbOrderInfoMapper.updateByPrimaryKeySelective(record);
-        return 0;
+      */  return 0;
     }
 
     @Override
@@ -185,27 +175,74 @@ public class TbOrderInfoImpl implements TbOrderInfo {
     * 方法注解     查询某个用户的全部订单
     *
     *@param            uId
-    *@return           java.util.List<com.longines.pojo.TbOrderInfo>
+    *@return           java.util.List<com.longines.pojo.TbOrderInfoService>
     */
     @Override
     public List<com.longines.pojo.TbOrderInfo> selectByuId(Integer uId) {
-        ApplicationContext ctx;
-        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
-        TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
         return tbOrderInfoMapper.selectByuId(uId);
     }
     /**
     * 方法注解      查询某个用户的其他子订单列表
     *
     *@param          tbOrderInfo
-    *@return         java.util.List<com.longines.pojo.TbOrderInfo>
+    *@return         java.util.List<com.longines.pojo.TbOrderInfoService>
     */
     @Override
     public List<com.longines.pojo.TbOrderInfo> selectBysNum(com.longines.pojo.TbOrderInfo tbOrderInfo) {
-        ApplicationContext ctx;
-        ctx = new ClassPathXmlApplicationContext("spring/spring-longines-dao.xml");
-        TbOrderInfoMapper tbOrderInfoMapper= (TbOrderInfoMapper) ctx.getBean("tbOrderInfoMapper");
         return tbOrderInfoMapper.selectBysNum(tbOrderInfo);
+    }
+    /**
+     * 方法注解       根据地址ID查询地址表对象
+     *
+     *@param       aId
+     *@return       TbRecInfo
+     */
+    @Override
+    public TbRecInfo selectByAid(Integer aId) {
+        /*return tbRecInfoMapper.selectByPrimaryKey();*/
+        return null;
+    }
+    /**
+     * 方法注解        根据商品ID查询商品表对象
+     *
+     *@param       gId
+     *@return       TbGoodsInfo
+     */
+    @Override
+    public TbGoodsInfo selectByGid(Integer gId) {
+        return tbGoodsInfoMapper.selectByPrimaryKey(gId);
+    }
+    /**
+     * 方法注解       根据商家ID查询商家信息
+     *
+     *@param       mId
+     *@return       TbMerce
+     */
+    @Override
+    public TbMerce selectBymId(Integer mId) {
+        return tbMerceMapper.selectByPrimaryKey(mId);
+    }
+    /**
+     * 方法注解       根据用户ID查询所有订单ID
+     *
+     *@param       uId
+     *@return       List<Integer>
+     */
+    @Override
+    public List<Integer> selectByuid(Integer uId) {
+        List<Integer> list=tbOrderInfoMapper.selectByuid(uId);
+        return list;
+    }
+    /**
+     * 方法注解       根据用户ID和状态号查询其所有订单ID
+     *
+     *@param       tbOrderInfo
+     *@return       List<Integer>
+     */
+    @Override
+    public List<Integer> selectByuIdsNum(TbOrderInfo tbOrderInfo) {
+        List<Integer> list=tbOrderInfoMapper.selectByuIdsNum(tbOrderInfo);
+        return list;
     }
 
 }

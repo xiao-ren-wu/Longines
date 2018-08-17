@@ -37,7 +37,7 @@ public class TbOrder extends TbOrderKey {
 
     @Override
     public String toString() {
-        return "TbOrder{" +
+        return "TbOrderService{" +
                 "gNum=" + gNum +
                 ", createtime=" + createtime +
                 ", updatetime=" + updatetime +

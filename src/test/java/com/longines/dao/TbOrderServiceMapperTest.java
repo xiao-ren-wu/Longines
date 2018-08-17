@@ -9,11 +9,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import static org.junit.Assert.*;
 
-public class TbOrderMapperTest {
+public class TbOrderServiceMapperTest {
     ApplicationContext ctx;
     @Before
     public void setUp() throws Exception {

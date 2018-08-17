@@ -1,6 +1,7 @@
 package com.longines.service;
 
-import com.longines.pojo.TbOrderInfoExample;
+import com.longines.pojo.*;
+
 import java.util.List;
 /**
 * @author   yangshuai
@@ -8,7 +9,7 @@ import java.util.List;
 * @since    2018/8/9 1:16
 * @version  1.0
 */
-public interface TbOrderInfo {
+public interface TbOrderInfoService {
     /**
      * 方法注解     计算订单的总价钱
      *
@@ -42,7 +43,7 @@ public interface TbOrderInfo {
      * 方法注解        根据订单ID选择订单详细信息行
      *
      *@param       oId
-     *@return       com.longines.pojo.TbOrderInfo
+     *@return       com.longines.pojo.TbOrderInfoService
      */
     com.longines.pojo.TbOrderInfo selectByPrimaryKey(Integer oId);
 
@@ -62,14 +63,49 @@ public interface TbOrderInfo {
      * 方法注解     查询某个用户的全部订单
      *
      *@param            uId
-     *@return           java.util.List<com.longines.pojo.TbOrderInfo>
+     *@return           java.util.List<com.longines.pojo.TbOrderInfoService>
      */
     List<com.longines.pojo.TbOrderInfo> selectByuId(Integer uId);
+    /**
+    * 方法注解       根据用户ID查询所有订单ID
+    *
+    *@param       uId
+    *@return       List<Integer>
+    */
+    List<Integer> selectByuid(Integer uId);
     /**
      * 方法注解      查询某个用户的其他子订单列表
      *
      *@param          tbOrderInfo
-     *@return         java.util.List<com.longines.pojo.TbOrderInfo>
+     *@return         java.util.List<com.longines.pojo.TbOrderInfoService>
      */
     List<com.longines.pojo.TbOrderInfo> selectBysNum(com.longines.pojo.TbOrderInfo tbOrderInfo);
+    /**
+    * 方法注解       根据地址ID查询地址表对象
+    *
+    *@param       aId
+    *@return       TbRecInfo
+    */
+    TbRecInfo selectByAid(Integer aId);
+    /**
+    * 方法注解        根据商品ID查询商品表对象
+    *
+    *@param       gId
+    *@return       TbGoodsInfo
+    */
+    TbGoodsInfo selectByGid(Integer gId);
+    /**
+    * 方法注解       根据商家ID查询商家信息
+    *
+    *@param       mId
+    *@return       TbMerce
+    */
+    TbMerce selectBymId(Integer mId);
+    /**
+     * 方法注解       根据用户ID和状态号查询其所有订单ID
+     *
+     *@param          tbOrderInfo
+     *@return       List<Integer>
+     */
+    List<Integer> selectByuIdsNum(TbOrderInfo tbOrderInfo);
 }

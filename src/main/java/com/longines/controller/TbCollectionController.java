@@ -1,6 +1,6 @@
 package com.longines.controller;
 
-import com.longines.dto.TbCollectionDto;
+import com.longines.pojo.TbCollectionKey;
 import com.longines.service.TbCollectionService;
 import com.longines.vo.TbCollectionVo;
 import org.springframework.stereotype.Controller;
@@ -22,10 +22,14 @@ public class TbCollectionController {
     @CrossOrigin
     @ResponseBody
     @PostMapping("Add")
-    public  int tbCollectionSave(@RequestBody TbCollectionDto tbCollectionDto)
+    public  int tbCollectionSave(@RequestBody TbCollectionKey tbCollectionKey)
     {
+        if (tbCollectionKey.getuId()==null)
+        {
+            return 2;
+        }
         try {
-            tbCollectionService.tbCollectionSave(tbCollectionDto.getuId(), tbCollectionDto.getgId());
+            tbCollectionService.tbCollectionSave(tbCollectionKey.getuId(), tbCollectionKey.getgId());
         } catch (Exception e) {
             return 0;
         }
@@ -34,9 +38,9 @@ public class TbCollectionController {
     @CrossOrigin
     @ResponseBody
     @PostMapping("Delete")
-    public int tbCollectionDelete(@RequestBody TbCollectionDto tbCollectionDto){
+    public int tbCollectionDelete(@RequestBody TbCollectionKey tbCollectionKey){
         try {
-            tbCollectionService.tbCollectionDelete(tbCollectionDto.getuId(),tbCollectionDto.getgId());
+            tbCollectionService.tbCollectionDelete(tbCollectionKey.getuId(), tbCollectionKey.getgId());
         } catch (Exception e) {
             return 0;
         }
@@ -45,12 +49,19 @@ public class TbCollectionController {
     @CrossOrigin
     @ResponseBody
     @PostMapping("Select")
-    public  List<TbCollectionVo> tbCollectionSelect(@RequestBody TbCollectionDto tbCollectionDto)
+    public  List<TbCollectionVo> tbCollectionSelect(@RequestBody TbCollectionKey tbCollectionKey)
     {
-        if(tbCollectionDto.getuId()==null)
+        if(tbCollectionKey.getuId()==null)
         {
             return null;
         }
-        return tbCollectionService.tbCollectionSelect(tbCollectionDto.getuId());
+        return tbCollectionService.tbCollectionSelect(tbCollectionKey.getuId());
+    }
+    @CrossOrigin
+    @ResponseBody
+    @PostMapping("Find")
+    public boolean tbCollectionFind(@RequestBody TbCollectionKey tbCollectionKey)
+    {
+        return tbCollectionService.tbCollectionFind(tbCollectionKey);
     }
 }

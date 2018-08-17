@@ -142,4 +142,7 @@
   <select id="collectionPur" parameterType="com.longines.pojo.TbCollection" resultType="Integer">
     SELECT tb_order.g_id from tb_pay inner join tb_order on tb_pay.o_id = tb_order.o_id where tb_pay.u_id=#{uId} and tb_order.g_id=#{gId}
   </select>
+  <select id="selectCollection" parameterType="com.longines.pojo.TbCollectionKey" resultType="Integer">
+    SELECT  u_id from tb_collection where  u_id=#{uId} and g_id=#{gId}
+  </select>
 </mapper>

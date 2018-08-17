@@ -58,9 +58,11 @@ public interface TbCollectionMapper {
   /**
      * 方法注释
      *
-     *@param   tbCollection ss
+     *@param   tbCollection j
      *@return   java.util.List<java.lang.Integer>
      */
     Integer collectionPur(TbCollection tbCollection);
+
+    Integer selectCollection(TbCollectionKey tbCollectionKey);
 
 }

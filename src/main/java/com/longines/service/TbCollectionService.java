@@ -1,6 +1,7 @@
 package com.longines.service;
 
 
+import com.longines.pojo.TbCollectionKey;
 import com.longines.vo.TbCollectionVo;
 
 import java.util.List;
@@ -34,6 +35,13 @@ public interface TbCollectionService {
      *@return   java.util.List<com.longines.pojo.TbCollection>
      */
     List<TbCollectionVo> tbCollectionSelect(Integer uId);
+    /**
+     * 方法注释
+     *
+     *@param   tbCollectionKey 收藏主键
+     *@return   boolean
+     */
+    boolean tbCollectionFind(TbCollectionKey tbCollectionKey);
 
 
 }

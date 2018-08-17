@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.longines.dao.TbPayMapper" >
+  <resultMap id="BaseResultMap" type="com.longines.pojo.TbPay" >
+    <id column="p_id" property="pId" jdbcType="INTEGER" />
+    <result column="u_id" property="uId" jdbcType="INTEGER" />
+    <result column="o_id" property="oId" jdbcType="INTEGER" />
+    <result column="p_method" property="pMethod" jdbcType="VARCHAR" />
+    <result column="t_num" property="tNum" jdbcType="VARCHAR" />
+    <result column="pm_data" property="pmData" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    p_id, u_id, o_id, p_method, t_num, pm_data, createtime, updatetime
+  </sql>
+
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_pay
+    <set >
+      <if test="record.pId != null" >
+        p_id = #{record.pId,jdbcType=INTEGER},
+      </if>
+      <if test="record.uId != null" >
+        u_id = #{record.uId,jdbcType=INTEGER},
+      </if>
+      <if test="record.oId != null" >
+        o_id = #{record.oId,jdbcType=INTEGER},
+      </if>
+      <if test="record.pMethod != null" >
+        p_method = #{record.pMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tNum != null" >
+        t_num = #{record.tNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pmData != null" >
+        pm_data = #{record.pmData,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.longines.pojo.TbPay" >
+    update tb_pay
+    <set >
+      <if test="uId != null" >
+        u_id = #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="oId != null" >
+        o_id = #{oId,jdbcType=INTEGER},
+      </if>
+      <if test="pMethod != null" >
+        p_method = #{pMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="tNum != null" >
+        t_num = #{tNum,jdbcType=VARCHAR},
+      </if>
+      <if test="pmData != null" >
+        pm_data = #{pmData,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where p_id = #{pId,jdbcType=INTEGER}
+  </update>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_pay
+    where p_id = #{pId,jdbcType=INTEGER}
+  </delete>
+
+
+  <insert id="insert" parameterType="com.longines.pojo.TbPay" >
+    insert into tb_pay (p_id, u_id, o_id,
+      p_method, t_num, pm_data)
+    values (#{pId,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{oId,jdbcType=INTEGER},
+      #{pMethod,jdbcType=VARCHAR}, #{tNum,jdbcType=VARCHAR}, #{pmData,jdbcType=TIMESTAMP})
+  </insert>
+  <select id="selectUser" parameterType="int" resultType="com.longines.pojo.TbUser">
+    select u.u_id,u.pic,u.ac_balance,u.pay_cod  from tb_user u inner join tb_pay p on  p.u_id =  u.u_id where p.p_id = #{pId,jdbcType=INTEGER}
+  </select>
+  <select id ="selectOrder" parameterType="int" resultType="com.longines.pojo.TbOrderInfo">
+    select oi.a_amount,oi.s_num,oi.o_id from tb_pay p inner join tb_order_info oi on p.o_id = oi.o_id  where p.p_id = #{pId,jdbcType=INTEGER}
+  </select>
+  <select id="selectUserId" parameterType="Integer" resultType="com.longines.pojo.TbUser">
+    select u_id from tb_order_info where o_id = #{oId} </select>
+  <update id="updateAcBalance" parameterType="com.longines.pojo.TbUser" >
+    update tb_user SET ac_balance = #{acBalance} where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+  <update id="updatePayCod" parameterType="com.longines.pojo.TbUser">
+   UPDATE  tb_user   SET   pay_cod = #{payCod} WHERE u_id = #{uId}
+  </update>
+  <update id="updatesNum" parameterType="com.longines.pojo.TbOrderInfo" >
+    update tb_order_info  SET s_num = #{sNum} where o_id = #{oId}
+  </update>
+</mapper>

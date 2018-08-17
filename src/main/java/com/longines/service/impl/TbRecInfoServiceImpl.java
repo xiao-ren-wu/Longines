@@ -21,7 +21,7 @@ import java.util.List;
 @Service
 public class TbRecInfoServiceImpl implements TbRecInfoService {
 
-    @Resource(name = "dao")
+    @Resource
     protected  TbRecInfoMapper Mapper;
 
     @Override

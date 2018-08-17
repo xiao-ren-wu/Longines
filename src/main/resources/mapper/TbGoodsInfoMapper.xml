@@ -40,4 +40,5 @@
         AND
               tb_mg_associated.m_id=tb_merce.m_id
     </select>
+
 </mapper>

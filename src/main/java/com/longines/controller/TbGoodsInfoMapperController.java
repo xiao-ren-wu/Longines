@@ -52,10 +52,10 @@ public class TbGoodsInfoMapperController {
     }
     @ResponseBody
     @PostMapping("ByBrand")
-    public   List<TbGoodsInfo> findGoodsByTheme( String brand)
+    public   List<TbGoodsInfo> findGoodsByTheme(@RequestBody TbGoodsInfo goods)
     {
 
-        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByTheme(brand);
+        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByTheme(goods.getBrand());
         if(tbGoodsInfoList==null)
         {
             return null;
@@ -96,7 +96,7 @@ public class TbGoodsInfoMapperController {
     }
     @ResponseBody
     @PostMapping("ByLike")
-    public  List<TbGoodsInfo> findGoodsByLike( long price)
+    public  List<TbGoodsInfo> findGoodsByLike( @RequestBody long price)
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoByLike(price);
 

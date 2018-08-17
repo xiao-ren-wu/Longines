@@ -95,4 +95,9 @@ public class TbCollectionServiceImpl implements TbCollectionService {
         }
         return tbCollectionVoList;
     }
+    @Override
+    public boolean tbCollectionFind(TbCollectionKey tbCollectionKey)
+    {
+           return tbCollectionMapper.selectCollection(tbCollectionKey)!=null;
+    }
 }

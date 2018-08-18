@@ -59,11 +59,13 @@ public interface TbShoppingCartMapper {
     TbGoodsInfo selectGoodsInfo(int gid);
     /**
      * 查询单价
-     * @param     tbShoppingCart 购物车对象
+     * @param     record 购物车对象
      * @return    int
      */
-    int updateTamount(TbShoppingCart tbShoppingCart);
+    int updateTamount(TbShoppingCart record);
 
-    int selectStatus(int gid);
+    int selectStatus(TbShoppingCartKey record);
+
+    int selectgNum(TbShoppingCartKey record);
 
 }

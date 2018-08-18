@@ -83,7 +83,7 @@ public class TbShoppingCartController {
             return null;
         }
         else {
-            return tbShoppingCartService.selectEchoInfo(uid);
+            return tbShoppingCartService.selectEchoInfo(6,9);
         }
     }
 

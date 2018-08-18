@@ -38,22 +38,23 @@ public class TbShoppingCartServiceTest {
 
     @Test
     public void testUpdateShcBygNum() {
-        tbShoppingCartService.updateShcBygNum(2,7,10);
+        tbShoppingCartService.updateShcBygNum(1,3,10);
+        System.out.println(tbShoppingCartService.selectEchoInfo(6,9));
     }
 
     @Test
     public void testDeleteShcByPK() {
-        tbShoppingCartService.deleteShcByPK(9,9);
+        tbShoppingCartService.deleteShcByPK(1,4);
     }
 
     @Test
     public void testInsertShcSelective() {
-        tbShoppingCartService.insertShcSelective(2,7);
+        tbShoppingCartService.insertShcSelective(1,4);
     }
 
     @Test
     public void testSelectEchoInfo(){
-        TbShoppingCartVo tbShoppingCartVo=tbShoppingCartService.selectEchoInfo(4);
+        TbShoppingCartVo tbShoppingCartVo=tbShoppingCartService.selectEchoInfo(6,9);
         System.out.println(tbShoppingCartVo);
     }
     @Test

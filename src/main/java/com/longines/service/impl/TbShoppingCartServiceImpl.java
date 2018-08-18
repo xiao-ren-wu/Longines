@@ -21,12 +21,13 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
     private TbShoppingCartMapper tbShoppingCartMapper;
 
     @Override
-    public void insertShcSelective(int uid,int gid) {
+    public void insertShcSelective(int uid, int gid) {
         TbShoppingCart tbShoppingCart=new TbShoppingCart();
         tbShoppingCart.setuId(uid);
         tbShoppingCart.setgId(gid);
         tbShoppingCart.setgNum(1);
         tbShoppingCart.setStatus(1);
+        tbShoppingCart.settAmount((long) 1);
         tbShoppingCartMapper.insertSelective(tbShoppingCart);
         tbShoppingCartMapper.updateTamount(tbShoppingCart);
     }
@@ -69,20 +70,29 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
 
 
     @Override
-    public TbShoppingCartVo selectEchoInfo(int gid) {
-        TbShoppingCartVo tbShoppingCartVoo=new TbShoppingCartVo();
-        tbShoppingCartVoo.setgId(gid);
+    public TbShoppingCartVo selectEchoInfo(int uid,int gid) {
+        TbShoppingCartVo tbShoppingCartVo=new TbShoppingCartVo();
+        tbShoppingCartVo.setgId(gid);
+
         TbMerce tbMerce=tbShoppingCartMapper.selectMerceInfo(gid);
-        tbShoppingCartVoo.setSname(tbMerce.getSname());
-        tbShoppingCartVoo.setmPic(tbMerce.getmPic());
+        tbShoppingCartVo.setSname(tbMerce.getSname());
+        tbShoppingCartVo.setmPic(tbMerce.getmPic());
+
         TbGoodsInfo tbGoodsInfo=tbShoppingCartMapper.selectGoodsInfo(gid);
-        tbShoppingCartVoo.setGname(tbGoodsInfo.getGname());
-        tbShoppingCartVoo.setgPic(tbGoodsInfo.getgPic());
-        tbShoppingCartVoo.setPrice(tbGoodsInfo.getPrice());
-        tbShoppingCartVoo.settNum(1);
-        tbShoppingCartVoo.settAmount(tbGoodsInfo.getPrice());
-        tbShoppingCartVoo.setStatus(tbShoppingCartMapper.selectStatus(gid));
-        return tbShoppingCartVoo;
+        tbShoppingCartVo.setGname(tbGoodsInfo.getGname());
+        tbShoppingCartVo.setgPic(tbGoodsInfo.getgPic());
+        tbShoppingCartVo.setPrice(tbGoodsInfo.getPrice());
+
+        TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
+        tbShoppingCartKey.setuId(uid);
+        tbShoppingCartKey.setgId(gid);
+        System.out.println(tbShoppingCartMapper.selectgNum(tbShoppingCartKey));
+
+       tbShoppingCartVo.settNum(tbShoppingCartMapper.selectgNum(tbShoppingCartKey));
+        tbShoppingCartVo.settAmount(tbShoppingCartMapper.selectgNum(tbShoppingCartKey)*tbGoodsInfo.getPrice());
+
+        tbShoppingCartVo.setStatus(tbShoppingCartMapper.selectStatus(tbShoppingCartKey));
+        return tbShoppingCartVo;
     }
 
 
@@ -94,7 +104,7 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         criteria.andUIdEqualTo(uid);
         List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
         for(TbShoppingCart tbShoppingCart:tbShoppingCartList){
-             TbShoppingCartVo tbShoppingCartVo  =selectEchoInfo(tbShoppingCart.getgId());
+             TbShoppingCartVo tbShoppingCartVo =selectEchoInfo(uid,tbShoppingCart.getgId());
              tbShoppingCartVoList.add(tbShoppingCartVo);
         }
         return tbShoppingCartVoList;

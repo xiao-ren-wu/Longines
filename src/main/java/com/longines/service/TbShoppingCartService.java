@@ -42,10 +42,11 @@ public interface TbShoppingCartService {
     List<TbShoppingCart> selectShcByUid(int uid);
     /**
      * 查询回显信息
+     * @param     uid   用户ID
      * @param     gid   商品ID
      * @return    com.longines.vo.TbShoppingCartVo
      */
-    TbShoppingCartVo selectEchoInfo(int gid);
+    TbShoppingCartVo selectEchoInfo(int uid,int gid);
     List<TbShoppingCartVo> selectEcho(int uid);
 
 }

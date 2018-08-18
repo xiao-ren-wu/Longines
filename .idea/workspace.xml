@@ -7,82 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c708a4b7-4375-4dbd-9297-9be98a472b5c" name="Default" comment="&quot;着手controller层&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apdplat_word_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mybatis_generator_core_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/word_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/controller/TbSearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/controller/TbThemeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsTheMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdminExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCPic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCPicExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCoupons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCouponsExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCouponsKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbGoodsThe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMgAssociated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMgAssociatedExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMgAssociatedKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderInfoExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/TbSearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/TbThemeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbSearchServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbThemeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/vo/TbSearchGoodsInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbGoodsTheMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbMgAssociatedMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/TbGoodsTheMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbAdminMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbCPicMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbCouponsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbGoodsTheMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbPayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/longines_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/longines_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/longines/dto/TbSearchThemeDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/longines.iml" beforeDir="false" afterPath="$PROJECT_DIR$/longines.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/controller/TbSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/controller/TbSearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/controller/TbThemeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/controller/TbThemeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbRecInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbRecInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/pojo/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/TbBrandMapperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/TbBrandMapperService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbRecInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbRecInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsTheMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsTheMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/TbSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/TbSearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/TbThemeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/TbThemeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbSearchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbSearchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbThemeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbThemeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/vo/TbSearchGoodsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/vo/TbSearchGoodsInfoVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longines/vo/TbThemeGoodsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longines/vo/TbThemeGoodsInfoVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsps/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsps/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/ProxyFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/Sale.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/TbGoodsInfoServiceMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/TbMgAssociatedServiceMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/TbOrderServiceInfoMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/TbOrderServiceMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/dao/TbShoppingCartMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/TbGoodsInfoMapperServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/TbGoodsInfoServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/TbOrderServiceInfoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/TbOrderServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/TbRecInfoServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/TbShoppingCartServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longines/service/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbGoodsTheMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbGoodsTheMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/TbGoodsInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TbGoodsInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sql/longines.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sql/longines.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TbGoodsTheMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TbGoodsTheMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/longines/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbGoodsInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbGoodsInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbRecInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbRecInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/classes/spring/spring-longines-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/spring/spring-longines-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/classes/spring/spring-longines-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/spring/spring-longines-web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/classes/sql/longines.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/sql/longines.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/jsps/showuser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/jsps/showuser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/jsps/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/jsps/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbGoodsTheMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/longines/WEB-INF/classes/mapper/TbGoodsTheMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,85 +38,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TbPayController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbPayController.java">
+      <file leaf-file-name="TbGoodsTheMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsTheMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+            <state relative-caret-position="352">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbPayServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbPayServiceImpl.java">
+      <file leaf-file-name="TbSearchService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbSearchService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="47" column="37" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="37" />
+            <state relative-caret-position="506">
+              <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbMgAssociatedMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMgAssociatedMapper.xml">
+      <file leaf-file-name="TbSearchServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbSearchServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4358" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TbGoodsInfoMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="370" column="38" lean-forward="true" selection-start-line="370" selection-start-column="38" selection-end-line="370" selection-end-column="38" />
+            <state relative-caret-position="720">
+              <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbShoppingCartKey.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartKey.java">
+      <file leaf-file-name="TbThemeServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbThemeServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="462">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbCollection.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollection.java">
+      <file leaf-file-name="TbThemeService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbThemeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbOrderMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbOrderMapper.xml">
+      <file leaf-file-name="TbGoodsInfoServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbGoodsInfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3237" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TbRecInfoMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbRecInfoMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="255" column="9" lean-forward="true" selection-start-line="255" selection-start-column="9" selection-end-line="255" selection-end-column="9" />
+            <state relative-caret-position="220">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbMerceMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMerceMapper.xml">
+      <file leaf-file-name="TbGoodsInfoMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsInfoMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5441" />
+            <state relative-caret-position="-226">
+              <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbUserMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbUserMapper.xml">
+      <file leaf-file-name="TbGoodsInfoMapperController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbGoodsInfoMapperController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6904" />
+            <state relative-caret-position="264">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbSearchController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbSearchController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbThemeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbThemeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-402">
+              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -239,8 +197,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longines/controller/TbShoppingCartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/service/TbBrandMapperService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbRecInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsInfoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/TbRecInfoMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dto/TbSearchThemeDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsInfoMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsTheMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/service/TbSearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/service/TbThemeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbSearchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbThemeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/controller/TbThemeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longines/controller/TbSearchController.java" />
       </list>
     </option>
   </component>
@@ -275,9 +241,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="675" />
-    <option name="width" value="699" />
+    <option name="width" value="700" />
     <option name="height" value="390" />
   </component>
   <component name="ProjectView">
@@ -285,7 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -345,6 +311,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Longines" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Longines" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
               <item name="pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -380,38 +355,20 @@
               <item name="Longines" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Longines" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Longines" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Longines" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Longines" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Longines" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Longines" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longines" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="o&#9;FILE&#9;file://E:/SummerDemo/Longines/src/main/java/com/longines/controller/TbThemeController.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
@@ -465,124 +422,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Unnamed">
+  <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="TbShoppingCartServiceTest.testInsertShcSelective" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="longines" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.longines.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.longines.service" />
-      <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testInsertShcSelective" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TbShoppingCartServiceTest.testSelectEcho" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="longines" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.longines.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.longines.service" />
-      <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testSelectEcho" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TbShoppingCartServiceTest.testSelectEchoInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="longines" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.longines.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.longines.service" />
-      <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testSelectEchoInfo" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TbShoppingCartServiceTest.testSelectShcByUid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="longines" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.longines.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.longines.service" />
-      <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testSelectShcByUid" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TbShoppingCartServiceTest.testUpdateShcBygNum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="longines" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.longines.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.longines.service" />
-      <option name="MAIN_CLASS_NAME" value="com.longines.service.TbShoppingCartServiceTest" />
-      <option name="METHOD_NAME" value="testUpdateShcBygNum" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -622,7 +464,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.16" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.31" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="longines:war exploded">
@@ -632,7 +474,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_longines" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Longines_3" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -640,7 +482,7 @@
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="7903" />
+        <option name="DEBUG_PORT" value="1037" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -693,23 +535,6 @@
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Tomcat Server.Unnamed" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testUpdateShcBygNum" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectShcByUid" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectEchoInfo" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testInsertShcSelective" />
-      <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectEcho" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectEchoInfo" />
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testUpdateShcBygNum" />
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testInsertShcSelective" />
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectEcho" />
-        <item itemvalue="JUnit.TbShoppingCartServiceTest.testSelectShcByUid" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -728,6 +553,8 @@
       <workItem from="1534250250894" duration="34821000" />
       <workItem from="1534391582819" duration="30623000" />
       <workItem from="1534490222743" duration="15723000" />
+      <workItem from="1534554821143" duration="510000" />
+      <workItem from="1534561404147" duration="1636000" />
     </task>
     <servers />
   </component>
@@ -764,15 +591,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152592000" />
+    <option name="totallyTimeSpent" value="154738000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5013405" side_tool="true" weight="0.31383738" />
-      <window_info anchor="bottom" id="Application Servers" order="0" sideWeight="0.49798927" weight="0.099857345" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50075644" side_tool="true" weight="0.14492753" />
+      <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32850242" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
@@ -789,44 +615,19 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49865952" weight="0.31383738" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49924356" visible="true" weight="0.31541726" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20643431" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28820375" />
       <window_info id="Web" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.688826" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49924356" visible="true" weight="0.31561998" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50075644" side_tool="true" weight="0.14492753" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32980332" />
-      <window_info id="Web" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32850242" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.18035427" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3993559" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -841,338 +642,172 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dto/TbShoppingCartDto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbOrderInfoMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbMerceService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbGoodsInfoService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbMgAssociatedService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbGoodsInfoMapperService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbCollectionService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbOrderService.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/longines/dao/TbGoodsInfoServiceMapperTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbRecInfoMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCouponsExample.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbPayService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbUserServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbShoppingCartServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbRecInfoServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbOrderServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbOrderInfoServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbMerceServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbGoodsInfoMapperServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbCollectionServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbBrandMapperServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbPayMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbPayMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbOrderInfoService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbMgAssociatedServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbOrderInfoMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbUserMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbPayServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbPayController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="e#299#300#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="770">
+          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbUserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMgAssociatedMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbOrderMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbRecInfoMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMerceMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="10076">
+          <caret line="458" column="9" selection-start-line="458" selection-start-column="9" selection-end-line="458" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartKey.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollection.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbCollectionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbBrandMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbBrandMapperService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/vo/TbThemeGoodsInfoVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="264">
+          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbOrderInfoMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/vo/TbSearchGoodsInfoVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="176">
+          <caret line="8" column="20" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dto/TbSearchThemeDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbMerceService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbGoodsInfoMapperController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbOrderInfoExample.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbGoodsInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbMgAssociatedService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbGoodsInfoMapperService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbMerceExample.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbCollectionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/longines/dao/TbGoodsInfoServiceMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="264">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsInfoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1570">
-          <caret line="118" column="48" selection-start-line="118" selection-start-column="48" selection-end-line="118" selection-end-column="48" />
+        <state relative-caret-position="-226">
+          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbRecInfoMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbGoodsTheMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        <state relative-caret-position="352">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdmin.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbAdminExample.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCouponsExample.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbThemeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCPicExample.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbCollectionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbBrandMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbPayService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbUserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbThemeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbShoppingCartServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbSearchServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbRecInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbOrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbOrderInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="46" column="52" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbMerceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbGoodsInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="30" column="52" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbGoodsInfoMapperServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbCollectionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbBrandMapperServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
+        <state relative-caret-position="220">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/dao/TbPayMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbSearchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="506">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbPayMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbSearchServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2496" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbGoodsTheMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbShoppingCartMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="229" column="96" lean-forward="true" selection-start-line="229" selection-start-column="96" selection-end-line="229" selection-end-column="96" />
+        <state relative-caret-position="720">
+          <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/TbOrderInfoService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbThemeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="462">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbThemeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-402">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbMgAssociatedServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-634">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbOrderInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/service/impl/TbPayServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="47" column="37" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/controller/TbPayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMgAssociatedMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4358" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbOrderMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3237" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbRecInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="255" column="9" lean-forward="true" selection-start-line="255" selection-start-column="9" selection-end-line="255" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMerceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5441" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbGoodsInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="370" column="38" lean-forward="true" selection-start-line="370" selection-start-column="38" selection-end-line="370" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbShoppingCartKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longines/pojo/TbCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>

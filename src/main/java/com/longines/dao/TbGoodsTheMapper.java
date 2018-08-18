@@ -1,6 +1,6 @@
 package com.longines.dao;
 
-import com.longines.vo.TbThemeGoodsInfo;
+import com.longines.vo.TbThemeGoodsInfoVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,6 +17,6 @@ public interface TbGoodsTheMapper {
      * @return java.util.List<com.longines.vo.TbThemeGoodsInfo>
      * @param theId 主题id
      */
-    List<TbThemeGoodsInfo> selectGooTheByTheId(int theId);
+    List<TbThemeGoodsInfoVo> selectGooTheByTheId(int theId);
 
 }

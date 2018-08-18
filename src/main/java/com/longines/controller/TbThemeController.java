@@ -1,7 +1,8 @@
 package com.longines.controller;
 
+import com.longines.dto.TbSearchThemeDto;
 import com.longines.service.TbThemeService;
-import com.longines.vo.TbThemeGoodsInfo;
+import com.longines.vo.TbThemeGoodsInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +31,8 @@ public class TbThemeController {
     @ResponseBody
     @PostMapping("themeInfo1")
 //    @RequestMapping("themeinfo1")
-    public List<TbThemeGoodsInfo> themeInfo1() {
-        List<TbThemeGoodsInfo> list = tbThemeService.SelectThemeGoods(1);
+    public List<TbThemeGoodsInfoVo> themeInfo1() {
+        List<TbThemeGoodsInfoVo> list = tbThemeService.SelectThemeGoods(1);
         return list;
     }
 
@@ -42,8 +43,8 @@ public class TbThemeController {
     @ResponseBody
     @PostMapping("themeInfo2")
 //    @RequestMapping("themeinfo2")
-    public List<TbThemeGoodsInfo> themeInfo2() {
-        List<TbThemeGoodsInfo> list = tbThemeService.SelectThemeGoods(2);
+    public List<TbThemeGoodsInfoVo> themeInfo2() {
+        List<TbThemeGoodsInfoVo> list = tbThemeService.SelectThemeGoods(2);
         return list;
     }
 
@@ -54,8 +55,8 @@ public class TbThemeController {
     @ResponseBody
     @PostMapping("themeInfo3")
 //    @RequestMapping("themeinfo3")
-    public List<TbThemeGoodsInfo> themeInfo3() {
-        List<TbThemeGoodsInfo> list = tbThemeService.SelectThemeGoods(3);
+    public List<TbThemeGoodsInfoVo> themeInfo3() {
+        List<TbThemeGoodsInfoVo> list = tbThemeService.SelectThemeGoods(3);
         return list;
     }
 
@@ -66,8 +67,8 @@ public class TbThemeController {
     @ResponseBody
     @PostMapping("themeInfo4")
 //    @RequestMapping("themeinfo4")
-    public List<TbThemeGoodsInfo> themeInfo4(@RequestBody TbThemeGoodsInfo tbThemeGoodsInfo) {
-        List<TbThemeGoodsInfo> list = tbThemeService.SelectThemeGoods(tbThemeGoodsInfo.getTheId());
+    public List<TbThemeGoodsInfoVo> themeInfo4(@RequestBody TbSearchThemeDto tbThemeGoodsInfo) {
+        List<TbThemeGoodsInfoVo> list = tbThemeService.SelectThemeGoods(tbThemeGoodsInfo.getTheId());
         return list;
     }
 

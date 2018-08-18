@@ -1,9 +1,8 @@
 package com.longines.service.impl;
 
 import com.longines.dao.TbGoodsTheMapper;
-import com.longines.pojo.TbGoodsThe;
 import com.longines.service.TbThemeService;
-import com.longines.vo.TbThemeGoodsInfo;
+import com.longines.vo.TbThemeGoodsInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,7 @@ public class TbThemeServiceImpl implements TbThemeService {
      * @param theId 主题id
      */
     @Override
-    public List<TbThemeGoodsInfo> SelectThemeGoods(int theId) {
+    public List<TbThemeGoodsInfoVo> SelectThemeGoods(int theId) {
         return tbGoodsTheMapper.selectGooTheByTheId(theId);
     }
 }

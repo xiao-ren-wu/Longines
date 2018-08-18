@@ -2,7 +2,7 @@ package com.longines.dao;
 
 import com.longines.pojo.TbGoodsInfo;
 import com.longines.vo.TbGoodsInfoExt;
-import com.longines.vo.TbSearchGoodsInfo;
+import com.longines.vo.TbSearchGoodsInfoVo;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository("dao")
@@ -78,31 +78,31 @@ public interface TbGoodsInfoMapper {
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectBygName(String gname);
+    List<TbSearchGoodsInfoVo> selectBygName(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectBygNamePUD(String gname);
+    List<TbSearchGoodsInfoVo> selectBygNamePUD(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectBygNamePDU(String gname);
+    List<TbSearchGoodsInfoVo> selectBygNamePDU(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectBygNameTUD(String gname);
+    List<TbSearchGoodsInfoVo> selectBygNameTUD(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectBygNameTDU(String gname);
+    List<TbSearchGoodsInfoVo> selectBygNameTDU(String gname);
     /**
      * 方法注解       给一个商品ID按ID大小顺序得到每个商品单价
      *

@@ -430,27 +430,27 @@
   </select>
 
     <!-- 根据商品名称查询商品信息 -->
-    <select id="selectBygName" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfo" >
+    <select id="selectBygName" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfoVo" >
         SELECT tb_goods_info.g_id,gname,brand,price,the_id,mov,func,a_peo,dial,strap,w_but,g_pic,tb_mg_associated.s_time FROM tb_goods_info,tb_mg_associated WHERE gname LIKE '%${value}%' AND tb_goods_info.g_id=tb_mg_associated.g_id
     </select>
 
     <!--价格由高到低-->
-    <select id="selectBygNamePUD" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfo" >
+    <select id="selectBygNamePUD" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfoVo" >
         SELECT tb_goods_info.g_id,gname,brand,price,the_id,mov,func,a_peo,dial,strap,w_but,g_pic,tb_mg_associated.s_time FROM tb_goods_info,tb_mg_associated WHERE gname LIKE '%${value}%' AND tb_goods_info.g_id=tb_mg_associated.g_id ORDER BY tb_goods_info.price DESC
    </select>
 
     <!--价格由低到高-->
-    <select id="selectBygNamePDU" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfo" >
+    <select id="selectBygNamePDU" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfoVo" >
         SELECT tb_goods_info.g_id,gname,brand,price,the_id,mov,func,a_peo,dial,strap,w_but,g_pic,tb_mg_associated.s_time FROM tb_goods_info,tb_mg_associated WHERE gname LIKE '%${value}%' AND tb_goods_info.g_id=tb_mg_associated.g_id ORDER BY tb_goods_info.price
     </select>
 
     <!--上架时间由晚到早 -->
-    <select id="selectBygNameTUD" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfo" >
+    <select id="selectBygNameTUD" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfoVo" >
         SELECT tb_goods_info.g_id,gname,brand,price,the_id,mov,func,a_peo,dial,strap,w_but,g_pic,tb_mg_associated.s_time FROM tb_goods_info,tb_mg_associated WHERE gname LIKE '%${value}%' AND tb_goods_info.g_id=tb_mg_associated.g_id ORDER BY tb_mg_associated.s_time DESC
     </select>
 
     <!--上架时间由早到晚 -->
-    <select id="selectBygNameTDU" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfo" >
+    <select id="selectBygNameTDU" parameterType="String" resultType="com.longines.vo.TbSearchGoodsInfoVo" >
         SELECT tb_goods_info.g_id,gname,brand,price,the_id,mov,func,a_peo,dial,strap,w_but,g_pic,tb_mg_associated.s_time FROM tb_goods_info,tb_mg_associated WHERE gname LIKE '%${value}%' AND tb_goods_info.g_id=tb_mg_associated.g_id ORDER BY tb_mg_associated.s_time
     </select>
 

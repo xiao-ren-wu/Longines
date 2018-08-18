@@ -1,6 +1,6 @@
 package com.longines.vo;
 
-public class TbThemeGoodsInfo {
+public class TbThemeGoodsInfoVo {
 
     private Integer gId;
 

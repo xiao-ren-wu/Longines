@@ -1,7 +1,6 @@
 package com.longines.service;
 
-import com.longines.pojo.TbGoodsThe;
-import com.longines.vo.TbThemeGoodsInfo;
+import com.longines.vo.TbThemeGoodsInfoVo;
 
 import java.util.List;
 
@@ -16,6 +15,6 @@ public interface TbThemeService {
      * @return java.util.List<com.longines.vo.TbThemeGoodsInfo>
      * @param theId 主题id
      */
-    List<TbThemeGoodsInfo> SelectThemeGoods(int theId);
+    List<TbThemeGoodsInfoVo> SelectThemeGoods(int theId);
 
 }

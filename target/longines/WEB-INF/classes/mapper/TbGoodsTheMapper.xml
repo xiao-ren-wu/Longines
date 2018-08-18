@@ -3,7 +3,7 @@
 <mapper namespace="com.longines.dao.TbGoodsTheMapper" >
 
   <!-- 根据主题id查询商品信息 -->
-  <select id="selectGooTheByTheId" parameterType="int" resultType="com.longines.vo.TbThemeGoodsInfo">
+  <select id="selectGooTheByTheId" parameterType="int" resultType="com.longines.vo.TbThemeGoodsInfoVo">
         SELECT g_id,gname,brand,price,tb_goods_info.the_id,mov,func,a_peo,dial,strap,w_but,g_pic,tb_goods_the.the_pic,tb_goods_the.the_des FROM tb_goods_info,tb_goods_the WHERE tb_goods_info.the_id=#{id} AND tb_goods_the.the_id=#{id}
     </select>
 

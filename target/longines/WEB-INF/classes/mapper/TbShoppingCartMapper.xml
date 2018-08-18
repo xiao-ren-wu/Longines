@@ -231,8 +231,14 @@
         select gname,price,g_pic from tb_goods_info
         where g_id=#{gId,jdbcType=INTEGER}
     </select>
-    <select id="selectStatus" parameterType="int" resultType="int">
+    <select id="selectStatus" parameterType="com.longines.pojo.TbShoppingCartKey" resultType="int">
         select status from tb_shopping_cart
-        where g_id=#{gId,jdbcType=INTEGER}
+        where  u_id=#{uId,jdbcType=INTEGER}
+        and g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <select id="selectgNum" parameterType="com.longines.pojo.TbShoppingCartKey" resultType="int">
+        select g_num from tb_shopping_cart
+        where  u_id=#{uId,jdbcType=INTEGER}
+        and g_id=#{gId,jdbcType=INTEGER}
     </select>
 </mapper>

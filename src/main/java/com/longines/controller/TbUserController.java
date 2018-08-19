@@ -1,6 +1,4 @@
 package com.longines.controller;
-
-
 import com.longines.pojo.TbUser;
 import com.longines.service.TbUserService;
 import com.longines.utils.MD5;
@@ -11,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
+
 
 
 /**
@@ -29,6 +27,34 @@ public class TbUserController {
 
     @Autowired
     private TbUserService service;
+
+
+
+    /**
+     * 注册用户
+     *
+     * @param user    用户
+     * @return java.lang.String
+     * @since 2018/8/9 22:34
+     */
+
+    @RequestMapping(value="/register")
+    @ResponseBody
+    public int register( @RequestBody TbUser user)throws Exception{
+        if(service.select(user.getTelNum())!=null){
+            return 0;
+        }
+        user.setPw(MD5.tomd5(user.getPw()));
+        if(service.regist(user)==1) {
+            return 1;
+        }else{
+         return 0;
+        }
+    }
+
+
+
+
 
 
 
@@ -54,10 +80,10 @@ public class TbUserController {
 
                 return user.getuId();
             } else {
-                return 100;
+                return 0;
             }
         } else {
-            return 1000;
+            return 0;
         }
     }
 
@@ -75,8 +101,6 @@ public class TbUserController {
          return tbuser;
     }
 
-
-
     /**
      *更新用户信息
      *@param user 用户
@@ -85,85 +109,49 @@ public class TbUserController {
      */
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ResponseBody
-    public String update(@RequestBody TbUser user) {
+    public int update(@RequestBody TbUser user) {
         if (service.updateTbUser(user) == 1) {
-            return "success";
+            return 1;
         } else {
-            return "fail";
+            return 0;
         }
 
     }
-
-
-
-
-
-
-
-
-
-    /**
-     * 注册用户
-     *
-     * @param user    用户
-     * @return java.lang.String
-     * @since 2018/8/9 22:34
-     */
-
-    @RequestMapping(value="/register",method =RequestMethod.POST)
-    @ResponseBody
-    public HashMap<String, Object> register( @RequestBody TbUser user)throws Exception{
-            String status;
-            String message;
-            String success;
-            user.setPw(MD5.tomd5(user.getPw()));
-            if(service.regist(user)==1) {
-                status="1";
-                message="注册成功";
-                success="success";
-            }else{
-                status="0";
-                message="注册失败";
-                success="failed";
-            }
-        HashMap<String,Object> map=new HashMap<>();
-        map.put("status",status);
-        map.put("message",message);
-        map.put("success",success);
-        return map;
-    }
-
-
-
     /**
      *修改密码
-     *@param telNum 电话号码
-     *@param valQu 问题答案
+     *@param user 用户
      *@return java.lang.String
      *@since 2018/8/14 10:46
      */
-    @RequestMapping(value="revisePw")
+    @RequestMapping(value="revisePw",method=RequestMethod.POST)
     @ResponseBody
-    public String  revisePw(String telNum,String valQu) {
-        TbUser user = service.select(telNum);
-        if (valQu.equals(user.getValQu())) {
-            return "success";
+    public int   revisePw(@RequestBody TbUser user) {
+        TbUser tbuser = service.select(user.getTelNum());
+        if (tbuser.getAntoqu().equals(user.getAntoqu()))
+        {
+            return 1;
         }else{
-            return "error";
+            return 0;
         }
-
     }
 
-    @RequestMapping(value="updatePic")
+    /**
+     *@description
+     *@param user 用户
+     *@return java.lang.String
+     *@since 2018/8/19 14:50
+     */
+    @RequestMapping(value="updatePic",method=RequestMethod.POST)
     @ResponseBody
-    public String updatePic(TbUser user,HttpServletRequest request) throws IOException {
+    public String updatePic( TbUser user,HttpServletRequest request) throws IOException {
+
+
         // 如果文件不为空，写入上传路径
         if (!user.getImage().isEmpty()) {
-            // 上传文件路径
-            String path = request.getServletContext().getRealPath(
-                    "/images/");
             // 上传文件名
             String filename = user.getImage().getOriginalFilename();
+            // 上传文件路径
+            String path = request.getServletContext().getRealPath("/images/");
             File filepath = new File(path, filename);
             // 判断路径是否存在，如果不存在就创建一个
             if (!filepath.getParentFile().exists()) {
@@ -171,13 +159,17 @@ public class TbUserController {
             }
             // 将上传文件保存到一个目标文件当中
             user.getImage().transferTo(new File(path + File.separator + filename));
-            user.setPic("/images/"+filename);
+            String relativePath="images/"+filename;
+            user.setPic(relativePath);
             service.updateTbUser(user);
-            return "成功success";
 
-        }else {
-            return "fail失败";
+
+            String fullpath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/"+relativePath;
+            return fullpath;
+
         }
+        return null;
+
     }
 
 

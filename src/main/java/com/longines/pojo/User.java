@@ -1,6 +1,5 @@
 package com.longines.pojo;
 
-
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 /**

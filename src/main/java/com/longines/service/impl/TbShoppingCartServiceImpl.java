@@ -45,12 +45,16 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
      *
      */
     @Override
-    public void updateShcBygNum(int uid,int gid, int gNum) {
+    public TbShoppingCart updateShcBygNum(int uid,int gid, int gNum) {
         TbShoppingCart tbShoppingCart=new TbShoppingCart();
         tbShoppingCart.setuId(uid);
         tbShoppingCart.setgId(gid);
         tbShoppingCart.setgNum(gNum);
         tbShoppingCartMapper.updateBygNum(tbShoppingCart);
+        TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
+        tbShoppingCartKey.setuId(uid);
+        tbShoppingCartKey.setgId(gid);
+        return tbShoppingCart;
     }
     /**
      * 根据用户ID查询购物车信息
@@ -88,9 +92,9 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         tbShoppingCartKey.setgId(gid);
         System.out.println(tbShoppingCartMapper.selectgNum(tbShoppingCartKey));
 
-       tbShoppingCartVo.settNum(tbShoppingCartMapper.selectgNum(tbShoppingCartKey));
+        tbShoppingCartVo.setgNum(tbShoppingCartMapper.selectgNum(tbShoppingCartKey));
         tbShoppingCartVo.settAmount(tbShoppingCartMapper.selectgNum(tbShoppingCartKey)*tbGoodsInfo.getPrice());
-
+        tbShoppingCartVo.settNum(1);
         tbShoppingCartVo.setStatus(tbShoppingCartMapper.selectStatus(tbShoppingCartKey));
         return tbShoppingCartVo;
     }

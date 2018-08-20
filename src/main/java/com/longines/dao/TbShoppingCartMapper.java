@@ -64,8 +64,16 @@ public interface TbShoppingCartMapper {
      */
     int updateTamount(TbShoppingCart record);
 
+    void updateStatus(TbShoppingCart record);
+    /**
+     * 查询状态号
+     * @param     record 购物车对象
+     * @return    int
+     */
     int selectStatus(TbShoppingCartKey record);
 
     int selectgNum(TbShoppingCartKey record);
+
+    int selectInv(int gid);
 
 }

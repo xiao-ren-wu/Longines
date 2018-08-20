@@ -6,20 +6,41 @@ package com.longines.vo;
  * @version  1.0
  */
 public class TbShoppingCartVo {
+    /**
+     * 商品ID
+     */
     private int gId;
-
+    /**
+     * 商家名称
+     */
     private String sname;
-
+    /**
+     * 商家图片
+     */
     private String mPic;
-
+    /**
+     * 商品名
+     */
     private String gname;
-
+    /**
+     * 商品单价
+     */
     private Long price;
-
+    /**
+     * 商品图片
+     */
     private String gPic;
-
+    /**
+     * 商品数量
+     */
+    private int gNum;
+    /**
+     * 状态号（是否下架）
+     */
     private Integer status;
-
+    /**
+     * 商品总价（结算时计算）
+     */
     private Long tAmount;
     /**
      * 去结算时显示商品总数
@@ -70,6 +91,14 @@ public class TbShoppingCartVo {
         return gPic;
     }
 
+    public int getgNum() {
+        return gNum;
+    }
+
+    public void setgNum(int gNum) {
+        this.gNum = gNum;
+    }
+
     public void setgPic(String gPic) {
         this.gPic = gPic;
     }
@@ -101,11 +130,13 @@ public class TbShoppingCartVo {
     @Override
     public String toString() {
         return "TbShoppingCartVo{" +
-                "sname='" + sname + '\'' +
+                "gId=" + gId +
+                ", sname='" + sname + '\'' +
                 ", mPic='" + mPic + '\'' +
                 ", gname='" + gname + '\'' +
                 ", price=" + price +
                 ", gPic='" + gPic + '\'' +
+                ", gNum=" + gNum +
                 ", status=" + status +
                 ", tAmount=" + tAmount +
                 ", tNum=" + tNum +

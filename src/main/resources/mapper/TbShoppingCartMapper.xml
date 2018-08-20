@@ -219,6 +219,12 @@
         set t_amount =(select price from tb_goods_info where g_id=#{gId,jdbcType=INTEGER})
         where g_id=#{gId,jdbcType=INTEGER}
     </update>
+    <update id="updateStatus" parameterType="com.longines.pojo.TbShoppingCart">
+        update tb_shopping_cart
+        set status = 0
+        where #{uId,jdbcType=INTEGER}
+        and g_id=#{gId,jdbcType=INTEGER}
+    </update>
     <select id="selectByUid" parameterType="int" resultMap="BaseResultMap">
 		select * from tb_shopping_cart
 	WHERE u_id=#{uId,jdbcType=INTEGER}
@@ -236,9 +242,13 @@
         where  u_id=#{uId,jdbcType=INTEGER}
         and g_id=#{gId,jdbcType=INTEGER}
     </select>
-    <select id="selectgNum" parameterType="com.longines.pojo.TbShoppingCartKey" resultType="int">
+    <select id="selectgNum" parameterType="com.longines.pojo.TbShoppingCartKey" resultType="Integer">
         select g_num from tb_shopping_cart
         where  u_id=#{uId,jdbcType=INTEGER}
         and g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <select id="selectInv" parameterType="int" resultType="int">
+        select inv from tb_mg_associated
+        where g_id=#{gId,jdbcType=INTEGER}
     </select>
 </mapper>

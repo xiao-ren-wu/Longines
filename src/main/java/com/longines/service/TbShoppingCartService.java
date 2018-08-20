@@ -32,7 +32,7 @@ public interface TbShoppingCartService {
      * @param     gid   商品ID
      * @param     gnum   商品数量
      */
-    void updateShcBygNum(int uid,int gid,int gnum);
+    TbShoppingCart updateShcBygNum(int uid,int gid,int gnum);
 
     /**
      * 根据用户ID查找
@@ -47,6 +47,11 @@ public interface TbShoppingCartService {
      * @return    com.longines.vo.TbShoppingCartVo
      */
     TbShoppingCartVo selectEchoInfo(int uid,int gid);
+    /**
+     * 回显单个用户的所有商品信息
+     * @param     uid   用户ID
+     * @return    java.util.List<com.longines.vo.TbShoppingCartVo>
+     */
     List<TbShoppingCartVo> selectEcho(int uid);
 
 }

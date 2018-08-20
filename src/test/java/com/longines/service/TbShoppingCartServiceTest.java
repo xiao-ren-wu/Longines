@@ -32,14 +32,14 @@ public class TbShoppingCartServiceTest {
     }
     @Test
     public void testSelectShcByUid() {
-        List<TbShoppingCart> tbShoppingCartlist= tbShoppingCartService.selectShcByUid(2);
+        List<TbShoppingCart> tbShoppingCartlist= tbShoppingCartService.selectShcByUid(6);
         System.out.println(tbShoppingCartlist);
     }
 
     @Test
     public void testUpdateShcBygNum() {
-        tbShoppingCartService.updateShcBygNum(1,3,10);
-        System.out.println(tbShoppingCartService.selectEchoInfo(6,9));
+        tbShoppingCartService.updateShcBygNum(1,3,1);
+        System.out.println(tbShoppingCartService.selectEchoInfo(1,3));
     }
 
     @Test
@@ -59,7 +59,7 @@ public class TbShoppingCartServiceTest {
     }
     @Test
     public void testSelectEcho(){
-        List<TbShoppingCartVo> tbShoppingCartVo=tbShoppingCartService.selectEcho(2);
+        List<TbShoppingCartVo> tbShoppingCartVo=tbShoppingCartService.selectEcho(6);
         for(TbShoppingCartVo tbShoppingCartVo1:tbShoppingCartVo){
             System.out.println(tbShoppingCartVo1);
         }

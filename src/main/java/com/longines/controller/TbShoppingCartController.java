@@ -51,18 +51,21 @@ public class TbShoppingCartController {
     @ResponseBody
     @RequestMapping("Delete")
     public int tbShoppingCartDelete(@RequestBody TbShoppingCartDto tbShoppingCartDto){
+        int tnum=0;
         List<Integer> gid=tbShoppingCartDto.getgId();
         for(int GID:gid) {
             tbShoppingCartService.deleteShcByPK(tbShoppingCartDto.getuId(), GID);
+            TbShoppingCartVo tbShoppingCartVo=new TbShoppingCartVo();
+            tbShoppingCartVo.setgId(GID);
+            tnum+=tbShoppingCartVo.getgNum();
         }
-        return 0;
+        return tnum;
     }
 
     @ResponseBody
     @RequestMapping("Update")
-    public int tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
-        tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
-        return 1;
+    public TbShoppingCart tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
+        return tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
     }
 
     @ResponseBody

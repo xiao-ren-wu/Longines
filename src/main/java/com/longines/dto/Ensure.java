@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Ensure {
     private Integer uId;
-    private Integer aId;
     private List<Integer> gId;
     private List<Integer> gNum;
     private List<Integer> mId;
@@ -17,14 +16,6 @@ public class Ensure {
 
     public void setuId(Integer uId) {
         this.uId = uId;
-    }
-
-    public Integer getaId() {
-        return aId;
-    }
-
-    public void setaId(Integer aId) {
-        this.aId = aId;
     }
 
     public List<Integer> getgId() {

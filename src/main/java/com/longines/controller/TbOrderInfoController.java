@@ -1,5 +1,6 @@
 package com.longines.controller;
 
+import com.longines.dto.Create;
 import com.longines.dto.Ensure;
 import com.longines.dto.HAHA;
 import com.longines.dto.SNumList;
@@ -27,8 +28,6 @@ public class TbOrderInfoController {
     private TbOrderService tbOrderService;
     @Resource
     private TbMgAssociatedService tbMgAssociatedService;
-    @Resource
-    private  TbRecInfoService tbRecInfoService;
    @Resource
    private TbGoodsInfoService tbGoodsInfoService;
     @Resource
@@ -36,12 +35,12 @@ public class TbOrderInfoController {
     @ResponseBody
     @CrossOrigin
     @RequestMapping(value = "ensure",method = RequestMethod.POST)
-    public TbOrderInfo createOrder( Ensure ensure){
+    public TbOrderInfo createOrder(Ensure ensure){
         TbOrderInfo tbOrderInfo=new TbOrderInfo();
         //取用户ID
         tbOrderInfo.setuId(ensure.getuId());
         //取地址id
-        tbOrderInfo.setaId(ensure.getaId());
+        tbOrderInfo.setaId(1);
         //取商品id和商品数量
         TbOrder tbOrder=new TbOrder();
         int orderId=(int) System.currentTimeMillis();
@@ -62,21 +61,6 @@ public class TbOrderInfoController {
         }else{
         return tbOrderInfo;
         }
-    }
-
-    @CrossOrigin
-    @ResponseBody
-    @RequestMapping(value = "/recSelect",method = RequestMethod.POST)
-    public List<TbRecInfo> recInfoList(@RequestBody Integer uId,@RequestBody Integer aId) {
-        TbRecInfoExample ex = new TbRecInfoExample();
-        ex.setDistinct(true);
-        TbRecInfoExample.Criteria cri = ex.createCriteria();
-        cri.andUIdEqualTo(uId);
-        cri.andAIdEqualTo(aId);
-
-        List<TbRecInfo> todoList = tbRecInfoService.selectByExample(ex);
-
-        return todoList;
     }
    @ResponseBody
    @CrossOrigin
@@ -103,16 +87,12 @@ public class TbOrderInfoController {
     @ResponseBody
     @CrossOrigin
     @RequestMapping(value = "Create",method = RequestMethod.POST)
-    public Create sNumList(@RequestBody Ensure ensure)
+    public Create sNumList(@RequestBody  Ensure ensure)
     {
         List<TbGoodsInfo> tbGoodsInfo=this.goods(ensure.getgId());
         List<TbMerce> tbMerces=this.merce(ensure.getgId());
-        TbRecInfo tbRecInfo=  this.recInfoList(ensure.getuId(),ensure.getaId()).get(0);
         TbOrderInfo tbOrderInfo=this.createOrder(ensure);
         Create create=new Create();
-        create.setConsignee(tbRecInfo.getConsignee());
-        create.setcTel(tbRecInfo.getcTel());
-        create.setsAdd(tbRecInfo.getsAdd());
         List<HAHA> haha=new ArrayList<>();
         for (int i=0;i<tbMerces.size();i++)
         {
@@ -147,7 +127,7 @@ public class TbOrderInfoController {
     @ResponseBody
     @CrossOrigin
     @RequestMapping(value = "List",method = RequestMethod.POST)
-    public List<SNumList> List(@RequestBody TbOrderInfo tbOrderInfo)
+    public List<SNumList> List(@RequestBody  TbOrderInfo tbOrderInfo)
     {
         List<TbGoodsInfo> tbGoodsInfo=this.allGoodsList(tbOrderInfo.getuId());
         List<Integer> listgId=new ArrayList<>();
@@ -185,7 +165,7 @@ public class TbOrderInfoController {
     @ResponseBody
     @CrossOrigin
     @RequestMapping(value = "sNumList",method = RequestMethod.POST)
-    public List<SNumList> sNumList(@RequestBody  TbOrderInfo tbOrderInfo)
+    public List<SNumList> sNumList(@RequestBody TbOrderInfo tbOrderInfo)
     {
         List<TbGoodsInfo> tbGoodsInfo=this.snumGoodsList(tbOrderInfo.getuId(),tbOrderInfo.getsNum());
         List<Integer> listgId=new ArrayList<>();

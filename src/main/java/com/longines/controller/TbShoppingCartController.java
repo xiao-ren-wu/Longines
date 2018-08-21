@@ -5,6 +5,7 @@ import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
+import com.longines.vo.TbShoppingSumVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -62,10 +63,26 @@ public class TbShoppingCartController {
         return tnum;
     }
 
+    /**
+     * 根据数量更新 （并返回总数总价）
+     * @param     tbShoppingCart  购物车对象
+     * @return    com.longines.vo.TbShoppingSumVo
+     */
     @ResponseBody
     @RequestMapping("Update")
-    public TbShoppingCart tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
-        return tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
+    public TbShoppingSumVo tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
+        tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
+
+        int gNum=0,Tamount=0;
+        TbShoppingSumVo tbShoppingSumVo=new TbShoppingSumVo();
+        gNum+=tbShoppingCartService.sumShcgNum(tbShoppingCart.getuId(),tbShoppingCart.getgId());
+        Tamount+=tbShoppingCartService.sumShctAmount(tbShoppingCart.getuId(),tbShoppingCart.getgId());
+
+        tbShoppingSumVo.settNum(gNum);
+        tbShoppingSumVo.settAmount((long) Tamount);
+        return tbShoppingSumVo;
+
+
     }
 
     @ResponseBody
@@ -88,6 +105,21 @@ public class TbShoppingCartController {
         else {
             return tbShoppingCartService.selectEchoInfo(6,9);
         }
+    }
+
+    @ResponseBody
+    @RequestMapping("Sum")
+    public TbShoppingSumVo tbShoppingCartSum(@RequestBody TbShoppingCartDto tbShoppingCartDto){
+        int gNum=0,Tamount=0;
+        List<Integer> gid=tbShoppingCartDto.getgId();
+        TbShoppingSumVo tbShoppingSumVo=new TbShoppingSumVo();
+        for(int GID:gid) {
+            gNum+=tbShoppingCartService.sumShcgNum(tbShoppingCartDto.getuId(),GID);
+            Tamount+=tbShoppingCartService.sumShctAmount(tbShoppingCartDto.getuId(),GID);
+        }
+        tbShoppingSumVo.settNum(gNum);
+        tbShoppingSumVo.settAmount((long) Tamount);
+        return tbShoppingSumVo;
     }
 
 }

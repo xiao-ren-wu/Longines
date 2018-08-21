@@ -76,4 +76,6 @@ public interface TbShoppingCartMapper {
 
     int selectInv(int gid);
 
+    Long selectPrice(int gid);
+
 }

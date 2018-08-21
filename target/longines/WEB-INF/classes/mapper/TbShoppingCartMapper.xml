@@ -214,11 +214,10 @@
 	where u_id=#{uId,jdbcType=INTEGER}
 	  and g_id =#{gId,jdbcType=INTEGER}
 	</update>
-    <update id="updateTamount" parameterType="com.longines.pojo.TbShoppingCart">
-        update tb_shopping_cart
-        set t_amount =(select price from tb_goods_info where g_id=#{gId,jdbcType=INTEGER})
+    <select id="selectPrice" parameterType="int" resultType="Long">
+        select price from tb_goods_info
         where g_id=#{gId,jdbcType=INTEGER}
-    </update>
+    </select>
     <update id="updateStatus" parameterType="com.longines.pojo.TbShoppingCart">
         update tb_shopping_cart
         set status = 0

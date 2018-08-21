@@ -4,6 +4,7 @@ import com.longines.dao.TbShoppingCartMapper;
 import com.longines.pojo.*;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
+import com.longines.vo.TbShoppingSumVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -112,6 +113,24 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
              tbShoppingCartVoList.add(tbShoppingCartVo);
         }
         return tbShoppingCartVoList;
+    }
+
+    @Override
+    public int sumShcgNum(int uid, int gid) {
+        TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
+        tbShoppingCartKey.setuId(uid);
+        tbShoppingCartKey.setgId(gid);
+        return tbShoppingCartMapper.selectgNum(tbShoppingCartKey);
+
+    }
+
+    @Override
+    public Long sumShctAmount(int uid, int gid) {
+        TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
+        tbShoppingCartKey.setuId(uid);
+        tbShoppingCartKey.setgId(gid);
+        return tbShoppingCartMapper.selectgNum(tbShoppingCartKey)*tbShoppingCartMapper.selectPrice(gid);
+
     }
 
 }

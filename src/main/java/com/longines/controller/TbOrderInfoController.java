@@ -1,7 +1,7 @@
 package com.longines.controller;
 
-import com.longines.dto.Create;
 import com.longines.dto.Ensure;
+import com.longines.dto.HAHA;
 import com.longines.dto.SNumList;
 import com.longines.pojo.*;
 import com.longines.service.*;
@@ -73,7 +73,9 @@ public class TbOrderInfoController {
         TbRecInfoExample.Criteria cri = ex.createCriteria();
         cri.andUIdEqualTo(uId);
         cri.andAIdEqualTo(aId);
+
         List<TbRecInfo> todoList = tbRecInfoService.selectByExample(ex);
+
         return todoList;
     }
    @ResponseBody
@@ -101,7 +103,7 @@ public class TbOrderInfoController {
     @ResponseBody
     @CrossOrigin
     @RequestMapping(value = "Create",method = RequestMethod.POST)
-    public Create sNumList(Ensure ensure)
+    public Create sNumList(@RequestBody Ensure ensure)
     {
         List<TbGoodsInfo> tbGoodsInfo=this.goods(ensure.getgId());
         List<TbMerce> tbMerces=this.merce(ensure.getgId());
@@ -111,27 +113,19 @@ public class TbOrderInfoController {
         create.setConsignee(tbRecInfo.getConsignee());
         create.setcTel(tbRecInfo.getcTel());
         create.setsAdd(tbRecInfo.getsAdd());
-        List<String> sname=new ArrayList<>();
-        List<String> mpic=new ArrayList<>();
-        List<String> gname=new ArrayList<>();
-        List<Long> price=new ArrayList<>();
-        List<String> gpic=new ArrayList<>();
+        List<HAHA> haha=new ArrayList<>();
         for (int i=0;i<tbMerces.size();i++)
         {
-            sname.add(tbMerces.get(i).getSname());
-            mpic.add(tbMerces.get(i).getmPic());
+            HAHA haha1=new HAHA();
+            haha1.setSname(tbMerces.get(i).getSname());
+            haha1.setmPic(tbMerces.get(i).getmPic());
+            haha1.setGname(tbGoodsInfo.get(i).getGname());
+            haha1.setPrice(tbGoodsInfo.get(i).getPrice());
+            haha1.setgPic(tbGoodsInfo.get(i).getgPic());
+            haha1.setwBut(tbGoodsInfo.get(i).getwBut());
+            haha.add(haha1);
         }
-        create.setSname(sname);
-        create.setmPic(mpic);
-        for (int i=0;i<tbGoodsInfo.size();i++)
-        {
-            gname.add(tbGoodsInfo.get(i).getGname());
-            price.add(tbGoodsInfo.get(i).getPrice());
-            gpic.add(tbGoodsInfo.get(i).getgPic());
-        }
-        create.setGname(gname);
-        create.setPrice(price);
-        create.setgPic(gpic);
+        create.setHaha(haha);
         create.setCreDate(tbOrderInfo.getCreDate());
         create.setdMethod(tbOrderInfo.getdMethod());
         create.setFreight(tbOrderInfo.getFreight());
@@ -153,7 +147,7 @@ public class TbOrderInfoController {
     @ResponseBody
     @CrossOrigin
     @RequestMapping(value = "List",method = RequestMethod.POST)
-    public List<SNumList> List( TbOrderInfo tbOrderInfo)
+    public List<SNumList> List(@RequestBody TbOrderInfo tbOrderInfo)
     {
         List<TbGoodsInfo> tbGoodsInfo=this.allGoodsList(tbOrderInfo.getuId());
         List<Integer> listgId=new ArrayList<>();
@@ -191,7 +185,7 @@ public class TbOrderInfoController {
     @ResponseBody
     @CrossOrigin
     @RequestMapping(value = "sNumList",method = RequestMethod.POST)
-    public List<SNumList> sNumList(  TbOrderInfo tbOrderInfo)
+    public List<SNumList> sNumList(@RequestBody  TbOrderInfo tbOrderInfo)
     {
         List<TbGoodsInfo> tbGoodsInfo=this.snumGoodsList(tbOrderInfo.getuId(),tbOrderInfo.getsNum());
         List<Integer> listgId=new ArrayList<>();

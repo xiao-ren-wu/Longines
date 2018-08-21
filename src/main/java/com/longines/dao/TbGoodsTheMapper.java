@@ -19,4 +19,10 @@ public interface TbGoodsTheMapper {
      */
     List<TbThemeGoodsInfoVo> selectGooTheByTheId(int theId);
 
+    /**
+     * @return java.util.List<com.longines.vo.TbThemeGoodsInfo>
+     * @param theId 主题id
+     */
+    List<TbThemeGoodsInfoVo> selectGooTheByTheIdHome(int theId);
+
 }

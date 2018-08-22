@@ -110,9 +110,12 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
         for(TbShoppingCart tbShoppingCart:tbShoppingCartList){
              TbShoppingCartVo tbShoppingCartVo =selectEchoInfo(uid,tbShoppingCart.getgId());
+             tbShoppingCartVo.setBon1(false);
+             tbShoppingCartVo.setBon2(false);
              tbShoppingCartVoList.add(tbShoppingCartVo);
         }
         return tbShoppingCartVoList;
+
     }
 
     @Override

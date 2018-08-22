@@ -47,6 +47,26 @@ public class TbShoppingCartVo {
      */
     private int tNum;
 
+    private boolean bon1;
+
+    private boolean bon2;
+
+    public boolean isBon1() {
+        return bon1;
+    }
+
+    public void setBon1(boolean bon1) {
+        this.bon1 = bon1;
+    }
+
+    public boolean isBon2() {
+        return bon2;
+    }
+
+    public void setBon2(boolean bon2) {
+        this.bon2 = bon2;
+    }
+
     public int getgId() {
         return gId;
     }

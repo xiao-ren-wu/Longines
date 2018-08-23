@@ -4,6 +4,7 @@ import com.longines.pojo.TbBrand;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository("dao1")
 /**
  * @author FengTianHao
@@ -14,9 +15,9 @@ public interface TbBrandMapper {
     /**
      * 查找所有的品牌名和其对应的图片
      *
-     *@param   []
      *@return   java.util.List<com.longines.pojo.TbBrand>
      */
 
     List<TbBrand> findAllBrand();
+
 }

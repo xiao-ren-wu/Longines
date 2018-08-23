@@ -1,5 +1,6 @@
 package com.longines.service;
 
+import com.longines.dto.TbPayDto;
 import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbUser;
 
@@ -44,10 +45,10 @@ public interface TbPayService {
     * 判断密码是否正确
     *
     *@param  pId 用户Id
-    *@param  PayCod  支付密码
+    *@param  payCod  支付密码
     *@return   int
     */
-   int judgePw(Integer pId,Integer  PayCod);
+   int judgePw(Integer pId, Integer payCod, Integer num);
    /**
     * 增加支付密码
     *
@@ -55,7 +56,14 @@ public interface TbPayService {
     *@param   uId  用户Id
     *@return   int
     */
-   int insertPayCod(Integer payCod,Integer uId);
+   int insertPayCod(Integer payCod, Integer uId);
+   /**
+    * Demo class
+    *
+    * @author wangyichao
+    * @date 2018/8/23
+    */
+   boolean bance(TbPayDto tbPayDto);
 }
 
 

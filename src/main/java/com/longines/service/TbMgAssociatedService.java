@@ -1,8 +1,7 @@
 package com.longines.service;
 
-import com.longines.pojo.TbMgAssociatedExample;
-import com.longines.pojo.TbMgAssociatedKey;
 import java.util.List;
+
 /**
 * @author   yangshuai
 * @description   商品商家接口
@@ -23,7 +22,7 @@ public interface TbMgAssociatedService {
     *@param       oId
     *@return       int
     */
-    int updateBygId(Integer oId,List<Integer> mId);
+    int updateBygId(Integer oId, List<Integer> mId);
     /**
      * 方法注解         根据商品ID得到商家ID
      *

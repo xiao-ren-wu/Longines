@@ -3,15 +3,10 @@ package com.longines.service.impl;
 
 import com.longines.dao.TbUserMapper;
 import com.longines.pojo.TbUser;
-
-
 import com.longines.service.TbUserService;
-
+import com.longines.utils.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
-import java.util.List;
 
 /**
 *@author zhaoxiaokang
@@ -32,13 +27,16 @@ public class TbUserServiceImpl implements TbUserService {
     @Override
     public int regist(TbUser user)
     {
-
-        if((mapper.insertSelective(user))==1){
+        TbUser tbUser=new TbUser();
+        tbUser.setPw(MD5.tomd5(user.getPw()));
+        tbUser.setTelNum(user.getTelNum());
+        tbUser.setUname(user.getUname());
+        if(mapper.insertSelective(tbUser)==1) {
             return 1;
-        }else{
+        }
+        else {
             return 0;
         }
-
     }
 
 
@@ -49,7 +47,7 @@ public class TbUserServiceImpl implements TbUserService {
      *@since 2018/8/8 21:31
      */
     @Override
-    public TbUser login(String telNum,String pw) {
+    public TbUser login(String telNum, String pw) {
 
 
         TbUser user=new TbUser();
@@ -118,6 +116,7 @@ public class TbUserServiceImpl implements TbUserService {
      */
     @Override
     public int updateTbUser(TbUser user) {
+
 
         return mapper.updateByPrimaryKeySelective(user);
     }

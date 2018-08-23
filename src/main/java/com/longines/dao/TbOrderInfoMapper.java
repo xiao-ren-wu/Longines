@@ -3,7 +3,9 @@ package com.longines.dao;
 import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbOrderInfoExample;
 import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
+
 /**
 * @author   yangshuai
 * @description   订单详细信息代理接口

@@ -1,11 +1,7 @@
 package com.longines.dao;
 
-import com.longines.pojo.TbGoodsInfo;
 import com.longines.pojo.TbMgAssociated;
-import com.longines.pojo.TbMgAssociatedExample;
-import com.longines.pojo.TbMgAssociatedKey;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+
 /**
 * @author   yangshuai
 * @description   商品商家代理接口

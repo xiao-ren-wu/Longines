@@ -1,7 +1,5 @@
 package com.longines.pojo;
 
-import java.util.Date;
-
 /**
  * @Author: liuyang
  * @Description:

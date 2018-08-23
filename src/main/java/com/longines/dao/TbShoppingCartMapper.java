@@ -1,7 +1,6 @@
 package com.longines.dao;
 
 import com.longines.pojo.*;
-import com.longines.vo.TbShoppingCartVo;
 
 import java.util.List;
 
@@ -59,11 +58,26 @@ public interface TbShoppingCartMapper {
     TbGoodsInfo selectGoodsInfo(int gid);
     /**
      * 查询单价
-     * @param     tbShoppingCart 购物车对象
+     * @param     record 购物车对象
      * @return    int
      */
-    int updateTamount(TbShoppingCart tbShoppingCart);
+    int updateTamount(TbShoppingCart record);
 
-    int selectStatus(int gid);
+    void updateStatus(TbShoppingCart record);
+    /**
+     * 查询状态号
+     * @param     record 购物车对象
+     * @return    int
+     */
+    int selectStatus(TbShoppingCartKey record);
+
+    int selectgNum(TbShoppingCartKey record);
+
+    int selectInv(int gid);
+
+    Long selectPrice(int gid);
+
+    int selectmId(int gid);
+
 
 }

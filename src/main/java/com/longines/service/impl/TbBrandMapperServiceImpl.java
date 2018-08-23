@@ -18,16 +18,15 @@ public class TbBrandMapperServiceImpl implements TbBrandMapperService {
     @Resource(name = "dao1")
     private TbBrandMapper tbBrandMapper;
 
+
+
     @Override
     public List<TbBrand> findAllBrand() {
         List<TbBrand> brandList=tbBrandMapper.findAllBrand();
-        if(brandList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return brandList;
-        }
+
     }
+
+
 }

@@ -5,8 +5,10 @@ import com.longines.pojo.TbGoodsInfo;
 import com.longines.service.TbGoodsInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
+
 /**
 * @author   yangshuai
 * @description     商品详细信息接口实现类

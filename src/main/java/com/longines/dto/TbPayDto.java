@@ -10,6 +10,24 @@ public class TbPayDto {
     private Integer uId;
     private Integer pId;
     private Integer payCod;
+    private Integer num;
+    private Integer money;
+
+    public Integer getMoney() {
+        return money;
+    }
+
+    public void setMoney(Integer money) {
+        this.money = money;
+    }
+
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
+    }
 
     public Integer getuId() { return uId; }
 

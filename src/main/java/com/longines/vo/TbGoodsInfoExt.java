@@ -1,5 +1,7 @@
 package com.longines.vo;
 
+import java.util.Date;
+
 /**
  * @author FengTianHao
  * @version 1.0
@@ -34,12 +36,11 @@ public class TbGoodsInfoExt {
 
     private String gPic3;
 
-    private Integer mId;
+    private String sName;
 
     private String mPic;
 
-
-
+    private Integer mId;
 
     public Integer getmId() {
         return mId;
@@ -48,6 +49,34 @@ public class TbGoodsInfoExt {
     public void setmId(Integer mId) {
         this.mId = mId;
     }
+
+    public String getmPic() {
+        return mPic;
+    }
+
+    public void setmPic(String mPic) {
+        this.mPic = mPic;
+    }
+
+    public String getsName() {
+        return sName;
+    }
+
+    public void setsName(String sName) {
+        this.sName = sName;
+    }
+
+    private Date sTime;
+
+    public Date getsTime() {
+        return sTime;
+    }
+
+    public void setsTime(Date sTime) {
+        this.sTime = sTime;
+    }
+
+
 
     public Integer getgId() {
         return gId;
@@ -145,15 +174,7 @@ public class TbGoodsInfoExt {
         this.gPic = gPic == null ? null : gPic.trim();
     }
 
-    public String getmPic() {
-        return mPic;
-    }
-
-    public void setmPic(String mPic) {
-        this.mPic = mPic;
-    }
-
-    public String getgPic3() {
+        public String getgPic3() {
 
         return gPic3;
     }
@@ -173,6 +194,6 @@ public class TbGoodsInfoExt {
 
     @Override
     public String toString() {
-        return "TbGoodsInfoExt{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + ", mId=" + mId + ", mPic='" + mPic + '\'' + '}';
+        return "TbGoodsInfoExt{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + ", sName='" + sName + '\'' + ", mPic='" + mPic + '\'' + ", mId=" + mId + ", sTime=" + sTime + '}';
     }
 }

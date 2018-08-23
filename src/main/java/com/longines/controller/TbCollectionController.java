@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 /**
  * @author    liuchanghui
  *
@@ -24,11 +25,11 @@ public class TbCollectionController {
     @PostMapping("Add")
     public  int tbCollectionSave(@RequestBody TbCollectionKey tbCollectionKey)
     {
-        if (tbCollectionKey.getuId()==null)
-        {
-            return 2;
-        }
         try {
+            if(tbCollectionKey.getuId()==null||tbCollectionKey.getgId()==null)
+            {
+                return 0;
+            }
             tbCollectionService.tbCollectionSave(tbCollectionKey.getuId(), tbCollectionKey.getgId());
         } catch (Exception e) {
             return 0;
@@ -40,6 +41,10 @@ public class TbCollectionController {
     @PostMapping("Delete")
     public int tbCollectionDelete(@RequestBody TbCollectionKey tbCollectionKey){
         try {
+            if(tbCollectionKey.getuId()==null||tbCollectionKey.getgId()==null)
+            {
+                return 0;
+            }
             tbCollectionService.tbCollectionDelete(tbCollectionKey.getuId(), tbCollectionKey.getgId());
         } catch (Exception e) {
             return 0;
@@ -51,10 +56,6 @@ public class TbCollectionController {
     @PostMapping("Select")
     public  List<TbCollectionVo> tbCollectionSelect(@RequestBody TbCollectionKey tbCollectionKey)
     {
-        if(tbCollectionKey.getuId()==null)
-        {
-            return null;
-        }
         return tbCollectionService.tbCollectionSelect(tbCollectionKey.getuId());
     }
     @CrossOrigin

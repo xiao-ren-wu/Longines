@@ -1,13 +1,16 @@
 package com.longines.dto;
 
-import java.util.List;
-
 public class SNumList {
     private String Sname;
     private String mPic;
     private String Gname;
     private String gPic;
     private long Price;
+    private Integer oId;
+
+    public Integer getoId() { return oId; }
+
+    public void setoId(Integer oId) { this.oId = oId; }
 
     public String getSname() {
         return Sname;

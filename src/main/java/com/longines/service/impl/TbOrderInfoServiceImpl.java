@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 /**
 * @author   yangshuai
 * @description    订单详细信息接口实现类
@@ -16,7 +17,7 @@ import java.util.List;
 * @version  1.0
 */
 @Service
-public class TbOrderInfoServiceImpl implements TbOrderInfoService{
+public class TbOrderInfoServiceImpl implements TbOrderInfoService {
     @Autowired
     private TbOrderInfoMapper tbOrderInfoMapper;
     @Autowired
@@ -77,7 +78,7 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     }
 
     @Override
-    public int insert(com.longines.pojo.TbOrderInfo record) { return 0; }
+    public int insert(TbOrderInfo record) { return 0; }
 
     /**
      * 方法注解       生成订单详细信息表
@@ -86,8 +87,8 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
      *@return       int
      */
     @Override
-    public int insertSelective(com.longines.pojo.TbOrderInfo record) {
-        com.longines.pojo.TbOrderInfo tbOrderInfo=record;
+    public int insertSelective(TbOrderInfo record) {
+        TbOrderInfo tbOrderInfo=record;
         try {
             tbOrderInfo.setoId(tbOrderInfo.getoId());
             tbOrderInfo.setuId(tbOrderInfo.getuId());
@@ -125,7 +126,7 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     }
 
     @Override
-    public List<com.longines.pojo.TbOrderInfo> selectByExample(TbOrderInfoExample example) {
+    public List<TbOrderInfo> selectByExample(TbOrderInfoExample example) {
         return null;
     }
     /**
@@ -135,18 +136,18 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     *@return       com.longines.pojo.TbOrderInfoService
     */
     @Override
-    public com.longines.pojo.TbOrderInfo selectByPrimaryKey(Integer oId) {
+    public TbOrderInfo selectByPrimaryKey(Integer oId) {
         return tbOrderInfoMapper.selectByPrimaryKey(oId);
 
     }
 
     @Override
-    public int updateByExampleSelective(com.longines.pojo.TbOrderInfo record, TbOrderInfoExample example) {
+    public int updateByExampleSelective(TbOrderInfo record, TbOrderInfoExample example) {
         return 0;
     }
 
     @Override
-    public int updateByExample(com.longines.pojo.TbOrderInfo record, TbOrderInfoExample example) {
+    public int updateByExample(TbOrderInfo record, TbOrderInfoExample example) {
         return 0;
     }
     /**
@@ -156,7 +157,7 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     *@return       int
     */
     @Override
-    public int updateByPrimaryKeySelective(com.longines.pojo.TbOrderInfo record){
+    public int updateByPrimaryKeySelective(TbOrderInfo record){
         //状态号:0待支付,1代发货,2已发货,3.交易成功,4交易取消
     /*   if(record.getsNum()==2)
         {
@@ -167,7 +168,7 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     }
 
     @Override
-    public int updateByPrimaryKey(com.longines.pojo.TbOrderInfo record) {
+    public int updateByPrimaryKey(TbOrderInfo record) {
         return 0;
     }
 
@@ -178,7 +179,7 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     *@return           java.util.List<com.longines.pojo.TbOrderInfoService>
     */
     @Override
-    public List<com.longines.pojo.TbOrderInfo> selectByuId(Integer uId) {
+    public List<TbOrderInfo> selectByuId(Integer uId) {
         return tbOrderInfoMapper.selectByuId(uId);
     }
     /**
@@ -188,7 +189,7 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     *@return         java.util.List<com.longines.pojo.TbOrderInfoService>
     */
     @Override
-    public List<com.longines.pojo.TbOrderInfo> selectBysNum(com.longines.pojo.TbOrderInfo tbOrderInfo) {
+    public List<TbOrderInfo> selectBysNum(TbOrderInfo tbOrderInfo) {
         return tbOrderInfoMapper.selectBysNum(tbOrderInfo);
     }
     /**

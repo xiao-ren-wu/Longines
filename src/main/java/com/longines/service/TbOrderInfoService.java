@@ -3,6 +3,7 @@ package com.longines.service;
 import com.longines.pojo.*;
 
 import java.util.List;
+
 /**
 * @author   yangshuai
 * @description    订单详细信息接口
@@ -29,43 +30,43 @@ public interface TbOrderInfoService {
      */
     int deleteByPrimaryKey(Integer oId);
 
-    int insert(com.longines.pojo.TbOrderInfo record);
+    int insert(TbOrderInfo record);
     /**
      * 方法注解       生成订单详细信息表
      *
      *@param       record
      *@return       int
      */
-    int insertSelective(com.longines.pojo.TbOrderInfo record);
+    int insertSelective(TbOrderInfo record);
 
-    List<com.longines.pojo.TbOrderInfo> selectByExample(TbOrderInfoExample example);
+    List<TbOrderInfo> selectByExample(TbOrderInfoExample example);
     /**
      * 方法注解        根据订单ID选择订单详细信息行
      *
      *@param       oId
      *@return       com.longines.pojo.TbOrderInfoService
      */
-    com.longines.pojo.TbOrderInfo selectByPrimaryKey(Integer oId);
+    TbOrderInfo selectByPrimaryKey(Integer oId);
 
-    int updateByExampleSelective(com.longines.pojo.TbOrderInfo record, TbOrderInfoExample example);
+    int updateByExampleSelective(TbOrderInfo record, TbOrderInfoExample example);
 
-    int updateByExample(com.longines.pojo.TbOrderInfo record,TbOrderInfoExample example);
+    int updateByExample(TbOrderInfo record, TbOrderInfoExample example);
     /**
      * 方法注解       根据传进来的订单获得他的状态号再根据情况改变其状态值
      *
      *@param       record
      *@return       int
      */
-    int updateByPrimaryKeySelective(com.longines.pojo.TbOrderInfo record);
+    int updateByPrimaryKeySelective(TbOrderInfo record);
 
-    int updateByPrimaryKey(com.longines.pojo.TbOrderInfo record);
+    int updateByPrimaryKey(TbOrderInfo record);
     /**
      * 方法注解     查询某个用户的全部订单
      *
      *@param            uId
      *@return           java.util.List<com.longines.pojo.TbOrderInfoService>
      */
-    List<com.longines.pojo.TbOrderInfo> selectByuId(Integer uId);
+    List<TbOrderInfo> selectByuId(Integer uId);
     /**
     * 方法注解       根据用户ID查询所有订单ID
     *
@@ -79,7 +80,7 @@ public interface TbOrderInfoService {
      *@param          tbOrderInfo
      *@return         java.util.List<com.longines.pojo.TbOrderInfoService>
      */
-    List<com.longines.pojo.TbOrderInfo> selectBysNum(com.longines.pojo.TbOrderInfo tbOrderInfo);
+    List<TbOrderInfo> selectBysNum(TbOrderInfo tbOrderInfo);
     /**
     * 方法注解       根据地址ID查询地址表对象
     *

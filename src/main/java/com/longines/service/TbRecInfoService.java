@@ -3,9 +3,8 @@ package com.longines.service;
 import com.longines.pojo.TbRecInfo;
 import com.longines.pojo.TbRecInfoExample;
 import com.longines.pojo.TbRecInfoKey;
+
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Service;
 
 /**
  * TbRecInfoService

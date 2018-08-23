@@ -13,9 +13,10 @@ public interface TbBrandMapperService {
     /**
      * 查找所有的品牌名及其对应的图片
      *
-     *@param
      *@return   java.util.List<com.longines.pojo.TbBrand>
      */
 
     List<TbBrand> findAllBrand();
+
 }
+

@@ -1,8 +1,8 @@
 package com.longines.controller;
 
 import com.longines.pojo.TbGoodsInfo;
-import com.longines.vo.TbGoodsInfoExt;
 import com.longines.service.TbGoodsInfoMapperService;
+import com.longines.vo.TbGoodsInfoExt;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,20 +19,14 @@ import java.util.List;
 @RequestMapping("/TbGoods")
 public class TbGoodsInfoMapperController {
     @Resource
-   private  TbGoodsInfoMapperService tbGoodsInfoMapperService;
+   private TbGoodsInfoMapperService tbGoodsInfoMapperService;
     @ResponseBody
     @PostMapping("ByPriceAsc")
     public List<TbGoodsInfo> findGoodsByPriceAsc()
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByPriceAsc();
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return tbGoodsInfoList;
-        }
 
     }
     @ResponseBody
@@ -41,14 +35,9 @@ public class TbGoodsInfoMapperController {
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByPriceDesc();
 
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return tbGoodsInfoList;
-        }
+
     }
     @ResponseBody
     @PostMapping("ByBrand")
@@ -56,28 +45,18 @@ public class TbGoodsInfoMapperController {
     {
 
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsByTheme(goods.getBrand());
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
+
             return tbGoodsInfoList;
-        }
     }
     @ResponseBody
     @PostMapping("BysTimeAsc")
     public  List<TbGoodsInfoExt> findGoodsBysTimeAsc()
     {
         List<TbGoodsInfoExt> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoBysTimeAsc();
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return tbGoodsInfoList;
-        }
+
     }
     @ResponseBody
     @PostMapping("BysTimeDesc")
@@ -85,58 +64,74 @@ public class TbGoodsInfoMapperController {
     {
         List<TbGoodsInfoExt> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoBysTimeDesc();
 
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return tbGoodsInfoList;
-        }
+
     }
     @ResponseBody
     @PostMapping("ByLike")
-    public  List<TbGoodsInfo> findGoodsByLike( @RequestBody long price)
+    public  List<TbGoodsInfo> findGoodsByLike(@RequestBody TbGoodsInfo goods)
     {
-        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoByLike(price);
+        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsInfoByLike(goods.getPrice());
 
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return tbGoodsInfoList;
-        }
+
     }
     @ResponseBody
     @PostMapping("findAllGoods")
     public  List<TbGoodsInfo> findAllGoods()
     {
         List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findAllGoodsInfo();
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return tbGoodsInfoList;
-        }
+
     }
     @ResponseBody
     @PostMapping("ById")
-    public  TbGoodsInfoExt findAllGoods( @RequestBody TbGoodsInfo goods)
+    public TbGoodsInfoExt findAllGoods(@RequestBody TbGoodsInfo goods)
     {
 
         TbGoodsInfoExt tbGoodsInfoList=tbGoodsInfoMapperService.findGoodsDetailById(goods.getgId());
-        if(tbGoodsInfoList==null)
-        {
-            return null;
-        }
-        else
-        {
+
             return tbGoodsInfoList;
-        }
+
+    }
+    @ResponseBody
+    @PostMapping("ByBrandPriceAsc")
+    public List<TbGoodsInfo> findBrandGoodsByPriceAsc(@RequestBody TbGoodsInfo goods )
+    {
+        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findBrandGoodsByPriceAsc(goods.getBrand());
+
+        return tbGoodsInfoList;
+
+    }
+    @ResponseBody
+    @PostMapping("ByBrandPriceDesc")
+    public List<TbGoodsInfo> findBrandGoodsByPriceDesc(@RequestBody TbGoodsInfo goods)
+    {
+        List<TbGoodsInfo> tbGoodsInfoList=tbGoodsInfoMapperService.findBrandGoodsByPriceDesc(goods.getBrand());
+
+        return tbGoodsInfoList;
+
+    }
+    @ResponseBody
+    @PostMapping("ByBrandsTimeAsc")
+    public  List<TbGoodsInfoExt> findGoodsByBrandsTimeAsc(@RequestBody TbGoodsInfo goods)
+    {
+        List<TbGoodsInfoExt> tbGoodsInfoList=tbGoodsInfoMapperService.findBrandGoodsInfoBysTimeAsc(goods.getBrand());
+
+        return tbGoodsInfoList;
+
+    }
+    @ResponseBody
+    @PostMapping("ByBrandsTimeDesc")
+    public  List<TbGoodsInfoExt> findGoodsByBrandsTimeDesc(@RequestBody TbGoodsInfo goods)
+    {
+        List<TbGoodsInfoExt> tbGoodsInfoList=tbGoodsInfoMapperService.findBrandGoodsInfoBysTimeDesc(goods.getBrand());
+
+        return tbGoodsInfoList;
+
     }
 
 }

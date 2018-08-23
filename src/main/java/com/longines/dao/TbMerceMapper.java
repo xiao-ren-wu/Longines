@@ -2,8 +2,9 @@ package com.longines.dao;
 
 import com.longines.pojo.TbMerce;
 import com.longines.pojo.TbMerceExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface TbMerceMapper {
     int countByExample(TbMerceExample example);

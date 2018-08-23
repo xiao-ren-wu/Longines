@@ -1,8 +1,9 @@
 package com.longines.service;
 
-import com.longines.vo.TbSearchGoodsInfo;
+import com.longines.vo.TbSearchGoodsInfoVo;
 
 import java.util.List;
+
 /**
  * @author weiyi
  * @since 2018-08-08 22:20
@@ -14,31 +15,31 @@ public interface TbSearchService {
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> search(String gname);
+    List<TbSearchGoodsInfoVo> search(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectGoodsPUD(String gname);
+    List<TbSearchGoodsInfoVo> selectGoodsPUD(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectGoodsPDU(String gname);
+    List<TbSearchGoodsInfoVo> selectGoodsPDU(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectGoodsTUD(String gname);
+    List<TbSearchGoodsInfoVo> selectGoodsTUD(String gname);
 
     /**
      * @return java.util.List<com.longines.vo.TbSearchGoodsInfo>
      * @param gname 商品名称
      */
-    List<TbSearchGoodsInfo> selectGoodsTDU(String gname);
+    List<TbSearchGoodsInfoVo> selectGoodsTDU(String gname);
 
 
 }

@@ -1,6 +1,7 @@
 package com.longines.pojo;
 
 import java.util.Date;
+
 /**
  * @author weiyi
  * @since 2018-08-08 21:45

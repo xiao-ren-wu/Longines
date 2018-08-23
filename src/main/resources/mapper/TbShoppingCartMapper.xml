@@ -8,6 +8,13 @@
         <result column="t_amount" property="tAmount" jdbcType="DECIMAL" />
         <result column="status" property="status" jdbcType="INTEGER" />
     </resultMap>
+    <resultMap id="ResultMap" type="com.longines.pojo.TbMgAssociated" >
+        <id column="m_id" property="mId" jdbcType="INTEGER" />
+        <id column="g_id" property="gId" jdbcType="INTEGER" />
+        <result column="inv" property="Inv" jdbcType="INTEGER" />
+
+    </resultMap>
+
     <sql id="Example_Where_Clause" >
         <where >
             <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -214,10 +221,15 @@
 	where u_id=#{uId,jdbcType=INTEGER}
 	  and g_id =#{gId,jdbcType=INTEGER}
 	</update>
-    <update id="updateTamount" parameterType="com.longines.pojo.TbShoppingCart">
-        update tb_shopping_cart
-        set t_amount =(select price from tb_goods_info where g_id=#{gId,jdbcType=INTEGER})
+    <select id="selectPrice" parameterType="int" resultType="Long">
+        select price from tb_goods_info
         where g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <update id="updateStatus" parameterType="com.longines.pojo.TbShoppingCart">
+        update tb_shopping_cart
+        set status = 0
+        where #{uId,jdbcType=INTEGER}
+        and g_id=#{gId,jdbcType=INTEGER}
     </update>
     <select id="selectByUid" parameterType="int" resultMap="BaseResultMap">
 		select * from tb_shopping_cart
@@ -231,8 +243,22 @@
         select gname,price,g_pic from tb_goods_info
         where g_id=#{gId,jdbcType=INTEGER}
     </select>
-    <select id="selectStatus" parameterType="int" resultType="int">
+    <select id="selectStatus" parameterType="com.longines.pojo.TbShoppingCartKey" resultType="int">
         select status from tb_shopping_cart
+        where  u_id=#{uId,jdbcType=INTEGER}
+        and g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <select id="selectgNum" parameterType="com.longines.pojo.TbShoppingCartKey" resultType="Integer">
+        select g_num from tb_shopping_cart
+        where  u_id=#{uId,jdbcType=INTEGER}
+        and g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <select id="selectInv" parameterType="int" resultType="int">
+        select inv from tb_mg_associated
+        where g_id=#{gId,jdbcType=INTEGER}
+    </select>
+    <select id="selectmId" parameterType="int" resultType="int">
+        select m_id from tb_mg_associated
         where g_id=#{gId,jdbcType=INTEGER}
     </select>
 </mapper>

@@ -2,8 +2,6 @@ package com.longines.service;
 
 import com.longines.pojo.TbUser;
 
-import java.util.List;
-
 /**
 *@author zhaoxiaokang
 *@since 2018/8/8 21:09

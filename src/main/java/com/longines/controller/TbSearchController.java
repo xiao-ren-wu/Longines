@@ -1,15 +1,13 @@
 package com.longines.controller;
 
+import com.longines.dto.TbSearchThemeDto;
 import com.longines.service.TbSearchService;
-import com.longines.service.TbThemeService;
-import com.longines.vo.TbSearchGoodsInfo;
-import com.longines.vo.TbThemeGoodsInfo;
+import com.longines.vo.TbSearchGoodsInfoVo;
 import org.apdplat.word.WordSegmenter;
 import org.apdplat.word.segmentation.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.List;
 import java.util.ListIterator;
@@ -34,12 +32,12 @@ public class TbSearchController {
     @ResponseBody
 //    @RequestMapping("searchController1")
     @PostMapping("searchController1")
-    public List<TbSearchGoodsInfo> searchController1(@RequestBody TbSearchGoodsInfo watchesName) {
+    public List<TbSearchGoodsInfoVo> searchController1(@RequestBody TbSearchThemeDto watchesName) {
         List<Word> words = WordSegmenter.segWithStopWords(watchesName.getgName());
         ListIterator listIterator = words.listIterator();
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
-            List<TbSearchGoodsInfo> list = tbSearchService.search(watchName);
+            List<TbSearchGoodsInfoVo> list = tbSearchService.search(watchName);
             if(!list.isEmpty()){
                 return list;
             }
@@ -54,12 +52,12 @@ public class TbSearchController {
     @ResponseBody
 //    @RequestMapping("searchController2")
     @PostMapping("searchController2")
-    public List<TbSearchGoodsInfo> searchController2(@RequestBody TbSearchGoodsInfo watchesName) {
+    public List<TbSearchGoodsInfoVo> searchController2(@RequestBody TbSearchThemeDto watchesName) {
         List<Word> words = WordSegmenter.segWithStopWords(watchesName.getgName());
         ListIterator listIterator = words.listIterator();
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
-            List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsPUD(watchName);
+            List<TbSearchGoodsInfoVo> list = tbSearchService.selectGoodsPUD(watchName);
             if(!list.isEmpty()){
                 return list;
             }
@@ -74,12 +72,12 @@ public class TbSearchController {
     @ResponseBody
 //    @RequestMapping("searchController3")
     @PostMapping("searchController3")
-    public List<TbSearchGoodsInfo> searchController3(@RequestBody TbSearchGoodsInfo watchesName) {
+    public List<TbSearchGoodsInfoVo> searchController3(@RequestBody TbSearchThemeDto watchesName) {
         List<Word> words = WordSegmenter.segWithStopWords(watchesName.getgName());
         ListIterator listIterator = words.listIterator();
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
-            List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsPDU(watchName);
+            List<TbSearchGoodsInfoVo> list = tbSearchService.selectGoodsPDU(watchName);
             if(!list.isEmpty()){
                 return list;
             }
@@ -94,12 +92,12 @@ public class TbSearchController {
     @ResponseBody
 //    @RequestMapping("searchController4")
     @PostMapping("searchController4")
-    public List<TbSearchGoodsInfo> searchController4(@RequestBody TbSearchGoodsInfo watchesName) {
+    public List<TbSearchGoodsInfoVo> searchController4(@RequestBody TbSearchThemeDto watchesName) {
         List<Word> words = WordSegmenter.segWithStopWords(watchesName.getgName());
         ListIterator listIterator = words.listIterator();
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
-            List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsTUD(watchName);
+            List<TbSearchGoodsInfoVo> list = tbSearchService.selectGoodsTUD(watchName);
             if(!list.isEmpty()){
                 return list;
             }
@@ -114,18 +112,17 @@ public class TbSearchController {
     @ResponseBody
 //    @RequestMapping("searchController5")
     @PostMapping("searchController5")
-    public List<TbSearchGoodsInfo> searchController5(@RequestBody TbSearchGoodsInfo watchesName) {
+    public List<TbSearchGoodsInfoVo> searchController5(@RequestBody TbSearchThemeDto watchesName) {
         List<Word> words = WordSegmenter.segWithStopWords(watchesName.getgName());
         ListIterator listIterator = words.listIterator();
         while (listIterator.hasNext()) {
             String watchName = listIterator.next().toString();
-            List<TbSearchGoodsInfo> list = tbSearchService.selectGoodsTDU(watchName);
+            List<TbSearchGoodsInfoVo> list = tbSearchService.selectGoodsTDU(watchName);
             if(!list.isEmpty()){
                 return list;
             }
         }
         return null;
     }
-
 
 }

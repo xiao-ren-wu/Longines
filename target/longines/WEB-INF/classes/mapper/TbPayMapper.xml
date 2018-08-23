@@ -160,4 +160,10 @@
   <update id="updatesNum" parameterType="com.longines.pojo.TbOrderInfo" >
     update tb_order_info  SET s_num = #{sNum} where o_id = #{oId}
   </update>
+  <select id="findPay" parameterType="int" resultType="com.longines.pojo.TbPay">
+    select * from tb_pay where o_id = #{oId}
+  </select>
+  <update id="updatebance" parameterType="com.longines.dto.TbPayDto">
+    update tb_user set ac_balance = #{money} where u_id=#{uId}
+  </update>
 </mapper>

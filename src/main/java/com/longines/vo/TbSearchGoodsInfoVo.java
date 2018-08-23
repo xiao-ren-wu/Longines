@@ -2,7 +2,7 @@ package com.longines.vo;
 
 import java.util.Date;
 
-public class TbSearchGoodsInfo {
+public class TbSearchGoodsInfoVo {
 
     private Integer gId;
 

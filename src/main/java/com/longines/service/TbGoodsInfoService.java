@@ -3,6 +3,7 @@ package com.longines.service;
 import com.longines.pojo.TbGoodsInfo;
 
 import java.util.List;
+
 /**
 * @author   yangshuai
 * @description   商品详细信息接口

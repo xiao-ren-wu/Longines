@@ -5,8 +5,12 @@ import com.longines.pojo.TbShoppingCart;
 import com.longines.pojo.TbShoppingCartKey;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
+import com.longines.vo.TbShoppingSumVo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -51,18 +55,37 @@ public class TbShoppingCartController {
     @ResponseBody
     @RequestMapping("Delete")
     public int tbShoppingCartDelete(@RequestBody TbShoppingCartDto tbShoppingCartDto){
+        int tnum=0;
         List<Integer> gid=tbShoppingCartDto.getgId();
         for(int GID:gid) {
             tbShoppingCartService.deleteShcByPK(tbShoppingCartDto.getuId(), GID);
+            TbShoppingCartVo tbShoppingCartVo=new TbShoppingCartVo();
+            tbShoppingCartVo.setgId(GID);
+            tnum+=tbShoppingCartVo.getgNum();
         }
-        return 0;
+        return tnum;
     }
 
+    /**
+     * 根据数量更新 （并返回总数总价）
+     * @param     tbShoppingCart  购物车对象
+     * @return    com.longines.vo.TbShoppingSumVo
+     */
     @ResponseBody
     @RequestMapping("Update")
-    public int tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
+    public TbShoppingSumVo tbShoppingCartUpdate(@RequestBody TbShoppingCart tbShoppingCart){
         tbShoppingCartService.updateShcBygNum(tbShoppingCart.getuId(),tbShoppingCart.getgId(),tbShoppingCart.getgNum());
-        return 1;
+
+        int gNum=0,Tamount=0;
+        TbShoppingSumVo tbShoppingSumVo=new TbShoppingSumVo();
+        gNum+=tbShoppingCartService.sumShcgNum(tbShoppingCart.getuId(),tbShoppingCart.getgId());
+        Tamount+=tbShoppingCartService.sumShctAmount(tbShoppingCart.getuId(),tbShoppingCart.getgId());
+
+        tbShoppingSumVo.settNum(gNum);
+        tbShoppingSumVo.settAmount((long) Tamount);
+        return tbShoppingSumVo;
+
+
     }
 
     @ResponseBody
@@ -75,7 +98,6 @@ public class TbShoppingCartController {
             return tbShoppingCartService.selectEcho(tbShoppingCartKey.getuId());
         }
     }
-
     @ResponseBody
     @RequestMapping("SelectVo")
     public TbShoppingCartVo tbShoppingCartSelectVo(Integer uid){
@@ -83,8 +105,24 @@ public class TbShoppingCartController {
             return null;
         }
         else {
-            return tbShoppingCartService.selectEchoInfo(uid);
+            return tbShoppingCartService.selectEchoInfo(uid,9);
         }
     }
+
+    @ResponseBody
+    @RequestMapping("Sum")
+    public TbShoppingSumVo tbShoppingCartSum(@RequestBody TbShoppingCartDto tbShoppingCartDto){
+        int gNum=0,Tamount=0;
+        List<Integer> gid=tbShoppingCartDto.getgId();
+        TbShoppingSumVo tbShoppingSumVo=new TbShoppingSumVo();
+        for(int GID:gid) {
+            gNum+=tbShoppingCartService.sumShcgNum(tbShoppingCartDto.getuId(),GID);
+            Tamount+=tbShoppingCartService.sumShctAmount(tbShoppingCartDto.getuId(),GID);
+        }
+        tbShoppingSumVo.settNum(gNum);
+        tbShoppingSumVo.settAmount((long) Tamount);
+        return tbShoppingSumVo;
+    }
+
 
 }

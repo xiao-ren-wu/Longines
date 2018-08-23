@@ -1,4 +1,7 @@
 package com.longines.pojo;
+
+import java.util.Date;
+
 /**
  * @author FengTianHao
  * @since 2018/8/8 21:51
@@ -32,6 +35,28 @@ public class TbGoodsInfo {
     private String gPic2;
 
     private String gPic3;
+
+
+    private Date createtime;
+
+    private Date updatetime;
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    public Date getCreatetime() {
+
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
 
     public String getgPic3() {
         return gPic3;
@@ -139,16 +164,16 @@ public class TbGoodsInfo {
         this.gPic = gPic == null ? null : gPic.trim();
     }
 
-    @Override
-    public String toString() {
-        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + '}';
-    }
-
     public Integer getTheId() {
         return theId;
     }
 
     public void setTheId(Integer theId) {
         this.theId = theId;
+    }
+
+    @Override
+    public String toString() {
+        return "TbGoodsInfo{" + "gId=" + gId + ", gname='" + gname + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", theId=" + theId + ", mov='" + mov + '\'' + ", func='" + func + '\'' + ", aPeo='" + aPeo + '\'' + ", dial='" + dial + '\'' + ", strap='" + strap + '\'' + ", wBut='" + wBut + '\'' + ", gPic='" + gPic + '\'' + ", gPic2='" + gPic2 + '\'' + ", gPic3='" + gPic3 + '\'' + ", createtime=" + createtime + ", updatetime=" + updatetime + '}';
     }
 }

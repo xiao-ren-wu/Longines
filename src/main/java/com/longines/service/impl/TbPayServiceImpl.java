@@ -1,6 +1,7 @@
 package com.longines.service.impl;
 
 import com.longines.dao.TbPayMapper;
+import com.longines.dto.TbPayDto;
 import com.longines.pojo.TbOrderInfo;
 import com.longines.pojo.TbPay;
 import com.longines.pojo.TbUser;
@@ -29,22 +30,26 @@ public class TbPayServiceImpl  implements TbPayService {
 
         TbPay tbPay = new TbPay();
         Random random = new Random();
-        TbUser  tbUserId = tbPayMapper.selectUserId(oId);
+        if(tbPayMapper.findPay(oId)==null) {
+            TbUser tbUserId = tbPayMapper.selectUserId(oId);
 
-        tbPay.setpId(random.nextInt(10000));
-        tbPay.setoId(oId);
-        tbPay.setuId(tbUserId.getuId());
-        tbPay.setpMethod("余额支付");
-        tbPay.setPmData(new Date());
-        tbPay.settNum("100");
-        tbPayMapper.insert(tbPay);
+            tbPay.setpId(random.nextInt(10000));
+            tbPay.setoId(oId);
+            tbPay.setuId(tbUserId.getuId());
+            tbPay.setpMethod("余额支付");
+            tbPay.setPmData(new Date());
+            tbPay.settNum("100");
+            tbPayMapper.insert(tbPay);
+        }else
+        {
+            tbPay=tbPayMapper.findPay(oId);
+        }
         return tbPay.getpId();
 
     }
 
     @Override
     public TbUser findUidPicAcBalance(Integer pId){
-
         return tbPayMapper.selectUser(pId);
     }
 
@@ -56,20 +61,20 @@ public class TbPayServiceImpl  implements TbPayService {
     }
 
     @Override
-    public  int judgePw(Integer pId,Integer payCod){
+    public  int judgePw(Integer pId,Integer payCod,Integer num){
 
         String payCod1=tbPayMapper.selectUser(pId).getPayCod();
 
         if(payCod1==null){
-            tbPayMapper.deleteByPrimaryKey(pId);
             return 3;
         }else{
-            System.out.println(payCod);
             if (payCod1.equals(MD5.tomd5(payCod.toString()))){
                 return 0;
             }
             else {
-                tbPayMapper.deleteByPrimaryKey(pId);
+                if(num==0) {
+                    tbPayMapper.deleteByPrimaryKey(pId);
+            }
                 return 1;
             }
 
@@ -96,7 +101,6 @@ public class TbPayServiceImpl  implements TbPayService {
         }
         else
             {
-            tbPayMapper.deleteByPrimaryKey(pId);
             return  2;
         }
         return 0;
@@ -115,4 +119,9 @@ public class TbPayServiceImpl  implements TbPayService {
         return 1;
     }
 
+    @Override
+    public boolean bance(TbPayDto tbPayDto) {
+        tbPayMapper.updatebance(tbPayDto);
+        return true;
+    }
 }

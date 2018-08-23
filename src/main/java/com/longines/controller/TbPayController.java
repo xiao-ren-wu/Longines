@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+
 /**
  * 支付功能
  *
@@ -19,7 +20,7 @@ import javax.annotation.Resource;
 
 public class TbPayController {
 
-    TbPayVo  tbPayVo = new TbPayVo();
+    TbPayVo tbPayVo = new TbPayVo();
     @Resource
     private TbPayService tbPayService;
     /**
@@ -52,7 +53,15 @@ public class TbPayController {
     @PostMapping("IfSuccess")
     public TbPayVo success(@RequestBody TbPayDto tbPayDto) {
 
-        int i = tbPayService.judgePw(tbPayDto.getpId(),tbPayDto.getpayCod());
+        if(tbPayDto.getNum()==null)
+        {
+            tbPayDto.setNum(2);
+            tbPayVo.setNum(2);
+        }else
+        {
+            tbPayVo.setNum(tbPayDto.getNum()-1);
+        }
+        int i = tbPayService.judgePw(tbPayDto.getpId(),tbPayDto.getpayCod(),tbPayDto.getNum()-1);
         /**
          * i用来判断密码是否正确
          * 0:密码正确
@@ -79,6 +88,12 @@ public class TbPayController {
         }
     }
 
+    /**
+     * 设置密码
+     *
+     *@param   tbPayDto  从页面接收的数据对象
+     *@return   com.longines.vo.TbPayVo
+     */
     @CrossOrigin
     @ResponseBody
     @PostMapping("InsertPayCod")
@@ -91,5 +106,13 @@ public class TbPayController {
             tbPayVo.setMsg("设置密码失败");
             return tbPayVo;
         }
+    }
+    @CrossOrigin
+    @ResponseBody
+    @PostMapping("balance")
+    public boolean bance(@RequestBody TbPayDto tbPayDto)
+    {
+        System.out.println(tbPayDto.getuId());
+        return tbPayService.bance(tbPayDto);
     }
 }

@@ -1,6 +1,6 @@
 package com.longines.vo;
 
-public class TbThemeGoodsInfo {
+public class TbThemeGoodsInfoVo {
 
     private Integer gId;
 
@@ -29,6 +29,8 @@ public class TbThemeGoodsInfo {
     private String thePic;
 
     private String theDes;
+
+    private Integer mId;
 
     public Integer getgId() {
         return gId;
@@ -142,4 +144,11 @@ public class TbThemeGoodsInfo {
         this.theDes = theDes;
     }
 
+    public Integer getmId() {
+        return mId;
+    }
+
+    public void setmId(Integer mId) {
+        this.mId = mId;
+    }
 }

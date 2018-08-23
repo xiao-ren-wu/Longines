@@ -27,7 +27,15 @@ public class TbMerce {
 
     private Date updatetime;
 
-    private String mPic;
+    public String mPic;
+
+    public String getmPic() {
+        return mPic;
+    }
+
+    public void setmPic(String mPic) {
+        this.mPic = mPic;
+    }
 
     public Integer getmId() {
         return mId;
@@ -123,13 +131,5 @@ public class TbMerce {
 
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
-    }
-
-    public String getmPic() {
-        return mPic;
-    }
-
-    public void setmPic(String mPic) {
-        this.mPic = mPic == null ? null : mPic.trim();
     }
 }

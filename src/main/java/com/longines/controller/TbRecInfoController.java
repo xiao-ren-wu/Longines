@@ -4,9 +4,7 @@ import com.longines.pojo.TbRecInfo;
 import com.longines.pojo.TbRecInfoExample;
 import com.longines.pojo.TbRecInfoKey;
 import com.longines.service.TbRecInfoService;
-
 import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -25,13 +23,18 @@ public class TbRecInfoController {
     @Resource
     private TbRecInfoService recInfoService;
 
+    private int aid = -1;
+
+
    @CrossOrigin
    @ResponseBody
    @RequestMapping(value = "/recSelect",method = RequestMethod.POST)
    public List<TbRecInfo> list1(@RequestBody TbRecInfo tbRecInfo) {
+
         TbRecInfoExample ex = new TbRecInfoExample();
         ex.setDistinct(true);
         TbRecInfoExample.Criteria cri = ex.createCriteria();
+
         cri.andUIdEqualTo(tbRecInfo.getuId());
 
         List<TbRecInfo> todoList = recInfoService.selectByExample(ex);
@@ -60,10 +63,9 @@ public class TbRecInfoController {
     public TbRecInfo edit(@RequestBody TbRecInfo tbRecInfo) {
         List<TbRecInfo> todoList = list2(tbRecInfo);
 
-        return tbRecInfo;
+        return todoList.get(0);
     }
 
-    //@RequestParam(value = "dis1", required = true) String dis,@RequestParam(value = "city1", required = true) String city ,@RequestParam(value = "pro1", required = true) String pro, @RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel, @RequestParam(value = "aid1", required = true) Integer aid, @RequestParam(value = "uid1", required = true) Integer uid
     @CrossOrigin
     @ResponseBody
     @RequestMapping(value = "/recEdit",method = RequestMethod.POST)
@@ -78,7 +80,6 @@ public class TbRecInfoController {
         }
     }
 
-    //@RequestParam(value = "uid1", required = true) Integer uid,@RequestParam(value = "aid1", required = true) Integer aid
 
     @CrossOrigin
     @ResponseBody
@@ -94,18 +95,61 @@ public class TbRecInfoController {
         }
     }
 
-   //@RequestParam(value = "dis1", required = true) String dis,@RequestParam(value = "city1", required = true) String city ,@RequestParam(value = "pro1", required = true) String pro,@RequestParam(value = "con1", required = true) String con, @RequestParam(value = "add1", required = true) String add, @RequestParam(value = "tel1", required = true) String tel,@RequestParam(value = "uid1", required = true) Integer uid
     @CrossOrigin
     @ResponseBody
     @RequestMapping(value = "/insertRec",method = RequestMethod.POST)
-    public String insert1(@RequestBody TbRecInfo tbRecInfo) {
+    public List<TbRecInfo> insert1(@RequestBody TbRecInfo tbRecInfo) {
 
-        int flag = recInfoService.insert(tbRecInfo);
+        recInfoService.insert(tbRecInfo);
+        List<TbRecInfo> todoList = list1(tbRecInfo);
 
-        if(flag == 1){
-            return "insertSuccess";
-        }else{
-            return "insertFail";
+        return todoList;
+
+    }
+
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/getAid",method = RequestMethod.POST)
+    public String add(@RequestBody TbRecInfo tbRecInfo){
+        try {
+            aid = tbRecInfo.getaId();
+            System.out.println("aid = " + aid);
+            return "getSuccess";
+        } catch (Exception e) {
+            return "getFail";
+        }
+    }
+
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/sendAid",method = RequestMethod.POST)
+    public TbRecInfo send(@RequestBody TbRecInfo tbRecInfo1) {
+
+        if(aid != -1){
+
+            tbRecInfo1.setaId(aid);
+            List<TbRecInfo> todoList = list2(tbRecInfo1);
+
+            return todoList.get(0);
+        }
+        else{
+
+
+            List<TbRecInfo> todoList = list1(tbRecInfo1);
+
+
+            if(todoList.size() == 0){
+
+                TbRecInfo bt = new TbRecInfo();
+
+                bt.setuId(tbRecInfo1.getuId());
+                bt.setaId(-1);
+                return bt;
+            }
+            else{
+
+                return todoList.get(0);
+            }
         }
     }
 }

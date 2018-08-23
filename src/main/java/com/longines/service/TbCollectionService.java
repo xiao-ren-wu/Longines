@@ -19,7 +19,7 @@ public interface TbCollectionService {
      *@param   uId 用户id
      * @param gId   商品id
      */
-    void tbCollectionSave(Integer uId,Integer gId);
+    void tbCollectionSave(Integer uId, Integer gId);
     /**
      * 方法注释
      *删除收藏
@@ -31,7 +31,7 @@ public interface TbCollectionService {
     /**
      * 方法注释
      *我的收藏
-     *@param   uId uio
+     *@param   uId 用户id
      *@return   java.util.List<com.longines.pojo.TbCollection>
      */
     List<TbCollectionVo> tbCollectionSelect(Integer uId);

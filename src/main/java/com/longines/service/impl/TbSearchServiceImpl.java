@@ -2,7 +2,7 @@ package com.longines.service.impl;
 
 import com.longines.dao.TbGoodsInfoMapper;
 import com.longines.service.TbSearchService;
-import com.longines.vo.TbSearchGoodsInfo;
+import com.longines.vo.TbSearchGoodsInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class TbSearchServiceImpl implements TbSearchService {
      * @param gname 商品名称
      */
     @Override
-    public List<TbSearchGoodsInfo> search(String gname) {
+    public List<TbSearchGoodsInfoVo> search(String gname) {
         return tbGoodsInfoMapper.selectBygName(gname);
     }
 
@@ -33,7 +33,7 @@ public class TbSearchServiceImpl implements TbSearchService {
      * @param gname 商品名称
      */
     @Override
-    public List<TbSearchGoodsInfo> selectGoodsPUD(String gname) {
+    public List<TbSearchGoodsInfoVo> selectGoodsPUD(String gname) {
         return tbGoodsInfoMapper.selectBygNamePUD(gname);
     }
 
@@ -42,7 +42,7 @@ public class TbSearchServiceImpl implements TbSearchService {
      * @param gname 商品名称
      */
     @Override
-    public List<TbSearchGoodsInfo> selectGoodsPDU(String gname) {
+    public List<TbSearchGoodsInfoVo> selectGoodsPDU(String gname) {
         return tbGoodsInfoMapper.selectBygNamePDU(gname);
     }
 
@@ -51,7 +51,7 @@ public class TbSearchServiceImpl implements TbSearchService {
      * @param gname 商品名称
      */
     @Override
-    public List<TbSearchGoodsInfo> selectGoodsTUD(String gname) {
+    public List<TbSearchGoodsInfoVo> selectGoodsTUD(String gname) {
         return tbGoodsInfoMapper.selectBygNameTUD(gname);
     }
 
@@ -60,7 +60,7 @@ public class TbSearchServiceImpl implements TbSearchService {
      * @param gname 商品名称
      */
     @Override
-    public List<TbSearchGoodsInfo> selectGoodsTDU(String gname) {
+    public List<TbSearchGoodsInfoVo> selectGoodsTDU(String gname) {
         return tbGoodsInfoMapper.selectBygNameTDU(gname);
     }
 

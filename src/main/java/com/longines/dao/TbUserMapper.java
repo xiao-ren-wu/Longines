@@ -1,9 +1,7 @@
 package com.longines.dao;
 
 import com.longines.pojo.TbUser;
-import com.longines.pojo.TbUserExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+
 /**
 *@author zhaoxiaokang
 *@since 2018/8/13 22:28
@@ -49,7 +47,7 @@ public interface TbUserMapper {
      *@return int
      *@since 2018/8/9 22:27
      */
-    int updateByPrimaryKeySelective (TbUser user);
+    int updateByPrimaryKeySelective(TbUser user);
 
     TbUser findTbuser(String telNum);
 

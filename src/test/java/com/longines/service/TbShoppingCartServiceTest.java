@@ -1,5 +1,6 @@
 package com.longines.service;
 
+import com.longines.pojo.TbMgAssociated;
 import com.longines.pojo.TbShoppingCart;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
@@ -64,4 +65,5 @@ public class TbShoppingCartServiceTest {
             System.out.println(tbShoppingCartVo1);
         }
     }
+
 }

@@ -4,7 +4,6 @@ import com.longines.dao.TbShoppingCartMapper;
 import com.longines.pojo.*;
 import com.longines.service.TbShoppingCartService;
 import com.longines.vo.TbShoppingCartVo;
-import com.longines.vo.TbShoppingSumVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -91,14 +90,16 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         TbShoppingCartKey tbShoppingCartKey=new TbShoppingCartKey();
         tbShoppingCartKey.setuId(uid);
         tbShoppingCartKey.setgId(gid);
-        System.out.println(tbShoppingCartMapper.selectgNum(tbShoppingCartKey));
 
+        tbShoppingCartVo.setmId(tbShoppingCartMapper.selectmId(gid));
         tbShoppingCartVo.setgNum(tbShoppingCartMapper.selectgNum(tbShoppingCartKey));
         tbShoppingCartVo.settAmount(tbShoppingCartMapper.selectgNum(tbShoppingCartKey)*tbGoodsInfo.getPrice());
         tbShoppingCartVo.settNum(1);
         tbShoppingCartVo.setStatus(tbShoppingCartMapper.selectStatus(tbShoppingCartKey));
+
         return tbShoppingCartVo;
     }
+
 
 
     @Override
@@ -110,13 +111,14 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         List<TbShoppingCart> tbShoppingCartList=tbShoppingCartMapper.selectByExample(tbShoppingCartExample);
         for(TbShoppingCart tbShoppingCart:tbShoppingCartList){
              TbShoppingCartVo tbShoppingCartVo =selectEchoInfo(uid,tbShoppingCart.getgId());
-             tbShoppingCartVo.setBon1(false);
-             tbShoppingCartVo.setBon2(false);
+             tbShoppingCartVo.setBon1(0);
+             tbShoppingCartVo.setBon2(0);
              tbShoppingCartVoList.add(tbShoppingCartVo);
         }
         return tbShoppingCartVoList;
-
     }
+
+
 
     @Override
     public int sumShcgNum(int uid, int gid) {
@@ -135,5 +137,8 @@ public class TbShoppingCartServiceImpl implements TbShoppingCartService {
         return tbShoppingCartMapper.selectgNum(tbShoppingCartKey)*tbShoppingCartMapper.selectPrice(gid);
 
     }
+
+
+
 
 }

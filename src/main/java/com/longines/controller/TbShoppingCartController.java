@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -102,7 +103,7 @@ public class TbShoppingCartController {
             return null;
         }
         else {
-            return tbShoppingCartService.selectEchoInfo(6,9);
+            return tbShoppingCartService.selectEchoInfo(uid,9);
         }
     }
 
@@ -120,5 +121,6 @@ public class TbShoppingCartController {
         tbShoppingSumVo.settAmount((long) Tamount);
         return tbShoppingSumVo;
     }
+
 
 }

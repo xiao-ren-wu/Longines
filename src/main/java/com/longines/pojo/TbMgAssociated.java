@@ -22,4 +22,14 @@ public class TbMgAssociated extends TbMgAssociatedKey {
     public void setsTime(Date sTime) {
         this.sTime = sTime;
     }
+
+    @Override
+    public String toString() {
+        return "TbMgAssociated{" +
+                "inv=" + inv +
+                ", sTime=" + sTime +
+                ", mId=" + mId +
+                ", gId=" + gId +
+                '}';
+    }
 }

@@ -2,7 +2,6 @@ package com.longines.service;
 
 import com.longines.pojo.TbShoppingCart;
 import com.longines.vo.TbShoppingCartVo;
-import com.longines.vo.TbShoppingSumVo;
 
 import java.util.List;
 
@@ -58,5 +57,6 @@ public interface TbShoppingCartService {
     int sumShcgNum(int uid,int gid);
 
     Long sumShctAmount(int uid,int gid);
+
 
 }

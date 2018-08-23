@@ -47,24 +47,26 @@ public class TbShoppingCartVo {
      */
     private int tNum;
 
-    private boolean bon1;
+    private int Bon1;
 
-    private boolean bon2;
+    private int Bon2;
 
-    public boolean isBon1() {
-        return bon1;
+    private int mId;
+
+    public int getBon1() {
+        return Bon1;
     }
 
-    public void setBon1(boolean bon1) {
-        this.bon1 = bon1;
+    public void setBon1(int bon1) {
+        Bon1 = bon1;
     }
 
-    public boolean isBon2() {
-        return bon2;
+    public int getBon2() {
+        return Bon2;
     }
 
-    public void setBon2(boolean bon2) {
-        this.bon2 = bon2;
+    public void setBon2(int bon2) {
+        Bon2 = bon2;
     }
 
     public int getgId() {
@@ -147,6 +149,14 @@ public class TbShoppingCartVo {
         this.tNum = tNum;
     }
 
+    public int getmId() {
+        return mId;
+    }
+
+    public void setmId(int mId) {
+        this.mId = mId;
+    }
+
     @Override
     public String toString() {
         return "TbShoppingCartVo{" +
@@ -160,6 +170,9 @@ public class TbShoppingCartVo {
                 ", status=" + status +
                 ", tAmount=" + tAmount +
                 ", tNum=" + tNum +
+                ", Bon1=" + Bon1 +
+                ", Bon2=" + Bon2 +
+                ", mId=" + mId +
                 '}';
     }
 }

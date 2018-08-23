@@ -1,9 +1,9 @@
 package com.longines.pojo;
 
 public class TbMgAssociatedKey {
-    private Integer mId;
+    protected Integer mId;
 
-    private Integer gId;
+    protected Integer gId;
 
     public Integer getmId() {
         return mId;

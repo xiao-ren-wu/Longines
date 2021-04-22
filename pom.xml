@@ -25,7 +25,7 @@
     <logback.version>1.1.2</logback.version>
     <!--持久层依赖-->
     <mysql-connector-java.version>5.1.39</mysql-connector-java.version>
-    <mybatis.version>3.3.0</mybatis.version>
+    <mybatis.version>3.5.6</mybatis.version>
     <mybatis-spring.version>1.2.2</mybatis-spring.version>
     <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
     <mysql.version>5.1.32</mysql.version>

@@ -22,7 +22,7 @@
     <!--日志依赖-->
     <junit.version>4.12</junit.version>
     <slf4j.version>1.7.10</slf4j.version>
-    <logback.version>1.1.2</logback.version>
+    <logback.version>1.2.0</logback.version>
     <!--持久层依赖-->
     <mysql-connector-java.version>5.1.39</mysql-connector-java.version>
     <mybatis.version>3.3.0</mybatis.version>

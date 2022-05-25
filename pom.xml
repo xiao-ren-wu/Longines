@@ -39,7 +39,7 @@
     <jackson.version>2.6.3</jackson.version>
 
     <!--spring 版本-->
-    <spring.version>4.3.7.RELEASE</spring.version>
+    <spring.version>5.2.22.RELEASE</spring.version>
 
     <!--文件上传相关依赖-->
     <commons-lang3.version>3.3.2</commons-lang3.version>
